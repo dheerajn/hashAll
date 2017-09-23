@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         } else {
             viewControllerToBeShown = mainStoryboard.instantiateInitialViewController()
-            let nav1 = UINavigationController()
-            nav1.viewControllers = [viewControllerToBeShown!]
-            self.window?.rootViewController = nav1
+            let navController = UINavigationController()
+            navController.viewControllers = [viewControllerToBeShown!]
+            self.window?.rootViewController = navController
             self.window?.makeKeyAndVisible()
         }
         return true

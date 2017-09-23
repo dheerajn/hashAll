@@ -10,4 +10,9 @@ import Foundation
 
 public protocol HashTagsViewConfigurable: class {
     var screenTitle: String? { get }
+    
+    //UI
+    var cameraButtonTitle: String? { get }
+    var photoLibraryButtonTitle: String? { get }
+    var predictButtonTitle: String? { get }
 }

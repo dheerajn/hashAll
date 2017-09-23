@@ -4,7 +4,10 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,9 +20,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0i0-5y-L5Z">
-                                <rect key="frame" x="107" y="548" width="160" height="73"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0i0-5y-L5Z" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="107" y="552" width="160" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.61176470589999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="getStartedButtonTapped:" destination="3f1-vm-4yc" eventType="touchUpInside" id="xbH-Nj-DBT"/>
                                 </connections>
@@ -43,13 +57,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMq-AW-SUq" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="16" y="520" width="30" height="30"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.1215686277" green="0.01176470611" blue="0.42352941630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NH9-aY-7NF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3A-mt-Td0" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="329" y="520" width="30" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="x9V-9f-y2o"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="photoLibraryTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtW-dd-PtW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kV-oF-rCg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="296" id="dRt-Q0-bf2"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSA-G2-FSp" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="123" y="599" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.1215686277" green="0.01176470611" blue="0.42352941630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="predictButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0w-ag-cy8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1kV-oF-rCg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3XA-fL-vQt"/>
+                            <constraint firstItem="M3A-mt-Td0" firstAttribute="width" secondItem="iMq-AW-SUq" secondAttribute="width" id="FNi-fq-ps9"/>
+                            <constraint firstItem="M3A-mt-Td0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SkS-06-MPv"/>
+                            <constraint firstItem="1kV-oF-rCg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z5w-th-DuZ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iMq-AW-SUq" secondAttribute="trailingMargin" id="fD6-jD-IGa"/>
+                            <constraint firstItem="M3A-mt-Td0" firstAttribute="top" secondItem="iMq-AW-SUq" secondAttribute="top" id="lrU-L8-szX"/>
+                            <constraint firstItem="M3A-mt-Td0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="mRR-tq-FfQ"/>
+                            <constraint firstItem="M3A-mt-Td0" firstAttribute="baseline" secondItem="iMq-AW-SUq" secondAttribute="firstBaseline" id="rBb-Ln-uPn"/>
+                            <constraint firstItem="1kV-oF-rCg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vIR-2Z-dqm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M3A-mt-Td0" secondAttribute="bottom" constant="93" id="wqG-fe-bVR"/>
+                            <constraint firstItem="iMq-AW-SUq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xmT-aG-HCP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="iMq-AW-SUq" id="V4r-tG-Ied"/>
+                        <outlet property="imageToPredict" destination="1kV-oF-rCg" id="yoz-zm-vO9"/>
+                        <outlet property="photoLibraryButton" destination="M3A-mt-Td0" id="vOc-tJ-XZO"/>
+                        <outlet property="predictButton" destination="iSA-G2-FSp" id="xqB-BV-IuR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="133"/>
+            <point key="canvasLocation" x="636" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
