@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         var viewControllerToBeShown: UIViewController?
         
-        if UserDefaults.standard.value(forKey: "OnBoarding") as? String == nil {
+        if UserDefaults.standard.value(forKey: Constants.onboaringIdentifier) as? String == nil {
             viewControllerToBeShown = mainStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController") as? OnboardingViewController
             self.window?.rootViewController = viewControllerToBeShown
             self.window?.makeKeyAndVisible()

@@ -26,7 +26,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func getStartedButtonTapped(_ sender: Any) {
-        UserDefaults.standard.setValue("Done", forKey: "OnBoarding")
+        UserDefaults.standard.setValue("Done", forKey: Constants.onboaringIdentifier)
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let hashTagVc = storyboard.instantiateViewController(withIdentifier: "HashTagsViewController") as? HashTagsViewController
