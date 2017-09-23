@@ -12,10 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var viewControllerToBeShown: UIViewController?
+        
+        if UserDefaults.standard.value(forKey: "OnBoarding") as? String == nil {
+            viewControllerToBeShown = mainStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController") as? OnboardingViewController
+            self.window?.rootViewController = viewControllerToBeShown
+            self.window?.makeKeyAndVisible()
+        } else {
+            viewControllerToBeShown = mainStoryboard.instantiateInitialViewController()
+            let nav1 = UINavigationController()
+            nav1.viewControllers = [viewControllerToBeShown!]
+            self.window?.rootViewController = nav1
+        }
         return true
     }
 
