@@ -11,6 +11,8 @@ import CoreML
 
 class HashTagsViewController: UIViewController {
     
+    // Deep Residual Learning for Image Recognition
+    // https://arxiv.org/abs/1512.03385
     let resnetModel = Resnet50()
     let imagePicker = UIImagePickerController()
     
@@ -19,7 +21,6 @@ class HashTagsViewController: UIViewController {
             
         }
     }
-    
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var predictButton: CustomButton!
@@ -27,12 +28,14 @@ class HashTagsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if viewModel == nil {
+            viewModel = HashTagsViewModel()
+        }
         setupUserInterface()
     }
     
     func setupUserInterface() {
         self.title = viewModel?.screenTitle
-        imagePicker.delegate = self
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         self.predictButton.setTitle(viewModel?.predictButtonTitle, for: .normal)
@@ -43,6 +46,11 @@ class HashTagsViewController: UIViewController {
     }
     
     @IBAction func photoLibraryTapped(_ sender: CustomButton) {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            return
+        }
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
     }
     
@@ -73,12 +81,8 @@ private extension HashTagsViewController {
     
     func resnet(ref: CVPixelBuffer) {
         do {
-            // prediction
-            let output = try resnetModel.prediction(image: ref)
-            
-            // sort classes by probability
-            let sorted = output.classLabelProbs.sorted(by: { (lhs, rhs) -> Bool in
-                
+            let predictions = try resnetModel.prediction(image: ref)
+            let sorted = predictions.classLabelProbs.sorted(by: { (lhs, rhs) -> Bool in
                 return lhs.value > rhs.value
             })
             print("the results are \(sorted[0].key): \(NSString(format: "%.2f", sorted[0].value))\n \(sorted[1].key): \(NSString(format: "%.2f", sorted[1].value))\n \(sorted[2].key): \(NSString(format: "%.2f", sorted[2].value))\n \(sorted[3].key): \(NSString(format: "%.2f", sorted[3].value))\n \(sorted[4].key): \(NSString(format: "%.2f", sorted[4].value))\n \(sorted[5].key): \(NSString(format: "%.2f", sorted[5].value))\n \(sorted[6].key): \(NSString(format: "%.2f", sorted[6].value))")
