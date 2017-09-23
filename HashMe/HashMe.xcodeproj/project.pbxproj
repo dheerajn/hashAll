@@ -21,6 +21,7 @@
 		C84B2B301F76BD4000F56BF5 /* HashTagsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2F1F76BD4000F56BF5 /* HashTagsViewConfigurable.swift */; };
 		C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */; };
 		C84B2B351F76C19F00F56BF5 /* NavigationControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */; };
+		C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867A0981F76CB5200B8B0E7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C84B2B2F1F76BD4000F56BF5 /* HashTagsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagsViewConfigurable.swift; sourceTree = "<group>"; };
 		C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagFlowController.swift; sourceTree = "<group>"; };
 		C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllable.swift; sourceTree = "<group>"; };
+		C867A0981F76CB5200B8B0E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */,
+				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84B2B301F76BD4000F56BF5 /* HashTagsViewConfigurable.swift in Sources */,
+				C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */,
 				C84B2B2C1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift in Sources */,
 				C84B2B351F76C19F00F56BF5 /* NavigationControllable.swift in Sources */,
 				C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */,
