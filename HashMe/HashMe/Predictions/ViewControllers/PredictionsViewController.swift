@@ -10,6 +10,7 @@ import UIKit
 import CoreML
 
 //https://github.com/ytakzk/CoreML-samples - help taken from this.
+//TODO: try putting different models and compare the results of the prediction and combine everything.
 
 class PredictionsViewController: BaseViewController {
     
