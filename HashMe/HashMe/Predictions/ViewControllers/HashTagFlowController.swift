@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-public protocol HashTagFlowDelegate: NavigationControllable {}
+public protocol HashTagFlowDelegate: NavigationControllable, PredictionResultsPresentable {}
 
-class HashTagFlowController: HashTagFlowDelegate {
+public class HashTagFlowController: HashTagFlowDelegate {
     
-    var navigationController: UINavigationController?
+    public var navigationController: UINavigationController?
     var initialViewController: UIViewController?
     
     init(initialViewController: UIViewController) {
@@ -24,8 +24,9 @@ class HashTagFlowController: HashTagFlowDelegate {
     func showHashTagView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let hashTagVc = storyboard.instantiateViewController(withIdentifier: "HashTagsViewController") as? HashTagsViewController
-        hashTagVc?.viewModel = HashTagsViewModel()
+        let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.hashtagsVcIdentifier) as? PredictionsViewController
+        hashTagVc?.flowDelegate = self
+        hashTagVc?.viewModel = PredictionsViewModel()
         
         self.navigationController = UINavigationController(rootViewController: hashTagVc!)
         self.initialViewController?.present(self.navigationController!, animated: true, completion: nil)

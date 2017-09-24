@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol HashTagsViewConfigurable: class {
+public protocol PredictionsViewConfigurable: class {
     var screenTitle: String? { get }
     
     //UI

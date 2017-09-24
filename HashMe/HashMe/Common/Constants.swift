@@ -10,4 +10,8 @@ import Foundation
 
 struct Constants {
     static var onboaringIdentifier = "OnBoarding"
+    
+    static var hashtagsVcIdentifier = "PredictionsViewController"
+    static var predictionsResultsVcIdentifier = "PredictionResultsViewController"
+    
 }

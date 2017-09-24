@@ -1,5 +1,5 @@
 //
-//  HashTagsViewModel.swift
+//  PredictionsViewModel.swift
 //  HashMe
 //
 //  Created by Dheeru on 9/23/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HashTagsViewModel: HashTagsViewConfigurable {
+class PredictionsViewModel: PredictionsViewConfigurable {
     
     var screenTitle: String? {
         return "Hash Me title"

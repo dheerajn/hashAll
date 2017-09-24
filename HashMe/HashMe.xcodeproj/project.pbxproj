@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */; };
+		C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */; };
+		C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */; };
+		C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BED01F77290D0029732B /* PredictionResultsPresentable.swift */; };
 		C817F7301F75DCBF00B8C0FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */; };
 		C817F7351F75DCBF00B8C0FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C817F7331F75DCBF00B8C0FD /* Main.storyboard */; };
 		C817F7371F75DCBF00B8C0FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C817F7361F75DCBF00B8C0FD /* Assets.xcassets */; };
@@ -14,11 +18,11 @@
 		C817F7451F75DCBF00B8C0FD /* HashMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */; };
 		C84B2B191F75EC6B00F56BF5 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B181F75EC6B00F56BF5 /* UIImageExtension.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
-		C84B2B281F76B36500F56BF5 /* HashTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* HashTagsViewController.swift */; };
+		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
 		C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */; };
 		C84B2B2C1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2B1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift */; };
-		C84B2B2E1F76BD2C00F56BF5 /* HashTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2D1F76BD2C00F56BF5 /* HashTagsViewModel.swift */; };
-		C84B2B301F76BD4000F56BF5 /* HashTagsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2F1F76BD4000F56BF5 /* HashTagsViewConfigurable.swift */; };
+		C84B2B2E1F76BD2C00F56BF5 /* PredictionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2D1F76BD2C00F56BF5 /* PredictionsViewModel.swift */; };
+		C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2F1F76BD4000F56BF5 /* PredictionsViewConfigurable.swift */; };
 		C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */; };
 		C84B2B351F76C19F00F56BF5 /* NavigationControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */; };
 		C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85450591F76F44100CF3D4E /* CustomButton.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewController.swift; sourceTree = "<group>"; };
+		C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsResultsViewModel.swift; sourceTree = "<group>"; };
+		C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewConfigurable.swift; sourceTree = "<group>"; };
+		C812BED01F77290D0029732B /* PredictionResultsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsPresentable.swift; sourceTree = "<group>"; };
 		C817F72C1F75DCBF00B8C0FD /* HashMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C817F7341F75DCBF00B8C0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,11 +57,11 @@
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B181F75EC6B00F56BF5 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		C84B2B271F76B36500F56BF5 /* HashTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagsViewController.swift; sourceTree = "<group>"; };
+		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
 		C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		C84B2B2B1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewConfigurable.swift; sourceTree = "<group>"; };
-		C84B2B2D1F76BD2C00F56BF5 /* HashTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagsViewModel.swift; sourceTree = "<group>"; };
-		C84B2B2F1F76BD4000F56BF5 /* HashTagsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagsViewConfigurable.swift; sourceTree = "<group>"; };
+		C84B2B2D1F76BD2C00F56BF5 /* PredictionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewModel.swift; sourceTree = "<group>"; };
+		C84B2B2F1F76BD4000F56BF5 /* PredictionsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewConfigurable.swift; sourceTree = "<group>"; };
 		C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagFlowController.swift; sourceTree = "<group>"; };
 		C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllable.swift; sourceTree = "<group>"; };
 		C85450591F76F44100CF3D4E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -78,6 +86,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C812BEC31F7726900029732B /* PredictionsResults */ = {
+			isa = PBXGroup;
+			children = (
+				C812BEC61F7727400029732B /* Configurable */,
+				C812BEC51F7727310029732B /* ViewModels */,
+				C812BEC41F7727260029732B /* ViewControllers */,
+			);
+			path = PredictionsResults;
+			sourceTree = "<group>";
+		};
+		C812BEC41F7727260029732B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C812BEC51F7727310029732B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C812BEC61F7727400029732B /* Configurable */ = {
+			isa = PBXGroup;
+			children = (
+				C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */,
+			);
+			path = Configurable;
+			sourceTree = "<group>";
+		};
+		C812BECD1F7728D40029732B /* Presentables */ = {
+			isa = PBXGroup;
+			children = (
+				C812BED01F77290D0029732B /* PredictionResultsPresentable.swift */,
+			);
+			path = Presentables;
+			sourceTree = "<group>";
+		};
 		C817F7231F75DCBF00B8C0FD = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +149,9 @@
 		C817F72E1F75DCBF00B8C0FD /* HashMe */ = {
 			isa = PBXGroup;
 			children = (
+				C812BEC31F7726900029732B /* PredictionsResults */,
 				C84B2B331F76C18400F56BF5 /* Common */,
-				C84B2B1C1F76ACCC00F56BF5 /* Hashtags */,
+				C84B2B1C1F76ACCC00F56BF5 /* Predictions */,
 				C84B2B1B1F76ABF500F56BF5 /* Onboarding */,
 				C84B2B171F75EC0C00F56BF5 /* Extensions */,
 				C84B2B0B1F75E94200F56BF5 /* Extras */,
@@ -148,14 +199,15 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		C84B2B1C1F76ACCC00F56BF5 /* Hashtags */ = {
+		C84B2B1C1F76ACCC00F56BF5 /* Predictions */ = {
 			isa = PBXGroup;
 			children = (
+				C812BECD1F7728D40029732B /* Presentables */,
 				C84B2B221F76AD5700F56BF5 /* ViewControllers */,
 				C84B2B211F76AD4F00F56BF5 /* ViewModels */,
 				C84B2B201F76AD4500F56BF5 /* Models */,
 			);
-			path = Hashtags;
+			path = Predictions;
 			sourceTree = "<group>";
 		};
 		C84B2B1D1F76AD1E00F56BF5 /* ViewControllers */ = {
@@ -185,7 +237,7 @@
 		C84B2B201F76AD4500F56BF5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C84B2B2F1F76BD4000F56BF5 /* HashTagsViewConfigurable.swift */,
+				C84B2B2F1F76BD4000F56BF5 /* PredictionsViewConfigurable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,7 +245,7 @@
 		C84B2B211F76AD4F00F56BF5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C84B2B2D1F76BD2C00F56BF5 /* HashTagsViewModel.swift */,
+				C84B2B2D1F76BD2C00F56BF5 /* PredictionsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -201,7 +253,7 @@
 		C84B2B221F76AD5700F56BF5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C84B2B271F76B36500F56BF5 /* HashTagsViewController.swift */,
+				C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */,
 				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
 			);
 			path = ViewControllers;
@@ -336,14 +388,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84B2B301F76BD4000F56BF5 /* HashTagsViewConfigurable.swift in Sources */,
+				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
+				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
+				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
+				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
 				C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */,
 				C84B2B2C1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift in Sources */,
 				C84B2B351F76C19F00F56BF5 /* NavigationControllable.swift in Sources */,
+				C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */,
 				C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */,
-				C84B2B2E1F76BD2C00F56BF5 /* HashTagsViewModel.swift in Sources */,
+				C84B2B2E1F76BD2C00F56BF5 /* PredictionsViewModel.swift in Sources */,
 				C817F7301F75DCBF00B8C0FD /* AppDelegate.swift in Sources */,
-				C84B2B281F76B36500F56BF5 /* HashTagsViewController.swift in Sources */,
+				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,

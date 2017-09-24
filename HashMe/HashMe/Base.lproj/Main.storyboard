@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -50,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="-247.19999999999999" y="132.68365817091455"/>
         </scene>
-        <!--Hash Tags View Controller-->
+        <!--Predictions View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HashTagsViewController" id="BYZ-38-t0r" customClass="HashTagsViewController" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PredictionsViewController" id="BYZ-38-t0r" customClass="PredictionsViewController" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +97,7 @@
                                     <action selector="photoLibraryTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtW-dd-PtW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kV-oF-rCg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kV-oF-rCg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="296" id="dRt-Q0-bf2"/>
@@ -149,6 +148,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="636" y="132.68365817091455"/>
+        </scene>
+        <!--Prediction Results View Controller-->
+        <scene sceneID="25f-lU-Qcb">
+            <objects>
+                <viewController storyboardIdentifier="PredictionResultsViewController" id="7NR-8f-Tr6" customClass="PredictionResultsViewController" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NUs-qZ-y6i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="neA-Pt-P9Z"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JBo-a5-dH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="133"/>
         </scene>
     </scenes>
 </document>

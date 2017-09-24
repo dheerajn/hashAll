@@ -1,5 +1,5 @@
 //
-//  HashTagsViewController.swift
+//  PredictionsViewController.swift
 //  HashMe
 //
 //  Created by Dheeru on 9/23/17.
@@ -9,18 +9,19 @@
 import UIKit
 import CoreML
 
-class HashTagsViewController: UIViewController {
+class PredictionsViewController: UIViewController {
     
     // Deep Residual Learning for Image Recognition
     // https://arxiv.org/abs/1512.03385
     let resnetModel = Resnet50()
     let imagePicker = UIImagePickerController()
-    
-    var viewModel: HashTagsViewConfigurable? {
+    var predictedResults = [String]()
+    var viewModel: PredictionsViewConfigurable? {
         didSet {
             
         }
     }
+    var flowDelegate: HashTagFlowDelegate?
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var predictButton: CustomButton!
@@ -29,7 +30,7 @@ class HashTagsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if viewModel == nil {
-            viewModel = HashTagsViewModel()
+            viewModel = PredictionsViewModel()
         }
         setupUserInterface()
     }
@@ -62,7 +63,7 @@ class HashTagsViewController: UIViewController {
     }
 }
 
-extension HashTagsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage,
             let resized = image.resize(size: CGSize(width: 224, height: 224)) else {
@@ -77,7 +78,7 @@ extension HashTagsViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 }
 
-private extension HashTagsViewController {
+private extension PredictionsViewController {
     
     func resnet(ref: CVPixelBuffer) {
         do {
@@ -86,6 +87,17 @@ private extension HashTagsViewController {
                 return lhs.value > rhs.value
             })
             print("the results are \(sorted[0].key): \(NSString(format: "%.2f", sorted[0].value))\n \(sorted[1].key): \(NSString(format: "%.2f", sorted[1].value))\n \(sorted[2].key): \(NSString(format: "%.2f", sorted[2].value))\n \(sorted[3].key): \(NSString(format: "%.2f", sorted[3].value))\n \(sorted[4].key): \(NSString(format: "%.2f", sorted[4].value))\n \(sorted[5].key): \(NSString(format: "%.2f", sorted[5].value))\n \(sorted[6].key): \(NSString(format: "%.2f", sorted[6].value))")
+            
+            self.predictedResults.append(sorted[0].key)
+            self.predictedResults.append(sorted[1].key)
+            self.predictedResults.append(sorted[2].key)
+            self.predictedResults.append(sorted[3].key)
+            self.predictedResults.append(sorted[4].key)
+            self.predictedResults.append(sorted[5].key)
+            self.predictedResults.append(sorted[6].key)
+            self.predictedResults.append(sorted[7].key)
+            
+            self.flowDelegate?.showPredictionResultsView()
         } catch {
             print(error)
         }
