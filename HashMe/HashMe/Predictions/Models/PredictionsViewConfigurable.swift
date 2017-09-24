@@ -10,7 +10,7 @@ import Foundation
 
 public protocol PredictionsViewConfigurable: class {
     var screenTitle: String? { get }
-    
+    var maxNumOfKeys: Int? { get }
     //UI
     var cameraButtonTitle: String? { get }
     var photoLibraryButtonTitle: String? { get }

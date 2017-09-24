@@ -59,7 +59,7 @@ class PredictionsViewController: BaseViewController {
         guard let image = imageToPredict.image, let ref = image.buffer else {
             return
         }
-        resnet(ref: ref)
+        predictImage(ref: ref)
     }
 }
 
@@ -80,26 +80,22 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
 
 private extension PredictionsViewController {
     
-    func resnet(ref: CVPixelBuffer) {
+    func predictImage(ref: CVPixelBuffer) {
         do {
             let predictions = try resnetModel.prediction(image: ref)
             let sorted = predictions.classLabelProbs.sorted(by: { (lhs, rhs) -> Bool in
                 return lhs.value > rhs.value
             })
-            print("the results are \(sorted[0].key): \(NSString(format: "%.2f", sorted[0].value))\n \(sorted[1].key): \(NSString(format: "%.2f", sorted[1].value))\n \(sorted[2].key): \(NSString(format: "%.2f", sorted[2].value))\n \(sorted[3].key): \(NSString(format: "%.2f", sorted[3].value))\n \(sorted[4].key): \(NSString(format: "%.2f", sorted[4].value))\n \(sorted[5].key): \(NSString(format: "%.2f", sorted[5].value))\n \(sorted[6].key): \(NSString(format: "%.2f", sorted[6].value))")
-            
-            self.predictedResults.append(sorted[0].key)
-            self.predictedResults.append(sorted[1].key)
-            self.predictedResults.append(sorted[2].key)
-            self.predictedResults.append(sorted[3].key)
-            self.predictedResults.append(sorted[4].key)
-            self.predictedResults.append(sorted[5].key)
-            self.predictedResults.append(sorted[6].key)
-            self.predictedResults.append(sorted[7].key)
-            
+            for i in 0...maxNumOfKeys() {
+                self.predictedResults.append(sorted[i].key)
+            }
             self.flowDelegate?.showPredictionResultsView()
         } catch {
             print(error)
         }
+    }
+    
+    func maxNumOfKeys() -> Int {
+        return viewModel?.maxNumOfKeys ?? 7
     }
 }

@@ -23,4 +23,8 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     var predictButtonTitle: String? {
         return "PREDICT"
     }
+    
+    var maxNumOfKeys: Int? {
+        return 7
+    }
 }
