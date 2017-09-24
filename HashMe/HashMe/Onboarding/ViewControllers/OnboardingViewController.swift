@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: BaseViewController {
     var flowDelegate: HashTagFlowDelegate?
     
     @IBOutlet weak var getstartedButton: UIButton!

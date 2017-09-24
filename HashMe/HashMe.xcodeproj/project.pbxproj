@@ -11,6 +11,8 @@
 		C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */; };
 		C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */; };
 		C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BED01F77290D0029732B /* PredictionResultsPresentable.swift */; };
+		C812BED31F7738C80029732B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BED21F7738C80029732B /* BaseViewController.swift */; };
+		C812BED51F7739580029732B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BED41F7739580029732B /* UIColorExtension.swift */; };
 		C817F7301F75DCBF00B8C0FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */; };
 		C817F7351F75DCBF00B8C0FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C817F7331F75DCBF00B8C0FD /* Main.storyboard */; };
 		C817F7371F75DCBF00B8C0FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C817F7361F75DCBF00B8C0FD /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsResultsViewModel.swift; sourceTree = "<group>"; };
 		C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewConfigurable.swift; sourceTree = "<group>"; };
 		C812BED01F77290D0029732B /* PredictionResultsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsPresentable.swift; sourceTree = "<group>"; };
+		C812BED21F7738C80029732B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C812BED41F7739580029732B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C817F72C1F75DCBF00B8C0FD /* HashMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C817F7341F75DCBF00B8C0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				C84B2B181F75EC6B00F56BF5 /* UIImageExtension.swift */,
+				C812BED41F7739580029732B /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
+				C812BED21F7738C80029732B /* BaseViewController.swift */,
 				C867A09D1F76E17C00B8B0E7 /* UI */,
 				C867A09C1F76E16500B8B0E7 /* Protocols */,
 				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
@@ -392,7 +398,9 @@
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
 				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
+				C812BED51F7739580029732B /* UIColorExtension.swift in Sources */,
 				C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */,
+				C812BED31F7738C80029732B /* BaseViewController.swift in Sources */,
 				C84B2B2C1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift in Sources */,
 				C84B2B351F76C19F00F56BF5 /* NavigationControllable.swift in Sources */,
 				C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */,

@@ -13,7 +13,7 @@ var viewModel: PredictionResultsViewConfigurable? {
         
     }
 }
-class PredictionResultsViewController: UIViewController {
+class PredictionResultsViewController: BaseViewController {
 
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {

@@ -9,7 +9,7 @@
 import UIKit
 import CoreML
 
-class PredictionsViewController: UIViewController {
+class PredictionsViewController: BaseViewController {
     
     // Deep Residual Learning for Image Recognition
     // https://arxiv.org/abs/1512.03385
