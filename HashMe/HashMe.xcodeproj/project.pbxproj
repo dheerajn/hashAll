@@ -56,7 +56,7 @@
 		C817F7341F75DCBF00B8C0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C817F7361F75DCBF00B8C0FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C817F7391F75DCBF00B8C0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C817F73B1F75DCBF00B8C0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C817F73B1F75DCBF00B8C0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		C817F7401F75DCBF00B8C0FD /* HashMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HashMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMeTests.swift; sourceTree = "<group>"; };
 		C817F7461F75DCBF00B8C0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,8 +161,6 @@
 				C84B2B1B1F76ABF500F56BF5 /* Onboarding */,
 				C84B2B171F75EC0C00F56BF5 /* Extensions */,
 				C84B2B0B1F75E94200F56BF5 /* Extras */,
-				C817F7331F75DCBF00B8C0FD /* Main.storyboard */,
-				C817F73B1F75DCBF00B8C0FD /* Info.plist */,
 			);
 			path = HashMe;
 			sourceTree = "<group>";
@@ -179,6 +177,7 @@
 		C84B2B0B1F75E94200F56BF5 /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				C817F73B1F75DCBF00B8C0FD /* Info.plist */,
 				C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */,
 				C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */,
 				C817F7381F75DCBF00B8C0FD /* LaunchScreen.storyboard */,
@@ -268,6 +267,7 @@
 		C84B2B331F76C18400F56BF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C817F7331F75DCBF00B8C0FD /* Main.storyboard */,
 				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
 				C812BED21F7738C80029732B /* BaseViewController.swift */,
 				C867A09D1F76E17C00B8B0E7 /* UI */,
