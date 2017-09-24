@@ -21,7 +21,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
         return "PHOTO LIBRARY"
     }
     var predictButtonTitle: String? {
-        return "PREDICT"
+        return "GENERATE HASHTAGS"
     }
     
     var maxNumOfKeys: Int? {

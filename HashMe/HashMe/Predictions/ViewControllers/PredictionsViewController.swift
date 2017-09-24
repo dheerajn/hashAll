@@ -43,16 +43,11 @@ class PredictionsViewController: BaseViewController {
     }
     
     @IBAction func cameraButtonTapped(_ sender: CustomButton) {
-        
+        openCameraOrPhotoLibrary(sourceType: .camera)
     }
     
     @IBAction func photoLibraryTapped(_ sender: CustomButton) {
-        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-            return
-        }
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        self.present(imagePicker, animated: true, completion: nil)
+        openCameraOrPhotoLibrary(sourceType: .photoLibrary)
     }
     
     @IBAction func predictButtonTapped(_ sender: CustomButton) {
@@ -60,6 +55,21 @@ class PredictionsViewController: BaseViewController {
             return
         }
         predictImage(ref: ref)
+    }
+    
+    func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
+        guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
+            let dismissAction: CustomAlertAction = (title: "Ok", style: UIAlertActionStyle.destructive, handler: nil)
+            CustomAlertController().displayAlertWithTitle("Huh, looks like we cant open \(sourceType).",
+                message: "Sorry, please try again later. Something went wrong.",
+                preferredStyle: .alert,
+                andActions: [dismissAction],
+                onViewController: self)
+            return
+        }
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
     }
 }
 
