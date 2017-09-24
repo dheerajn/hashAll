@@ -9,6 +9,8 @@
 import Foundation
 
 struct Constants {
+    static var mainStoryboardIdentifier = "Main"
+    
     static var onboaringIdentifier = "OnBoarding"
     
     static var hashtagsVcIdentifier = "PredictionsViewController"

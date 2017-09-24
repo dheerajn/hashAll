@@ -22,7 +22,7 @@ public class HashTagFlowController: HashTagFlowDelegate {
     }
     
     func showHashTagView() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
         
         let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.hashtagsVcIdentifier) as? PredictionsViewController
         hashTagVc?.flowDelegate = self

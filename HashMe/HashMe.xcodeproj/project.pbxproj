@@ -254,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */,
-				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +261,7 @@
 		C84B2B331F76C18400F56BF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
 				C867A09D1F76E17C00B8B0E7 /* UI */,
 				C867A09C1F76E16500B8B0E7 /* Protocols */,
 				C867A0981F76CB5200B8B0E7 /* Constants.swift */,

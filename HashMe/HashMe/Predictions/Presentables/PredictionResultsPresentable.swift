@@ -15,7 +15,7 @@ public protocol PredictionResultsPresentable: class {
 
 public extension PredictionResultsPresentable where Self: HashTagFlowController {
     func showPredictionResultsView(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
         let predictionResultsVc = storyboard.instantiateViewController(withIdentifier: Constants.predictionsResultsVcIdentifier) as? PredictionResultsViewController
         predictionResultsVc?.viewModel = PredictionsResultsViewModel()
        self.navigationController?.pushViewController(predictionResultsVc!, animated: true)
