@@ -26,7 +26,7 @@ public class HashTagFlowController: HashTagFlowDelegate {
         
         let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.hashtagsVcIdentifier) as? PredictionsViewController
         hashTagVc?.flowDelegate = self
-        hashTagVc?.viewModel = PredictionsViewModel()
+        hashTagVc?.viewModel = PredictionsViewModel(flowDelegate: self)
         
         self.navigationController = UINavigationController(rootViewController: hashTagVc!)
         self.initialViewController?.present(self.navigationController!, animated: true, completion: nil)

@@ -9,13 +9,11 @@
 import UIKit
 import CoreML
 
+//https://github.com/ytakzk/CoreML-samples - help taken from this.
+
 class PredictionsViewController: BaseViewController {
     
-    // Deep Residual Learning for Image Recognition
-    // https://arxiv.org/abs/1512.03385
-    let resnetModel = Resnet50()
     let imagePicker = UIImagePickerController()
-    var predictedResults = [String]()
     var viewModel: PredictionsViewConfigurable? {
         didSet {
             
@@ -30,7 +28,7 @@ class PredictionsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if viewModel == nil {
-            viewModel = PredictionsViewModel()
+            viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
         }
         setupUserInterface()
     }
@@ -54,7 +52,7 @@ class PredictionsViewController: BaseViewController {
         guard let image = imageToPredict.image, let ref = image.buffer else {
             return
         }
-        predictImage(ref: ref)
+        self.viewModel?.predictImage(ref: ref)
     }
     
     func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
@@ -85,27 +83,5 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
-    }
-}
-
-private extension PredictionsViewController {
-    
-    func predictImage(ref: CVPixelBuffer) {
-        do {
-            let predictions = try resnetModel.prediction(image: ref)
-            let sorted = predictions.classLabelProbs.sorted(by: { (lhs, rhs) -> Bool in
-                return lhs.value > rhs.value
-            })
-            for i in 0...maxNumOfKeys() {
-                self.predictedResults.append(sorted[i].key)
-            }
-            self.flowDelegate?.showPredictionResultsView()
-        } catch {
-            print(error)
-        }
-    }
-    
-    func maxNumOfKeys() -> Int {
-        return viewModel?.maxNumOfKeys ?? 7
     }
 }
