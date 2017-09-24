@@ -27,4 +27,12 @@ import UIKit
             self.layer.borderColor = borderColor.cgColor
         }
     }
+    
+    @IBInspectable var minimumScalingFactor: CGFloat = 0.5 {
+        didSet {
+            self.titleLabel?.minimumScaleFactor = minimumScalingFactor
+            self.titleLabel?.adjustsFontSizeToFitWidth = true
+        }
+    }
+    
 }
