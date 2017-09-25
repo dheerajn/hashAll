@@ -76,7 +76,7 @@
 		C85450591F76F44100CF3D4E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C867A0981F76CB5200B8B0E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C8F54A141F79BBE100E94DF4 /* TimeTravelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelExtension.swift; sourceTree = "<group>"; };
-		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomLoadingAnimation.swift; path = UI/CustomLoadingAnimation.swift; sourceTree = "<group>"; };
+		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -274,13 +274,12 @@
 		C84B2B331F76C18400F56BF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C8F54A1D1F79C53700E94DF4 /* Storyboards */,
+				C8F54A1C1F79C51900E94DF4 /* Presentables */,
 				C8F54A181F79BD6F00E94DF4 /* ViewControllers */,
-				C817F7331F75DCBF00B8C0FD /* Main.storyboard */,
 				C867A09D1F76E17C00B8B0E7 /* UI */,
 				C867A09C1F76E16500B8B0E7 /* Protocols */,
 				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
-				C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */,
-				C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -297,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				C85450591F76F44100CF3D4E /* CustomButton.swift */,
+				C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -309,6 +309,22 @@
 				C812BED21F7738C80029732B /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C8F54A1C1F79C51900E94DF4 /* Presentables */ = {
+			isa = PBXGroup;
+			children = (
+				C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */,
+			);
+			path = Presentables;
+			sourceTree = "<group>";
+		};
+		C8F54A1D1F79C53700E94DF4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C817F7331F75DCBF00B8C0FD /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
