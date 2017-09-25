@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 public protocol LoadingScreenPresentable: class {
-    func showLoadingAnimation()
+    func startLoadingAnimation()
     func removeLoadingAnimationFromSuperView()
 }
 
 // MARK: - This helps presenting the loading screen for a view controler
 extension LoadingScreenPresentable where Self: UIViewController {
-    func showLoadingAnimation() {
+    func startLoadingAnimation() {
         let loadingView = CustomLoadingAnimation()
         loadingView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         loadingView.alpha = 1
