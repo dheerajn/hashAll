@@ -31,6 +31,9 @@
 		C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85450591F76F44100CF3D4E /* CustomButton.swift */; };
 		C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */; };
 		C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867A0981F76CB5200B8B0E7 /* Constants.swift */; };
+		C8F54A151F79BBE100E94DF4 /* TimeTravelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A141F79BBE100E94DF4 /* TimeTravelExtension.swift */; };
+		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
+		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllable.swift; sourceTree = "<group>"; };
 		C85450591F76F44100CF3D4E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C867A0981F76CB5200B8B0E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C8F54A141F79BBE100E94DF4 /* TimeTravelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelExtension.swift; sourceTree = "<group>"; };
+		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomLoadingAnimation.swift; path = UI/CustomLoadingAnimation.swift; sourceTree = "<group>"; };
+		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 			children = (
 				C84B2B181F75EC6B00F56BF5 /* UIImageExtension.swift */,
 				C812BED41F7739580029732B /* UIColorExtension.swift */,
+				C8F54A141F79BBE100E94DF4 /* TimeTravelExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,13 +274,13 @@
 		C84B2B331F76C18400F56BF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C8F54A181F79BD6F00E94DF4 /* ViewControllers */,
 				C817F7331F75DCBF00B8C0FD /* Main.storyboard */,
-				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
-				C812BED21F7738C80029732B /* BaseViewController.swift */,
 				C867A09D1F76E17C00B8B0E7 /* UI */,
 				C867A09C1F76E16500B8B0E7 /* Protocols */,
 				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
-				C812BED61F773F8E0029732B /* CustomAlertController.swift */,
+				C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */,
+				C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -292,6 +299,16 @@
 				C85450591F76F44100CF3D4E /* CustomButton.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		C8F54A181F79BD6F00E94DF4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C812BED61F773F8E0029732B /* CustomAlertController.swift */,
+				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
+				C812BED21F7738C80029732B /* BaseViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
+				C8F54A151F79BBE100E94DF4 /* TimeTravelExtension.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
 				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
@@ -414,8 +432,10 @@
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
+				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,
 				C84B2B191F75EC6B00F56BF5 /* UIImageExtension.swift in Sources */,
+				C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */,
 				C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

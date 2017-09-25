@@ -9,11 +9,15 @@
 import Foundation
 
 struct Constants {
+    
+    struct Tags {
+        static let loadingViewTag = 54321
+        static let activateButtonTag = 1210
+    }
     static var mainStoryboardIdentifier = "Main"
     
     static var onboaringIdentifier = "OnBoarding"
     
     static var hashtagsVcIdentifier = "PredictionsViewController"
     static var predictionsResultsVcIdentifier = "PredictionResultsViewController"
-    
 }
