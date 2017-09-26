@@ -10,4 +10,9 @@ import Foundation
 
 class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
+    fileprivate var predictions: [String]?
+    
+    init(predictions: [String]) {
+        self.predictions = predictions
+    }
 }
