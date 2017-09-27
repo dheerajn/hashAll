@@ -7,12 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
-    fileprivate var predictions: [String]?
+    var predictions: [String]?
     
     init(predictions: [String]) {
         self.predictions = predictions
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.predictions?.count ?? 0
     }
 }

@@ -34,6 +34,8 @@
 		C8F54A151F79BBE100E94DF4 /* TimeTravelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A141F79BBE100E94DF4 /* TimeTravelExtension.swift */; };
 		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
 		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
+		C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */; };
+		C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		C8F54A141F79BBE100E94DF4 /* TimeTravelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelExtension.swift; sourceTree = "<group>"; };
 		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
+		C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */,
+				C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				C85450591F76F44100CF3D4E /* CustomButton.swift */,
+				C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */,
 				C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */,
 			);
 			path = UI;
@@ -431,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
+				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
 				C8F54A151F79BBE100E94DF4 /* TimeTravelExtension.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
@@ -448,6 +455,7 @@
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
+				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
 				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,
 				C84B2B191F75EC6B00F56BF5 /* UIImageExtension.swift in Sources */,

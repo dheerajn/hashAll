@@ -156,13 +156,67 @@
                     <view key="view" contentMode="scaleToFill" id="NUs-qZ-y6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pT2-tb-Te3">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="627" id="EXV-ZO-pT2"/>
+                                    <constraint firstAttribute="width" constant="343" id="cwp-7f-SWy"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0ah-dC-lA3">
+                                    <size key="itemSize" width="100" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PredictionResultCollectionViewCell" id="t6O-xb-4nM" customClass="PredictionResultCollectionViewCell" customModule="HashMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-Ti-KcH" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="predictionDisplayLabel" destination="l6r-Ti-KcH" id="ppA-4u-TaD"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="pT2-tb-Te3" secondAttribute="bottom" constant="20" id="K4x-wp-k3s"/>
+                            <constraint firstItem="pT2-tb-Te3" firstAttribute="top" secondItem="neA-Pt-P9Z" secondAttribute="top" id="mDs-uU-eQ4"/>
+                            <constraint firstItem="pT2-tb-Te3" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="16" id="myQ-ng-faz"/>
+                            <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="pT2-tb-Te3" secondAttribute="trailing" constant="16" id="swL-l1-m8d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="neA-Pt-P9Z"/>
                     </view>
+                    <connections>
+                        <outlet property="predictionResultsCollectionView" destination="pT2-tb-Te3" id="A7C-mR-urC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBo-a5-dH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1346" y="133"/>
+            <point key="canvasLocation" x="1344.8" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

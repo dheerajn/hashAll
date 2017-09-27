@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol PredictionResultsViewConfigurable: class {
-    
+    var predictions: [String]? { get }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
 }
