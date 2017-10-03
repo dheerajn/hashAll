@@ -21,17 +21,14 @@ class OnboardingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = OnboardingViewModel()
-        self.title = viewModel?.screeTitle ?? "HASH ME"
+        self.title = viewModel?.screeTitle ?? "HASH ME ONBOARDING"
         self.getstartedButton.setTitle(viewModel?.buttonTitle ?? "Get Started", for: UIControlState.normal)
     }
     
     @IBAction func getStartedButtonTapped(_ sender: Any) {
-        UserDefaults.standard.setValue("Done", forKey: Constants.onboaringIdentifier)
+        let customUserDefaults = CustomUserDefault()
+        customUserDefaults.setOnboardingWithValue()
         
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let hashTagVc = storyboard.instantiateViewController(withIdentifier: "HashTagsViewController") as? HashTagsViewController
-//        hashTagVc?.viewModel = HashTagsViewModel()
-//        present(hashTagVc!, animated: true, completion: nil)
-        self.flowDelegate = HashTagFlowController(initialViewController: self)
+        self.flowDelegate?.showPredictionsView()
     }
 }

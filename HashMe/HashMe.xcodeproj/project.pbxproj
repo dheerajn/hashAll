@@ -19,6 +19,10 @@
 		C817F7371F75DCBF00B8C0FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C817F7361F75DCBF00B8C0FD /* Assets.xcassets */; };
 		C817F73A1F75DCBF00B8C0FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C817F7381F75DCBF00B8C0FD /* LaunchScreen.storyboard */; };
 		C817F7451F75DCBF00B8C0FD /* HashMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */; };
+		C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A381F82FE78006DA3F3 /* RootViewController.swift */; };
+		C8255A3B1F830CB3006DA3F3 /* PredictionsViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A3A1F830CB3006DA3F3 /* PredictionsViewPresentable.swift */; };
+		C8255A3D1F831300006DA3F3 /* OnboardingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A3C1F831300006DA3F3 /* OnboardingPresentable.swift */; };
+		C8255A3F1F8320F3006DA3F3 /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A3E1F8320F3006DA3F3 /* CustomUserDefaults.swift */; };
 		C84B2B191F75EC6B00F56BF5 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B181F75EC6B00F56BF5 /* UIImageExtension.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
 		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
@@ -65,6 +69,10 @@
 		C817F7401F75DCBF00B8C0FD /* HashMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HashMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMeTests.swift; sourceTree = "<group>"; };
 		C817F7461F75DCBF00B8C0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8255A381F82FE78006DA3F3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = HashMe/Common/ViewControllers/RootViewController.swift; sourceTree = SOURCE_ROOT; };
+		C8255A3A1F830CB3006DA3F3 /* PredictionsViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PredictionsViewPresentable.swift; path = Presentables/PredictionsViewPresentable.swift; sourceTree = "<group>"; };
+		C8255A3C1F831300006DA3F3 /* OnboardingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingPresentable.swift; path = HashMe/Common/Presentables/OnboardingPresentable.swift; sourceTree = SOURCE_ROOT; };
+		C8255A3E1F8320F3006DA3F3 /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomUserDefaults.swift; path = HashMe/Common/Utilities/CustomUserDefaults.swift; sourceTree = SOURCE_ROOT; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B181F75EC6B00F56BF5 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 				C84B2B1F1F76AD3500F56BF5 /* Models */,
 				C84B2B1E1F76AD2D00F56BF5 /* ViewModels */,
 				C84B2B1D1F76AD1E00F56BF5 /* ViewControllers */,
+				C8255A3A1F830CB3006DA3F3 /* PredictionsViewPresentable.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -312,7 +321,10 @@
 			children = (
 				C812BED61F773F8E0029732B /* CustomAlertController.swift */,
 				C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */,
+				C8255A3E1F8320F3006DA3F3 /* CustomUserDefaults.swift */,
+				C8255A3C1F831300006DA3F3 /* OnboardingPresentable.swift */,
 				C812BED21F7738C80029732B /* BaseViewController.swift */,
+				C8255A381F82FE78006DA3F3 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -437,10 +449,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
+				C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */,
+				C8255A3B1F830CB3006DA3F3 /* PredictionsViewPresentable.swift in Sources */,
 				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
 				C8F54A151F79BBE100E94DF4 /* TimeTravelExtension.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
+				C8255A3F1F8320F3006DA3F3 /* CustomUserDefaults.swift in Sources */,
 				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
 				C812BED51F7739580029732B /* UIColorExtension.swift in Sources */,
 				C812BED71F773F8E0029732B /* CustomAlertController.swift in Sources */,
@@ -452,6 +467,7 @@
 				C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */,
 				C84B2B2E1F76BD2C00F56BF5 /* PredictionsViewModel.swift in Sources */,
 				C817F7301F75DCBF00B8C0FD /* AppDelegate.swift in Sources */,
+				C8255A3D1F831300006DA3F3 /* OnboardingPresentable.swift in Sources */,
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,

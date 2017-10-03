@@ -19,5 +19,6 @@ struct Constants {
     static var onboaringIdentifier = "OnBoarding"
     
     static var hashtagsVcIdentifier = "PredictionsViewController"
+    static var onboardingVcIdentifier = "OnboardingViewController"
     static var predictionsResultsVcIdentifier = "PredictionResultsViewController"
 }

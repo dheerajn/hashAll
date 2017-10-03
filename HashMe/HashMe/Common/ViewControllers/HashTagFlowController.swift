@@ -9,26 +9,20 @@
 import Foundation
 import UIKit
 
-public protocol HashTagFlowDelegate: NavigationControllable, PredictionResultsPresentable {}
+public protocol HashTagFlowDelegate: NavigationControllable, PredictionResultsPresentable, PredictionsViewPresentable, OnboardingPresentable {}
 
 public class HashTagFlowController: HashTagFlowDelegate {
     
     public var navigationController: UINavigationController?
-    var initialViewController: UIViewController?
     
-    init(initialViewController: UIViewController) {
-        self.initialViewController = initialViewController
-        showHashTagView()
-    }
-    
-    func showHashTagView() {
-        let storyboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
         
-        let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.hashtagsVcIdentifier) as? PredictionsViewController
-        hashTagVc?.flowDelegate = self
-        hashTagVc?.viewModel = PredictionsViewModel(flowDelegate: self)
-        
-        self.navigationController = UINavigationController(rootViewController: hashTagVc!)
-        self.initialViewController?.present(self.navigationController!, animated: true, completion: nil)
+        let customUserDefaults = CustomUserDefault()
+        if customUserDefaults.getOnboardingValue() == nil {
+            self.showOnboardingView()
+        } else {
+            self.showPredictionsView()
+        }
     }
 }

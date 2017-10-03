@@ -15,20 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let mainStoryboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
-        var viewControllerToBeShown: UIViewController?
-        
-        if UserDefaults.standard.value(forKey: Constants.onboaringIdentifier) as? String == nil {
-            viewControllerToBeShown = mainStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController") as? OnboardingViewController
-            self.window?.rootViewController = viewControllerToBeShown
-            self.window?.makeKeyAndVisible()
-        } else {
-            viewControllerToBeShown = mainStoryboard.instantiateInitialViewController()
-            let navController = UINavigationController()
-            navController.viewControllers = [viewControllerToBeShown!]
-            self.window?.rootViewController = navController
-            self.window?.makeKeyAndVisible()
-        }
+        let mainController = RootViewController()
+        let navigationController = UINavigationController(rootViewController: mainController)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
         return true
     }
 

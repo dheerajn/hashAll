@@ -13,6 +13,6 @@ class OnboardingViewModel: OnboardingViewConfigurable {
         return "Get Started"
     }
     var screeTitle: String? {
-        return "HASH ME"
+        return "HASH ME ONBOARDING"
     }
 }
