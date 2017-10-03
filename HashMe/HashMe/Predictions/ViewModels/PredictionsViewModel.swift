@@ -49,11 +49,19 @@ class PredictionsViewModel: PredictionsViewConfigurable {
                 return lhs.value > rhs.value
             })
             for i in 0...maxNumOfKeys {
-                self.predictedResults.append(sorted[i].key)
+                formatPredictions(tobeFormattedString: sorted[i].key)
             }
             self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults)
         } catch {
             print(error)
+        }
+    }
+    
+    private func formatPredictions(tobeFormattedString: String) {
+        let predictionsToBeFormatted = tobeFormattedString.characters.split{$0 == ","}.map(String.init) //{$0 == "," || $0 == ";"}
+        
+        for prediction in predictionsToBeFormatted {
+            self.predictedResults.append(prediction)
         }
     }
 }
