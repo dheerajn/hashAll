@@ -40,6 +40,7 @@
 		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
 		C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */; };
 		C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */; };
+		C8F880D61F85BA29007201B0 /* PredictionsCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F880D51F85BA29007201B0 /* PredictionsCustomFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 		C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		C8F880D51F85BA29007201B0 /* PredictionsCustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsCustomFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */,
 				C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */,
+				C8F880D51F85BA29007201B0 /* PredictionsCustomFlowLayout.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
+				C8F880D61F85BA29007201B0 /* PredictionsCustomFlowLayout.swift in Sources */,
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
 				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,

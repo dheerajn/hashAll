@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PredictionResultsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PredictionResultsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PredictionsCustomFlowLayoutDelegate {
 
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     var viewModel: PredictionResultsViewConfigurable? {
@@ -22,8 +22,14 @@ class PredictionResultsViewController: BaseViewController, UICollectionViewDeleg
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
         
+        let layout = PredictionsCustomFlowLayout()
+        self.predictionResultsCollectionView.collectionViewLayout = layout
+        layout.delegate = self
     }
     
+    func collectionView(_ collectionView: UICollectionView, heightForCellAt indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
+        return 40.0
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.collectionView(collectionView, numberOfItemsInSection: section) ?? 0
     }
@@ -38,18 +44,18 @@ class PredictionResultsViewController: BaseViewController, UICollectionViewDeleg
         return predictionCell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        let width = collectionView.frame.size.width / 5 - 1
-        return CGSize(width: width, height: width)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5.0
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        let width = collectionView.frame.size.width / 5 - 1
+//        return CGSize(width: width, height: width)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10.0
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 5.0
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
