@@ -10,7 +10,7 @@ import Foundation
 
 class OnboardingViewModel: OnboardingViewConfigurable {
     var buttonTitle: String? {
-        return "Get Started"
+        return NSLocalizedString("GetStartedButtonTitle", comment: "Title for get started button")
     }
     var screeTitle: String? {
         return "HASH ME ONBOARDING"

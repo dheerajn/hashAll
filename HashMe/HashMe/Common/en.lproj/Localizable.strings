@@ -5,4 +5,16 @@
   Created by Dheeru on 10/5/17.
   Copyright © 2017 Dheeru. All rights reserved.
 */
+
+//Alert Buttons
+"OkButtonTitle" = "OK";
+
+//Predictions
+"ImagePickerAlert" = "Huh, looks like there is something wrong. Please try again later.";
 "ImagePickerIssue" = "Sorry, please try again later. Something went wrong.";
+
+//UIButtons
+"CameraButtonTitle" = "CAMERA";
+"PhotoLibraryButtonTitle" = "PHOTO LIBRARY";
+"GetHashTagsButtonTitle" = "GET HASHTAGS";
+"GetStartedButtonTitle" = "GET STARTED";
