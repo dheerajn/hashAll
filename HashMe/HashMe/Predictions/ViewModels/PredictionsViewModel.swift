@@ -27,15 +27,15 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     }
     
     var cameraButtonTitle: String? {
-        return NSLocalizedString("CameraButtonTitle", comment: "Title for camera button")
+        return LocalizedString.cameraButtonTitle
     }
     
     var photoLibraryButtonTitle: String? {
-        return NSLocalizedString("PhotoLibraryButtonTitle", comment: "Title for photo library button")
+        return LocalizedString.photoLibraryButtonTitle
     }
     
     var predictButtonTitle: String? {
-        return NSLocalizedString("GetHashTagsButtonTitle", comment: "Title for get hashtags button")
+        return LocalizedString.predictButtonTitle
     }
     
     var maxNumOfKeys: Int {

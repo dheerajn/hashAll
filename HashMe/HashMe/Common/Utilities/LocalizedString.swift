@@ -48,7 +48,17 @@ public func CustomLocalizedStringWithDefaultValue(_ key: String, tableName: Stri
 }
 
 public class LocalizedString {
-    public static var testString: String {
-        return CustomLocalizedString("randonTitle", english: "This is a test")
-    }
+    
+    //Alert Buttons
+    static var okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
+    
+    //Predictions
+    static var alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
+    static var alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
+    
+    //UIButtons
+    static var cameraButtonTitle = NSLocalizedString("CameraButtonTitle", comment: "Title for camera button")
+    static var photoLibraryButtonTitle = NSLocalizedString("PhotoLibraryButtonTitle", comment: "Title for photo library button")
+    static var predictButtonTitle = NSLocalizedString("GetHashTagsButtonTitle", comment: "Title for get hashtags button")
+    static var getStartedButtonTitle = NSLocalizedString("GetStartedButtonTitle", comment: "Title for get started button")
 }

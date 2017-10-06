@@ -22,7 +22,7 @@ class OnboardingViewController: BaseViewController {
         super.viewDidLoad()
         self.viewModel = OnboardingViewModel()
         self.title = viewModel?.screeTitle ?? "HASH ME ONBOARDING"
-        self.getstartedButton.setTitle(viewModel?.buttonTitle ?? "Get Started", for: UIControlState.normal)
+        self.getstartedButton.setTitle(viewModel?.getStartedButtonTitle ?? LocalizedString.getStartedButtonTitle, for: UIControlState.normal)
     }
     
     @IBAction func getStartedButtonTapped(_ sender: Any) {

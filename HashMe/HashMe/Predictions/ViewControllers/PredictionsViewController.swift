@@ -58,12 +58,9 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
-            let okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
-            let alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
-            let alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
-            let dismissAction: CustomAlertAction = (title: okButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
-            CustomAlertController().displayAlertWithTitle(alertTitle,
-                message: alertMessage,
+            let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
+            CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
+                message: LocalizedString.alertMessage,
                 preferredStyle: .alert,
                 andActions: [dismissAction],
                 onViewController: self)

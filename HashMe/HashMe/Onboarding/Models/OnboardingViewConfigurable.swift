@@ -10,5 +10,5 @@ import Foundation
 
 public protocol OnboardingViewConfigurable: class {
     var screeTitle: String? { get }
-    var buttonTitle: String? { get }
+    var getStartedButtonTitle: String? { get }
 }
