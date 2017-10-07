@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreML
+import FBSDKShareKit
 
 //https://github.com/ytakzk/CoreML-samples - help taken from this.
 //TODO: try putting different models and compare the results of the prediction and combine everything.
@@ -32,6 +33,51 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
             viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
         }
         setupUserInterface()
+        
+        //        let shareLinkContent = FBSDKShareLinkContent()
+        //        shareLinkContent.hashtag = FBSDKHashtag(string: "#MadeWithHackbook")
+        
+        //        let shareDialog = FBSDKShareDialog()
+        //        shareDialog.shareContent = shareLinkContent
+        //        shareDialog.fromViewController = self
+        //        shareDialog.mode = FBSDKShareDialogMode.shareSheet
+        //        shareDialog.show()
+        
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //        var objectsToShare = [AnyObject]()
+        //
+        //
+        //        var shareText: String?
+        //        shareText = "sgare this "
+        //        if let shareTextObj = shareText {
+        //            objectsToShare.append(shareTextObj as AnyObject)
+        //        }
+        //
+        //
+        //            objectsToShare.append(#imageLiteral(resourceName: "Batman-and-the-Joker-Shows-Their-Cards"))
+        //
+        //
+        //            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        //            activityViewController.popoverPresentationController?.sourceView = self.view
+        //
+        //        present(activityViewController, animated: true, completion: nil)
+        
+///////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        //        let shareLinkContent = FBSDKSharePhoto(image: #imageLiteral(resourceName: "Batman-and-the-Joker-Shows-Their-Cards"), userGenerated: true)
+        //        shareLinkContent?.caption = "#This is a caption"
+        //
+        //        let sharing = FBSDKSharePhotoContent()
+        //        sharing.photos = [shareLinkContent] as? [Any]
+        //        sharing.hashtag = FBSDKHashtag(string: "#MadeWithHackbookhashtagtwo")
+        //
+        //        let shareDialog = FBSDKShareDialog()
+        //        shareDialog.shareContent = sharing
+        //        shareDialog.fromViewController = self
+        //        shareDialog.mode = FBSDKShareDialogMode.shareSheet
+        //        shareDialog.show()
+        
     }
     
     func setupUserInterface() {
@@ -60,10 +106,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
             let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
             CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
-                message: LocalizedString.alertMessage,
-                preferredStyle: .alert,
-                andActions: [dismissAction],
-                onViewController: self)
+                                                          message: LocalizedString.alertMessage,
+                                                          preferredStyle: .alert,
+                                                          andActions: [dismissAction],
+                                                          onViewController: self)
             return
         }
         imagePicker.sourceType = sourceType
