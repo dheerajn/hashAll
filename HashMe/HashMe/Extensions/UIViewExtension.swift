@@ -64,16 +64,14 @@ extension UIView {
         }
         if (subview != nil) {
             insertSubview(blurContainerView, aboveSubview: subview!)
-        }
-        else {
+        } else {
             insertSubview(blurContainerView, at: 0)
         }
         if animated {
             UIView.animate(withDuration: 0.5, animations: {() -> Void in
                 blurEffectView.effect = blurEffect
             })
-        }
-        else {
+        } else {
             blurEffectView.effect = blurEffect
         }
         return blurContainerView
@@ -93,33 +91,12 @@ extension UIView {
                         }, completion: {(_ finished: Bool) -> Void in
                             subview.removeFromSuperview()
                         })
-                    }
-                    else {
+                    } else {
                         subview.removeFromSuperview()
                     }
                     return
                 }
             }
-        }
-    }
-    
-    func addBlurredBackgroundImageNamed(_ imageName: String) {
-        let imageView = UIImageView(image: UIImage(named: imageName))
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        insertSubview(imageView, at: 0)
-        imageView.stretchToSuperView()
-    }
-    
-    func stretchToSuperView() {
-        let view: UIView? = self
-        view?.translatesAutoresizingMaskIntoConstraints = false
-        let bindings = ["view" : view]//NSDictionaryOfVariableBindings(view)
-        let formatTemplate = "%@:|[view]|"
-        for axis: String in ["H", "V"] {
-            let format = String(format: formatTemplate, axis)
-            let constraints = NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: bindings ?? ["view" : view])
-            view?.superview?.addConstraints(constraints)
         }
     }
 }
