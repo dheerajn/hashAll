@@ -14,3 +14,4 @@ public extension TimeInterval {
         return .now() + absolutePause
     }
 }
+

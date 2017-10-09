@@ -11,7 +11,18 @@ import UIKit
 class PredictionResultCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var predictionDisplayLabel: CustomLabel!
-
+    
+    @IBOutlet weak var selectionButton: UIButton!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layer.cornerRadius = 10.0
+    }
+    
+    override func prepareForReuse() {
+        self.predictionDisplayLabel.text = ""
+    }
+    
     open class func reuseID() -> String {
         return "PredictionResultCollectionViewCell"
     }
