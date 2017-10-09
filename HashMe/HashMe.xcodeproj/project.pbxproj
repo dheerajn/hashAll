@@ -184,7 +184,6 @@
 				C84B2B331F76C18400F56BF5 /* Common */,
 				C84B2B1C1F76ACCC00F56BF5 /* Predictions */,
 				C84B2B1B1F76ABF500F56BF5 /* Onboarding */,
-				C84B2B171F75EC0C00F56BF5 /* Extensions */,
 				C84B2B0B1F75E94200F56BF5 /* Extras */,
 			);
 			path = HashMe;
@@ -294,6 +293,7 @@
 		C84B2B331F76C18400F56BF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C84B2B171F75EC0C00F56BF5 /* Extensions */,
 				C8F54A1D1F79C53700E94DF4 /* Storyboards */,
 				C8F54A1C1F79C51900E94DF4 /* Presentables */,
 				C8F54A181F79BD6F00E94DF4 /* ViewControllers */,
