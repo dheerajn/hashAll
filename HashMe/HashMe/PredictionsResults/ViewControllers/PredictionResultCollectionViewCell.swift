@@ -18,6 +18,10 @@ class PredictionResultCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
+    override func prepareForReuse() {
+        self.predictionDisplayLabel.text = ""
+    }
+    
     open class func reuseID() -> String {
         return "PredictionResultCollectionViewCell"
     }

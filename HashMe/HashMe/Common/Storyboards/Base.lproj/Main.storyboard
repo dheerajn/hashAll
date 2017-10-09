@@ -164,27 +164,21 @@
                                     <constraint firstAttribute="height" constant="627" id="EXV-ZO-pT2"/>
                                     <constraint firstAttribute="width" constant="343" id="cwp-7f-SWy"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OQV-k0-Wis">
-                                    <size key="itemSize" width="94" height="29"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="q0W-Gs-SLT" customClass="PredictionViewLayout" customModule="HashMe" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PredictionResultCollectionViewCell" id="t6O-xb-4nM" customClass="PredictionResultCollectionViewCell" customModule="HashMe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="94" height="29"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="94" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-Ti-KcH" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="29"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-Ti-KcH" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="48"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="29" id="CcD-js-5dE"/>
-                                                        <constraint firstAttribute="width" constant="64" id="RcK-id-nT9"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="RcK-id-nT9"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -197,7 +191,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8f-Dx-DYw">
-                                                    <rect key="frame" x="64" y="0.0" width="30" height="29"/>
+                                                    <rect key="frame" x="64" y="0.0" width="30" height="48"/>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="+"/>
                                                 </button>
@@ -218,6 +212,7 @@
                                             <constraint firstItem="l6r-Ti-KcH" firstAttribute="top" secondItem="t6O-xb-4nM" secondAttribute="top" id="nOF-xN-gUI"/>
                                             <constraint firstItem="l6r-Ti-KcH" firstAttribute="top" secondItem="t6O-xb-4nM" secondAttribute="top" id="s3O-zc-0Fn"/>
                                         </constraints>
+                                        <size key="customSize" width="94" height="48"/>
                                         <connections>
                                             <outlet property="predictionDisplayLabel" destination="l6r-Ti-KcH" id="zFJ-Zu-xvI"/>
                                             <outlet property="selectionButton" destination="z8f-Dx-DYw" id="bm7-4c-8wt"/>

@@ -7,16 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
-class PredictionResultsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class PredictionResultsViewController: BaseViewController {
+    
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
-    
-    let columns: CGFloat = 3.0
-    let inset: CGFloat = 8.0
-    let spacing: CGFloat = 8.0
-    let lineSpacing: CGFloat = 8.0
-    
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {
             
@@ -28,10 +23,15 @@ class PredictionResultsViewController: BaseViewController, UICollectionViewDeleg
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
         
-        
+        let layout = predictionResultsCollectionView.collectionViewLayout as! PredictionViewLayout
+        layout.delegate = self
+        layout.numberOfColumns = 3
+        layout.cellPadding = 5
     }
-    
-    // MARK: UICollectionViewDataSource
+}
+
+// MARK: UICollectionViewDataSource
+extension PredictionResultsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -42,35 +42,39 @@ class PredictionResultsViewController: BaseViewController, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let predictionCell = collectionView.dequeueReusableCell(withReuseIdentifier: PredictionResultCollectionViewCell.reuseID(), for: indexPath) as? PredictionResultCollectionViewCell else {
             return UICollectionViewCell()
-
+            
         }
         predictionCell.predictionDisplayLabel.text = viewModel?.predictions![indexPath.row]
         return predictionCell
     }
     
-    // MARK: UICollectionViewDataDelegate
+}
+
+// MARK: UICollectionViewDelegate
+extension PredictionResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
+}
+// MARK: PredictionLayoutDelegate
+extension PredictionResultsViewController: PredictionLayoutDelegate {
     
-    // MARK: UICollectionViewDelegateFlowLayout
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
+        let character = viewModel?.predictions![indexPath.row]
+        let descriptionHeight = heightForText((character?.description)!, width: width-24)
+        let height = 4 + 17 + 4 + descriptionHeight + 12
+        return height
         
-        let width = Int((collectionView.frame.width / columns) - (inset + spacing))
-        
-        return CGSize(width: width, height: width)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return spacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return lineSpacing
+    func heightForText(_ text: String, width: CGFloat) -> CGFloat {
+        let font = UIFont.systemFont(ofSize: 10)
+        let rect = NSString(string: text).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        return ceil(rect.height)
     }
 }
+
