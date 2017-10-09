@@ -17,6 +17,7 @@ class PredictionResultsViewController: BaseViewController {
             
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.predictionResultsCollectionView.delegate = self
@@ -35,6 +36,7 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.collectionView(collectionView, numberOfItemsInSection: section) ?? 0
     }
@@ -64,11 +66,15 @@ extension PredictionResultsViewController: PredictionLayoutDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-        let character = viewModel?.predictions![indexPath.row]
-        let descriptionHeight = heightForText((character?.description)!, width: width-24)
+        guard let validPrediction = viewModel?.predictions else { return 0.001 }
+        if indexPath.row > validPrediction.count {
+            return 0.001
+        }
+        
+        let character = validPrediction[indexPath.row]
+        let descriptionHeight = heightForText(character.description, width: (width - 24))
         let height = 4 + 17 + 4 + descriptionHeight + 12
         return height
-        
     }
     
     func heightForText(_ text: String, width: CGFloat) -> CGFloat {
