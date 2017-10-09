@@ -123,18 +123,3 @@ extension UIView {
         }
     }
 }
-
-//class UIView {
-//    func stretchToSuperView() {
-//        let view: UIView? = self
-//        view?.translatesAutoresizingMaskIntoConstraints = false
-//        let bindings = NSDictionaryOfVariableBindings(view)
-//        let formatTemplate = "%@:|[view]|"
-//        for axis: String in ["H", "V"] {
-//            let format = String(format: formatTemplate, axis)
-//            let constraints = NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: bindings)
-//            view?.superview?.addConstraints(constraints)
-//        }
-//    }
-//}
-
