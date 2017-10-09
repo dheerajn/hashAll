@@ -16,6 +16,7 @@ class PredictionResultCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.layer.cornerRadius = 10.0
     }
     
     override func prepareForReuse() {
