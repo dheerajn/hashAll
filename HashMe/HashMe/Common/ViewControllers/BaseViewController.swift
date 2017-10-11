@@ -34,6 +34,7 @@ class BaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
         
         view.backgroundColor = UIColor.LightGreyBackgroundColor()
+        setupNavigationTitleProperties()
     }
 
     deinit {
@@ -53,6 +54,9 @@ class BaseViewController: UIViewController {
         
     }
     
+    func setupNavigationTitleProperties(withColor color: UIColor = UIColor.white) {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 24)]
+    }
     open func hideLeftNavBarButton() {
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
@@ -62,12 +66,21 @@ class BaseViewController: UIViewController {
     }
     
     func addLeftBarButton() {
-        let btnLeftMenu: UIButton = UIButton()
-        btnLeftMenu.setImage(UIImage.BackButtonImage, for: UIControlState())
-        btnLeftMenu.addTarget(self, action: #selector(BaseViewController.popViewController), for: UIControlEvents.touchUpInside)
-        btnLeftMenu.frame = CGRect(x: 0, y: 0, width: 33/2, height: 27/2)
-        let barButton = UIBarButtonItem(customView: btnLeftMenu)
+        let leftBarButton: UIButton = UIButton()
+        leftBarButton.setImage(UIImage.BackButtonImage, for: UIControlState())
+        leftBarButton.addTarget(self, action: #selector(BaseViewController.popViewController), for: UIControlEvents.touchUpInside)
+        leftBarButton.frame = CGRect(x: 0, y: 0, width: 35/2, height: 35/2)
+        let barButton = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    func addRightBarButton(withImage image: UIImage, withAction action: Selector) {
+        let rightBarButton: UIButton = UIButton()
+        rightBarButton.setImage(image, for: UIControlState())
+        rightBarButton.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
+        rightBarButton.frame = CGRect(x: 0, y: 0, width: 35/2, height: 35/2)
+        let barButton = UIBarButtonItem(customView: rightBarButton)
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     @objc func popViewController() {

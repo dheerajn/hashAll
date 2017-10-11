@@ -21,7 +21,6 @@ class PredictionResultsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
-        
         self.predictionResultsCollectionView.delegate = self
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
@@ -35,6 +34,11 @@ class PredictionResultsViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addLeftBarButton()
+        addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.shareButtonTapped))
+    }
+    
+    @objc func shareButtonTapped() {
+        
     }
 }
 

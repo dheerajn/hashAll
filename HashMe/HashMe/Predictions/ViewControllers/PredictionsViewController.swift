@@ -38,11 +38,16 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     func setupUserInterface() {
-        self.title = viewModel?.screenTitle
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         self.predictButton.setTitle(viewModel?.predictButtonTitle, for: .normal)
+        
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = viewModel?.screenTitle ?? ""
     }
     
     @IBAction func cameraButtonTapped(_ sender: CustomButton) {

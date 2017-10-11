@@ -23,7 +23,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     }
     
     var screenTitle: String? {
-        return "Hash Me title"
+        return "#"
     }
     
     var cameraButtonTitle: String? {
