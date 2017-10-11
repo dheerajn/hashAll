@@ -100,13 +100,31 @@ extension UIView {
         }
     }
     
-    func setupBluredViewImage(_ image: UIImage) {
+    func setupMediumBluredViewOnImage(_ image: UIImage) {
         let imageView = UIImageView(image: image)
         imageView.contentMode = UIViewContentMode.scaleToFill
         imageView.frame = UIScreen.main.bounds
         self.insertSubview(imageView, at: 0)
         
         _ = imageView.addMediumBlurEffect()
+    }
+    
+    func setupLightBluredViewOnImage(_ image: UIImage) {
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.frame = UIScreen.main.bounds
+        self.insertSubview(imageView, at: 0)
+        
+        _ = imageView.addLightBlurEffect()
+    }
+    
+    func setupDarkBluredViewOnImage(_ image: UIImage) {
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.frame = UIScreen.main.bounds
+        self.insertSubview(imageView, at: 0)
+        
+        _ = imageView.addDarkBlurEffect()
     }
 }
 

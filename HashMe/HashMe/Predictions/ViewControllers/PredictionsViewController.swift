@@ -40,7 +40,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         self.predictButton.setTitle(viewModel?.predictButtonTitle, for: .normal)
-        self.view.setupBluredViewImage(UIImage.BatmanJokerImage)
+        self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }
     
     @IBAction func cameraButtonTapped(_ sender: CustomButton) {
