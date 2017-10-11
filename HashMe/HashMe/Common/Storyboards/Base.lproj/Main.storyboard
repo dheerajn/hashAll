@@ -12,42 +12,40 @@
     </dependencies>
     <scenes>
         <!--Onboarding View Controller-->
-        <scene sceneID="z6P-Dl-oeQ">
+        <scene sceneID="frn-pI-zOz">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" id="3f1-vm-4yc" customClass="OnboardingViewController" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HmZ-Wu-R3x">
+                <pageViewController storyboardIdentifier="OnboardingViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="s07-Xh-igG" customClass="OnboardingViewController" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Qc-At-iyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6kM-iZ-Fzl">
+            <objects>
+                <viewController storyboardIdentifier="onboardingViewController2" id="elY-R3-QAj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kgf-5z-pHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0i0-5y-L5Z" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
-                                <rect key="frame" x="107" y="552" width="160" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.61176470589999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="getStartedButtonTapped:" destination="3f1-vm-4yc" eventType="touchUpInside" id="xbH-Nj-DBT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="pxj-13-BSo"/>
+                        <viewLayoutGuide key="safeArea" id="918-KS-s7d"/>
                     </view>
-                    <connections>
-                        <outlet property="getstartedButton" destination="0i0-5y-L5Z" id="Y9X-KV-dFp"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jeb-hh-bpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yik-0r-LRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-247.19999999999999" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-990" y="850"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="T0Q-uc-Efo">
+            <objects>
+                <viewController storyboardIdentifier="onboardingViewController1" id="KGA-qy-AsI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2q7-dw-nSS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bde-sp-sj2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgW-1X-yAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354" y="850"/>
         </scene>
         <!--Predictions View Controller-->
         <scene sceneID="tne-QT-ifu">
