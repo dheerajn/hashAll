@@ -19,7 +19,8 @@ public class HashTagFlowController: HashTagFlowDelegate {
         self.navigationController = navigationController
         
         let customUserDefaults = CustomUserDefault()
-        if customUserDefaults.getOnboardingValue() == nil {
+        //The very first time, getOnboardingValue() value will be nil since no body is setting, but from second time, the Bool value will be "0" which is false, so we will not show onboarding view anymore.
+        if customUserDefaults.getOnboardingValue() ?? true {
             self.showOnboardingView()
         } else {
             self.showPredictionsView()
