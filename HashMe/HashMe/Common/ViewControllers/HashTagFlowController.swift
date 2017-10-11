@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol HashTagFlowDelegate: NavigationControllable, PredictionResultsPresentable, PredictionsViewPresentable, OnboardingPresentable {}
+public protocol HashTagFlowDelegate: NavigationControllerAnimationPresentable, PredictionResultsPresentable, PredictionsViewPresentable, OnboardingPresentable {}
 
 public class HashTagFlowController: HashTagFlowDelegate {
     

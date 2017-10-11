@@ -1,5 +1,5 @@
 //
-//  NavigationControllable.swift
+//  NavigationFlowControllable.swift
 //  HashMe
 //
 //  Created by Dheeru on 9/23/17.
@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-public protocol NavigationControllable: class {
+public protocol NavigationFlowControllable: class {
     var navigationController: UINavigationController? { get set }
 }

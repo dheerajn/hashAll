@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */; };
+		3680F6BF1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */; };
 		C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */; };
 		C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */; };
 		C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */; };
@@ -32,7 +33,7 @@
 		C84B2B2E1F76BD2C00F56BF5 /* PredictionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2D1F76BD2C00F56BF5 /* PredictionsViewModel.swift */; };
 		C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B2F1F76BD4000F56BF5 /* PredictionsViewConfigurable.swift */; };
 		C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */; };
-		C84B2B351F76C19F00F56BF5 /* NavigationControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */; };
+		C84B2B351F76C19F00F56BF5 /* NavigationFlowControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */; };
 		C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85450591F76F44100CF3D4E /* CustomButton.swift */; };
 		C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */; };
 		C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867A0981F76CB5200B8B0E7 /* Constants.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
+		3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerAnimationPresentable.swift; sourceTree = "<group>"; };
 		C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewController.swift; sourceTree = "<group>"; };
 		C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsResultsViewModel.swift; sourceTree = "<group>"; };
 		C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewConfigurable.swift; sourceTree = "<group>"; };
@@ -93,7 +95,7 @@
 		C84B2B2D1F76BD2C00F56BF5 /* PredictionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewModel.swift; sourceTree = "<group>"; };
 		C84B2B2F1F76BD4000F56BF5 /* PredictionsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewConfigurable.swift; sourceTree = "<group>"; };
 		C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagFlowController.swift; sourceTree = "<group>"; };
-		C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllable.swift; sourceTree = "<group>"; };
+		C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowControllable.swift; sourceTree = "<group>"; };
 		C85450591F76F44100CF3D4E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C867A0981F76CB5200B8B0E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C8869D2C1F8C28F500C32845 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeIntervalExtension.swift; path = HashMe/Common/Extensions/TimeIntervalExtension.swift; sourceTree = SOURCE_ROOT; };
@@ -325,7 +327,7 @@
 		C867A09C1F76E16500B8B0E7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C84B2B341F76C19F00F56BF5 /* NavigationControllable.swift */,
+				C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */,
+				3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */,
 			);
 			path = Presentables;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */,
+				3680F6BF1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift in Sources */,
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
 				C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */,
 				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
@@ -495,7 +499,7 @@
 				C812BED31F7738C80029732B /* BaseViewController.swift in Sources */,
 				C8869D2F1F8C291900C32845 /* UIViewExtension.swift in Sources */,
 				C84B2B2C1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift in Sources */,
-				C84B2B351F76C19F00F56BF5 /* NavigationControllable.swift in Sources */,
+				C84B2B351F76C19F00F56BF5 /* NavigationFlowControllable.swift in Sources */,
 				C8869D311F8C29BB00C32845 /* UIImageExtension.swift in Sources */,
 				C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */,
 				C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */,

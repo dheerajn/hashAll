@@ -19,6 +19,6 @@ public extension OnboardingPresentable where Self: HashTagFlowController {
         let onboardingViewController = storyboard.instantiateViewController(withIdentifier: Constants.onboardingVcIdentifier) as? OnboardingViewController
         onboardingViewController?.flowDelegate = self
         onboardingViewController?.viewModel = OnboardingViewModel()
-        self.navigationController?.pushViewController(onboardingViewController!, animated: true)
+        self.pushViewControllerWithAnimation(onboardingViewController!)
     }
 }
