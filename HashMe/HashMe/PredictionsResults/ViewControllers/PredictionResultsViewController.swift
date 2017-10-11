@@ -20,6 +20,8 @@ class PredictionResultsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
+        
         self.predictionResultsCollectionView.delegate = self
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
@@ -28,6 +30,11 @@ class PredictionResultsViewController: BaseViewController {
         layout.delegate = self
         layout.numberOfColumns = 3
         layout.cellPadding = 5
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addLeftBarButton()
     }
 }
 

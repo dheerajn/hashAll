@@ -28,7 +28,9 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         hideLeftNavBarButton()
+        
         if viewModel == nil {
             viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
         }

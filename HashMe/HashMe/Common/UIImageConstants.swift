@@ -10,6 +10,19 @@ import Foundation
 import UIKit
 
 extension UIImage {
+    
+    //Navigation Button Images
+    static var BackButtonImage: UIImage {
+        guard let validAndroidPayImage = UIImage(named: "backButtonIcon") else { return UIImage() }
+        return validAndroidPayImage
+    }
+    
+    static var ShareImage: UIImage {
+        guard let validAndroidPayImage = UIImage(named: "shareIcon") else { return UIImage() }
+        return validAndroidPayImage
+    }
+    
+    //Blured Background Images
     static var BatmanJokerImage: UIImage {
         guard let validAndroidPayImage = UIImage(named: "Batman-and-the-Joker-Shows-Their-Cards") else { return UIImage() }
         return validAndroidPayImage
