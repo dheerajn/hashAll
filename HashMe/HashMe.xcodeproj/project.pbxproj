@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */; };
 		C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */; };
 		C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */; };
 		C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
 		C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewController.swift; sourceTree = "<group>"; };
 		C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsResultsViewModel.swift; sourceTree = "<group>"; };
 		C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewConfigurable.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				C867A09D1F76E17C00B8B0E7 /* UI */,
 				C867A09C1F76E16500B8B0E7 /* Protocols */,
 				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
+				363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				C8255A3B1F830CB3006DA3F3 /* PredictionsViewPresentable.swift in Sources */,
 				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
+				363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */,
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
 				C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */,
 				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
