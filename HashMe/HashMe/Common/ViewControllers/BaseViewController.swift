@@ -53,12 +53,6 @@ class BaseViewController: UIViewController {
     }
 
     open func hideLeftNavBarButton() {
-        self.navigationItem.leftBarButtonItem?.customView?.alpha = 0.0
-        self.navigationItem.leftBarButtonItem?.customView?.isUserInteractionEnabled = false
-    }
-    
-    open func hideRightNavBarButton() {
-        self.navigationItem.rightBarButtonItem?.customView?.alpha = 0.0
-        self.navigationItem.rightBarButtonItem?.customView?.isUserInteractionEnabled = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 }

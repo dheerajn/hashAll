@@ -28,6 +28,7 @@ class OnboardingViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         self.view.setupBluredViewImage(UIImage(named: "Batman-and-the-Joker-Shows-Their-Cards") ?? UIImage())
         
         self.viewModel = OnboardingViewModel()
