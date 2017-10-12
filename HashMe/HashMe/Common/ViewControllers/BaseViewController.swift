@@ -65,10 +65,10 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
-    func addLeftBarButton() {
+    func addLeftBarButton(withAction action: Selector) {
         let leftBarButton: UIButton = UIButton()
         leftBarButton.setImage(UIImage.BackButtonImage, for: UIControlState())
-        leftBarButton.addTarget(self, action: #selector(BaseViewController.popViewController), for: UIControlEvents.touchUpInside)
+        leftBarButton.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
         leftBarButton.frame = CGRect(x: 0, y: 0, width: 35/2, height: 35/2)
         let barButton = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.leftBarButtonItem = barButton
@@ -81,9 +81,5 @@ class BaseViewController: UIViewController {
         rightBarButton.frame = CGRect(x: 0, y: 0, width: 35/2, height: 35/2)
         let barButton = UIBarButtonItem(customView: rightBarButton)
         self.navigationItem.rightBarButtonItem = barButton
-    }
-    
-    @objc func popViewController() {
-        _ = self.navigationController?.popViewController(animated: true)
     }
 }

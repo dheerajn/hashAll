@@ -19,6 +19,6 @@ public extension PredictionsViewPresentable where Self: HashTagFlowController {
         let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.hashtagsVcIdentifier) as? PredictionsViewController
         hashTagVc?.flowDelegate = self
         hashTagVc?.viewModel = PredictionsViewModel(flowDelegate: self)
-        self.pushViewControllerWithAnimation(hashTagVc!)
+        self.pushViewControllerWithAnimation(hashTagVc!, withAnimationType: .fade)
     }
 }

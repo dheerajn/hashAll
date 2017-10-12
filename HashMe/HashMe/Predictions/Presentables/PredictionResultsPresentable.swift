@@ -17,7 +17,8 @@ public extension PredictionResultsPresentable where Self: HashTagFlowController 
     func showPredictionResultsView(predictions: [String]){
         let storyboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
         let predictionResultsVc = storyboard.instantiateViewController(withIdentifier: Constants.predictionsResultsVcIdentifier) as? PredictionResultsViewController
+        predictionResultsVc?.flowDelegate = self
         predictionResultsVc?.viewModel = PredictionsResultsViewModel(predictions: predictions)
-        self.pushViewControllerWithAnimation(predictionResultsVc!)
+        self.pushViewControllerWithAnimation(predictionResultsVc!, withAnimationType: .moveIn)
     }
 }
