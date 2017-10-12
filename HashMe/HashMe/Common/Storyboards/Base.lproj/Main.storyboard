@@ -95,15 +95,8 @@
                                     <action selector="photoLibraryTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtW-dd-PtW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kV-oF-rCg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="296" id="dRt-Q0-bf2"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSA-G2-FSp" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSA-G2-FSp" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
                                 <rect key="frame" x="123" y="599" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -119,26 +112,41 @@
                                     <action selector="predictButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0w-ag-cy8"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1K-86-HrM">
+                                <rect key="frame" x="40" y="105" width="295" height="325"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kV-oF-rCg">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="323"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1kV-oF-rCg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3XA-fL-vQt"/>
                             <constraint firstItem="M3A-mt-Td0" firstAttribute="width" secondItem="iMq-AW-SUq" secondAttribute="width" id="FNi-fq-ps9"/>
+                            <constraint firstItem="D1K-86-HrM" firstAttribute="centerX" secondItem="iSA-G2-FSp" secondAttribute="centerX" id="PDm-Tz-REt"/>
                             <constraint firstItem="M3A-mt-Td0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SkS-06-MPv"/>
-                            <constraint firstItem="1kV-oF-rCg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z5w-th-DuZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iSA-G2-FSp" secondAttribute="bottom" constant="38" id="WXE-CL-7Cf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D1K-86-HrM" secondAttribute="trailing" constant="40" id="e4t-fR-v8R"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iMq-AW-SUq" secondAttribute="trailingMargin" id="fD6-jD-IGa"/>
+                            <constraint firstItem="D1K-86-HrM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="ja9-r7-3Ok"/>
                             <constraint firstItem="M3A-mt-Td0" firstAttribute="top" secondItem="iMq-AW-SUq" secondAttribute="top" id="lrU-L8-szX"/>
                             <constraint firstItem="M3A-mt-Td0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="mRR-tq-FfQ"/>
                             <constraint firstItem="M3A-mt-Td0" firstAttribute="baseline" secondItem="iMq-AW-SUq" secondAttribute="firstBaseline" id="rBb-Ln-uPn"/>
-                            <constraint firstItem="1kV-oF-rCg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vIR-2Z-dqm"/>
+                            <constraint firstItem="iMq-AW-SUq" firstAttribute="top" secondItem="D1K-86-HrM" secondAttribute="bottom" constant="90" id="toS-Rr-1mH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M3A-mt-Td0" secondAttribute="bottom" constant="93" id="wqG-fe-bVR"/>
                             <constraint firstItem="iMq-AW-SUq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xmT-aG-HCP"/>
+                            <constraint firstItem="iSA-G2-FSp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="yGe-VO-tgu"/>
+                            <constraint firstItem="D1K-86-HrM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="zjV-F4-1FQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="iMq-AW-SUq" id="V4r-tG-Ied"/>
                         <outlet property="imageToPredict" destination="1kV-oF-rCg" id="yoz-zm-vO9"/>
+                        <outlet property="imageToPredictContainerView" destination="D1K-86-HrM" id="cer-ZT-7l9"/>
                         <outlet property="photoLibraryButton" destination="M3A-mt-Td0" id="vOc-tJ-XZO"/>
                         <outlet property="predictButton" destination="iSA-G2-FSp" id="xqB-BV-IuR"/>
                     </connections>

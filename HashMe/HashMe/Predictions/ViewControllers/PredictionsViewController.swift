@@ -24,6 +24,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var predictButton: CustomButton!
+    @IBOutlet weak var imageToPredictContainerView: UIView!
     @IBOutlet weak var imageToPredict: UIImageView!
     
     override func viewDidLoad() {
