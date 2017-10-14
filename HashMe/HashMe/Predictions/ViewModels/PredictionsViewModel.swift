@@ -51,7 +51,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             for i in 0...maxNumOfKeys {
                 formatPredictions(tobeFormattedString: sorted[i].key)
             }
-            self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults)
+            self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults.map({"#" + $0}))
         } catch {
             print(error)
         }
