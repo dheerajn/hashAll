@@ -11,6 +11,8 @@ import UIKit
 
 class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
+    var flowDelegate: HashTagFlowDelegate?
+
     var predictions: [String]?
     
     init(predictions: [String]) {
@@ -19,5 +21,9 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.predictions?.count ?? 0
+    }
+    
+    func launchShareActivity() {
+        self.flowDelegate?.launchShareSheet(withActivities: self.predictions ?? ["#HashMe"], andSubject: "This is flow Delegate")
     }
 }

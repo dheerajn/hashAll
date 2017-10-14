@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 public protocol PredictionResultsViewConfigurable: class {
+    
+    var flowDelegate: HashTagFlowDelegate? { get set }
     var predictions: [String]? { get }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    
+    func launchShareActivity()
 }

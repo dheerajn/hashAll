@@ -43,6 +43,7 @@
 		C8869D331F8C29CF00C32845 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D321F8C29CF00C32845 /* UIColorExtension.swift */; };
 		C8869D351F8C2ACB00C32845 /* PredictionsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D341F8C2ACB00C32845 /* PredictionsLayout.swift */; };
 		C8869D371F8C2ADE00C32845 /* PredictionLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D361F8C2ADE00C32845 /* PredictionLayoutAttributes.swift */; };
+		C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */; };
 		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
 		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
 		C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */; };
@@ -104,6 +105,7 @@
 		C8869D321F8C29CF00C32845 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = HashMe/Common/Extensions/UIColorExtension.swift; sourceTree = SOURCE_ROOT; };
 		C8869D341F8C2ACB00C32845 /* PredictionsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsLayout.swift; sourceTree = "<group>"; };
 		C8869D361F8C2ADE00C32845 /* PredictionLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionLayoutAttributes.swift; sourceTree = "<group>"; };
+		C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetPresentable.swift; sourceTree = "<group>"; };
 		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 		C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		C812BEC31F7726900029732B /* PredictionsResults */ = {
 			isa = PBXGroup;
 			children = (
+				C8869D4D1F92751300C32845 /* Presentables */,
 				C812BEC61F7727400029732B /* Configurable */,
 				C812BEC51F7727310029732B /* ViewModels */,
 				C812BEC41F7727260029732B /* ViewControllers */,
@@ -349,6 +352,14 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		C8869D4D1F92751300C32845 /* Presentables */ = {
+			isa = PBXGroup;
+			children = (
+				C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */,
+			);
+			path = Presentables;
+			sourceTree = "<group>";
+		};
 		C8F54A181F79BD6F00E94DF4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +497,7 @@
 				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
 				C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */,
 				C8255A3B1F830CB3006DA3F3 /* PredictionsViewPresentable.swift in Sources */,
+				C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */,
 				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */,

@@ -12,7 +12,7 @@ import AVFoundation
 class PredictionResultsViewController: BaseViewController {
     
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
-    var flowDelegate: HashTagFlowDelegate?
+    
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {
             
@@ -39,10 +39,11 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @objc func leftBarButtonTapped() {
-        self.flowDelegate?.popViewControllerWithAnimation()
+        self.viewModel?.flowDelegate?.popViewControllerWithAnimation()
     }
+    
     @objc func shareButtonTapped() {
-        
+        self.viewModel?.launchShareActivity()
     }
 }
 
