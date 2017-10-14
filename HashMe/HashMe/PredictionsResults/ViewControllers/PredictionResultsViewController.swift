@@ -7,21 +7,34 @@
 //
 
 import UIKit
+import AVFoundation
 
-class PredictionResultsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+class PredictionResultsViewController: BaseViewController {
+    
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {
             
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.predictionResultsCollectionView.delegate = self
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
         
+        let layout = predictionResultsCollectionView.collectionViewLayout as! PredictionViewLayout
+        layout.delegate = self
+        layout.numberOfColumns = 3
+        layout.cellPadding = 5
+    }
+}
+
+// MARK: UICollectionViewDataSource
+extension PredictionResultsViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,24 +47,40 @@ class PredictionResultsViewController: BaseViewController, UICollectionViewDeleg
             
         }
         predictionCell.predictionDisplayLabel.text = viewModel?.predictions![indexPath.row]
-        predictionCell.predictionDisplayLabel.textAlignment = .center
         return predictionCell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        let width = collectionView.frame.size.width / 5 - 1
-        return CGSize(width: width, height: width)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5.0
-    }
-    
+}
+
+// MARK: UICollectionViewDelegate
+extension PredictionResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
 }
+// MARK: PredictionLayoutDelegate
+extension PredictionResultsViewController: PredictionLayoutDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
+        guard let validPrediction = viewModel?.predictions else { return 0.001 }
+        if indexPath.row > validPrediction.count {
+            return 0.001
+        }
+        
+        let character = validPrediction[indexPath.row]
+        let descriptionHeight = heightForText(character.description, width: (width - 24))
+        let height = 4 + 17 + 4 + descriptionHeight + 12
+        return height
+    }
+    
+    func heightForText(_ text: String, width: CGFloat) -> CGFloat {
+        let font = UIFont.systemFont(ofSize: 10)
+        let rect = NSString(string: text).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        return ceil(rect.height)
+    }
+}
+

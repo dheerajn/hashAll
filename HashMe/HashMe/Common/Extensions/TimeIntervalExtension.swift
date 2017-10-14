@@ -1,5 +1,5 @@
 //
-//  TimeTravelExtension.swift
+//  TimeIntervalExtension.swift
 //  HashMe
 //
 //  Created by Dheeru on 9/25/17.
@@ -14,3 +14,4 @@ public extension TimeInterval {
         return .now() + absolutePause
     }
 }
+
