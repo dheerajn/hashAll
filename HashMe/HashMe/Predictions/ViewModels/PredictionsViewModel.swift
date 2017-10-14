@@ -17,7 +17,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     // Deep Residual Learning for Image Recognition
     // https://arxiv.org/abs/1512.03385
     fileprivate var resnetModel = Resnet50()
-
+    
     init(flowDelegate: HashTagFlowDelegate?) {
         self.flowDelegate = flowDelegate
     }
@@ -41,7 +41,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     var maxNumOfKeys: Int {
         return 7
     }
-
+    
     func predictImage(ref: CVPixelBuffer) {
         do {
             let predictions = try resnetModel.prediction(image: ref)
@@ -51,7 +51,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             for i in 0...maxNumOfKeys {
                 formatPredictions(tobeFormattedString: sorted[i].key)
             }
-            self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults)
+            self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults.map({"#" + $0}))
         } catch {
             print(error)
         }
