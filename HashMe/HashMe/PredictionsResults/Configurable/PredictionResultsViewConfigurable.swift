@@ -13,6 +13,7 @@ public protocol PredictionResultsViewConfigurable: class {
     
     var flowDelegate: HashTagFlowDelegate? { get set }
     var predictions: [String]? { get }
+    var copyButtonTitle: String? { get }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     

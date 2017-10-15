@@ -11,6 +11,7 @@ import AVFoundation
 
 class PredictionResultsViewController: BaseViewController {
     
+    @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     
     var viewModel: PredictionResultsViewConfigurable? {
@@ -21,15 +22,7 @@ class PredictionResultsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
-        self.predictionResultsCollectionView.delegate = self
-        self.predictionResultsCollectionView.dataSource = self
-        self.predictionResultsCollectionView.backgroundColor = UIColor.clear
-        
-        let layout = predictionResultsCollectionView.collectionViewLayout as! PredictionViewLayout
-        layout.delegate = self
-        layout.numberOfColumns = 3
-        layout.cellPadding = 5
+        configureUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,12 +32,30 @@ class PredictionResultsViewController: BaseViewController {
         addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.shareButtonTapped))
     }
     
+    func configureUI() {
+        self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
+        self.predictionResultsCollectionView.delegate = self
+        self.predictionResultsCollectionView.dataSource = self
+        self.predictionResultsCollectionView.backgroundColor = UIColor.clear
+        
+        let layout = predictionResultsCollectionView.collectionViewLayout as! PredictionViewLayout
+        layout.delegate = self
+        layout.numberOfColumns = 3
+        layout.cellPadding = 5
+        
+        self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
+    }
+    
     @objc func leftBarButtonTapped() {
         self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
     }
     
     @objc func shareButtonTapped() {
         self.viewModel?.launchShareActivity()
+    }
+    
+    @IBAction func copyButtonTapped(_ sender: Any) {
+        UIPasteboard.general.strings = self.viewModel?.predictions
     }
 }
 

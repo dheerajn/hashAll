@@ -18,6 +18,7 @@
 "PhotoLibraryButtonTitle" = "BIBLIOTECA DE FOTOS";
 "GetHashTagsButtonTitle" = "OBTENER ETIQUETAS DE HASH";
 "GetStartedButtonTitle" = "EMPEZAR";
+"copyButtonTitle" = "DUPDO";
 
 "hashTagTitle" = "THE HASHTAG";
 "hashTagDescription" = "Utiliza hashtags con redes en línea, no seas un instrumento al respecto!";

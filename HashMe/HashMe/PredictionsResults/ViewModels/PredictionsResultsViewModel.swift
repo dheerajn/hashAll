@@ -19,6 +19,10 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         self.predictions = predictions
     }
     
+    var copyButtonTitle: String? {
+        return LocalizedString.copyButtonTitle
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.predictions?.count ?? 0
     }

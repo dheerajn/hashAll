@@ -18,6 +18,7 @@
 "PhotoLibraryButtonTitle" = "PHOTO LIBRARY";
 "GetHashTagsButtonTitle" = "GET HASHTAGS";
 "GetStartedButtonTitle" = "GET STARTED";
+"copyButtonTitle" = "COPY";
 
 "hashTagTitle" = "THE HASHTAG";
 "hashTagDescription" = "Utilize hashtags with online networking, don't be an instrument about it!";
