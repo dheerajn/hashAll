@@ -62,7 +62,8 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @IBAction func predictButtonTapped() {
-        guard let image = imageToPredict.image, let ref = image.buffer else {
+        let resized = imageToPredict.image?.resize(size: CGSize(width: 224, height: 224))
+        guard let image = resized, let ref = image.buffer else {
             return
         }
         self.viewModel?.predictImage(ref: ref)
@@ -92,11 +93,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
 
 extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage,
-            let resized = image.resize(size: CGSize(width: 224, height: 224)) else {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
                 return
         }
-        self.imageToPredict.image = resized
+        self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {
             //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
             DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(1), execute: {
