@@ -42,6 +42,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         self.predictButton.setTitle(viewModel?.predictButtonTitle, for: .normal)
+        self.setStatusBar()
         
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }

@@ -29,6 +29,12 @@ class OnboardingViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)]
+
         self.view.setupMediumBluredViewOnImage(UIImage.BatmanJokerImage)
         
         self.viewModel = OnboardingViewModel()
@@ -63,7 +69,7 @@ class OnboardingViewController: UIPageViewController {
 //MARK: UI
 extension OnboardingViewController {
     fileprivate func configureUI() {
-        configureButton()
+        configureGetStartedButton()
         configurePageControl()
     }
     
@@ -78,11 +84,13 @@ extension OnboardingViewController {
         self.view.addSubview(pageControl)
     }
     
-    func configureButton() {
-        getstartedButton = UIButton(frame:  CGRect(x: 0, y: UIScreen.main.bounds.maxY - 100,width: 200, height: 50))
+    func configureGetStartedButton() {
+        getstartedButton = UIButton(frame:  CGRect(x: 0, y: UIScreen.main.bounds.maxY - 100,width: 150, height: 50))
+        getstartedButton.center.x = self.view.center.x
+        getstartedButton.center.y = self.view.frame.size.height/1.2
         getstartedButton.layer.cornerRadius = 14.0
         getstartedButton.layer.borderWidth = 2
-        getstartedButton.layer.borderColor = UIColor.red.cgColor
+        getstartedButton.layer.borderColor = UIColor.white.cgColor
         getstartedButton.titleLabel?.textColor = UIColor.white
         getstartedButton.addTarget(self, action: #selector(OnboardingViewController.getStartedButtonTapped(_:)), for: UIControlEvents.touchUpInside)
         self.getstartedButton.isHidden = true

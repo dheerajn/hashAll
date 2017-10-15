@@ -21,6 +21,7 @@ class PredictionResultsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setStatusBar()
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
         self.predictionResultsCollectionView.delegate = self
         self.predictionResultsCollectionView.dataSource = self

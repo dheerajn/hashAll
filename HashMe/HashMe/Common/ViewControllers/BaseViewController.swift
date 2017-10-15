@@ -51,7 +51,6 @@ class BaseViewController: UIViewController {
     }
     
     @objc open func keyboardDidHide(_ notification: Notification) {
-        
     }
     
     func setupNavigationTitleProperties(withColor color: UIColor = UIColor.white) {
@@ -63,6 +62,15 @@ class BaseViewController: UIViewController {
     
     open func makeNavigationBarTransparent() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    open func setStatusBar() {
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+    }
+    
+    open func resetStatusBar() {
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.default
     }
     
     func addLeftBarButton(withAction action: Selector) {
