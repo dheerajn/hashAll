@@ -15,8 +15,8 @@ public protocol ShareSheetPresentable: NavigationFlowControllable {
 
 public extension ShareSheetPresentable {
     func launchShareSheet(withActivities activities: [String], andSubject subject: String) {
-        //            let calendarActivity = HHCalendarActivity()
-        let activityVC = UIActivityViewController(activityItems: activities, applicationActivities: [/*calendarActivity*/])
+        let facebookActivity = FacebookActivity()
+        let activityVC = UIActivityViewController(activityItems: activities, applicationActivities: [facebookActivity])
         activityVC.setValue("Stay at the )", forKey: "subject")
         let excludeActivities: [UIActivityType] = [.airDrop,
                                                    .assignToContact,
