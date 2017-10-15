@@ -53,6 +53,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWd-rd-Leb" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="40" y="303.5" width="295" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="34P-eH-sQ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumScalingFactor">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMq-AW-SUq" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
                                 <rect key="frame" x="20" y="552" width="100" height="50"/>
                                 <constraints>
@@ -120,14 +143,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iMq-AW-SUq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Iwx-vr-s8i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWd-rd-Leb" secondAttribute="trailing" constant="40" id="QON-7k-A3C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M3A-mt-Td0" secondAttribute="bottom" constant="65" id="azc-5A-Flq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M3A-mt-Td0" secondAttribute="trailing" constant="20" id="fzS-XU-uPI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iMq-AW-SUq" secondAttribute="bottom" constant="65" id="h7Q-AI-BnC"/>
+                            <constraint firstItem="zWd-rd-Leb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hTw-kJ-vy4"/>
+                            <constraint firstItem="zWd-rd-Leb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="nM6-gq-FWH"/>
+                            <constraint firstItem="zWd-rd-Leb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zpX-OS-60G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="iMq-AW-SUq" id="V4r-tG-Ied"/>
+                        <outlet property="descriptionLabel" destination="zWd-rd-Leb" id="nmX-J1-RBu"/>
                         <outlet property="imageToPredict" destination="1kV-oF-rCg" id="yoz-zm-vO9"/>
                         <outlet property="photoLibraryButton" destination="M3A-mt-Td0" id="vOc-tJ-XZO"/>
                     </connections>

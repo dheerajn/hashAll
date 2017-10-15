@@ -23,7 +23,11 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     }
     
     var screenTitle: String? {
-        return "THE HASHTAG"
+        return LocalizedString.theHashTagTitle
+    }
+    
+    var descriptionLabelText: String? {
+        return LocalizedString.hashTagDescription
     }
     
     var cameraButtonTitle: String? {

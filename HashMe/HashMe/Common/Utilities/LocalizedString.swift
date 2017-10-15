@@ -61,4 +61,7 @@ public class LocalizedString {
     static var photoLibraryButtonTitle = NSLocalizedString("PhotoLibraryButtonTitle", comment: "Title for photo library button")
     static var predictButtonTitle = NSLocalizedString("GetHashTagsButtonTitle", comment: "Title for get hashtags button")
     static var getStartedButtonTitle = NSLocalizedString("GetStartedButtonTitle", comment: "Title for get started button")
+    
+    static var theHashTagTitle = NSLocalizedString("hashTagTitle", comment: "Title for the screen")
+    static var hashTagDescription = NSLocalizedString("hashTagDescription", comment: "Description for hash tag")
 }

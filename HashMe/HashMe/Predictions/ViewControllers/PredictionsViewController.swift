@@ -23,6 +23,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         }
     }
     
+    @IBOutlet weak var descriptionLabel: CustomLabel!
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var imageToPredict: UIImageView!
@@ -87,7 +88,14 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         if viewModel == nil {
             viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
         }
+        
         hideLeftNavBarButton()
+        
+        UIView.animate(withDuration: 0.5) {
+            self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
+            self.descriptionLabel.alpha = 1
+        }
+       
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         
@@ -102,6 +110,7 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
         }
         self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {
+            self.descriptionLabel.text = ""
             //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
             DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(1), execute: {
                 self.predictButtonTapped()

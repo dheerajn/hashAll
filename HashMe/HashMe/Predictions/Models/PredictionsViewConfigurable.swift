@@ -11,6 +11,7 @@ import CoreML
 
 public protocol PredictionsViewConfigurable: class {
     var screenTitle: String? { get }
+    var descriptionLabelText: String? { get }
     var maxNumOfKeys: Int { get }
     
     var cameraButtonTitle: String? { get }
