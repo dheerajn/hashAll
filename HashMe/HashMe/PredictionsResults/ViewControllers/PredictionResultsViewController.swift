@@ -40,7 +40,7 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @objc func leftBarButtonTapped() {
-        self.viewModel?.flowDelegate?.popViewControllerWithAnimation()
+        self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
     }
     
     @objc func shareButtonTapped() {

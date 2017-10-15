@@ -21,6 +21,6 @@ public extension PredictionResultsPresentable where Self: HashTagFlowController 
         let viewModel = PredictionsResultsViewModel(predictions: predictions)
         viewModel.flowDelegate = self
         predictionResultsVc?.viewModel = viewModel
-        self.pushViewControllerWithAnimation(predictionResultsVc!, withAnimationType: .moveIn)
+        self.pushViewControllerWithAnimation(predictionResultsVc!, withAnimationType: .fade)
     }
 }

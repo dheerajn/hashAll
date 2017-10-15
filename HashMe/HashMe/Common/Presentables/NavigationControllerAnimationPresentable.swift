@@ -24,7 +24,7 @@ public protocol NavigationControllerAnimationPresentable: NavigationFlowControll
     func pushViewControllerWithAnimation(_ viewController: UIViewController, withAnimationType animation: NavigationAnimationType)
     
     /// This pops the top view controller
-    func popViewControllerWithAnimation()
+    func popViewControllerWithAnimation(withAnimationType animation: NavigationAnimationType)
     
     /// This will collapse the complete navigation controller.
     func collapseTheNavigationController()
@@ -52,11 +52,20 @@ public extension NavigationControllerAnimationPresentable {
         }
     }
     
-    func popViewControllerWithAnimation() {
+    func popViewControllerWithAnimation(withAnimationType animation: NavigationAnimationType) {
         let transition: CATransition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionReveal
+        switch animation {
+        case .moveIn:
+            transition.type = kCATransitionMoveIn
+        case .fade:
+            transition.type = kCATransitionFade
+        case .push:
+            transition.type = kCATransitionPush
+        case .reveal:
+            transition.type = kCATransitionFromTop
+        }
         transition.subtype = kCATransitionFromBottom
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.popViewController(animated: false)

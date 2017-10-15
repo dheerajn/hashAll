@@ -48,6 +48,9 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             let sorted = predictions.classLabelProbs.sorted(by: { (lhs, rhs) -> Bool in
                 return lhs.value > rhs.value
             })
+            
+            self.emptyPredictionResultsArray()
+            
             for i in 0...maxNumOfKeys {
                 formatPredictions(tobeFormattedString: sorted[i].key)
             }
@@ -57,11 +60,17 @@ class PredictionsViewModel: PredictionsViewConfigurable {
         }
     }
     
-    private func formatPredictions(tobeFormattedString: String) {
+    fileprivate func formatPredictions(tobeFormattedString: String) {
         let predictionsToBeFormatted = tobeFormattedString.characters.split{$0 == ","}.map(String.init) //{$0 == "," || $0 == ";"}
         
         for prediction in predictionsToBeFormatted {
             self.predictedResults.append(prediction)
+        }
+    }
+    
+    fileprivate func emptyPredictionResultsArray() {
+        if self.predictedResults.count > 0 {
+            self.predictedResults.removeAll()
         }
     }
 }
