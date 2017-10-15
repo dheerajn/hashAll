@@ -21,7 +21,6 @@ class PredictionResultsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setStatusBar()
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
         self.predictionResultsCollectionView.delegate = self
         self.predictionResultsCollectionView.dataSource = self
@@ -35,6 +34,7 @@ class PredictionResultsViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.resetStatusBar()
         addLeftBarButton(withAction: #selector(PredictionResultsViewController.leftBarButtonTapped))
         addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.shareButtonTapped))
     }

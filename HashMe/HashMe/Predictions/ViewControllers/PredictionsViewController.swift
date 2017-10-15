@@ -14,13 +14,15 @@ import CoreML
 
 class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
+    var flowDelegate: HashTagFlowDelegate?
+
     let imagePicker = UIImagePickerController()
     var viewModel: PredictionsViewConfigurable? {
         didSet {
             
         }
     }
-    var flowDelegate: HashTagFlowDelegate?
+    
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var imageToPredict: UIImageView!
@@ -30,19 +32,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         setupUserInterface()
     }
     
-    func setupUserInterface() {
-        if viewModel == nil {
-            viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
-        }
-        hideLeftNavBarButton()
-        self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
-        self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.setStatusBar()
-        
-        self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = viewModel?.screenTitle ?? ""
@@ -88,6 +81,17 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
                                                       preferredStyle: .alert,
                                                       andActions: [dismissAction],
                                                       onViewController: self)
+    }
+    
+    fileprivate func setupUserInterface() {
+        if viewModel == nil {
+            viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
+        }
+        hideLeftNavBarButton()
+        self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
+        self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
+        
+        self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }
 }
 
