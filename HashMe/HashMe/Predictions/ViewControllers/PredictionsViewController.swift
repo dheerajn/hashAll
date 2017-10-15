@@ -63,7 +63,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         self.viewModel?.predictImage(ref: ref)
     }
     
-    func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
+    fileprivate func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
             self.showImagePickerProblemAlert()
             return
