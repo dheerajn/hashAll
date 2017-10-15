@@ -11,6 +11,7 @@ import AVFoundation
 
 class PredictionResultsViewController: BaseViewController {
     
+    @IBOutlet weak var copiedView: CustomView!
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     
@@ -44,6 +45,8 @@ class PredictionResultsViewController: BaseViewController {
         layout.cellPadding = 5
         
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
+        
+        self.moveViewOutside()
     }
     
     @objc func leftBarButtonTapped() {
@@ -56,6 +59,24 @@ class PredictionResultsViewController: BaseViewController {
     
     @IBAction func copyButtonTapped(_ sender: Any) {
         UIPasteboard.general.strings = self.viewModel?.predictions
+        self.animateCopiedView()
+    }
+    
+    fileprivate func animateCopiedView() {
+        UIView.animate(withDuration: 0.75, animations: {
+            self.copiedView.center = self.view.center
+        }) { (success) in
+            UIView.animate(withDuration: 1, animations: {
+                self.copiedView.alpha = 0
+            }, completion: { (success) in
+                self.copiedView.alpha = 1
+                self.moveViewOutside()
+            })
+        }
+    }
+    
+    fileprivate func moveViewOutside() {
+        self.copiedView.frame.origin.y = UIScreen.main.bounds.maxY
     }
 }
 
@@ -111,4 +132,3 @@ extension PredictionResultsViewController: PredictionLayoutDelegate {
         return ceil(rect.height)
     }
 }
-
