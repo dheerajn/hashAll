@@ -17,5 +17,6 @@ public protocol PredictionResultsViewConfigurable: class {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     
+    func copyImagesToPasteboard()
     func launchShareActivity()
 }

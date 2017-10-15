@@ -27,6 +27,10 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         return self.predictions?.count ?? 0
     }
     
+    func copyImagesToPasteboard() {
+        UIPasteboard.general.strings = self.predictions
+    }
+    
     func launchShareActivity() {
         self.flowDelegate?.launchShareSheet(withActivities: self.predictions ?? ["#HashMe"], andSubject: "This is flow Delegate")
     }

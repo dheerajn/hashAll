@@ -58,7 +58,7 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @IBAction func copyButtonTapped(_ sender: Any) {
-        UIPasteboard.general.strings = self.viewModel?.predictions
+        self.viewModel?.copyImagesToPasteboard()
         self.animateCopiedView()
     }
     
