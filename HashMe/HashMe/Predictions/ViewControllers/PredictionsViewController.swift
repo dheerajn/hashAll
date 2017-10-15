@@ -27,18 +27,17 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        hideLeftNavBarButton()
-        
-        if viewModel == nil {
-            viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
-        }
         setupUserInterface()
     }
     
     func setupUserInterface() {
+        if viewModel == nil {
+            viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
+        }
+        hideLeftNavBarButton()
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
+        
         self.setStatusBar()
         
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
@@ -53,6 +52,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         super.viewWillDisappear(animated)
         self.removeLoadingAnimationFromSuperView()
     }
+    
     @IBAction func cameraButtonTapped(_ sender: CustomButton) {
         openCameraOrPhotoLibrary(sourceType: .camera)
     }
@@ -70,12 +70,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
-            let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
-            CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
-                message: LocalizedString.alertMessage,
-                preferredStyle: .alert,
-                andActions: [dismissAction],
-                onViewController: self)
+            self.showImagePickerProblemAlert()
             return
         }
         imagePicker.sourceType = sourceType
@@ -83,6 +78,15 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         DispatchQueue.main.async {
             self.present(self.imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    fileprivate func showImagePickerProblemAlert() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
+        CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
+                                                      message: LocalizedString.alertMessage,
+                                                      preferredStyle: .alert,
+                                                      andActions: [dismissAction],
+                                                      onViewController: self)
     }
 }
 
