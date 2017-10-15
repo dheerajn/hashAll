@@ -31,9 +31,8 @@ open class CustomLoadingAnimation: UIView {
     open func startLoadingAnimation() {
         squareView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         squareView.alpha = 1
-        squareView.backgroundColor = UIColor.LightGreyBackgroundColor()
         self.addSubview(squareView)
-        
+        let _ = squareView.addLightBlurEffect()
         drawBaseLinesForAnimation()
         
         self.startLoadingAnimation(fromX: self.center.x - 25, fromY: self.center.y - 50, toX: self.center.x - 25, toY: self.center.y + 50)
@@ -63,7 +62,7 @@ open class CustomLoadingAnimation: UIView {
         })
     }
     
-    fileprivate func startLoadingAnimation(fromX: CGFloat, fromY: CGFloat, toX: CGFloat, toY: CGFloat, animation: Bool = true, strokeColor: UIColor = UIColor.red) {
+    fileprivate func startLoadingAnimation(fromX: CGFloat, fromY: CGFloat, toX: CGFloat, toY: CGFloat, animation: Bool = true, strokeColor: UIColor = UIColor.white) {
         
         // remove old shape layer if any
         //        self.shapeLayer?.removeFromSuperlayer()
@@ -97,10 +96,11 @@ open class CustomLoadingAnimation: UIView {
     fileprivate func drawBaseLinesForAnimation() {
         if initialLoad {
             initialLoad = false
-            self.startLoadingAnimation(fromX: self.center.x - 25, fromY: self.center.y - 50, toX: self.center.x - 25, toY: self.center.y + 50, animation: false, strokeColor: UIColor.lightGray)
-            self.startLoadingAnimation(fromX: self.center.x + 25, fromY: self.center.y - 50, toX: self.center.x + 25, toY: self.center.y + 50, animation: false, strokeColor: UIColor.lightGray)
-            self.startLoadingAnimation(fromX: self.center.x + 55, fromY: self.center.y - 20, toX: self.center.x - 55, toY: self.center.y - 20, animation: false, strokeColor: UIColor.lightGray)
-            self.startLoadingAnimation(fromX: self.center.x + 55, fromY: self.center.y + 20, toX: self.center.x - 55, toY: self.center.y + 20, animation: false, strokeColor: UIColor.lightGray)
+            let linesBaseColor = UIColor.darkGray.withAlphaComponent(0.7)
+            self.startLoadingAnimation(fromX: self.center.x - 25, fromY: self.center.y - 50, toX: self.center.x - 25, toY: self.center.y + 50, animation: false, strokeColor: linesBaseColor)
+            self.startLoadingAnimation(fromX: self.center.x + 25, fromY: self.center.y - 50, toX: self.center.x + 25, toY: self.center.y + 50, animation: false, strokeColor: linesBaseColor)
+            self.startLoadingAnimation(fromX: self.center.x + 55, fromY: self.center.y - 20, toX: self.center.x - 55, toY: self.center.y - 20, animation: false, strokeColor: linesBaseColor)
+            self.startLoadingAnimation(fromX: self.center.x + 55, fromY: self.center.y + 20, toX: self.center.x - 55, toY: self.center.y + 20, animation: false, strokeColor: linesBaseColor)
         }
     }
     

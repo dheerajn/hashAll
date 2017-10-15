@@ -49,6 +49,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         self.title = viewModel?.screenTitle ?? ""
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeLoadingAnimationFromSuperView()
+    }
     @IBAction func cameraButtonTapped(_ sender: CustomButton) {
         openCameraOrPhotoLibrary(sourceType: .camera)
     }
@@ -90,7 +94,13 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
         }
         self.imageToPredict.image = resized
         imagePicker.dismiss(animated: true) {
-            self.predictButtonTapped()
+            //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
+            DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(1), execute: {
+                self.predictButtonTapped()
+            })
+            UIView.animate(withDuration: 0.2, animations: {
+                self.startLoadingAnimation()
+            })
         }
     }
     
