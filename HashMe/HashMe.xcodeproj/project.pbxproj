@@ -45,6 +45,7 @@
 		C8869D371F8C2ADE00C32845 /* PredictionLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D361F8C2ADE00C32845 /* PredictionLayoutAttributes.swift */; };
 		C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */; };
 		C8869D531F928A9C00C32845 /* FacebookActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D521F928A9C00C32845 /* FacebookActivity.swift */; };
+		C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */; };
 		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
 		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
 		C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */; };
@@ -108,6 +109,7 @@
 		C8869D361F8C2ADE00C32845 /* PredictionLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionLayoutAttributes.swift; sourceTree = "<group>"; };
 		C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetPresentable.swift; sourceTree = "<group>"; };
 		C8869D521F928A9C00C32845 /* FacebookActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookActivity.swift; sourceTree = "<group>"; };
+		C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 		C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */,
 				C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */,
 				C8869D521F928A9C00C32845 /* FacebookActivity.swift */,
+				C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
+				C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */,
 				C8869D371F8C2ADE00C32845 /* PredictionLayoutAttributes.swift in Sources */,
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
 				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,

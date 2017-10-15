@@ -23,8 +23,6 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     var flowDelegate: HashTagFlowDelegate?
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
-    @IBOutlet weak var predictButton: CustomButton!
-    @IBOutlet weak var imageToPredictContainerView: UIView!
     @IBOutlet weak var imageToPredict: UIImageView!
     
     override func viewDidLoad() {
@@ -41,7 +39,6 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     func setupUserInterface() {
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
-        self.predictButton.setTitle(viewModel?.predictButtonTitle, for: .normal)
         self.setStatusBar()
         
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
@@ -60,7 +57,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         openCameraOrPhotoLibrary(sourceType: .photoLibrary)
     }
     
-    @IBAction func predictButtonTapped(_ sender: CustomButton) {
+    @IBAction func predictButtonTapped() {
         guard let image = imageToPredict.image, let ref = image.buffer else {
             return
         }
@@ -92,7 +89,9 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
                 return
         }
         self.imageToPredict.image = resized
-        imagePicker.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true) {
+            self.predictButtonTapped()
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
