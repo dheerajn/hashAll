@@ -10,8 +10,13 @@ import UIKit
 
 class PredictionResultCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var predictionDisplayLabel: CustomLabel!
+    var isPredictionSelected: Bool? {
+        didSet {
+            isPredictionSelected == true ? (self.backgroundColor = UIColor.PredictionsCellSelectedColor()) : (self.backgroundColor = UIColor.CellDeselectedColor())
+        }
+    }
     
+    @IBOutlet weak var predictionDisplayLabel: CustomLabel!
     @IBOutlet weak var selectionButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {

@@ -44,5 +44,13 @@ public extension UIColor {
     public static func LightGreyBackgroundColor() -> UIColor {
         return UIColor(r: 247, g: 248, b: 249)
     }
+    
+    public static func PredictionsCellSelectedColor() -> UIColor {
+        return UIColor.yellow.withAlphaComponent(0.9)
+    }
+    
+    public static func CellDeselectedColor() -> UIColor {
+        return UIColor.lightGray.withAlphaComponent(0.5)
+    }
 }
 

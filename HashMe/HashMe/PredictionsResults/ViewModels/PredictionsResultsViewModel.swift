@@ -13,10 +13,12 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
     var flowDelegate: HashTagFlowDelegate?
 
-    var predictions: [String]?
-    
+    var originalPredictions: [String]?
+    var updatedPredicitons: [String]?
+
     init(predictions: [String]) {
-        self.predictions = predictions
+        self.originalPredictions = predictions
+        self.updatedPredicitons = predictions
     }
     
     var copyButtonTitle: String? {
@@ -24,14 +26,23 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.predictions?.count ?? 0
+        return self.originalPredictions?.count ?? 0
     }
     
     func copyImagesToPasteboard() {
-        UIPasteboard.general.strings = self.predictions
+        UIPasteboard.general.strings = self.originalPredictions
     }
     
     func launchShareActivity() {
-        self.flowDelegate?.launchShareSheet(withActivities: self.predictions ?? ["#HashMe"], andSubject: "This is flow Delegate")
+        self.flowDelegate?.launchShareSheet(withActivities: self.updatedPredicitons ?? ["#HashMe"], andSubject: "This is flow Delegate")
+    }
+    
+    func updatePredictionsArray(forHashTag tag: String) {
+        guard let validUpdatedPredictions = self.updatedPredicitons else { return }
+        if validUpdatedPredictions.contains(tag) {
+            self.updatedPredicitons = validUpdatedPredictions.filter{$0 != tag}
+        } else {
+            self.updatedPredicitons?.append(tag)
+        }
     }
 }

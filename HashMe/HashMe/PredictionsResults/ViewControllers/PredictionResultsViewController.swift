@@ -93,9 +93,9 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let predictionCell = collectionView.dequeueReusableCell(withReuseIdentifier: PredictionResultCollectionViewCell.reuseID(), for: indexPath) as? PredictionResultCollectionViewCell else { return UICollectionViewCell() }
         
-        guard let validPredictions = viewModel?.predictions else { return UICollectionViewCell() }
+        guard let validPredictions = viewModel?.originalPredictions else { return UICollectionViewCell() }
         predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
-        predictionCell.backgroundColor = UIColor.yellow
+        predictionCell.isPredictionSelected = true
         
         return predictionCell
     }
@@ -104,7 +104,14 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension PredictionResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        guard let selectedPredictionCell = predictionResultsCollectionView.cellForItem(at: indexPath) as? PredictionResultCollectionViewCell else { return }
+        if selectedPredictionCell.isPredictionSelected == true {
+            selectedPredictionCell.isPredictionSelected = false
+        } else {
+            selectedPredictionCell.isPredictionSelected = true
+        }
+        self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
     }
 }
 // MARK: PredictionLayoutDelegate
@@ -115,7 +122,7 @@ extension PredictionResultsViewController: PredictionLayoutDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-        guard let validPrediction = viewModel?.predictions else { return 0.001 }
+        guard let validPrediction = viewModel?.originalPredictions else { return 0.001 }
         if indexPath.row > validPrediction.count {
             return 0.001
         }
