@@ -91,14 +91,14 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let predictionCell = collectionView.dequeueReusableCell(withReuseIdentifier: PredictionResultCollectionViewCell.reuseID(), for: indexPath) as? PredictionResultCollectionViewCell else {
-            return UICollectionViewCell()
-            
-        }
-        predictionCell.predictionDisplayLabel.text = viewModel?.predictions![indexPath.row]
+        guard let predictionCell = collectionView.dequeueReusableCell(withReuseIdentifier: PredictionResultCollectionViewCell.reuseID(), for: indexPath) as? PredictionResultCollectionViewCell else { return UICollectionViewCell() }
+        
+        guard let validPredictions = viewModel?.predictions else { return UICollectionViewCell() }
+        predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
+        predictionCell.backgroundColor = UIColor.yellow
+        
         return predictionCell
     }
-    
 }
 
 // MARK: UICollectionViewDelegate
