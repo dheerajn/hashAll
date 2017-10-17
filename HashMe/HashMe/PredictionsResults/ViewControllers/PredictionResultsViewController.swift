@@ -30,7 +30,7 @@ class PredictionResultsViewController: BaseViewController {
         super.viewDidAppear(animated)
         self.resetStatusBar()
         addLeftBarButton(withAction: #selector(PredictionResultsViewController.leftBarButtonTapped))
-        addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.shareButtonTapped))
+        addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.shareButtonTapped), withAnimation: true)
     }
     
     func configureUI() {
