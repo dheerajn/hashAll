@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-public typealias ShareSheetActivities = (tags: [String], predictedImage: UIImage)
-
 public protocol ShareSheetPresentable: NavigationFlowControllable {
-    func launchShareSheet(withActivities activities: ShareSheetActivities, andSubject subject: String)
+    func launchShareSheet(withActivities activities: NSMutableArray, andSubject subject: String)
 }
 
 public extension ShareSheetPresentable {
-    func launchShareSheet(withActivities activities: ShareSheetActivities, andSubject subject: String) {
+    func launchShareSheet(withActivities activities: NSMutableArray, andSubject subject: String) {
         let facebookActivity = FacebookActivity()
-        let activityVC = UIActivityViewController(activityItems: [activities.tags, activities.predictedImage], applicationActivities: [facebookActivity])
+        
+        guard let validActivities = activities as? [Any] else { return }
+        let activityVC = UIActivityViewController(activityItems: validActivities, applicationActivities: [facebookActivity])
         activityVC.setValue("Stay at the )", forKey: "subject")
         let excludeActivities: [UIActivityType] = [.airDrop,
                                                    .assignToContact,
@@ -28,6 +28,8 @@ public extension ShareSheetPresentable {
                                                    .print,
                                                    .saveToCameraRoll]
         activityVC.excludedActivityTypes = excludeActivities
-        self.navigationController?.present(activityVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.navigationController?.present(activityVC, animated: true, completion: nil)
+        }
     }
 }
