@@ -46,7 +46,7 @@ class PredictionResultsViewController: BaseViewController {
         
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
         
-        self.moveViewOutside()
+        self.moveCopiedViewOutside()
     }
     
     @objc func leftBarButtonTapped() {
@@ -70,12 +70,12 @@ class PredictionResultsViewController: BaseViewController {
                 self.copiedView.alpha = 0
             }, completion: { (success) in
                 self.copiedView.alpha = 1
-                self.moveViewOutside()
+                self.moveCopiedViewOutside()
             })
         }
     }
     
-    fileprivate func moveViewOutside() {
+    fileprivate func moveCopiedViewOutside() {
         self.copiedView.frame.origin.y = UIScreen.main.bounds.maxY
     }
 }
