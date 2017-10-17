@@ -14,9 +14,11 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     var flowDelegate: HashTagFlowDelegate?
 
     var originalPredictions: [String]?
+    var predictionImage: UIImage?
     var updatedPredicitons: [String]?
 
-    init(predictions: [String]) {
+    init(predictions: [String], withPredictionImage: UIImage) {
+        self.predictionImage = withPredictionImage
         self.originalPredictions = predictions
         self.updatedPredicitons = predictions
     }
@@ -35,7 +37,8 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
     func launchShareActivity() {
         DispatchQueue.main.async {
-            self.flowDelegate?.launchShareSheet(withActivities: self.updatedPredicitons ?? ["#HashMe"], andSubject: "This is flow Delegate")
+            let tagsAndImage: ShareSheetActivities = (tags: self.updatedPredicitons ?? ["HashMe"], predictedImage: self.predictionImage ?? UIImage())
+            self.flowDelegate?.launchShareSheet(withActivities: tagsAndImage, andSubject: "This is flow Delegate")
         }
     }
     

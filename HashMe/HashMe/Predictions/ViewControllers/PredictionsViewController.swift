@@ -60,7 +60,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         guard let image = resized, let ref = image.buffer else {
             return
         }
-        self.viewModel?.predictImage(ref: ref)
+        self.viewModel?.predictImage(ref: ref, predictionImage: imageToPredict.image ?? UIImage())
     }
     
     fileprivate func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {

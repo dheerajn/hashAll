@@ -46,7 +46,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
         return 7
     }
     
-    func predictImage(ref: CVPixelBuffer) {
+    func predictImage(ref: CVPixelBuffer, predictionImage: UIImage) {
         do {
             let predictions = try resnetModel.prediction(image: ref)
             let sorted = predictions.classLabelProbs.sorted(by: { (lhs, rhs) -> Bool in
@@ -60,7 +60,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             }
             let formattedPredictionsArray = self.predictedResults.map({"#" + $0}) //append #
             let updatedFormattedPredictionsArray = formattedPredictionsArray.map({$0.filter { !" \n\t\r".characters.contains($0) }}) //remove white spaces
-            self.flowDelegate?.showPredictionResultsView(predictions: updatedFormattedPredictionsArray)
+            self.flowDelegate?.showPredictionResultsView(predictions: updatedFormattedPredictionsArray, withPredictionImage: predictionImage)
         } catch {
             print(error)
         }

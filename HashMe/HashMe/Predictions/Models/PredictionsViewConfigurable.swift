@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import CoreML
 
 public protocol PredictionsViewConfigurable: class {
@@ -21,5 +22,5 @@ public protocol PredictionsViewConfigurable: class {
     /// Predicts the image.
     ///
     /// - Parameter ref: Based on the image buffer type. The pixel buffer implements the memory storage for an image buffer.
-    func predictImage(ref: CVPixelBuffer)
+    func predictImage(ref: CVPixelBuffer, predictionImage: UIImage)
 }

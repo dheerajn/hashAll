@@ -13,6 +13,7 @@ public protocol PredictionResultsViewConfigurable: class {
     
     var flowDelegate: HashTagFlowDelegate? { get set }
     var originalPredictions: [String]? { get }
+    var predictionImage: UIImage? { get }
     var updatedPredicitons: [String]? { get set } //this will append and remove a string, so "set" is required
     var copyButtonTitle: String? { get }
     
