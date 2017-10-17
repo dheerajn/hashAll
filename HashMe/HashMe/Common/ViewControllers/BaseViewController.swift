@@ -77,7 +77,7 @@ class BaseViewController: UIViewController {
         let leftBarButton: UIButton = UIButton()
         leftBarButton.setImage(UIImage.BackButtonImage, for: UIControlState())
         leftBarButton.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
-        leftBarButton.frame = CGRect(x: 0, y: 0, width: 35/2, height: 35/2)
+        leftBarButton.frame = CGRect(x: 0, y: 0, width: 50/2, height: 50/2)
         let barButton = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.leftBarButtonItem = barButton
     }
@@ -86,7 +86,7 @@ class BaseViewController: UIViewController {
         let rightBarButton: UIButton = UIButton()
         rightBarButton.setImage(image, for: UIControlState())
         rightBarButton.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
-        rightBarButton.frame = CGRect(x: 0, y: 0, width: 35/2, height: 35/2)
+        rightBarButton.frame = CGRect(x: 0, y: 0, width: 50/2, height: 50/2)
         let barButton = UIBarButtonItem(customView: rightBarButton)
         self.navigationItem.rightBarButtonItem = barButton
     }

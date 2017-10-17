@@ -34,7 +34,9 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     }
     
     func launchShareActivity() {
-        self.flowDelegate?.launchShareSheet(withActivities: self.updatedPredicitons ?? ["#HashMe"], andSubject: "This is flow Delegate")
+        DispatchQueue.main.async {
+            self.flowDelegate?.launchShareSheet(withActivities: self.updatedPredicitons ?? ["#HashMe"], andSubject: "This is flow Delegate")
+        }
     }
     
     func updatePredictionsArray(forHashTag tag: String) {
