@@ -285,13 +285,34 @@
                                     <action selector="copyButtonTapped:" destination="7NR-8f-Tr6" eventType="touchUpInside" id="X7N-oz-vjE"/>
                                 </connections>
                             </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjh-3e-IHC" customClass="SocialMediaCustomView" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="15" y="527" width="345" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="ApH-gk-nsJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="cre-d3-Zps" firstAttribute="centerX" secondItem="NUs-qZ-y6i" secondAttribute="centerX" id="6jc-6T-F1q"/>
+                            <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="Mjh-3e-IHC" secondAttribute="bottom" constant="20" id="8oF-4s-a8F"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="pT2-tb-Te3" secondAttribute="bottom" constant="75" id="K4x-wp-k3s"/>
+                            <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Mjh-3e-IHC" secondAttribute="trailing" constant="15" id="Ogw-rm-EQH"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="cre-d3-Zps" secondAttribute="bottom" constant="20" id="i42-Cc-fPK"/>
                             <constraint firstItem="pT2-tb-Te3" firstAttribute="top" secondItem="neA-Pt-P9Z" secondAttribute="top" id="mDs-uU-eQ4"/>
                             <constraint firstItem="pT2-tb-Te3" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="16" id="myQ-ng-faz"/>
+                            <constraint firstItem="Mjh-3e-IHC" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="15" id="nYb-Zw-OgN"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="pT2-tb-Te3" secondAttribute="trailing" constant="16" id="swL-l1-m8d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="neA-Pt-P9Z"/>
@@ -300,6 +321,7 @@
                         <outlet property="copiedView" destination="XqW-09-HgE" id="Odf-NM-KN2"/>
                         <outlet property="copyButton" destination="cre-d3-Zps" id="hvw-SZ-Et1"/>
                         <outlet property="predictionResultsCollectionView" destination="pT2-tb-Te3" id="A7C-mR-urC"/>
+                        <outlet property="socialMediaView" destination="Mjh-3e-IHC" id="exY-LP-5Qa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBo-a5-dH4" userLabel="First Responder" sceneMemberID="firstResponder"/>

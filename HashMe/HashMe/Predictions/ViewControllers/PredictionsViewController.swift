@@ -11,7 +11,9 @@ import CoreML
 
 //https://github.com/ytakzk/CoreML-samples - help taken from this.
 //TODO: try putting different models and compare the results of the prediction and combine everything.
+
 //checkmark image: https://www.flaticon.com/free-icon/verification-mark_59595#term=checkmark&page=1&position=40
+//more image: https://www.flaticon.com/free-icon/more-circular-button-interface-symbol-of-three-horizontal-dots_54495#term=more%20icon&page=1&position=8
 
 //FB Support - https://en.facebookbrand.com/support
 //https://developers.facebook.com/docs/apps/review/branding

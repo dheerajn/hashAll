@@ -11,9 +11,12 @@ import AVFoundation
 
 class PredictionResultsViewController: BaseViewController {
     
+    @IBOutlet weak var socialMediaView: SocialMediaCustomView!
     @IBOutlet weak var copiedView: CustomView!
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
+    
+    var hidingAnimationDuration = 0.5
     
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {
@@ -30,11 +33,31 @@ class PredictionResultsViewController: BaseViewController {
         super.viewDidAppear(animated)
         self.resetStatusBar()
         addLeftBarButton(withAction: #selector(PredictionResultsViewController.leftBarButtonTapped))
-        addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.shareButtonTapped), withAnimation: true)
+        addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.rightBarButtonTapped), withAnimation: true)
     }
     
+    
+    
+    @objc func leftBarButtonTapped() {
+        self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
+    }
+    
+    @objc func rightBarButtonTapped() {
+        self.resetSocialMediaView()
+    }
+    
+    @IBAction func copyButtonTapped(_ sender: Any) {
+        self.viewModel?.copyImagesToPasteboard()
+        self.animateCopiedView()
+    }
+    
+}
+
+//MARK: UI
+extension PredictionResultsViewController {
     func configureUI() {
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
+        
         self.predictionResultsCollectionView.delegate = self
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
@@ -45,44 +68,66 @@ class PredictionResultsViewController: BaseViewController {
         layout.cellPadding = 5
         
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
+        self.moveCopiedViewOutsideBounds()
+        self.moveSocialMediaCustomViewOutsideBounds()
         
-        self.moveCopiedViewOutside()
+        handleShareSheetActions()
     }
     
-    @objc func leftBarButtonTapped() {
-        self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
-    }
-    
-    @objc func shareButtonTapped() {
-        self.viewModel?.launchShareActivity()
-    }
-    
-    @IBAction func copyButtonTapped(_ sender: Any) {
-        self.viewModel?.copyImagesToPasteboard()
-        self.animateCopiedView()
-    }
-    
-    fileprivate func animateCopiedView() {
-        UIView.animate(withDuration: 0.75, animations: {
-            self.copiedView.center = self.view.center
-        }) { (success) in
-            UIView.animate(withDuration: 1, animations: {
-                self.copiedView.alpha = 0
-            }, completion: { (success) in
-                self.copiedView.alpha = 1
-                self.moveCopiedViewOutside()
+    func handleShareSheetActions() {
+        self.socialMediaView.instagramButtonCustomHander = {
+            //TODO: Work on Instagram Action
+        }
+        
+        self.socialMediaView.dismissButtonCustomHandler = {
+            self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
+        }
+        
+        self.socialMediaView.moreButtonCustomHandler = {
+            self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
+            DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(self.hidingAnimationDuration), execute: {
+                self.viewModel?.launchShareActivity()
             })
         }
     }
     
-    fileprivate func moveCopiedViewOutside() {
-        self.copiedView.frame.origin.y = UIScreen.main.bounds.maxY
+    fileprivate func animateCopiedView() {
+        self.copiedView.center = self.view.center
+        UIView.animate(withDuration: 0.75, animations: {
+            self.copiedView.alpha = 1
+        }) { (success) in
+            UIView.animate(withDuration: 1, animations: {
+                self.copiedView.alpha = 0
+            }, completion: { (success) in
+                self.moveCopiedViewOutsideBounds()
+            })
+        }
     }
-}
-
-extension PredictionResultsViewController {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    fileprivate func moveCopiedViewOutsideBounds() {
+        self.copiedView.frame.origin.y = UIScreen.main.bounds.maxY
+        self.copiedView.alpha = 0
+    }
+    
+    fileprivate func moveSocialMediaCustomViewOutsideBounds(withAnimation: Bool = false) {
         
+        func moveSocialMediaOutside() {
+            self.socialMediaView.transform = CGAffineTransform(translationX: 0, y: 200)
+        }
+        
+        if withAnimation {
+            UIView.animate(withDuration: hidingAnimationDuration) {
+                moveSocialMediaOutside()
+            }
+        } else {
+            moveSocialMediaOutside()
+        }
+    }
+    
+    fileprivate func resetSocialMediaView() {
+        UIView.animate(withDuration: hidingAnimationDuration) {
+            self.socialMediaView.transform = CGAffineTransform.identity
+        }
     }
 }
 
@@ -120,6 +165,7 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
     }
 }
+
 // MARK: PredictionLayoutDelegate
 extension PredictionResultsViewController: PredictionLayoutDelegate {
     
