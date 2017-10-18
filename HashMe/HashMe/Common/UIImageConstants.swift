@@ -12,14 +12,14 @@ import UIKit
 extension UIImage {
     
     //Icons
-    static var FacebookIcon: UIImage {
-        guard let validFacebookImage = UIImage(named: "FB-f-Logo__white") else { return UIImage() }
-        return validFacebookImage
-    }
-    
     static var InstagramIcon: UIImage {
         guard let validInstagramImage = UIImage(named: "Instagram") else { return UIImage() }
         return validInstagramImage
+    }
+    
+    static var MoreIcon: UIImage {
+        guard let validMoreImage = UIImage(named: "more-circular-symbol") else { return UIImage() }
+        return validMoreImage
     }
     
     //Navigation Button Images

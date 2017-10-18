@@ -35,9 +35,7 @@ class PredictionResultsViewController: BaseViewController {
         addLeftBarButton(withAction: #selector(PredictionResultsViewController.leftBarButtonTapped))
         addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.rightBarButtonTapped), withAnimation: true)
     }
-    
-    
-    
+
     @objc func leftBarButtonTapped() {
         self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
     }
@@ -50,7 +48,6 @@ class PredictionResultsViewController: BaseViewController {
         self.viewModel?.copyImagesToPasteboard()
         self.animateCopiedView()
     }
-    
 }
 
 //MARK: UI
