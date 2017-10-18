@@ -15,10 +15,10 @@ public protocol ShareSheetPresentable: NavigationFlowControllable {
 
 public extension ShareSheetPresentable {
     func launchShareSheet(withActivities activities: NSMutableArray, andSubject subject: String) {
-        let facebookActivity = FacebookActivity()
+        let instagranActivity = InstagramActivity()
         
         guard let validActivities = activities as? [Any] else { return }
-        let activityVC = UIActivityViewController(activityItems: validActivities, applicationActivities: [facebookActivity])
+        let activityVC = UIActivityViewController(activityItems: validActivities, applicationActivities: [instagranActivity])
         activityVC.setValue("Stay at the )", forKey: "subject")
         let excludeActivities: [UIActivityType] = [.airDrop,
                                                    .assignToContact,

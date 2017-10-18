@@ -1,25 +1,26 @@
 //
-//  FacebookActivity.swift
+//  InstagramActivity.swift
 //  HashMe
 //
-//  Created by Dheeru on 10/14/17.
+//  Created by Dheeraj Neelam on 10/18/17.
 //  Copyright © 2017 Dheeru. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class FacebookActivity: UIActivity {
+class InstagramActivity: UIActivity {
     
     func activityType() -> String {
-        return NSStringFromClass(FacebookActivity.self)
+        return NSStringFromClass(InstagramActivity.self)
     }
-
+    
     override var activityImage: UIImage? {
-        return UIImage.BatmanJokerImage
+        return UIImage.InstagramIcon
     }
+    
     override var activityTitle: String? {
-        return "Facebook"
+        return "Instagram"
     }
     
     override func canPerform(withActivityItems activityItems: [Any]) -> Bool {

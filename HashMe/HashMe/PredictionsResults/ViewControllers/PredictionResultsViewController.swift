@@ -80,6 +80,12 @@ class PredictionResultsViewController: BaseViewController {
     }
 }
 
+extension PredictionResultsViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+}
+
 // MARK: UICollectionViewDataSource
 extension PredictionResultsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {

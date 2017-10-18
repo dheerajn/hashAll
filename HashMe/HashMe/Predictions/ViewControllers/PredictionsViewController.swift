@@ -12,6 +12,15 @@ import CoreML
 //https://github.com/ytakzk/CoreML-samples - help taken from this.
 //TODO: try putting different models and compare the results of the prediction and combine everything.
 //checkmark image: https://www.flaticon.com/free-icon/verification-mark_59595#term=checkmark&page=1&position=40
+
+//FB Support - https://en.facebookbrand.com/support
+//https://developers.facebook.com/docs/apps/review/branding
+//assets - https://en.facebookbrand.com/assets, https://en.facebookbrand.com/assets/f-logo
+
+//Instagram Permisson Request - https://en.instagram-brand.com/register/signin?redirect=%2Frequests%2Fdashboard
+//https://en.instagram-brand.com/guidelines/general
+//https://en.instagram-brand.com/assets/glyph-icon
+
 class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     var flowDelegate: HashTagFlowDelegate?

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363B7B261F97C0830094B274 /* InstagramActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B7B251F97C0830094B274 /* InstagramActivity.swift */; };
 		363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */; };
 		3680F6BF1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */; };
 		C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */; };
@@ -44,7 +45,6 @@
 		C8869D351F8C2ACB00C32845 /* PredictionsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D341F8C2ACB00C32845 /* PredictionsLayout.swift */; };
 		C8869D371F8C2ADE00C32845 /* PredictionLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D361F8C2ADE00C32845 /* PredictionLayoutAttributes.swift */; };
 		C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */; };
-		C8869D531F928A9C00C32845 /* FacebookActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D521F928A9C00C32845 /* FacebookActivity.swift */; };
 		C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */; };
 		C8869D5D1F941F3C00C32845 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D5C1F941F3B00C32845 /* CustomView.swift */; };
 		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
@@ -64,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		363B7B251F97C0830094B274 /* InstagramActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramActivity.swift; sourceTree = "<group>"; };
 		363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
 		3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerAnimationPresentable.swift; sourceTree = "<group>"; };
 		C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		C8869D341F8C2ACB00C32845 /* PredictionsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsLayout.swift; sourceTree = "<group>"; };
 		C8869D361F8C2ADE00C32845 /* PredictionLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionLayoutAttributes.swift; sourceTree = "<group>"; };
 		C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetPresentable.swift; sourceTree = "<group>"; };
-		C8869D521F928A9C00C32845 /* FacebookActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookActivity.swift; sourceTree = "<group>"; };
 		C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C8869D5C1F941F3B00C32845 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 				C85450591F76F44100CF3D4E /* CustomButton.swift */,
 				C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */,
 				C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */,
-				C8869D521F928A9C00C32845 /* FacebookActivity.swift */,
+				363B7B251F97C0830094B274 /* InstagramActivity.swift */,
 				C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */,
 				C8869D5C1F941F3B00C32845 /* CustomView.swift */,
 			);
@@ -522,7 +522,6 @@
 				C8869D2F1F8C291900C32845 /* UIViewExtension.swift in Sources */,
 				C84B2B2C1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift in Sources */,
 				C84B2B351F76C19F00F56BF5 /* NavigationFlowControllable.swift in Sources */,
-				C8869D531F928A9C00C32845 /* FacebookActivity.swift in Sources */,
 				C8869D311F8C29BB00C32845 /* UIImageExtension.swift in Sources */,
 				C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */,
 				C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */,
@@ -540,6 +539,7 @@
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
 				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,
+				363B7B261F97C0830094B274 /* InstagramActivity.swift in Sources */,
 				C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */,
 				C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */,
 			);

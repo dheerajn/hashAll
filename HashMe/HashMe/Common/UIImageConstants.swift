@@ -11,6 +11,17 @@ import UIKit
 
 extension UIImage {
     
+    //Icons
+    static var FacebookIcon: UIImage {
+        guard let validFacebookImage = UIImage(named: "FB-f-Logo__white") else { return UIImage() }
+        return validFacebookImage
+    }
+    
+    static var InstagramIcon: UIImage {
+        guard let validInstagramImage = UIImage(named: "Instagram") else { return UIImage() }
+        return validInstagramImage
+    }
+    
     //Navigation Button Images
     static var BackButtonImage: UIImage {
         guard let validAndroidPayImage = UIImage(named: "backButtonIcon") else { return UIImage() }
