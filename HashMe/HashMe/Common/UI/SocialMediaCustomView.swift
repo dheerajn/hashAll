@@ -2,7 +2,7 @@
 //  SocialMediaCustomView.swift
 //  HashMe
 //
-//  Created by Dheeraj Neelam on 10/18/17.
+//  Created by Dheeru on 10/18/17.
 //  Copyright © 2017 Dheeru. All rights reserved.
 //
 

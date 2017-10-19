@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		363B7B261F97C0830094B274 /* InstagramActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B7B251F97C0830094B274 /* InstagramActivity.swift */; };
 		363B7B281F97D0C50094B274 /* SocialMediaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363B7B271F97D0C50094B274 /* SocialMediaView.xib */; };
 		363B7B2A1F97D2C10094B274 /* SocialMediaCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B7B291F97D2C10094B274 /* SocialMediaCustomView.swift */; };
 		363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */; };
@@ -66,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		363B7B251F97C0830094B274 /* InstagramActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramActivity.swift; sourceTree = "<group>"; };
 		363B7B271F97D0C50094B274 /* SocialMediaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SocialMediaView.xib; path = HashMe/Common/XIb/SocialMediaView.xib; sourceTree = SOURCE_ROOT; };
 		363B7B291F97D2C10094B274 /* SocialMediaCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCustomView.swift; sourceTree = "<group>"; };
 		363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				C85450591F76F44100CF3D4E /* CustomButton.swift */,
 				C8F54A231F7B32AC00E94DF4 /* CustomLabel.swift */,
 				C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */,
-				363B7B251F97C0830094B274 /* InstagramActivity.swift */,
 				C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */,
 				C8869D5C1F941F3B00C32845 /* CustomView.swift */,
 			);
@@ -547,7 +544,6 @@
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
 				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,
-				363B7B261F97C0830094B274 /* InstagramActivity.swift in Sources */,
 				C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */,
 				C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */,
 			);
