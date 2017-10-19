@@ -40,6 +40,7 @@ class PredictionViewLayout: UICollectionViewLayout {
         return CGSize(width: width, height: contentHeight)
     }
     
+
     override func prepare() {
         if cache.isEmpty {
             let columnWidth = width / CGFloat(numberOfColumns)
@@ -52,17 +53,27 @@ class PredictionViewLayout: UICollectionViewLayout {
             var yOffsets = [CGFloat](repeating: 0, count: numberOfColumns)
             
             var column = 0
+            var itemcount = 0
+            var widthCache = [Int:CGFloat]()
+            
             for item in 0..<collectionView!.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
                 let width = columnWidth - (cellPadding * 2)
                 let imageHeight = delegate.collectionView(collectionView!, heightForImageAtIndexPath: indexPath, withWidth: width)
-//                let descriptionHeight = delegate.collectionView(collectionView!, heightForDescriptionAtIndexPath: indexPath, withWidth: width)
+                //                let descriptionHeight = delegate.collectionView(collectionView!, heightForDescriptionAtIndexPath: indexPath, withWidth: width)
                 let descriptionWidth = delegate.collectionView(collectionView!, widthForDescriptionAtIndexPath: indexPath, withWidth: width)
-
+                
                 let height = cellPadding + imageHeight + 50 + cellPadding
                 let testwidth = cellPadding + imageHeight + descriptionWidth + cellPadding
-                
-                let frame = CGRect(x: xOffsets[column], y: yOffsets[column], width: testwidth, height: 50)
+                var xOffset : CGFloat = 0;
+                if (itemcount%numberOfColumns != 0) {
+                    let previousCellIndexPath = itemcount - 1
+                    let previousCellWidth = widthCache[previousCellIndexPath]
+                    xOffset = previousCellWidth!
+                } else {
+                    xOffset = xOffsets[column]
+                }
+                let frame = CGRect(x: xOffset , y: yOffsets[column], width: testwidth, height: 50)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 let attributes = PredictionLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = insetFrame
@@ -71,6 +82,9 @@ class PredictionViewLayout: UICollectionViewLayout {
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffsets[column] = yOffsets[column] + height
                 column = column >= (numberOfColumns - 1) ? 0 : column + 1
+                widthCache[itemcount] = xOffset + testwidth
+                itemcount = itemcount + 1
+                
             }
         }
     }
