@@ -36,7 +36,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     }
     
     func launchShareActivity() {
-        self.flowDelegate?.launchShareSheet(withActivities: getActivitiesToBeShared(), andSubject: "#hashMe")
+        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashMe")
     }
     
     func updatePredictionsArray(forHashTag tag: String) {
@@ -48,7 +48,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         }
     }
     
-    fileprivate func getActivitiesToBeShared() -> NSMutableArray {
+    fileprivate func getHashTagsToBeShared() -> NSMutableArray {
         let activitiesToBeShared = NSMutableArray()
         activitiesToBeShared.add(self.predictionImage ?? UIImage())
         for activity in self.updatedPredicitons ?? [] {
