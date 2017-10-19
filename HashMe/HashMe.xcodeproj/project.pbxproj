@@ -138,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		364019601F98F71E00247521 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
+				363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		C812BEC31F7726900029732B /* PredictionsResults */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,14 +332,13 @@
 		C84B2B331F76C18400F56BF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				364019601F98F71E00247521 /* Constants */,
 				C83AF3CA1F86EA7500D4A4BC /* Utilities */,
 				C8F54A1D1F79C53700E94DF4 /* Storyboards */,
 				C8F54A1C1F79C51900E94DF4 /* Presentables */,
 				C8F54A181F79BD6F00E94DF4 /* ViewControllers */,
 				C867A09D1F76E17C00B8B0E7 /* UI */,
 				C867A09C1F76E16500B8B0E7 /* Protocols */,
-				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
-				363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
