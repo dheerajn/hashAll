@@ -23,7 +23,6 @@
 		C817F73A1F75DCBF00B8C0FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C817F7381F75DCBF00B8C0FD /* LaunchScreen.storyboard */; };
 		C817F7451F75DCBF00B8C0FD /* HashMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */; };
 		C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A381F82FE78006DA3F3 /* RootViewController.swift */; };
-		C8255A3B1F830CB3006DA3F3 /* PredictionsViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A3A1F830CB3006DA3F3 /* PredictionsViewPresentable.swift */; };
 		C8255A3D1F831300006DA3F3 /* OnboardingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A3C1F831300006DA3F3 /* OnboardingPresentable.swift */; };
 		C83AF3C21F86E07100D4A4BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C83AF3C41F86E07100D4A4BC /* Localizable.strings */; };
 		C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83AF3CC1F86EA8200D4A4BC /* CustomUserDefaults.swift */; };
@@ -48,6 +47,7 @@
 		C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */; };
 		C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */; };
 		C8869D5D1F941F3C00C32845 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D5C1F941F3B00C32845 /* CustomView.swift */; };
+		C89F5C991F9989B200CB33CE /* PredictionsViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F5C981F9989B200CB33CE /* PredictionsViewPresentable.swift */; };
 		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
 		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
 		C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */; };
@@ -85,7 +85,6 @@
 		C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMeTests.swift; sourceTree = "<group>"; };
 		C817F7461F75DCBF00B8C0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8255A381F82FE78006DA3F3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = HashMe/Common/ViewControllers/RootViewController.swift; sourceTree = SOURCE_ROOT; };
-		C8255A3A1F830CB3006DA3F3 /* PredictionsViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PredictionsViewPresentable.swift; path = Presentables/PredictionsViewPresentable.swift; sourceTree = "<group>"; };
 		C8255A3C1F831300006DA3F3 /* OnboardingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingPresentable.swift; path = HashMe/Common/Presentables/OnboardingPresentable.swift; sourceTree = SOURCE_ROOT; };
 		C83AF3BF1F86DF8D00D4A4BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C83AF3C31F86E07100D4A4BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetPresentable.swift; sourceTree = "<group>"; };
 		C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C8869D5C1F941F3B00C32845 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		C89F5C981F9989B200CB33CE /* PredictionsViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PredictionsViewPresentable.swift; path = ../../../../../PredictionsViewPresentable.swift; sourceTree = "<group>"; };
 		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 		C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -262,10 +262,10 @@
 		C84B2B1B1F76ABF500F56BF5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C89F5C971F99896B00CB33CE /* Presentables */,
 				C84B2B1F1F76AD3500F56BF5 /* Models */,
 				C84B2B1E1F76AD2D00F56BF5 /* ViewModels */,
 				C84B2B1D1F76AD1E00F56BF5 /* ViewControllers */,
-				C8255A3A1F830CB3006DA3F3 /* PredictionsViewPresentable.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -377,6 +377,15 @@
 				C8869D4E1F92753300C32845 /* ShareSheetPresentable.swift */,
 			);
 			path = Presentables;
+			sourceTree = "<group>";
+		};
+		C89F5C971F99896B00CB33CE /* Presentables */ = {
+			isa = PBXGroup;
+			children = (
+				C89F5C981F9989B200CB33CE /* PredictionsViewPresentable.swift */,
+			);
+			name = Presentables;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		C8F54A181F79BD6F00E94DF4 /* ViewControllers */ = {
@@ -517,7 +526,6 @@
 			files = (
 				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
 				C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */,
-				C8255A3B1F830CB3006DA3F3 /* PredictionsViewPresentable.swift in Sources */,
 				C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */,
 				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
@@ -542,6 +550,7 @@
 				C84B2B2E1F76BD2C00F56BF5 /* PredictionsViewModel.swift in Sources */,
 				C8869D351F8C2ACB00C32845 /* PredictionsLayout.swift in Sources */,
 				C817F7301F75DCBF00B8C0FD /* AppDelegate.swift in Sources */,
+				C89F5C991F9989B200CB33CE /* PredictionsViewPresentable.swift in Sources */,
 				C8255A3D1F831300006DA3F3 /* OnboardingPresentable.swift in Sources */,
 				C83AF3CE1F86EACB00D4A4BC /* LocalizedString.swift in Sources */,
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,

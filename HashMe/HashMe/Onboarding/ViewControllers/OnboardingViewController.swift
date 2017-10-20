@@ -9,6 +9,7 @@
 import UIKit
 
 class OnboardingViewController: UIPageViewController {
+    
     var flowDelegate: HashTagFlowDelegate?
     
     var getstartedButton: UIButton!
@@ -31,19 +32,8 @@ class OnboardingViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
         
-        //following will help setting up the first view controller to show
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
+        
         configureUI()
-    }
-    
-    
-    func newVc(viewController: String) -> UIViewController {
-        return UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil).instantiateViewController(withIdentifier: viewController)
     }
     
     @IBAction func getStartedButtonTapped(_ sender: Any) {
@@ -57,6 +47,7 @@ class OnboardingViewController: UIPageViewController {
 //MARK: UI
 extension OnboardingViewController {
     fileprivate func configureUI() {
+        showTheFirstViewController()
         self.title = viewModel?.screeTitle ?? "HASH ME ONBOARDING"
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
         self.viewModel = OnboardingViewModel()
@@ -65,6 +56,15 @@ extension OnboardingViewController {
         configurePageControl()
     }
     
+    fileprivate func showTheFirstViewController() {
+        //following will help setting up the first view controller to show
+        if let firstViewController = orderedViewControllers.first {
+            setViewControllers([firstViewController],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
+        }
+    }
     fileprivate func updateNavControllerProperties() {
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -97,7 +97,10 @@ extension OnboardingViewController {
         self.getstartedButton.isHidden = true
         self.getstartedButton.setTitle(viewModel?.getStartedButtonTitle ?? LocalizedString.getStartedButtonTitle, for: UIControlState.normal)
         self.view.addSubview(getstartedButton)
-        
+    }
+    
+    fileprivate func newVc(viewController: String) -> UIViewController {
+        return UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil).instantiateViewController(withIdentifier: viewController)
     }
 }
 
