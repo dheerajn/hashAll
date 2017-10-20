@@ -74,7 +74,6 @@ extension PredictionResultsViewController {
     
     func handleShareSheetActions() {
         self.socialMediaView.instagramButtonCustomHander = {
-            //TODO: Work on Instagram Action
             let url = URL(string: "instagram://camera")
             UIApplication.shared.open(url!, options: [:], completionHandler: nil)
         }
@@ -85,6 +84,7 @@ extension PredictionResultsViewController {
         
         self.socialMediaView.moreButtonCustomHandler = {
             self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
+            //The following codes helps in dismissing the custom share sheet and then presenting UIActivityVc
             DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(self.hidingAnimationDuration), execute: {
                 self.viewModel?.launchShareActivity()
             })
