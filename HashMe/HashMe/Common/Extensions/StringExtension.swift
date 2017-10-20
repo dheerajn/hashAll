@@ -15,12 +15,13 @@ public extension String {
     var camelCaseStringLowerCase: String {
         let source = self
         if source.characters.contains(" ") {
-            let first = String(source[..<source.index(startIndex, offsetBy: 1)]) //or let first = source.substring(to: source.index(startIndex, offsetBy: 1))
+            // let first = source.substring(to: source.index(startIndex, offsetBy: 1)). This is deprecated so following works fine
+            let first = String(source[..<source.index(startIndex, offsetBy: 1)])
             let cammel = source.capitalized.replacingOccurrences(of: " ", with: "")
             let rest = String(cammel.characters.dropFirst())
             return "\(first)\(rest)"
         } else {
-            let first = String(source.lowercased()[..<source.index(startIndex, offsetBy: 1)]) //or let first = source.lowercased().substring(to: source.index(startIndex, offsetBy: 1))
+            let first = String(source.lowercased()[..<source.index(startIndex, offsetBy: 1)])
             let rest = String(source.characters.dropFirst())
             return "\(first)\(rest)"
         }
