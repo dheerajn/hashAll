@@ -201,8 +201,8 @@ extension PredictionResultsViewController: PredictionLayoutDelegate {
         
         let character = validPrediction[indexPath.row]
         let descriptionHeight = widthForText(character.description, width: (width - 24))
-        let height = 4 + 17 + 4 + descriptionHeight + 12
-        return height
+        let width = 4 + 17 + 4 + descriptionHeight + 12
+        return width
     }
     
     func widthForText(_ text: String, width: CGFloat) -> CGFloat {
