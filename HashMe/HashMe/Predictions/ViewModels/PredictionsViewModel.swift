@@ -58,7 +58,8 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             for i in 0...maxNumOfKeys {
                 formatPredictions(tobeFormattedString: sorted[i].key)
             }
-            let formattedPredictionsArray = self.predictedResults.map({"#" + $0}) //append #
+            var formattedPredictionsArray = self.predictedResults.map({"#" + $0}) //append #
+            formattedPredictionsArray = formattedPredictionsArray.map({$0.camelCaseStringLowerCase})
             let updatedFormattedPredictionsArray = formattedPredictionsArray.map({$0.filter { !" \n\t\r".characters.contains($0) }}) //remove white spaces
             self.flowDelegate?.showPredictionResultsView(predictions: updatedFormattedPredictionsArray, withPredictionImage: predictionImage)
         } catch {

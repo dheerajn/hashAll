@@ -48,6 +48,7 @@
 		C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */; };
 		C8869D5D1F941F3C00C32845 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D5C1F941F3B00C32845 /* CustomView.swift */; };
 		C89F5C9F1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F5C9E1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift */; };
+		C89F5CA11F99969400CB33CE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F5CA01F99969400CB33CE /* StringExtension.swift */; };
 		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
 		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
 		C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */; };
@@ -114,6 +115,7 @@
 		C8869D5A1F93DDDB00C32845 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C8869D5C1F941F3B00C32845 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		C89F5C9E1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsInitialViewPresentable.swift; sourceTree = "<group>"; };
+		C89F5CA01F99969400CB33CE /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = HashMe/Common/Extensions/StringExtension.swift; sourceTree = SOURCE_ROOT; };
 		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 		C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				C8869D321F8C29CF00C32845 /* UIColorExtension.swift */,
 				C8869D2E1F8C291900C32845 /* UIViewExtension.swift */,
 				C83AF3CB1F86EA8200D4A4BC /* LocalizedString.swift */,
+				C89F5CA01F99969400CB33CE /* StringExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
 				C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */,
 				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
+				C89F5CA11F99969400CB33CE /* StringExtension.swift in Sources */,
 				C8869D331F8C29CF00C32845 /* UIColorExtension.swift in Sources */,
 				C812BED71F773F8E0029732B /* CustomAlertController.swift in Sources */,
 				C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */,

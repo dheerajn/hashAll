@@ -65,6 +65,7 @@ extension OnboardingViewController {
                                completion: nil)
         }
     }
+    
     fileprivate func updateNavControllerProperties() {
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
