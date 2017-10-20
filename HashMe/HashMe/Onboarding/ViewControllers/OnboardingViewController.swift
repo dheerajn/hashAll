@@ -28,18 +28,6 @@ class OnboardingViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: true)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)]
-
-        self.view.setupMediumBluredViewOnImage(UIImage.BatmanJokerImage)
-        
-        self.viewModel = OnboardingViewModel()
-        self.title = viewModel?.screeTitle ?? "HASH ME ONBOARDING"
-        
         self.dataSource = self
         self.delegate = self
         
@@ -69,11 +57,24 @@ class OnboardingViewController: UIPageViewController {
 //MARK: UI
 extension OnboardingViewController {
     fileprivate func configureUI() {
+        self.title = viewModel?.screeTitle ?? "HASH ME ONBOARDING"
+        self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
+        self.viewModel = OnboardingViewModel()
+        updateNavControllerProperties()
         configureGetStartedButton()
         configurePageControl()
     }
     
-    func configurePageControl() {
+    fileprivate func updateNavControllerProperties() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)]
+    }
+    
+    fileprivate func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
         pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
@@ -84,10 +85,10 @@ extension OnboardingViewController {
         self.view.addSubview(pageControl)
     }
     
-    func configureGetStartedButton() {
+    fileprivate func configureGetStartedButton() {
         getstartedButton = UIButton(frame:  CGRect(x: 0, y: UIScreen.main.bounds.maxY - 100,width: 150, height: 50))
         getstartedButton.center.x = self.view.center.x
-        getstartedButton.center.y = self.view.frame.size.height/1.2
+        getstartedButton.center.y = self.view.frame.size.height/1.15
         getstartedButton.layer.cornerRadius = 14.0
         getstartedButton.layer.borderWidth = 2
         getstartedButton.layer.borderColor = UIColor.white.cgColor
