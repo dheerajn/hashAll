@@ -75,7 +75,7 @@ extension PredictionResultsViewController {
     func handleShareSheetActions() {
         self.socialMediaView.instagramButtonCustomHander = {
             //TODO: Work on Instagram Action
-            let url = URL(string: "instagram://")
+            let url = URL(string: "instagram://camera")
             UIApplication.shared.open(url!, options: [:], completionHandler: nil)
         }
         
