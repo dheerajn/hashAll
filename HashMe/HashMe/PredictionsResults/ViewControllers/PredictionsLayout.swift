@@ -13,7 +13,7 @@ protocol PredictionLayoutDelegate {
     
     func collectionView(_ collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
     
-//    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
+    //    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
     func collectionView(_ collectionView: UICollectionView, widthForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
 }
 
@@ -40,7 +40,7 @@ class PredictionViewLayout: UICollectionViewLayout {
         return CGSize(width: width, height: contentHeight)
     }
     
-
+    
     override func prepare() {
         if cache.isEmpty {
             let columnWidth = width / CGFloat(numberOfColumns)
@@ -55,9 +55,13 @@ class PredictionViewLayout: UICollectionViewLayout {
             var column = 0
             var itemcount = 0
             var widthCache = [Int:CGFloat]()
-            
+            var xodffsetCache = [Int:CGFloat]()
+
+            var heightCache = CGFloat()
+            var widthAligning : CGFloat = 0.0;
             for item in 0..<collectionView!.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
+                
                 let width = columnWidth - (cellPadding * 2)
                 let imageHeight = delegate.collectionView(collectionView!, heightForImageAtIndexPath: indexPath, withWidth: width)
                 //                let descriptionHeight = delegate.collectionView(collectionView!, heightForDescriptionAtIndexPath: indexPath, withWidth: width)
@@ -66,14 +70,23 @@ class PredictionViewLayout: UICollectionViewLayout {
                 let height = cellPadding + imageHeight + 50 + cellPadding
                 let testwidth = cellPadding + imageHeight + descriptionWidth + cellPadding
                 var xOffset : CGFloat = 0;
-                if (itemcount%numberOfColumns != 0) {
-                    let previousCellIndexPath = itemcount - 1
-                    let previousCellWidth = widthCache[previousCellIndexPath]
-                    xOffset = previousCellWidth!
-                } else {
-                    xOffset = xOffsets[column]
+                var ittr = itemcount - 1
+                while ((widthCache[ittr]) != nil) {
+                    if let offS =  widthCache[ittr] {
+                        xOffset = offS + testwidth
+                    }
+                    ittr = ittr - 1
                 }
-                let frame = CGRect(x: xOffset , y: yOffsets[column], width: testwidth, height: 50)
+                widthAligning = widthAligning + xOffset + testwidth
+                if (widthAligning > collectionView!.bounds.width - (collectionView!.contentInset.left + collectionView!.contentInset.right)) {
+                    widthAligning = 0.0
+                    xOffset = 0.0
+                    heightCache = heightCache + height
+                    xOffset = xOffsets[0]
+                }
+
+                xodffsetCache[itemcount] = xOffset
+                let frame = CGRect(x: xOffset , y: heightCache, width: testwidth, height: 50)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 let attributes = PredictionLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = insetFrame
@@ -82,7 +95,7 @@ class PredictionViewLayout: UICollectionViewLayout {
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffsets[column] = yOffsets[column] + height
                 column = column >= (numberOfColumns - 1) ? 0 : column + 1
-                widthCache[itemcount] = xOffset + testwidth
+                widthCache[itemcount] = testwidth
                 itemcount = itemcount + 1
                 
             }
