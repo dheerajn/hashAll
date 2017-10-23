@@ -13,14 +13,14 @@ public extension String {
     
     //Ex: "this is string".camelcaseStringLowerCase = "thisIsString"
     var camelCaseStringLowerCase: String {
-        let source = self
+        var source = self
         if source.characters.contains(" ") {
-            // let first = source.substring(to: source.index(startIndex, offsetBy: 1)). This is deprecated so following works fine
-            let first = String(source[..<source.index(startIndex, offsetBy: 1)])
-            let cammel = source.capitalized.replacingOccurrences(of: " ", with: "")
-            let rest = String(cammel.characters.dropFirst())
-            return "\(first)\(rest)"
+            source = source.lowercased()
+            var cammel = source.capitalized.replacingOccurrences(of: " ", with: "")
+            let firstCharacter = cammel.remove(at: cammel.startIndex).description.lowercased()
+            return "\(firstCharacter)\(cammel)"
         } else {
+            // let first = source.substring(to: source.index(startIndex, offsetBy: 1)). This is deprecated so following works fine
             let first = String(source.lowercased()[..<source.index(startIndex, offsetBy: 1)])
             let rest = String(source.characters.dropFirst())
             return "\(first)\(rest)"

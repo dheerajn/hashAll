@@ -59,10 +59,11 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             
             for i in 0...maxNumOfKeys {
                 //take out "," and append the element to the array by adding the "#"
-                let _ = sorted[i].key.characters.split{$0 == ","}.map(String.init).map{self.predictedResults.append("#\($0)")}
+                let _ = sorted[i].key.characters.split{$0 == ","}.map(String.init).map{self.predictedResults.append("\($0)")}
             }
             self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase} // camelCasing
-            self.predictedResults = self.predictedResults.map{$0.filter { !" \n\t\r".characters.contains($0) }} //remove white spaces
+            self.predictedResults = self.predictedResults.map{"#\($0)"} //append #
+//            self.predictedResults = self.predictedResults.map{$0.filter { !" \n\t\r".characters.contains($0) }} //remove white spaces
             
             self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults, withPredictionImage: predictionImage)
         } catch {
