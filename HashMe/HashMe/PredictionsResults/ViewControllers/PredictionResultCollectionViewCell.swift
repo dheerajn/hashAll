@@ -34,7 +34,7 @@ class PredictionResultCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func resetColors() {
-        self.backgroundColor = UIColor.CellDeselectedColor()
+        self.backgroundColor = UIColor.PredictionsCellDeselectedColor()
         predictionDisplayLabel.textColor = UIColor.white
     }
     
