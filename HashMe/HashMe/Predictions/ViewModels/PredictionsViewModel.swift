@@ -58,13 +58,13 @@ class PredictionsViewModel: PredictionsViewConfigurable {
 //            [0 ... maxNumOfKeys].map{sorted[$0]}
             
             for i in 0...maxNumOfKeys {
-               let _ = sorted[i].key.characters.split{$0 == ","}.map(String.init).map{ self.predictedResults.append("\($0)")}
+                //take out "," and append the element to the array by adding the "#"
+                let _ = sorted[i].key.characters.split{$0 == ","}.map(String.init).map{self.predictedResults.append("#\($0)")}
             }
-
-            var formattedPredictionsArray = self.predictedResults.map({"#" + $0}) //append #
-            formattedPredictionsArray = formattedPredictionsArray.map({$0.camelCaseStringLowerCase})
-            let updatedFormattedPredictionsArray = formattedPredictionsArray.map({$0.filter { !" \n\t\r".characters.contains($0) }}) //remove white spaces
-            self.flowDelegate?.showPredictionResultsView(predictions: updatedFormattedPredictionsArray, withPredictionImage: predictionImage)
+            self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase} // camelCasing
+            self.predictedResults = self.predictedResults.map{$0.filter { !" \n\t\r".characters.contains($0) }} //remove white spaces
+            
+            self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults, withPredictionImage: predictionImage)
         } catch {
             print(error)
         }
