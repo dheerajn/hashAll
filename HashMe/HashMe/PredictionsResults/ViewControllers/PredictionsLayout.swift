@@ -40,7 +40,6 @@ class PredictionViewLayout: UICollectionViewLayout {
         return CGSize(width: width, height: contentHeight)
     }
     
-
     override func prepare() {
         if cache.isEmpty {
             let columnWidth = width / CGFloat(numberOfColumns)
