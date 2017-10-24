@@ -20,11 +20,18 @@ public func print(_ items: Any..., separator: String = " ", terminator: String =
     #endif
 }
 
-/// Executes the closure on the main queue after the given delay
+/// Executes the closure on the main queue after the given delay.
 ///
 /// - Parameters:
 ///   - delay: Delay in seconds
-///   - closure: Code to be executed after the delay
+///   - closure: Code to be executed after the delay.
 public func dispatchOnMainQueueWith(delay: Double, closure: @escaping ()->()) {
     DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(delay), execute: closure)
+}
+
+/// Executes the closure on the main queue.
+///
+/// - Parameter closure: Code to be executed.
+public func dispatchOnMainQueue(closure: @escaping ()->()) {
+    DispatchQueue.main.async(execute: closure)
 }

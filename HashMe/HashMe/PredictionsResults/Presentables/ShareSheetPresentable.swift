@@ -27,7 +27,7 @@ public extension ShareSheetPresentable {
                                                    .print,
                                                    .saveToCameraRoll]
         activityVC.excludedActivityTypes = excludeActivities
-        DispatchQueue.main.async {
+        dispatchOnMainQueue {
             self.navigationController?.present(activityVC, animated: true, completion: nil)
         }
     }

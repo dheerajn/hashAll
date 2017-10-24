@@ -81,7 +81,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         }
         imagePicker.sourceType = sourceType
         imagePicker.delegate = self
-        DispatchQueue.main.async {
+        dispatchOnMainQueue {
             self.present(self.imagePicker, animated: true, completion: nil)
         }
     }
