@@ -55,13 +55,10 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             
             self.emptyPredictionResultsArray()
             
-//            [0 ... maxNumOfKeys].map{sorted[$0]}
+            //The following code first does take the array from 0 to 7 (inclusive) and then removes all the "," from the element and then appends it to the array
+            let _ = Array(0...maxNumOfKeys).map{ sorted[$0].key.characters.split{$0 == ","}.map(String.init).map{self.predictedResults.append("\($0)")}}
             
-            for i in 0...maxNumOfKeys {
-                //take out "," and append the element to the array by adding the "#"
-                let _ = sorted[i].key.characters.split{$0 == ","}.map(String.init).map{self.predictedResults.append("\($0)")}
-            }
-            self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase}.map({"#\($0)"}) // camelCasing and append #            
+            self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase}.map({"#\($0)"}) // camelCasing and append #
             self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults, withPredictionImage: predictionImage)
         } catch {
             print(error)
