@@ -87,7 +87,7 @@ extension PredictionResultsViewController {
         self.socialMediaView.moreButtonCustomHandler = {
             self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
             //The following codes helps in dismissing the custom share sheet and then presenting UIActivityVc
-            DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(self.hidingAnimationDuration), execute: {
+            dispatchOnMainQueueWith(delay: self.hidingAnimationDuration, closure: {
                 self.viewModel?.launchShareActivity()
             })
         }

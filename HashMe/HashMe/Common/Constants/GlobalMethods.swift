@@ -19,3 +19,12 @@ public func print(_ items: Any..., separator: String = " ", terminator: String =
         Swift.print(items[0], separator:separator, terminator: terminator)
     #endif
 }
+
+/// Executes the closure on the main queue after the given delay
+///
+/// - Parameters:
+///   - delay: Delay in seconds
+///   - closure: Code to be executed after the delay
+public func dispatchOnMainQueueWith(delay: Double, closure: @escaping ()->()) {
+    DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(delay), execute: closure)
+}

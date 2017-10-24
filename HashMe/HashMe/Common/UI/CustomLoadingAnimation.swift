@@ -38,19 +38,16 @@ open class CustomLoadingAnimation: UIView {
         self.startLoadingAnimation(fromX: self.center.x - 25, fromY: self.center.y - 50, toX: self.center.x - 25, toY: self.center.y + 50)
         
         let pause = animationDuration
-        DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(pause), execute: {
+        dispatchOnMainQueueWith(delay: pause) {
             self.startLoadingAnimation(fromX: self.center.x + 25, fromY: self.center.y - 50, toX: self.center.x + 25, toY: self.center.y + 50)
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(pause * 2), execute: {
+        }
+        dispatchOnMainQueueWith(delay: pause * 2) {
             self.startLoadingAnimation(fromX: self.center.x + 55, fromY: self.center.y - 20, toX: self.center.x - 55, toY: self.center.y - 20)
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(pause * 3), execute: {
+        }
+        dispatchOnMainQueueWith(delay: pause * 3) {
             self.startLoadingAnimation(fromX: self.center.x + 55, fromY: self.center.y + 20, toX: self.center.x - 55, toY: self.center.y + 20)
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(pause * 4), execute: {
+        }
+        dispatchOnMainQueueWith(delay: pause * 4) {
             UIView.animate(withDuration: 0.5, animations: {
                 self.shapeLayer1?.removeFromSuperlayer()
                 self.shapeLayer2?.removeFromSuperlayer()
@@ -59,7 +56,7 @@ open class CustomLoadingAnimation: UIView {
             }, completion: { (success) in
                 self.startLoadingAnimation()
             })
-        })
+        }
     }
     
     fileprivate func startLoadingAnimation(fromX: CGFloat, fromY: CGFloat, toX: CGFloat, toY: CGFloat, animation: Bool = true, strokeColor: UIColor = UIColor.white) {
