@@ -24,6 +24,7 @@
 		C817F7451F75DCBF00B8C0FD /* HashMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */; };
 		C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A381F82FE78006DA3F3 /* RootViewController.swift */; };
 		C8255A3D1F831300006DA3F3 /* OnboardingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8255A3C1F831300006DA3F3 /* OnboardingPresentable.swift */; };
+		C82D6E6C1F9EBD7800BDC0FF /* GlobalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82D6E6B1F9EBD7800BDC0FF /* GlobalMethods.swift */; };
 		C83AF3C21F86E07100D4A4BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C83AF3C41F86E07100D4A4BC /* Localizable.strings */; };
 		C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83AF3CC1F86EA8200D4A4BC /* CustomUserDefaults.swift */; };
 		C83AF3CE1F86EACB00D4A4BC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83AF3CB1F86EA8200D4A4BC /* LocalizedString.swift */; };
@@ -87,6 +88,7 @@
 		C817F7461F75DCBF00B8C0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8255A381F82FE78006DA3F3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = HashMe/Common/ViewControllers/RootViewController.swift; sourceTree = SOURCE_ROOT; };
 		C8255A3C1F831300006DA3F3 /* OnboardingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingPresentable.swift; path = HashMe/Common/Presentables/OnboardingPresentable.swift; sourceTree = SOURCE_ROOT; };
+		C82D6E6B1F9EBD7800BDC0FF /* GlobalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethods.swift; sourceTree = "<group>"; };
 		C83AF3BF1F86DF8D00D4A4BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C83AF3C31F86E07100D4A4BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C83AF3C51F86E10100D4A4BC /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				C867A0981F76CB5200B8B0E7 /* Constants.swift */,
 				363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */,
+				C82D6E6B1F9EBD7800BDC0FF /* GlobalMethods.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */,
 				C812BED11F77290D0029732B /* PredictionResultsPresentable.swift in Sources */,
 				C89F5CA11F99969400CB33CE /* StringExtension.swift in Sources */,
+				C82D6E6C1F9EBD7800BDC0FF /* GlobalMethods.swift in Sources */,
 				C8869D331F8C29CF00C32845 /* UIColorExtension.swift in Sources */,
 				C812BED71F773F8E0029732B /* CustomAlertController.swift in Sources */,
 				C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */,
