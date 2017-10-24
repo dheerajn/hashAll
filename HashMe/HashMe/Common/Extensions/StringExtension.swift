@@ -13,6 +13,7 @@ public extension String {
     
     //Ex: "this is string".camelcaseStringLowerCase = "thisIsString"
     var camelCaseStringLowerCase: String {
+        if self.isEmpty || self == " " { return "" }
         var source = self
         if source.characters.contains(" ") {
             source = source.lowercased()
