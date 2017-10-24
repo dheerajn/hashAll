@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Batman-and-the-Joker-Shows-Their-Cards" translatesAutoresizingMaskIntoConstraints="NO" id="egd-Hf-Noy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot2" translatesAutoresizingMaskIntoConstraints="NO" id="egd-Hf-Noy">
                                 <rect key="frame" x="16" y="66" width="343" height="444"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -56,7 +56,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eagle" translatesAutoresizingMaskIntoConstraints="NO" id="fKO-wP-5tJ" customClass="CustomImageView" customModule="HashMe" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot1" translatesAutoresizingMaskIntoConstraints="NO" id="fKO-wP-5tJ" customClass="CustomImageView" customModule="HashMe" customModuleProvider="target">
                                 <rect key="frame" x="16" y="66" width="343" height="444"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -364,8 +364,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Batman-and-the-Joker-Shows-Their-Cards" width="1400" height="700"/>
         <image name="checkmark" width="32" height="32"/>
-        <image name="eagle" width="3153" height="4035"/>
+        <image name="screenshot1" width="750" height="1334"/>
+        <image name="screenshot2" width="750" height="1334"/>
     </resources>
 </document>
