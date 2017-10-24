@@ -61,10 +61,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
                 //take out "," and append the element to the array by adding the "#"
                 let _ = sorted[i].key.characters.split{$0 == ","}.map(String.init).map{self.predictedResults.append("\($0)")}
             }
-            self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase} // camelCasing
-            self.predictedResults = self.predictedResults.map{"#\($0)"} //append #
-//            self.predictedResults = self.predictedResults.map{$0.filter { !" \n\t\r".characters.contains($0) }} //remove white spaces
-            
+            self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase}.map({"#\($0)"}) // camelCasing and append #            
             self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults, withPredictionImage: predictionImage)
         } catch {
             print(error)
