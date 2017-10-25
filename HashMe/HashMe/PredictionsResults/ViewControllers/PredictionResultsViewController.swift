@@ -149,8 +149,20 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
         guard let validPredictions = viewModel?.originalPredictions else { return UICollectionViewCell() }
         predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
         predictionCell.isPredictionSelected = true
-        
+        animateCell(predictionCell)
         return predictionCell
+    }
+    
+    fileprivate func animateCell(_ predictionCell: PredictionResultCollectionViewCell) {
+        predictionCell.alpha = 0
+        predictionCell.layer.transform = CATransform3DMakeScale(0.8, 0.8, 0.8)
+        
+        dispatchOnMainQueueWith(delay: 0.5) {
+            UIView.animate(withDuration: 0.4, animations: {
+                predictionCell.alpha = 1
+                predictionCell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
+            })
+        }
     }
 }
 
@@ -161,8 +173,10 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         guard let selectedPredictionCell = predictionResultsCollectionView.cellForItem(at: indexPath) as? PredictionResultCollectionViewCell else { return }
         if selectedPredictionCell.isPredictionSelected == true {
             selectedPredictionCell.isPredictionSelected = false
+            selectedPredictionCell.scaleDownWithAnimation()
         } else {
             selectedPredictionCell.isPredictionSelected = true
+            selectedPredictionCell.scaleToIdentityWithAnimation()
         }
         self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
     }
