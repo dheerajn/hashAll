@@ -99,17 +99,6 @@ extension OnboardingViewController {
         self.view.addSubview(getstartedButton)
     }
     
-    fileprivate func animateGetStartedButton() {
-            UIView.animate(withDuration: 1.0,
-                           delay: 0,
-                           usingSpringWithDamping: 0.8,
-                           initialSpringVelocity: 1,
-                           options: UIViewAnimationOptions.allowUserInteraction,
-                           animations: {
-                            self.getstartedButton.transform = .identity
-            }, completion: nil)
-    }
-    
     fileprivate func scaleButtonToZero() {
         getstartedButton.transform = CGAffineTransform(scaleX: 0, y: 0)
     }
@@ -119,7 +108,27 @@ extension OnboardingViewController {
     }
     
     fileprivate func hideGetStartedButton() {
-        self.scaleButtonToZero()
+        UIView.animate(withDuration: 1.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 1,
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        self.getstartedButton.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        }, completion: { (success) in
+            self.scaleButtonToZero()
+        })
+    }
+    
+    fileprivate func animateGetStartedButton() {
+        UIView.animate(withDuration: 1.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 1,
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        self.getstartedButton.transform = .identity
+        }, completion: nil)
     }
     
     fileprivate func newVc(viewController: String) -> UIViewController {
