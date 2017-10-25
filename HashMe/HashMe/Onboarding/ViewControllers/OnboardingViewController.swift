@@ -49,7 +49,7 @@ extension OnboardingViewController {
     fileprivate func configureUI() {
         showTheFirstViewController()
         self.title = viewModel?.screeTitle ?? "HASH ME ONBOARDING"
-        self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
+        self.view.setupMediumBluredViewOnImage(UIImage.EagleImage)
         self.viewModel = OnboardingViewModel()
         updateNavControllerProperties()
         configureGetStartedButton()
@@ -95,9 +95,32 @@ extension OnboardingViewController {
         getstartedButton.layer.borderColor = UIColor.white.cgColor
         getstartedButton.titleLabel?.textColor = UIColor.white
         getstartedButton.addTarget(self, action: #selector(OnboardingViewController.getStartedButtonTapped(_:)), for: UIControlEvents.touchUpInside)
-        self.getstartedButton.isHidden = true
         self.getstartedButton.setTitle(viewModel?.getStartedButtonTitle ?? LocalizedString.getStartedButtonTitle, for: UIControlState.normal)
+        self.scaleButtonToZero()
         self.view.addSubview(getstartedButton)
+    }
+    
+    fileprivate func animateGetStartedButton() {
+            UIView.animate(withDuration: 1.0,
+                           delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 1,
+                           options: UIViewAnimationOptions.allowUserInteraction,
+                           animations: {
+                            self.getstartedButton.transform = .identity
+            }, completion: nil)
+    }
+    
+    fileprivate func scaleButtonToZero() {
+        getstartedButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+    }
+    
+    fileprivate func showGetStartedButton() {
+        self.animateGetStartedButton()
+    }
+    
+    fileprivate func hideGetStartedButton() {
+        self.scaleButtonToZero()
     }
     
     fileprivate func newVc(viewController: String) -> UIViewController {
@@ -117,7 +140,7 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
     
     fileprivate func shouldShowGetStartedButton() {
         let lastPage = self.pageControl.numberOfPages - 1
-        pageControl.currentPage == lastPage ? (self.getstartedButton.isHidden = false) : (self.getstartedButton.isHidden = true)
+        pageControl.currentPage == lastPage ? showGetStartedButton() : hideGetStartedButton()
     }
 }
 
