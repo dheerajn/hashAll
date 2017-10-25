@@ -121,7 +121,6 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
         }
         self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {
-            self.descriptionLabel.text = ""
             //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
             dispatchOnMainQueueWith(delay: 1, closure: {
                 self.predictButtonTapped()
@@ -140,6 +139,5 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
 extension PredictionsViewController: PredictionsViewDelegate {
     func removePredictionImage() {
         self.imageToPredict.image = nil
-        self.descriptionLabel.text = viewModel?.descriptionLabelText ?? LocalizedString.hashTagDescription
     }
 }

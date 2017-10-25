@@ -40,6 +40,6 @@ public protocol PredictionsViewConfigurable: class {
 
 public protocol PredictionsViewDelegate: class {
     
-    /// This method will help the view controller to remove the image and show the label.
+    /// This method will help the view controller to remove the image.
     func removePredictionImage()
 }
