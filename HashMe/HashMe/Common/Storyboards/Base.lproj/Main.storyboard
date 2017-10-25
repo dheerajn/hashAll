@@ -20,7 +20,7 @@
         <!--View Controller-->
         <scene sceneID="6kM-iZ-Fzl">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController2" id="elY-R3-QAj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController3" id="elY-R3-QAj" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgf-5z-pHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,9 +49,41 @@
             <point key="canvasLocation" x="-338.39999999999998" y="856.82158920539734"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="JaK-rh-eFi">
+            <objects>
+                <viewController storyboardIdentifier="onboardingViewController1" id="eIT-GF-nZr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nab-h5-1Na">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot2" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-mc-oli" customClass="CustomImageView" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="65" y="35" width="245" height="438"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="yiY-TJ-tM2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62z-SC-Nz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1686" y="857"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="T0Q-uc-Efo">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController1" id="KGA-qy-AsI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController2" id="KGA-qy-AsI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2q7-dw-nSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

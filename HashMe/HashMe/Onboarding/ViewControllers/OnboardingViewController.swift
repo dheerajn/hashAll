@@ -18,7 +18,8 @@ class OnboardingViewController: UIPageViewController {
     
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: Constants.onboardingViewController1),
-                self.newVc(viewController: Constants.onboardingViewController2)]
+                self.newVc(viewController: Constants.onboardingViewController2),
+                self.newVc(viewController: Constants.onboardingViewController3)]
     }()
     
     var viewModel: OnboardingViewConfigurable? {

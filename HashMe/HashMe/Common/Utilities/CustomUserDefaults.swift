@@ -11,10 +11,10 @@ import UIKit
 
 class CustomUserDefault {
     func setOnboardingWithValue() {
-        UserDefaults.standard.setValue(0, forKey: Constants.onboaringIdentifier) //setting this 0 will change the logic not to show the onboarding view. 
+        UserDefaults.standard.setValue(0, forKey: Constants.onboardingIdentifier) //setting this 0 will change the logic not to show the onboarding view. 
     }
     
     func getOnboardingValue() -> Bool? {
-        return UserDefaults.standard.value(forKey: Constants.onboaringIdentifier) as? Bool
+        return UserDefaults.standard.value(forKey: Constants.onboardingIdentifier) as? Bool
     }
 }
