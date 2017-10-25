@@ -11,6 +11,8 @@ import CoreML
 
 class PredictionsViewModel: PredictionsViewConfigurable {
     
+    weak var delegate: PredictionsViewDelegate?
+
     fileprivate var flowDelegate: HashTagFlowDelegate?
     fileprivate var predictedResults = [String]()
     
@@ -60,6 +62,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             
             self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase}.map({"#\($0)"}) // camelCasing and append #
             self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults, withPredictionImage: predictionImage)
+            self.delegate?.removePredictionImage()
         } catch {
             print(error)
         }

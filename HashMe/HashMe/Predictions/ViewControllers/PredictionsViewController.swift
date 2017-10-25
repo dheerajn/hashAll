@@ -30,7 +30,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     let imagePicker = UIImagePickerController()
     var viewModel: PredictionsViewConfigurable? {
         didSet {
-            
+            viewModel?.delegate = self
         }
     }
     
@@ -134,5 +134,12 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PredictionsViewController: PredictionsViewDelegate {
+    func removePredictionImage() {
+        self.imageToPredict.image = nil
+        self.descriptionLabel.text = viewModel?.descriptionLabelText ?? LocalizedString.hashTagDescription
     }
 }
