@@ -48,7 +48,6 @@ class OnboardingViewController: UIPageViewController {
 extension OnboardingViewController {
     fileprivate func configureUI() {
         showTheFirstViewController()
-        self.title = viewModel?.screeTitle ?? "HASH ME ONBOARDING"
         self.view.setupMediumBluredViewOnImage(UIImage.EagleImage)
         self.viewModel = OnboardingViewModel()
         updateNavControllerProperties()
