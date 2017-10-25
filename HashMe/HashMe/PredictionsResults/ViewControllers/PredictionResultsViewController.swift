@@ -173,10 +173,10 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         guard let selectedPredictionCell = predictionResultsCollectionView.cellForItem(at: indexPath) as? PredictionResultCollectionViewCell else { return }
         if selectedPredictionCell.isPredictionSelected == true {
             selectedPredictionCell.isPredictionSelected = false
-            selectedPredictionCell.scaleDownWithAnimation()
+            selectedPredictionCell.scaleDownForAnimation()
         } else {
             selectedPredictionCell.isPredictionSelected = true
-            selectedPredictionCell.scaleToIdentityWithAnimation()
+            selectedPredictionCell.scaleToIdentityWith3DAnimation()
         }
         self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
     }
