@@ -328,10 +328,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="bottom" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
-                                <rect key="frame" x="102" y="318" width="315" height="80"/>
+                                <rect key="frame" x="102" y="318" width="315" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-yi-dQg" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="157.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zan-w3-64Z"/>
                                         </constraints>
@@ -354,7 +354,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cre-d3-Zps" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
-                                        <rect key="frame" x="157.5" y="50" width="157.5" height="30"/>
+                                        <rect key="frame" x="207.5" y="0.0" width="107.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Oip-Aj-Byr"/>
                                         </constraints>
