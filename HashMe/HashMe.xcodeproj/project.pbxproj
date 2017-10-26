@@ -12,6 +12,7 @@
 		363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */; };
 		3680F6BF1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */; };
 		36A01DD81FA0D26600EC5E28 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A01DD71FA0D26600EC5E28 /* UICollectionViewExtension.swift */; };
+		36A01DDA1FA2143A00EC5E28 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A01DD91FA2143A00EC5E28 /* UILabelExtension.swift */; };
 		C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */; };
 		C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */; };
 		C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */; };
@@ -73,6 +74,7 @@
 		363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
 		3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerAnimationPresentable.swift; sourceTree = "<group>"; };
 		36A01DD71FA0D26600EC5E28 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UICollectionViewExtension.swift; path = HashMe/Common/Extensions/UICollectionViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		36A01DD91FA2143A00EC5E28 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = HashMe/Common/Extensions/UILabelExtension.swift; sourceTree = SOURCE_ROOT; };
 		C812BEC71F7727D50029732B /* PredictionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewController.swift; sourceTree = "<group>"; };
 		C812BEC91F7727F90029732B /* PredictionsResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsResultsViewModel.swift; sourceTree = "<group>"; };
 		C812BECB1F7728070029732B /* PredictionResultsViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsViewConfigurable.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				C83AF3CB1F86EA8200D4A4BC /* LocalizedString.swift */,
 				C89F5CA01F99969400CB33CE /* StringExtension.swift */,
 				36A01DD71FA0D26600EC5E28 /* UICollectionViewExtension.swift */,
+				36A01DD91FA2143A00EC5E28 /* UILabelExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
+				36A01DDA1FA2143A00EC5E28 /* UILabelExtension.swift in Sources */,
 				C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */,
 				C8869D371F8C2ADE00C32845 /* PredictionLayoutAttributes.swift in Sources */,
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
