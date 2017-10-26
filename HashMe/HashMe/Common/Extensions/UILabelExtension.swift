@@ -21,25 +21,6 @@ extension UILabel {
         }
     }
     
-    /// This method helps you animating the alpha value of each character by character.
-    ///
-    /// - Parameters:
-    ///   - duration: Time to show this animation.
-    ///   - delay: This animation will start after the delay given.
-    func animateAlpha(duration: Double, delay: Double) {
-        if let text = text {
-            let time = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-            
-            let originalFontColor = self.textColor
-            
-            textColor = UIColor.clear
-            //TODO: Refactor this
-            DispatchQueue.main.asyncAfter(deadline: time) { () -> Void in
-                self.iterateAlpha(text as NSString, index: 0, delay: duration / Double(text.characters.count), font: self.font, color: originalFontColor!)
-            }
-        }
-    }
-    
     fileprivate func iterateAdding(_ text: NSString, index: Int, delay: Double) {
         let substring = text.substring(to: index)
         self.text = substring
@@ -50,6 +31,23 @@ extension UILabel {
             DispatchQueue.main.asyncAfter(deadline: time) {
                 self.iterateAdding(text, index: index + 1, delay: delay)
             }
+        }
+    }
+    
+    /// This method helps you animating the alpha value of each character by character.
+    ///
+    /// - Parameters:
+    ///   - duration: Time to show this animation.
+    ///   - delay: This animation will start after the delay given.
+    func animateAlpha(duration: Double, delay: Double) {
+        if let text = text {
+            let originalFontColor = self.textColor
+            
+            textColor = UIColor.clear
+
+            dispatchOnMainQueueWith(delay: delay, closure: {
+                self.iterateAlpha(text as NSString, index: 0, delay: duration / Double(text.characters.count), font: self.font, color: originalFontColor!)
+            })
         }
     }
     

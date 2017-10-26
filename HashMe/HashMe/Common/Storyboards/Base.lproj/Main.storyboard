@@ -17,10 +17,10 @@
             </objects>
             <point key="canvasLocation" x="-812" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding Sub View Controller Three-->
         <scene sceneID="6kM-iZ-Fzl">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController3" id="elY-R3-QAj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController3" id="elY-R3-QAj" customClass="OnboardingSubViewControllerThree" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgf-5z-pHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,18 +40,28 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-7q-ZBu" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="493" width="335" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="918-KS-s7d"/>
                     </view>
+                    <connections>
+                        <outlet property="step3Label" destination="Y1T-7q-ZBu" id="xb1-6z-j9D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yik-0r-LRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-338.39999999999998" y="856.82158920539734"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding Sub View Controller One-->
         <scene sceneID="JaK-rh-eFi">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController1" id="eIT-GF-nZr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController1" id="eIT-GF-nZr" customClass="OnboardingSubViewControllerOne" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nab-h5-1Na">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,19 +81,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUB-z2-7I5" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="493" width="335" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="yiY-TJ-tM2"/>
                     </view>
+                    <connections>
+                        <outlet property="screenShot1" destination="J6n-mc-oli" id="qGP-bN-hgU"/>
+                        <outlet property="step1Label" destination="WUB-z2-7I5" id="KL3-L0-dhO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62z-SC-Nz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1686" y="857"/>
+            <point key="canvasLocation" x="-1687.2" y="856.82158920539734"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding Sub View Controller Two-->
         <scene sceneID="T0Q-uc-Efo">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController2" id="KGA-qy-AsI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController2" id="KGA-qy-AsI" customClass="OnboardingSubViewControllerTwo" customModule="HashMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2q7-dw-nSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,9 +124,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LZ-6x-p4p" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="493" width="335" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bde-sp-sj2"/>
                     </view>
+                    <connections>
+                        <outlet property="step2Label" destination="8LZ-6x-p4p" id="jVp-HC-qh2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgW-1X-yAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

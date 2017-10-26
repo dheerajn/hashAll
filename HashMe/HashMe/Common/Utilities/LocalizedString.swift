@@ -66,4 +66,9 @@ public class LocalizedString {
     
     static var theHashTagTitle = NSLocalizedString("hashTagTitle", comment: "Title for the screen")
     static var hashTagDescription = NSLocalizedString("hashTagDescription", comment: "Description for hash tag")
+    
+    //Onboarding
+    static var onboardingStep1Text = NSLocalizedString("step1OnboardingText", comment: "Text for the tutorial step 1")
+    static var onboardingStep2Text = NSLocalizedString("step2OnboardingText", comment: "Text for the tutorial step 2")
+    static var onboardingStep3Text = NSLocalizedString("step3OnboardingText", comment: "Text for the tutorial step 3")
 }
