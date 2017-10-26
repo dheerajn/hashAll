@@ -19,6 +19,7 @@
 "GetHashTagsButtonTitle" = "GET HASHTAGS";
 "GetStartedButtonTitle" = "GET STARTED";
 "copyButtonTitle" = "COPY";
+"selectAllButtonTitle" = "SELECT ALL";
 
 "hashTagTitle" = "THE HASHTAG";
 "hashTagDescription" = "Utilize hashtags with online networking, don't be an instrument about it!";

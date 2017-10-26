@@ -16,10 +16,12 @@ public protocol PredictionResultsViewConfigurable: class {
     var predictionImage: UIImage? { get }
     var updatedPredicitons: [String]? { get set } //this will append and remove a string, so "set" is required
     var copyButtonTitle: String? { get }
+    var selectAllButtonTitle: String? { get }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     
+    func selectAllButtonTapped()
     func updatePredictionsArray(forHashTag tag: String)
-    func copyImagesToPasteboard()
+    func copyHashTagsToPasteboard()
     func launchShareActivity()
 }

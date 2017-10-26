@@ -12,27 +12,35 @@ import UIKit
 class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
     var flowDelegate: HashTagFlowDelegate?
-
+    
     var originalPredictions: [String]?
     var predictionImage: UIImage?
     var updatedPredicitons: [String]?
-
+    
     init(predictions: [String], withPredictionImage: UIImage) {
         self.predictionImage = withPredictionImage
         self.originalPredictions = predictions
-        self.updatedPredicitons = predictions
+        self.updatedPredicitons = []
     }
     
     var copyButtonTitle: String? {
         return LocalizedString.copyButtonTitle
     }
     
+    var selectAllButtonTitle: String? {
+        return LocalizedString.selecAllButtonTitle
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.originalPredictions?.count ?? 0
     }
     
-    func copyImagesToPasteboard() {
-        UIPasteboard.general.strings = self.originalPredictions
+    func copyHashTagsToPasteboard() {
+        UIPasteboard.general.strings = self.updatedPredicitons
+    }
+    
+    func selectAllButtonTapped() {
+        self.updatedPredicitons = self.originalPredictions
     }
     
     func launchShareActivity() {

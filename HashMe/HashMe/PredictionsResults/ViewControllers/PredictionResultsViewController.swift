@@ -13,11 +13,11 @@ class PredictionResultsViewController: BaseViewController {
     
     @IBOutlet weak var socialMediaView: SocialMediaCustomView!
     @IBOutlet weak var copiedView: CustomView!
+    @IBOutlet weak var selectAllButton: CustomButton!
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     
     var hidingAnimationDuration = 0.5
-    
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {
             
@@ -45,10 +45,16 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @IBAction func copyButtonTapped(_ sender: Any) {
-        self.viewModel?.copyImagesToPasteboard()
+        self.viewModel?.copyHashTagsToPasteboard()
         self.animateCopiedView()
     }
     
+    @IBAction func selectAllButtonTapped(_ sender: Any) {
+        self.viewModel?.selectAllButtonTapped()
+        guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
+        
+        let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = true; $0.scaleToIdentityWith3DAnimation()}
+    }
 }
 
 //MARK: UI
@@ -66,6 +72,8 @@ extension PredictionResultsViewController {
         layout.cellPadding = 5
         
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
+        self.selectAllButton.setTitle(viewModel?.selectAllButtonTitle, for: UIControlState.normal)
+        
         self.moveCopiedViewOutsideBounds()
         self.moveSocialMediaCustomViewOutsideBounds()
         
@@ -148,19 +156,23 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
         
         guard let validPredictions = viewModel?.originalPredictions else { return UICollectionViewCell() }
         predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
-        predictionCell.isPredictionSelected = true
+        
+        predictionCell.isPredictionSelected = false
+        if predictionCell.isPredictionSelected == false {
+            predictionCell.scaleDownForAnimation()
+        }
         animateCell(predictionCell)
         return predictionCell
     }
     
     fileprivate func animateCell(_ predictionCell: PredictionResultCollectionViewCell) {
         predictionCell.alpha = 0
-        predictionCell.layer.transform = CATransform3DMakeScale(0.8, 0.8, 0.8)
+        predictionCell.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         
         dispatchOnMainQueueWith(delay: 0.5) {
             UIView.animate(withDuration: 0.4, animations: {
                 predictionCell.alpha = 1
-                predictionCell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
+                predictionCell.layer.transform = CATransform3DScale(CATransform3DIdentity, 0.9, 0.9, 0.9)
             })
         }
     }
