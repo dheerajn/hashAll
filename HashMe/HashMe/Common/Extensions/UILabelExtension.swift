@@ -33,6 +33,7 @@ extension UILabel {
             let originalFontColor = self.textColor
             
             textColor = UIColor.clear
+            //TODO: Refactor this
             DispatchQueue.main.asyncAfter(deadline: time) { () -> Void in
                 self.iterateAlpha(text as NSString, index: 0, delay: duration / Double(text.characters.count), font: self.font, color: originalFontColor!)
             }
