@@ -8,13 +8,20 @@
 
 import UIKit
 
-class OnboardingSubViewControllerThree: UIViewController {
+class OnboardingSubViewControllerThree: BaseViewController {
 
     @IBOutlet weak var step3Label: CustomLabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.step3Label.text = LocalizedString.onboardingStep3Text
-        self.step3Label.animateAlpha(duration: 2, delay: 0)
+        self.view.backgroundColor = UIColor.clear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if initialLoad {
+            self.step3Label.text = LocalizedString.onboardingStep3Text
+            self.step3Label.animateAlpha(duration: 2, delay: 0)
+            initialLoad = false
+        }
     }
 }

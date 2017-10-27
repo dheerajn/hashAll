@@ -8,13 +8,20 @@
 
 import UIKit
 
-class OnboardingSubViewControllerTwo: UIViewController {
+class OnboardingSubViewControllerTwo: BaseViewController {
 
     @IBOutlet weak var step2Label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.step2Label.text = LocalizedString.onboardingStep2Text
-        self.step2Label.animateAlpha(duration: 2, delay: 0)
+        self.view.backgroundColor = UIColor.clear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if initialLoad {
+            self.step2Label.text = LocalizedString.onboardingStep2Text
+            self.step2Label.animateAlpha(duration: 2, delay: 0)
+            initialLoad = false
+        }
     }
 }
