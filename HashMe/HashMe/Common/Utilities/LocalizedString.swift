@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- Custom CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
+ CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
  found for the current language.
  
  If using this in a global constant defined in LocalizedString, use a computed var so that it will be reevaluated on each call.
@@ -21,7 +21,7 @@ public func CustomLocalizedString(_ key: String, english: String) -> String {
 }
 
 /**
- Custom CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
+CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
  found for the current language.
  
  If using this in a global constant defined in LocalizedString, use a computed var so that it will be reevaluated on each call.
@@ -39,7 +39,7 @@ public func CustomLocalizedStringWithDefaultValue(_ key: String, tableName: Stri
         #if DEBUG
             fatalError(errorMessage)
         #else
-            MFLoggingService.sharedInstance.logError(errorMessage)
+            print(errorMessage)
             // Use English if there was no translation for the key at all
             return value
         #endif
