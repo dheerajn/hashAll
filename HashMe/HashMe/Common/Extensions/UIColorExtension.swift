@@ -50,7 +50,7 @@ public extension UIColor {
     }
     
     public static func PredictionsCellDeselectedColor() -> UIColor {
-        return UIColor.lightGray//.withAlphaComponent(0.5)
+        return UIColor.darkGray.withAlphaComponent(0.75)
     }
 }
 
