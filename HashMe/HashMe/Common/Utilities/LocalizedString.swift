@@ -71,4 +71,7 @@ public class LocalizedString {
     static var onboardingStep1Text = NSLocalizedString("step1OnboardingText", comment: "Text for the tutorial step 1")
     static var onboardingStep2Text = NSLocalizedString("step2OnboardingText", comment: "Text for the tutorial step 2")
     static var onboardingStep3Text = NSLocalizedString("step3OnboardingText", comment: "Text for the tutorial step 3")
+    
+    //Prediction Results
+    static var copiedText = NSLocalizedString("CopiedText", comment: "Title for Copied Label")
 }

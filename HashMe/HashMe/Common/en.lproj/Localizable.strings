@@ -27,3 +27,6 @@
 "step1OnboardingText" = "Automatically generate hashtags from the content of the photos.";
 "step2OnboardingText" = "Upload photos directly from the photo library or from camera.";
 "step3OnboardingText" = "Import the tags on instagram or any other social media apps.";
+
+//UILabel
+"CopiedText" = "COPIED";

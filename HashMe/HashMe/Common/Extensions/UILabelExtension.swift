@@ -17,7 +17,7 @@ extension UILabel {
     /// - Parameter duration: Time to show this animation.
     func animateAdding(_ duration: Double) {
         if let text = text {
-            iterateAdding(text as NSString, index: 0, delay: duration / Double(text.characters.count))
+            iterateAdding(text as NSString, index: 0, delay: duration / Double(text.count))
         }
     }
     
@@ -46,7 +46,7 @@ extension UILabel {
             textColor = UIColor.clear
 
             dispatchOnMainQueueWith(delay: delay, closure: {
-                self.iterateAlpha(text as NSString, index: 0, delay: duration / Double(text.characters.count), font: self.font, color: originalFontColor!)
+                self.iterateAlpha(text as NSString, index: 0, delay: duration / Double(text.count), font: self.font, color: originalFontColor!)
             })
         }
     }
@@ -70,7 +70,7 @@ extension UILabel {
         
         self.attributedText = result
         
-        if substringToHide.characters.count != 0 {
+        if substringToHide.count != 0 {
             let time = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
             DispatchQueue.main.asyncAfter(deadline: time) { () -> Void in
                 self.iterateAlpha(text, index: index + 1, delay: delay, font: font, color: color)

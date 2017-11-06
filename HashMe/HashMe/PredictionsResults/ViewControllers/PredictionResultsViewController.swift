@@ -11,6 +11,7 @@ import AVFoundation
 
 class PredictionResultsViewController: BaseViewController {
     
+    @IBOutlet weak var copiedLabel: CustomLabel!
     @IBOutlet weak var socialMediaView: SocialMediaCustomView!
     @IBOutlet weak var copiedView: CustomView!
     @IBOutlet weak var selectAllButton: CustomButton!
@@ -74,6 +75,7 @@ extension PredictionResultsViewController {
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
         self.selectAllButton.setTitle(viewModel?.selectAllButtonTitle, for: UIControlState.normal)
         
+        self.copiedLabel.text = viewModel?.copiedLabelTitle
         self.moveCopiedViewOutsideBounds()
         self.moveSocialMediaCustomViewOutsideBounds()
         

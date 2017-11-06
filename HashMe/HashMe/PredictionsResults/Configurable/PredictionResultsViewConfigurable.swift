@@ -17,6 +17,7 @@ public protocol PredictionResultsViewConfigurable: class {
     var updatedPredicitons: [String]? { get set } //this will append and remove a string, so "set" is required
     var copyButtonTitle: String? { get }
     var selectAllButtonTitle: String? { get }
+    var copiedLabelTitle: String? { get }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     

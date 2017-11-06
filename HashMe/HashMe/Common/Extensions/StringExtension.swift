@@ -15,7 +15,7 @@ public extension String {
     var camelCaseStringLowerCase: String {
         if self.isEmpty || self == " " { return "" }
         var source = self
-        if source.characters.contains(" ") {
+        if source.contains(" ") {
             source = source.lowercased()
             var cammel = source.capitalized.replacingOccurrences(of: " ", with: "")
             let firstCharacter = cammel.remove(at: cammel.startIndex).description.lowercased()
@@ -23,21 +23,21 @@ public extension String {
         } else {
             // let first = source.substring(to: source.index(startIndex, offsetBy: 1)). This is deprecated so following works fine
             let first = String(source.lowercased()[..<source.index(startIndex, offsetBy: 1)])
-            let rest = String(source.characters.dropFirst())
+            let rest = String(source.dropFirst())
             return "\(first)\(rest)"
         }
     }
     
     var camelCaseStringUpperCase: String {
         let source = self
-        if source.characters.contains(" ") {
+        if source.contains(" ") {
             let first = String(source.lowercased()[..<source.index(startIndex, offsetBy: 1)])
-            let rest = String(source.characters.dropFirst())
+            let rest = String(source.dropFirst())
             return "\(first)\(rest)"
         } else {
             let first = String(source[..<source.index(startIndex, offsetBy: 1)])
             let cammel = source.capitalized.replacingOccurrences(of: " ", with: "")
-            let rest = String(cammel.characters.dropFirst())
+            let rest = String(cammel.dropFirst())
             return "\(first)\(rest)"
         }
     }

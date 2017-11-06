@@ -31,6 +31,9 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         return LocalizedString.selecAllButtonTitle
     }
     
+    var copiedLabelTitle: String? {
+        return LocalizedString.copiedText
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.originalPredictions?.count ?? 0
     }
