@@ -358,8 +358,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="bottom" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
-                                <rect key="frame" x="102" y="318" width="315" height="40"/>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
+                                <rect key="frame" x="30" y="607" width="315" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-yi-dQg" customClass="CustomButton" customModule="HashMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="107.5" height="40"/>
