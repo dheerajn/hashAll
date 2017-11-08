@@ -55,6 +55,8 @@ class PredictionResultsViewController: BaseViewController {
         guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
         
         let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = true; $0.scaleToIdentityWith3DAnimation()}
+        
+        self.shouldEnableCopyButton()
     }
 }
 
@@ -73,6 +75,8 @@ extension PredictionResultsViewController {
         layout.cellPadding = 5
         
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
+        self.shouldEnableCopyButton()
+        
         self.selectAllButton.setTitle(viewModel?.selectAllButtonTitle, for: UIControlState.normal)
         
         self.copiedLabel.text = viewModel?.copiedLabelTitle
@@ -141,6 +145,11 @@ extension PredictionResultsViewController {
             self.socialMediaView.transform = CGAffineTransform.identity
         }
     }
+    
+    func shouldEnableCopyButton() {
+        let selectedPredictionsCount = viewModel?.updatedPredicitons?.count ?? 0
+        selectedPredictionsCount >= 1 ? (self.copyButton.isEnabled = true) : (self.copyButton.isEnabled = false)
+    }
 }
 
 // MARK: UICollectionViewDataSource
@@ -193,6 +202,7 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
             selectedPredictionCell.scaleToIdentityWith3DAnimation()
         }
         self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
+        self.shouldEnableCopyButton()
     }
 }
 
