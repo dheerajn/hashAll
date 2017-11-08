@@ -146,9 +146,19 @@ extension PredictionResultsViewController {
         }
     }
     
-    func shouldEnableCopyButton() {
+    fileprivate func shouldEnableCopyButton() {
         let selectedPredictionsCount = viewModel?.updatedPredicitons?.count ?? 0
-        selectedPredictionsCount >= 1 ? (self.copyButton.isEnabled = true) : (self.copyButton.isEnabled = false)
+        selectedPredictionsCount >= 1 ? enableCopyButton() : disableCopyButton()
+    }
+    
+    fileprivate func enableCopyButton() {
+        self.copyButton.isEnabled = true
+        self.copyButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    fileprivate func disableCopyButton() {
+        self.copyButton.isEnabled = false
+        self.copyButton.layer.borderColor = UIColor.darkGray.cgColor
     }
 }
 
