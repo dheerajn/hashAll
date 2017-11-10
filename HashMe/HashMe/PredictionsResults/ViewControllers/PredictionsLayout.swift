@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 protocol PredictionLayoutDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
-    
 //    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
     func collectionView(_ collectionView: UICollectionView, widthForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
 }
@@ -58,12 +55,11 @@ class PredictionViewLayout: UICollectionViewLayout {
             for item in 0..<collectionView!.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
                 let width = columnWidth - (cellPadding * 2)
-                let imageHeight = delegate.collectionView(collectionView!, heightForImageAtIndexPath: indexPath, withWidth: width)
                 //                let descriptionHeight = delegate.collectionView(collectionView!, heightForDescriptionAtIndexPath: indexPath, withWidth: width)
                 let descriptionWidth = delegate.collectionView(collectionView!, widthForDescriptionAtIndexPath: indexPath, withWidth: width)
                 
-                let height = cellPadding + imageHeight + 50 + cellPadding
-                let testwidth = cellPadding + imageHeight + descriptionWidth + cellPadding
+                let height = cellPadding + 50 + cellPadding
+                let testwidth = cellPadding + descriptionWidth + cellPadding
                 var xOffset : CGFloat = 0;
                 if (itemcount%numberOfColumns != 0) {
                     let previousCellIndexPath = itemcount - 1
@@ -76,7 +72,6 @@ class PredictionViewLayout: UICollectionViewLayout {
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 let attributes = PredictionLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = insetFrame
-                attributes.imageHeight = imageHeight
                 cache.append(attributes)
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffsets[column] = yOffsets[column] + height

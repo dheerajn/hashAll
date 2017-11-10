@@ -219,10 +219,6 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
 // MARK: PredictionLayoutDelegate
 extension PredictionResultsViewController: PredictionLayoutDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-        return 0.0
-    }
-    
 //    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
 //        guard let validPrediction = viewModel?.originalPredictions else { return 0.001 }
 //        if indexPath.row > validPrediction.count {
