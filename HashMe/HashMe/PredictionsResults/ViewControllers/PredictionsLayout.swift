@@ -58,7 +58,7 @@ class PredictionViewLayout: UICollectionViewLayout {
                 
                 let height = cellPadding + 50 + cellPadding
                 let testwidth = cellPadding + descriptionWidth + cellPadding
-                var xOffset : CGFloat = 0;
+                var xOffset : CGFloat = 0
                 if (itemcount%numberOfColumns != 0) {
                     let previousCellIndexPath = itemcount - 1
                     let previousCellWidth = widthCache[previousCellIndexPath]
@@ -90,5 +90,3 @@ class PredictionViewLayout: UICollectionViewLayout {
         return layoutAttributes
     }
 }
-
-
