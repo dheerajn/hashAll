@@ -218,24 +218,6 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
 
 // MARK: PredictionLayoutDelegate
 extension PredictionResultsViewController: PredictionLayoutDelegate {
-    
-//    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-//        guard let validPrediction = viewModel?.originalPredictions else { return 0.001 }
-//        if indexPath.row > validPrediction.count {
-//            return 0.001
-//        }
-//        
-//        let character = validPrediction[indexPath.row]
-//        let descriptionHeight = heightForText(character.description, width: (width - 24))
-//        let height = 4 + 17 + 4 + descriptionHeight + 12
-//        return height
-//    }
-//    
-//    func heightForText(_ text: String, width: CGFloat) -> CGFloat {
-//        let font = UIFont.systemFont(ofSize: 18)
-//        let rect = NSString(string: text).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
-//        return ceil(rect.height)
-//    }
 
     func collectionView(_ collectionView: UICollectionView, widthForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
         guard let validPrediction = viewModel?.originalPredictions else { return 0.001 }
@@ -245,7 +227,7 @@ extension PredictionResultsViewController: PredictionLayoutDelegate {
         
         let character = validPrediction[indexPath.row]
         let descriptionHeight = widthForText(character.description, width: (width - 24))
-        let width = 4 + 17 + 4 + descriptionHeight + 12
+        let width = descriptionHeight + 17
         return width
     }
     

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol PredictionLayoutDelegate {
-//    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
     func collectionView(_ collectionView: UICollectionView, widthForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat
 }
 
@@ -55,7 +54,6 @@ class PredictionViewLayout: UICollectionViewLayout {
             for item in 0..<collectionView!.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
                 let width = columnWidth - (cellPadding * 2)
-                //                let descriptionHeight = delegate.collectionView(collectionView!, heightForDescriptionAtIndexPath: indexPath, withWidth: width)
                 let descriptionWidth = delegate.collectionView(collectionView!, widthForDescriptionAtIndexPath: indexPath, withWidth: width)
                 
                 let height = cellPadding + 50 + cellPadding
@@ -78,7 +76,6 @@ class PredictionViewLayout: UICollectionViewLayout {
                 column = column >= (numberOfColumns - 1) ? 0 : column + 1
                 widthCache[itemcount] = xOffset + testwidth
                 itemcount = itemcount + 1
-                
             }
         }
     }
