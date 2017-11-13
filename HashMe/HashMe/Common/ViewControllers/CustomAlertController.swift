@@ -55,7 +55,6 @@ open class CustomAlertController: NSObject, UIAlertViewDelegate {
         presentedAlert = nil
     }
     
-    @objc
     open func alertViewDismised() {
         presentedAlert = nil
     }

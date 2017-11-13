@@ -48,6 +48,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         super.viewDidAppear(animated)
         self.setStatusBar()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = viewModel?.screenTitle ?? ""
@@ -73,7 +74,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         }
         self.viewModel?.predictImage(ref: ref, predictionImage: imageToPredict.image ?? UIImage())
     }
-    
+}
+
+//MARK: UI
+extension PredictionsViewController {
     fileprivate func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
             self.showImagePickerProblemAlert()

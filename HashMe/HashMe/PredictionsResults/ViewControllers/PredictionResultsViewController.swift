@@ -62,7 +62,7 @@ class PredictionResultsViewController: BaseViewController {
 
 //MARK: UI
 extension PredictionResultsViewController {
-    func configureUI() {
+    fileprivate func configureUI() {
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
         
         self.predictionResultsCollectionView.delegate = self
@@ -86,7 +86,7 @@ extension PredictionResultsViewController {
         handleShareSheetActions()
     }
     
-    func handleShareSheetActions() {
+    fileprivate func handleShareSheetActions() {
         self.socialMediaView.instagramButtonCustomHander = {
             let url = URL(string: "instagram://camera")
             if let url = url {
