@@ -20,7 +20,7 @@ class OnboardingSubViewControllerThree: BaseViewController {
         super.viewDidAppear(animated)
         if initialLoad {
             self.step3Label.text = LocalizedString.onboardingStep3Text
-            self.step3Label.animateAlpha(duration: 2, delay: 0)
+            self.step3Label.animateAlpha(duration: 1.25, delay: 0)
             initialLoad = false
         }
     }
