@@ -51,7 +51,8 @@ public extension LoadingScreenPresentable where Self: UIView {
         UIView.animate(withDuration: 0.5, animations: {
             let loadingView = self.viewWithTag(Constants.Tags.loadingViewTag)
             loadingView?.alpha = 0.0
-        }) { (success) in self.superview?.viewWithTag(Constants.Tags.loadingViewTag)?.removeFromSuperview()
+        }) { (success) in
+            self.superview?.viewWithTag(Constants.Tags.loadingViewTag)?.removeFromSuperview()
         }
     }
 }

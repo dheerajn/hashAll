@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+enum PredictionResultsAnimationDuration: Double {
+    case copiedAnimation = 1
+    case hidingAnimationDuration = 0.5
+    case cellAnimation = 0.4
+}
+
 class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
     var flowDelegate: HashTagFlowDelegate?

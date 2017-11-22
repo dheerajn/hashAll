@@ -109,7 +109,7 @@ extension OnboardingViewController {
     }
     
     fileprivate func hideGetStartedButton() {
-        UIView.animate(withDuration: 1.0,
+        UIView.animate(withDuration: OnboardingAnimationDuration.getStartedButton.rawValue,
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 1,
@@ -122,7 +122,7 @@ extension OnboardingViewController {
     }
     
     fileprivate func animateGetStartedButton() {
-        UIView.animate(withDuration: 1.0,
+        UIView.animate(withDuration: OnboardingAnimationDuration.getStartedButton.rawValue,
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 1,

@@ -20,7 +20,7 @@ class OnboardingSubViewControllerTwo: BaseViewController {
         super.viewDidAppear(animated)
         if initialLoad {
             self.step2Label.text = LocalizedString.onboardingStep2Text
-            self.step2Label.animateAlpha(duration: 1.25, delay: 0)
+            self.step2Label.animateAlpha(duration: OnboardingAnimationDuration.tutorialLabelAnimation.rawValue, delay: 0)
             initialLoad = false
         }
     }

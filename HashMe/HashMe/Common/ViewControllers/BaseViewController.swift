@@ -72,11 +72,11 @@ class BaseViewController: UIViewController {
         let barButton = UIBarButtonItem(customView: rightBarButton)
         self.navigationItem.rightBarButtonItem = barButton
         if withAnimation {
-            zoonInButton(rightBarButton)
+            zoomInButton(rightBarButton)
         }
     }
     
-    fileprivate func zoonInButton(_ rightBarButton: UIButton) {
+    fileprivate func zoomInButton(_ rightBarButton: UIButton) {
         UIView.animate(withDuration: 0.6,
                        animations: {
                         rightBarButton.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)

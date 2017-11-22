@@ -107,7 +107,7 @@ extension PredictionsViewController {
         hideLeftNavBarButton()
         
         self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
-        self.descriptionLabel.animateAlpha(duration: 1, delay: 0)
+        self.descriptionLabel.animateAlpha(duration: PredictionAnimationDuration.mainLabelAnimationDuration.rawValue, delay: 0)
         
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)

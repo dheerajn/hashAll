@@ -22,7 +22,7 @@ class OnboardingSubViewControllerOne: BaseViewController {
         super.viewDidAppear(animated)
         if initialLoad {
             self.step1Label.text = LocalizedString.onboardingStep1Text
-            self.step1Label.animateAlpha(duration: 1.25, delay: 0)
+            self.step1Label.animateAlpha(duration: OnboardingAnimationDuration.tutorialLabelAnimation.rawValue, delay: 0)
             initialLoad = false
         }
     }

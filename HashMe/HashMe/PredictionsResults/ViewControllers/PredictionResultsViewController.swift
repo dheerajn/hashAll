@@ -18,7 +18,6 @@ class PredictionResultsViewController: BaseViewController {
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     
-    var hidingAnimationDuration = 0.5
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {
             
@@ -101,7 +100,7 @@ extension PredictionResultsViewController {
         self.socialMediaView.moreButtonCustomHandler = {
             self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
             //The following codes helps in dismissing the custom share sheet and then presenting UIActivityVc
-            dispatchOnMainQueueWith(delay: self.hidingAnimationDuration, closure: {
+            dispatchOnMainQueueWith(delay: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue, closure: {
                 self.viewModel?.launchShareActivity()
             })
         }
@@ -109,10 +108,10 @@ extension PredictionResultsViewController {
     
     fileprivate func animateCopiedView() {
         self.copiedView.center = self.view.center
-        UIView.animate(withDuration: 0.75, animations: {
+        UIView.animate(withDuration: PredictionResultsAnimationDuration.copiedAnimation.rawValue, animations: {
             self.copiedView.alpha = 1
         }) { (success) in
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: PredictionResultsAnimationDuration.copiedAnimation.rawValue, animations: {
                 self.copiedView.alpha = 0
             }, completion: { (success) in
                 self.moveCopiedViewOutsideBounds()
@@ -132,7 +131,7 @@ extension PredictionResultsViewController {
         }
         
         if withAnimation {
-            UIView.animate(withDuration: hidingAnimationDuration) {
+            UIView.animate(withDuration: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue) {
                 moveSocialMediaOutside()
             }
         } else {
@@ -141,7 +140,7 @@ extension PredictionResultsViewController {
     }
     
     fileprivate func resetSocialMediaView() {
-        UIView.animate(withDuration: hidingAnimationDuration) {
+        UIView.animate(withDuration: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue) {
             self.socialMediaView.transform = CGAffineTransform.identity
         }
     }
@@ -191,7 +190,7 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
         predictionCell.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
         
         dispatchOnMainQueueWith(delay: 0.5) {
-            UIView.animate(withDuration: 0.4, animations: {
+            UIView.animate(withDuration: PredictionResultsAnimationDuration.cellAnimation.rawValue, animations: {
                 predictionCell.alpha = 1
                 predictionCell.layer.transform = CATransform3DScale(CATransform3DIdentity, 0.9, 0.9, 0.9)
             })
