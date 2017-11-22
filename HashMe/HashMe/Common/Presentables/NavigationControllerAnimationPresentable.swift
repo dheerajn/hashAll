@@ -32,41 +32,17 @@ public protocol NavigationControllerAnimationPresentable: NavigationFlowControll
 
 public extension NavigationControllerAnimationPresentable {
     func pushViewControllerWithAnimation(_ viewController: UIViewController, withAnimationType animation: NavigationAnimationType) {
-        let transition: CATransition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        switch animation {
-        case .moveIn:
-            transition.type = kCATransitionMoveIn
-        case .fade:
-            transition.type = kCATransitionFade
-        case .push:
-            transition.type = kCATransitionPush
-        case .reveal:
-            transition.type = kCATransitionFromTop
-        }
+        let transition: CATransition = self.transition(withAnimation: animation)
         transition.subtype = kCATransitionFromTop
+        
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-        if let validNavController = self.navigationController {
-            validNavController.pushViewController(viewController, animated: false)
-        }
+        self.navigationController?.pushViewController(viewController, animated: false)
     }
     
     func popViewControllerWithAnimation(withAnimationType animation: NavigationAnimationType) {
-        let transition: CATransition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        switch animation {
-        case .moveIn:
-            transition.type = kCATransitionMoveIn
-        case .fade:
-            transition.type = kCATransitionFade
-        case .push:
-            transition.type = kCATransitionPush
-        case .reveal:
-            transition.type = kCATransitionFromTop
-        }
+        let transition: CATransition = self.transition(withAnimation: animation)
         transition.subtype = kCATransitionFromBottom
+        
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.popViewController(animated: false)
     }
@@ -75,4 +51,20 @@ public extension NavigationControllerAnimationPresentable {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
+    fileprivate func transition(withAnimation animation: NavigationAnimationType) -> CATransition {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        switch animation {
+        case .moveIn:
+            transition.type = kCATransitionMoveIn
+        case .fade:
+            transition.type = kCATransitionFade
+        case .push:
+            transition.type = kCATransitionPush
+        case .reveal:
+            transition.type = kCATransitionFromTop
+        }
+        return transition
+    }
 }

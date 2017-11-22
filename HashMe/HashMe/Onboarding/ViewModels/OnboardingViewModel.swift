@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum OnboardingAnimationDuration: Double {
+    case getStartedButton = 1.0
+    case tutorialLabelAnimation = 1.25
+}
+
 class OnboardingViewModel: OnboardingViewConfigurable {
     var getStartedButtonTitle: String? {
         return LocalizedString.getStartedButtonTitle

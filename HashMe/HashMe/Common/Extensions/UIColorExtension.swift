@@ -46,11 +46,11 @@ public extension UIColor {
     }
     
     public static func PredictionsCellSelectedColor() -> UIColor {
-        return UIColor.yellow.withAlphaComponent(0.9)
+        return UIColor.yellow.withAlphaComponent(0.5)
     }
     
-    public static func CellDeselectedColor() -> UIColor {
-        return UIColor.lightGray.withAlphaComponent(0.5)
+    public static func PredictionsCellDeselectedColor() -> UIColor {
+        return UIColor.darkGray.withAlphaComponent(0.75)
     }
 }
 

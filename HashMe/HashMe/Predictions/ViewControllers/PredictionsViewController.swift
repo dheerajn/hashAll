@@ -30,7 +30,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     let imagePicker = UIImagePickerController()
     var viewModel: PredictionsViewConfigurable? {
         didSet {
-            
+            viewModel?.delegate = self
         }
     }
     
@@ -48,6 +48,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         super.viewDidAppear(animated)
         self.setStatusBar()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = viewModel?.screenTitle ?? ""
@@ -73,7 +74,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         }
         self.viewModel?.predictImage(ref: ref, predictionImage: imageToPredict.image ?? UIImage())
     }
-    
+}
+
+//MARK: UI
+extension PredictionsViewController {
     fileprivate func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
             self.showImagePickerProblemAlert()
@@ -81,7 +85,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         }
         imagePicker.sourceType = sourceType
         imagePicker.delegate = self
-        DispatchQueue.main.async {
+        dispatchOnMainQueue {
             self.present(self.imagePicker, animated: true, completion: nil)
         }
     }
@@ -102,11 +106,9 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         
         hideLeftNavBarButton()
         
-        UIView.animate(withDuration: 0.5) {
-            self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
-            self.descriptionLabel.alpha = 1
-        }
-       
+        self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
+        self.descriptionLabel.animateAlpha(duration: PredictionAnimationDuration.mainLabelAnimationDuration.rawValue, delay: 0)
+        
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         
@@ -121,9 +123,8 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
         }
         self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {
-            self.descriptionLabel.text = ""
             //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
-            DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(1), execute: {
+            dispatchOnMainQueueWith(delay: 1, closure: {
                 self.predictButtonTapped()
             })
             UIView.animate(withDuration: 0.2, animations: {
@@ -134,5 +135,11 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PredictionsViewController: PredictionsViewDelegate {
+    func removePredictionImage() {
+        self.imageToPredict.image = nil
     }
 }

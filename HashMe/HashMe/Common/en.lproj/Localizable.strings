@@ -19,6 +19,14 @@
 "GetHashTagsButtonTitle" = "GET HASHTAGS";
 "GetStartedButtonTitle" = "GET STARTED";
 "copyButtonTitle" = "COPY";
+"selectAllButtonTitle" = "SELECT ALL";
 
 "hashTagTitle" = "THE HASHTAG";
 "hashTagDescription" = "Utilize hashtags with online networking, don't be an instrument about it!";
+
+"step1OnboardingText" = "Automatically generate hashtags from the content of the photos.";
+"step2OnboardingText" = "Upload photos directly from the photo library or from camera.";
+"step3OnboardingText" = "Import the tags on instagram or any other social media apps.";
+
+//UILabel
+"CopiedText" = "COPIED";

@@ -9,34 +9,51 @@
 import Foundation
 import UIKit
 
+enum PredictionResultsAnimationDuration: Double {
+    case copiedAnimation = 1
+    case hidingAnimationDuration = 0.5
+    case cellAnimation = 0.4
+}
+
 class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
     var flowDelegate: HashTagFlowDelegate?
-
+    
     var originalPredictions: [String]?
     var predictionImage: UIImage?
     var updatedPredicitons: [String]?
-
+    
     init(predictions: [String], withPredictionImage: UIImage) {
         self.predictionImage = withPredictionImage
         self.originalPredictions = predictions
-        self.updatedPredicitons = predictions
+        self.updatedPredicitons = []
     }
     
     var copyButtonTitle: String? {
         return LocalizedString.copyButtonTitle
     }
     
+    var selectAllButtonTitle: String? {
+        return LocalizedString.selecAllButtonTitle
+    }
+    
+    var copiedLabelTitle: String? {
+        return LocalizedString.copiedText
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.originalPredictions?.count ?? 0
     }
     
-    func copyImagesToPasteboard() {
-        UIPasteboard.general.strings = self.originalPredictions
+    func copyHashTagsToPasteboard() {
+        UIPasteboard.general.strings = self.updatedPredicitons
+    }
+    
+    func selectAllButtonTapped() {
+        self.updatedPredicitons = self.originalPredictions
     }
     
     func launchShareActivity() {
-        self.flowDelegate?.launchShareSheet(withActivities: getActivitiesToBeShared(), andSubject: "#hashMe")
+        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashMe")
     }
     
     func updatePredictionsArray(forHashTag tag: String) {
@@ -48,7 +65,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         }
     }
     
-    fileprivate func getActivitiesToBeShared() -> NSMutableArray {
+    fileprivate func getHashTagsToBeShared() -> NSMutableArray {
         let activitiesToBeShared = NSMutableArray()
         activitiesToBeShared.add(self.predictionImage ?? UIImage())
         for activity in self.updatedPredicitons ?? [] {

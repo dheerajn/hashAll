@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- Custom CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
+ CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
  found for the current language.
  
  If using this in a global constant defined in LocalizedString, use a computed var so that it will be reevaluated on each call.
@@ -21,7 +21,7 @@ public func CustomLocalizedString(_ key: String, english: String) -> String {
 }
 
 /**
- Custom CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
+CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
  found for the current language.
  
  If using this in a global constant defined in LocalizedString, use a computed var so that it will be reevaluated on each call.
@@ -39,7 +39,7 @@ public func CustomLocalizedStringWithDefaultValue(_ key: String, tableName: Stri
         #if DEBUG
             fatalError(errorMessage)
         #else
-            MFLoggingService.sharedInstance.logError(errorMessage)
+            print(errorMessage)
             // Use English if there was no translation for the key at all
             return value
         #endif
@@ -62,7 +62,16 @@ public class LocalizedString {
     static var predictButtonTitle = NSLocalizedString("GetHashTagsButtonTitle", comment: "Title for get hashtags button")
     static var getStartedButtonTitle = NSLocalizedString("GetStartedButtonTitle", comment: "Title for get started button")
     static var copyButtonTitle = NSLocalizedString("copyButtonTitle", comment: "Title for copy button")
+    static var selecAllButtonTitle = NSLocalizedString("selectAllButtonTitle", comment: "Title for selecet all button")
     
     static var theHashTagTitle = NSLocalizedString("hashTagTitle", comment: "Title for the screen")
     static var hashTagDescription = NSLocalizedString("hashTagDescription", comment: "Description for hash tag")
+    
+    //Onboarding
+    static var onboardingStep1Text = NSLocalizedString("step1OnboardingText", comment: "Text for the tutorial step 1")
+    static var onboardingStep2Text = NSLocalizedString("step2OnboardingText", comment: "Text for the tutorial step 2")
+    static var onboardingStep3Text = NSLocalizedString("step3OnboardingText", comment: "Text for the tutorial step 3")
+    
+    //Prediction Results
+    static var copiedText = NSLocalizedString("CopiedText", comment: "Title for Copied Label")
 }

@@ -27,30 +27,12 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNavigationBarTransparent()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.keyboardDidShow(_:)), name:NSNotification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-        
         view.backgroundColor = UIColor.LightGreyBackgroundColor()
         setupNavigationTitleProperties()
     }
 
     deinit {
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc open func keyboardWillShow(_ notification: Notification) {
-    }
-    
-    @objc open func keyboardDidShow(_ notification: Notification) {
-    }
-    
-    @objc open func keyboardWillHide(_ notification: Notification) {
-    }
-    
-    @objc open func keyboardDidHide(_ notification: Notification) {
     }
     
     func setupNavigationTitleProperties(withColor color: UIColor = UIColor.white) {
@@ -90,11 +72,11 @@ class BaseViewController: UIViewController {
         let barButton = UIBarButtonItem(customView: rightBarButton)
         self.navigationItem.rightBarButtonItem = barButton
         if withAnimation {
-            zoonInButton(rightBarButton)
+            zoomInButton(rightBarButton)
         }
     }
     
-    fileprivate func zoonInButton(_ rightBarButton: UIButton) {
+    fileprivate func zoomInButton(_ rightBarButton: UIButton) {
         UIView.animate(withDuration: 0.6,
                        animations: {
                         rightBarButton.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)

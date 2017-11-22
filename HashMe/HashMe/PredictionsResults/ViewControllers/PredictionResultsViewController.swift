@@ -11,12 +11,12 @@ import AVFoundation
 
 class PredictionResultsViewController: BaseViewController {
     
+    @IBOutlet weak var copiedLabel: CustomLabel!
     @IBOutlet weak var socialMediaView: SocialMediaCustomView!
     @IBOutlet weak var copiedView: CustomView!
+    @IBOutlet weak var selectAllButton: CustomButton!
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
-    
-    var hidingAnimationDuration = 0.5
     
     var viewModel: PredictionResultsViewConfigurable? {
         didSet {
@@ -45,14 +45,23 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @IBAction func copyButtonTapped(_ sender: Any) {
-        self.viewModel?.copyImagesToPasteboard()
+        self.viewModel?.copyHashTagsToPasteboard()
         self.animateCopiedView()
+    }
+    
+    @IBAction func selectAllButtonTapped(_ sender: Any) {
+        self.viewModel?.selectAllButtonTapped()
+        guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
+        
+        let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = true; $0.scaleToIdentityWith3DAnimation()}
+        
+        self.shouldEnableCopyButton()
     }
 }
 
 //MARK: UI
 extension PredictionResultsViewController {
-    func configureUI() {
+    fileprivate func configureUI() {
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
         
         self.predictionResultsCollectionView.delegate = self
@@ -65,17 +74,23 @@ extension PredictionResultsViewController {
         layout.cellPadding = 5
         
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
+        self.shouldEnableCopyButton()
+        
+        self.selectAllButton.setTitle(viewModel?.selectAllButtonTitle, for: UIControlState.normal)
+        
+        self.copiedLabel.text = viewModel?.copiedLabelTitle
         self.moveCopiedViewOutsideBounds()
         self.moveSocialMediaCustomViewOutsideBounds()
         
         handleShareSheetActions()
     }
     
-    func handleShareSheetActions() {
+    fileprivate func handleShareSheetActions() {
         self.socialMediaView.instagramButtonCustomHander = {
-            //TODO: Work on Instagram Action
-            let url = URL(string: "instagram://")
-            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            let url = URL(string: "instagram://camera")
+            if let url = url {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
         
         self.socialMediaView.dismissButtonCustomHandler = {
@@ -84,7 +99,8 @@ extension PredictionResultsViewController {
         
         self.socialMediaView.moreButtonCustomHandler = {
             self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
-            DispatchQueue.main.asyncAfter(deadline: TimeInterval.convertToDispatchTimeT(self.hidingAnimationDuration), execute: {
+            //The following codes helps in dismissing the custom share sheet and then presenting UIActivityVc
+            dispatchOnMainQueueWith(delay: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue, closure: {
                 self.viewModel?.launchShareActivity()
             })
         }
@@ -92,10 +108,10 @@ extension PredictionResultsViewController {
     
     fileprivate func animateCopiedView() {
         self.copiedView.center = self.view.center
-        UIView.animate(withDuration: 0.75, animations: {
+        UIView.animate(withDuration: PredictionResultsAnimationDuration.copiedAnimation.rawValue, animations: {
             self.copiedView.alpha = 1
         }) { (success) in
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: PredictionResultsAnimationDuration.copiedAnimation.rawValue, animations: {
                 self.copiedView.alpha = 0
             }, completion: { (success) in
                 self.moveCopiedViewOutsideBounds()
@@ -115,7 +131,7 @@ extension PredictionResultsViewController {
         }
         
         if withAnimation {
-            UIView.animate(withDuration: hidingAnimationDuration) {
+            UIView.animate(withDuration: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue) {
                 moveSocialMediaOutside()
             }
         } else {
@@ -124,9 +140,24 @@ extension PredictionResultsViewController {
     }
     
     fileprivate func resetSocialMediaView() {
-        UIView.animate(withDuration: hidingAnimationDuration) {
+        UIView.animate(withDuration: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue) {
             self.socialMediaView.transform = CGAffineTransform.identity
         }
+    }
+    
+    fileprivate func shouldEnableCopyButton() {
+        let selectedPredictionsCount = viewModel?.updatedPredicitons?.count ?? 0
+        selectedPredictionsCount >= 1 ? enableCopyButton() : disableCopyButton()
+    }
+    
+    fileprivate func enableCopyButton() {
+        self.copyButton.isEnabled = true
+        self.copyButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    fileprivate func disableCopyButton() {
+        self.copyButton.isEnabled = false
+        self.copyButton.layer.borderColor = UIColor.darkGray.cgColor
     }
 }
 
@@ -145,9 +176,25 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
         
         guard let validPredictions = viewModel?.originalPredictions else { return UICollectionViewCell() }
         predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
-        predictionCell.isPredictionSelected = true
         
+        predictionCell.isPredictionSelected = false
+        if predictionCell.isPredictionSelected == false {
+            predictionCell.scaleDownForAnimation()
+        }
+        animateCell(predictionCell)
         return predictionCell
+    }
+    
+    fileprivate func animateCell(_ predictionCell: PredictionResultCollectionViewCell) {
+        predictionCell.alpha = 0
+        predictionCell.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
+        
+        dispatchOnMainQueueWith(delay: 0.5) {
+            UIView.animate(withDuration: PredictionResultsAnimationDuration.cellAnimation.rawValue, animations: {
+                predictionCell.alpha = 1
+                predictionCell.layer.transform = CATransform3DScale(CATransform3DIdentity, 0.9, 0.9, 0.9)
+            })
+        }
     }
 }
 
@@ -158,35 +205,34 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         guard let selectedPredictionCell = predictionResultsCollectionView.cellForItem(at: indexPath) as? PredictionResultCollectionViewCell else { return }
         if selectedPredictionCell.isPredictionSelected == true {
             selectedPredictionCell.isPredictionSelected = false
+            selectedPredictionCell.scaleDownForAnimation()
         } else {
             selectedPredictionCell.isPredictionSelected = true
+            selectedPredictionCell.scaleToIdentityWith3DAnimation()
         }
         self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
+        self.shouldEnableCopyButton()
     }
 }
 
 // MARK: PredictionLayoutDelegate
 extension PredictionResultsViewController: PredictionLayoutDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-        return 0.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
+
+    func collectionView(_ collectionView: UICollectionView, widthForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
         guard let validPrediction = viewModel?.originalPredictions else { return 0.001 }
         if indexPath.row > validPrediction.count {
             return 0.001
         }
         
         let character = validPrediction[indexPath.row]
-        let descriptionHeight = heightForText(character.description, width: (width - 24))
-        let height = 4 + 17 + 4 + descriptionHeight + 12
-        return height
+        let descriptionHeight = widthForText(character.description, width: (width - 24))
+        let width = descriptionHeight + 17
+        return width
     }
     
-    func heightForText(_ text: String, width: CGFloat) -> CGFloat {
-        let font = UIFont.systemFont(ofSize: 10)
-        let rect = NSString(string: text).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
-        return ceil(rect.height)
+    func widthForText(_ text: String, width: CGFloat) -> CGFloat {
+        let font = UIFont.systemFont(ofSize: 18)
+        let rect = NSString(string: text).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: width), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        return ceil(rect.width)
     }
 }

@@ -9,8 +9,13 @@
 import UIKit
 import CoreML
 
+enum PredictionAnimationDuration: Double {
+    case mainLabelAnimationDuration = 1
+}
 class PredictionsViewModel: PredictionsViewConfigurable {
     
+    weak var delegate: PredictionsViewDelegate?
+
     fileprivate var flowDelegate: HashTagFlowDelegate?
     fileprivate var predictedResults = [String]()
     
@@ -55,25 +60,17 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             
             self.emptyPredictionResultsArray()
             
-            for i in 0...maxNumOfKeys {
-                formatPredictions(tobeFormattedString: sorted[i].key)
-            }
-            let formattedPredictionsArray = self.predictedResults.map({"#" + $0}) //append #
-            let updatedFormattedPredictionsArray = formattedPredictionsArray.map({$0.filter { !" \n\t\r".characters.contains($0) }}) //remove white spaces
-            self.flowDelegate?.showPredictionResultsView(predictions: updatedFormattedPredictionsArray, withPredictionImage: predictionImage)
+            //The following code first does take the array from 0 to 7 (inclusive) and then removes all the "," from the element and then appends it to the array
+            let _ = Array(0...maxNumOfKeys).map{ sorted[$0].key.split{$0 == ","}.map(String.init).map{self.predictedResults.append("\($0)")}}
+            
+            self.predictedResults = self.predictedResults.map{$0.camelCaseStringLowerCase}.map({"#\($0)"}) // camelCasing and append #
+            self.flowDelegate?.showPredictionResultsView(predictions: self.predictedResults, withPredictionImage: predictionImage)
+            self.delegate?.removePredictionImage()
         } catch {
             print(error)
         }
     }
-    
-    fileprivate func formatPredictions(tobeFormattedString: String) {
-        let predictionsToBeFormatted = tobeFormattedString.characters.split{$0 == ","}.map(String.init) //{$0 == "," || $0 == ";"}
-        
-        for prediction in predictionsToBeFormatted {
-            self.predictedResults.append(prediction)
-        }
-    }
-    
+
     fileprivate func emptyPredictionResultsArray() {
         if self.predictedResults.count > 0 {
             self.predictedResults.removeAll()

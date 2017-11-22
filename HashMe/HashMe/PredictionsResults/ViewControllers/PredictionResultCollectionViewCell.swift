@@ -12,7 +12,7 @@ class PredictionResultCollectionViewCell: UICollectionViewCell {
     
     var isPredictionSelected: Bool? {
         didSet {
-            isPredictionSelected == true ? (self.backgroundColor = UIColor.PredictionsCellSelectedColor()) : (self.backgroundColor = UIColor.CellDeselectedColor())
+            isPredictionSelected == true ? setColors() : resetColors()
         }
     }
     
@@ -26,6 +26,16 @@ class PredictionResultCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         self.predictionDisplayLabel.text = ""
+    }
+    
+    fileprivate func setColors() {
+        self.backgroundColor = UIColor.PredictionsCellSelectedColor()
+        predictionDisplayLabel.textColor = UIColor.black
+    }
+    
+    fileprivate func resetColors() {
+        self.backgroundColor = UIColor.PredictionsCellDeselectedColor()
+        predictionDisplayLabel.textColor = UIColor.white
     }
     
     open class func reuseID() -> String {
