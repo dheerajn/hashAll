@@ -298,8 +298,7 @@
 		C84B2B1C1F76ACCC00F56BF5 /* Predictions */ = {
 			isa = PBXGroup;
 			children = (
-				C812BECD1F7728D40029732B /* Presentables */,
-				C84B2B221F76AD5700F56BF5 /* ViewControllers */,
+				C8F3A11C1FC5AE2200E0BC51 /* Views */,
 				C84B2B211F76AD4F00F56BF5 /* ViewModels */,
 				C84B2B201F76AD4500F56BF5 /* Models */,
 			);
@@ -414,6 +413,15 @@
 				C89F5C9E1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift */,
 			);
 			path = Presentable;
+			sourceTree = "<group>";
+		};
+		C8F3A11C1FC5AE2200E0BC51 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C812BECD1F7728D40029732B /* Presentables */,
+				C84B2B221F76AD5700F56BF5 /* ViewControllers */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C8F54A181F79BD6F00E94DF4 /* ViewControllers */ = {
