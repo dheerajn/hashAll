@@ -38,6 +38,7 @@ class BaseViewController: UIViewController {
     func setupNavigationTitleProperties(withColor color: UIColor = UIColor.white) {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)]
     }
+    
     open func hideLeftNavBarButton() {
         self.navigationItem.setHidesBackButton(true, animated: true)
     }

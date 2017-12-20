@@ -103,9 +103,9 @@ extension PredictionsViewController {
         if viewModel == nil {
             viewModel = PredictionsViewModel(flowDelegate: self.flowDelegate)
         }
-        
-        hideLeftNavBarButton()
-        
+        dispatchOnMainQueueWith(delay: 0.05) {
+            self.hideLeftNavBarButton()
+        }
         self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
         self.descriptionLabel.animateAlpha(duration: PredictionAnimationDuration.mainLabelAnimationDuration.rawValue, delay: 0)
         

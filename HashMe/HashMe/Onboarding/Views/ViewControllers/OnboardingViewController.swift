@@ -32,9 +32,12 @@ class OnboardingViewController: UIPageViewController {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
-        
-        
         configureUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateNavControllerProperties()
     }
     
     @IBAction func getStartedButtonTapped(_ sender: Any) {
@@ -51,7 +54,6 @@ extension OnboardingViewController {
         showTheFirstViewController()
         self.view.setupMediumBluredViewOnImage(UIImage.EagleImage)
         self.viewModel = OnboardingViewModel()
-        updateNavControllerProperties()
         configureGetStartedButton()
         configurePageControl()
     }
