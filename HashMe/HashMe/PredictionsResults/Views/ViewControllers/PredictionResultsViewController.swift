@@ -153,11 +153,13 @@ extension PredictionResultsViewController {
     fileprivate func enableCopyButton() {
         self.copyButton.isEnabled = true
         self.copyButton.layer.borderColor = UIColor.white.cgColor
+        self.copyButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     fileprivate func disableCopyButton() {
         self.copyButton.isEnabled = false
         self.copyButton.layer.borderColor = UIColor.darkGray.cgColor
+        self.copyButton.setTitleColor(UIColor.darkGray, for: .normal)
     }
 }
 
