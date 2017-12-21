@@ -16,7 +16,6 @@
 //UIButtons
 "CameraButtonTitle" = "CÁMARA";
 "PhotoLibraryButtonTitle" = "BIBLIOTECA DE FOTOS";
-"GetHashTagsButtonTitle" = "OBTENER ETIQUETAS DE HASH";
 "GetStartedButtonTitle" = "EMPEZAR";
 "copyButtonTitle" = "DUPDO";
 "selectAllButtonTitle" = "SELECCIONAR TODO";

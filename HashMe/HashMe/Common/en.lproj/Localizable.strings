@@ -16,7 +16,6 @@
 //UIButtons
 "CameraButtonTitle" = "CAMERA";
 "PhotoLibraryButtonTitle" = "PHOTO LIBRARY";
-"GetHashTagsButtonTitle" = "GET HASHTAGS";
 "GetStartedButtonTitle" = "GET STARTED";
 "copyButtonTitle" = "COPY";
 "selectAllButtonTitle" = "SELECT ALL";

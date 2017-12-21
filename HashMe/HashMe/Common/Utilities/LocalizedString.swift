@@ -59,7 +59,6 @@ public class LocalizedString {
     //UIButtons
     static var cameraButtonTitle = NSLocalizedString("CameraButtonTitle", comment: "Title for camera button")
     static var photoLibraryButtonTitle = NSLocalizedString("PhotoLibraryButtonTitle", comment: "Title for photo library button")
-    static var predictButtonTitle = NSLocalizedString("GetHashTagsButtonTitle", comment: "Title for get hashtags button")
     static var getStartedButtonTitle = NSLocalizedString("GetStartedButtonTitle", comment: "Title for get started button")
     static var copyButtonTitle = NSLocalizedString("copyButtonTitle", comment: "Title for copy button")
     static var selecAllButtonTitle = NSLocalizedString("selectAllButtonTitle", comment: "Title for selecet all button")

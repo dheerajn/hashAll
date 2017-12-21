@@ -43,10 +43,6 @@ class PredictionsViewModel: PredictionsViewConfigurable {
         return LocalizedString.photoLibraryButtonTitle
     }
     
-    var predictButtonTitle: String? {
-        return LocalizedString.predictButtonTitle
-    }
-    
     var maxNumOfKeys: Int {
         return 7
     }

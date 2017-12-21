@@ -29,9 +29,6 @@ public protocol PredictionsViewConfigurable: class {
     /// Title for photo library button
     var photoLibraryButtonTitle: String? { get }
     
-    /// Title for predict button.
-    var predictButtonTitle: String? { get }
-    
     /// Predicts the image.
     ///
     /// - Parameter ref: Based on the image buffer type. The pixel buffer implements the memory storage for an image buffer.
