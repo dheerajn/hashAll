@@ -78,6 +78,7 @@ extension PredictionResultsViewController {
         self.moveSocialMediaCustomViewOutsideBounds()
         
         handleShareSheetActions()
+        StoreReviewHelper.checkAndAskForReview()
     }
     
     fileprivate func handleShareSheetActions() {

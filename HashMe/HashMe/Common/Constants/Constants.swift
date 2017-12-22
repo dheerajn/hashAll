@@ -11,17 +11,19 @@ import Foundation
 struct Constants {
     
     struct Tags {
-        static let loadingViewTag = 54321
-        static let activateButtonTag = 1210
+        static let loadingViewTag               = 54321
+        static let activateButtonTag            = 1210
     }
-    static var mainStoryboardIdentifier = "Main"
+    static var mainStoryboardIdentifier         = "Main"
     
-    static var onboardingIdentifier = "OnBoarding"
-    static var onboardingViewController1 = "onboardingViewController1"
-    static var onboardingViewController2 = "onboardingViewController2"
-    static var onboardingViewController3 = "onboardingViewController3"
+    static var AppOpenedCount                   = "AppOpenedKey"
+    
+    static var onboardingIdentifier             = "OnBoarding"
+    static var onboardingViewController1        = "onboardingViewController1"
+    static var onboardingViewController2        = "onboardingViewController2"
+    static var onboardingViewController3        = "onboardingViewController3"
 
-    static var hashtagsVcIdentifier = "PredictionsViewController"
-    static var onboardingVcIdentifier = "OnboardingViewController"
-    static var predictionsResultsVcIdentifier = "PredictionResultsViewController"
+    static var hashtagsVcIdentifier             = "PredictionsViewController"
+    static var onboardingVcIdentifier           = "OnboardingViewController"
+    static var predictionsResultsVcIdentifier   = "PredictionResultsViewController"
 }

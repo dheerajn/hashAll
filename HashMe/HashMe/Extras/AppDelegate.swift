@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: mainController)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
+        
+        StoreReviewHelper.incrementAppOpenedCount()
         return true
     }
 

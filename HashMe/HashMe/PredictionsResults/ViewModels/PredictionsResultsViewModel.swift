@@ -53,7 +53,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     }
     
     func launchShareActivity() {
-        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashMe")
+        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashIt")
     }
     
     func updatePredictionsArray(forHashTag tag: String) {
@@ -71,7 +71,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         for activity in self.updatedPredicitons ?? [] {
             activitiesToBeShared.add(activity)
         }
-        activitiesToBeShared.add("#hashMe")
+        activitiesToBeShared.add("#hashIt")
         return activitiesToBeShared
     }
 }

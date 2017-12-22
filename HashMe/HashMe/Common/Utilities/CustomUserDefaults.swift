@@ -17,4 +17,12 @@ class CustomUserDefault {
     func getOnboardingValue() -> Bool? {
         return UserDefaults.standard.value(forKey: Constants.onboardingIdentifier) as? Bool
     }
+    
+    func setAppOpenedCount(value: Int) {
+        UserDefaults.standard.set(value, forKey: Constants.AppOpenedCount)
+    }
+    
+    func getAppOpenedCount() -> Int? {
+        return UserDefaults.standard.value(forKey: Constants.AppOpenedCount) as? Int
+    }
 }
