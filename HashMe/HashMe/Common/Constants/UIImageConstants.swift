@@ -33,6 +33,11 @@ extension UIImage {
         return validShareImage
     }
     
+    static var InfoImage: UIImage {
+        guard let validIconImage = UIImage(named: "info") else { return UIImage() }
+        return validIconImage
+    }
+    
     //Blured Background Images
     static var NatureImage: UIImage {
         guard let validSunLightImage = UIImage(named: "sunlight") else { return UIImage() }

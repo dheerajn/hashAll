@@ -74,6 +74,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         }
         self.viewModel?.predictImage(ref: ref, predictionImage: imageToPredict.image ?? UIImage())
     }
+    
+    @objc func rightBarButtonTapped() {
+        
+    }
 }
 
 //MARK: UI
@@ -106,6 +110,7 @@ extension PredictionsViewController {
         dispatchOnMainQueueWith(delay: 0.05) {
             self.hideLeftNavBarButton()
         }
+        addRightBarButton(withImage: UIImage.InfoImage, withAction: #selector(PredictionsViewController.rightBarButtonTapped))
         self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
         self.descriptionLabel.animateAlpha(duration: PredictionAnimationDuration.mainLabelAnimationDuration.rawValue, delay: 0)
         
