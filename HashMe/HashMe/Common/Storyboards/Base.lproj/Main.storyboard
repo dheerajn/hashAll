@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -282,7 +282,6 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-Ti-KcH" customClass="CustomLabel" customModule="HashMe" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="94" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -304,6 +303,12 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="l6r-Ti-KcH" firstAttribute="top" secondItem="t6O-xb-4nM" secondAttribute="top" id="Ad9-fR-VAG"/>
+                                            <constraint firstAttribute="trailing" secondItem="l6r-Ti-KcH" secondAttribute="trailing" id="FZg-SN-lcC"/>
+                                            <constraint firstItem="l6r-Ti-KcH" firstAttribute="leading" secondItem="t6O-xb-4nM" secondAttribute="leading" id="haP-Nv-MwA"/>
+                                            <constraint firstAttribute="bottom" secondItem="l6r-Ti-KcH" secondAttribute="bottom" id="u5P-Be-JcD"/>
+                                        </constraints>
                                         <size key="customSize" width="94" height="38"/>
                                         <connections>
                                             <outlet property="predictionDisplayLabel" destination="l6r-Ti-KcH" id="zFJ-Zu-xvI"/>

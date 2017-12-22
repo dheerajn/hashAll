@@ -68,11 +68,6 @@ extension PredictionResultsViewController {
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
         
-        let layout = predictionResultsCollectionView.collectionViewLayout as! PredictionViewLayout
-        layout.delegate = self
-        layout.numberOfColumns = 3
-        layout.cellPadding = 5
-        
         self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
         self.shouldEnableCopyButton()
         
@@ -163,6 +158,23 @@ extension PredictionResultsViewController {
     }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
+extension PredictionResultsViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let predictions = viewModel?.originalPredictions
+        guard let validPredictions = predictions else { return CGSize() }
+        let text = validPredictions[indexPath.row]
+        let font = UIFont.systemFont(ofSize: 18)
+        let rect = NSString(string: text).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        
+        return CGSize(width: rect.width + 20, height: rect.height + 10)
+        
+    }
+}
+
+
 // MARK: UICollectionViewDataSource
 extension PredictionResultsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -214,27 +226,5 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         }
         self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
         self.shouldEnableCopyButton()
-    }
-}
-
-// MARK: PredictionLayoutDelegate
-extension PredictionResultsViewController: PredictionLayoutDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, widthForDescriptionAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-        guard let validPrediction = viewModel?.originalPredictions else { return 0.001 }
-        if indexPath.row > validPrediction.count {
-            return 0.001
-        }
-        
-        let character = validPrediction[indexPath.row]
-        let descriptionHeight = widthForText(character.description, width: (width - 24))
-        let width = descriptionHeight + 17
-        return width
-    }
-    
-    func widthForText(_ text: String, width: CGFloat) -> CGFloat {
-        let font = UIFont.systemFont(ofSize: 18)
-        let rect = NSString(string: text).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: width), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
-        return ceil(rect.width)
     }
 }

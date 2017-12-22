@@ -44,7 +44,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     }
     
     var maxNumOfKeys: Int {
-        return 7
+        return 10
     }
     
     func predictImage(ref: CVPixelBuffer, predictionImage: UIImage) {
