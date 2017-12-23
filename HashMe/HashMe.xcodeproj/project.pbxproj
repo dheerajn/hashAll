@@ -94,7 +94,7 @@
 		C812BED01F77290D0029732B /* PredictionResultsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsPresentable.swift; sourceTree = "<group>"; };
 		C812BED21F7738C80029732B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C812BED61F773F8E0029732B /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
-		C817F72C1F75DCBF00B8C0FD /* HashMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C817F72C1F75DCBF00B8C0FD /* HashIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C817F7341F75DCBF00B8C0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C817F7361F75DCBF00B8C0FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 		C817F72D1F75DCBF00B8C0FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C817F72C1F75DCBF00B8C0FD /* HashMe.app */,
+				C817F72C1F75DCBF00B8C0FD /* HashIt.app */,
 				C817F7401F75DCBF00B8C0FD /* HashMeTests.xctest */,
 			);
 			name = Products;
@@ -498,7 +498,7 @@
 			);
 			name = HashMe;
 			productName = HashMe;
-			productReference = C817F72C1F75DCBF00B8C0FD /* HashMe.app */;
+			productReference = C817F72C1F75DCBF00B8C0FD /* HashIt.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C817F73F1F75DCBF00B8C0FD /* HashMeTests */ = {
@@ -801,13 +801,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J43L6556CC;
 				INFOPLIST_FILE = HashMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Dheeru.HashMe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HashIt;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -817,13 +818,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J43L6556CC;
 				INFOPLIST_FILE = HashMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Dheeru.HashMe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HashIt;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
