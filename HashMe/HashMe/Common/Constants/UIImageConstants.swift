@@ -38,6 +38,16 @@ extension UIImage {
         return validIconImage
     }
     
+    static var EmailImage: UIImage {
+        guard let validIconImage = UIImage(named: "icon-email-white") else { return UIImage() }
+        return validIconImage
+    }
+    
+    static var FeedbackImage: UIImage {
+        guard let validIconImage = UIImage(named: "icon-feedback") else { return UIImage() }
+        return validIconImage
+    }
+    
     //Blured Background Images
     static var NatureImage: UIImage {
         guard let validSunLightImage = UIImage(named: "sunlight") else { return UIImage() }
