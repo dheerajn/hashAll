@@ -33,11 +33,21 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
             viewModel?.delegate = self
         }
     }
+    var shouldHideContactsUsView: Bool = true {
+        didSet {
+            if shouldHideContactsUsView == true {
+                hideContactUsView()
+            } else {
+                handleRightBarButtonAction()
+            }
+        }
+    }
     
     @IBOutlet weak var descriptionLabel: CustomLabel!
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var imageToPredict: UIImageView!
+    @IBOutlet weak var contactUsView: CustomView!
     @IBOutlet weak var feedbackButton: UIButton!
     @IBOutlet weak var contactUsButton: UIButton!
     
@@ -62,10 +72,12 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @IBAction func cameraButtonTapped(_ sender: CustomButton) {
+        shouldHideContactsUsView = true
         openCameraOrPhotoLibrary(sourceType: .camera)
     }
     
     @IBAction func photoLibraryTapped(_ sender: CustomButton) {
+        shouldHideContactsUsView = true
         openCameraOrPhotoLibrary(sourceType: .photoLibrary)
     }
     
@@ -78,7 +90,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @objc func rightBarButtonTapped() {
-        self.handleRightBarButtonAction()
+        contactUsView.isHidden == true ? (shouldHideContactsUsView = false) : (shouldHideContactsUsView = true)
     }
     
     @IBAction func feedbackButtonTapped(_ sender: Any) {
@@ -88,7 +100,6 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     @IBAction func contactUsButtonTapped(_ sender: Any) {
         self.viewModel?.handleEmailAction()
     }
-    
 }
 
 //MARK: UI & Helper methods
@@ -129,20 +140,38 @@ extension PredictionsViewController {
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         
-        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
-        self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
+        hideContactsUsViewButtons()
+        
+        self.contactUsView.setupLightBluredViewOnImage(UIImage.SnowRiverImage)
+        self.shouldHideContactsUsView = true
         
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }
     
     func handleRightBarButtonAction() {
         UIView.animate(withDuration: 0.3, animations: {
-            self.feedbackButton.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.contactUsView.isHidden = false
         }) { (animated) in
             UIView.animate(withDuration: 0.3, animations: {
-                self.contactUsButton.transform = CGAffineTransform(translationX: 0, y: 0)
-            }, completion: nil)
+                self.feedbackButton.transform = CGAffineTransform(translationX: 0, y: 0)
+            }) { (animated) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.contactUsButton.transform = CGAffineTransform(translationX: 0, y: 0)
+                }, completion: nil)
+            }
         }
+    }
+    
+    func hideContactUsView() {
+        UIView.animate(withDuration: 0.5) {
+            self.contactUsView.isHidden = true
+            self.hideContactsUsViewButtons()
+        }
+    }
+    
+    fileprivate func hideContactsUsViewButtons() {
+        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
+        self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
     }
 }
 
