@@ -23,8 +23,8 @@
 "hashTagTitle" = "THE HASHTAG";
 "hashTagDescription" = "Utiliza hashtags con redes en línea, no seas un instrumento al respecto!";
 
-"step1OnboardingText" = "Genera hashtags automáticamente a partir del contenido de las fotos.";
-"step2OnboardingText" = "Cargue fotos directamente desde la biblioteca de fotos o desde la cámara.";
+"step1OnboardingText" = "Cargue fotos directamente desde la biblioteca de fotos o desde la cámara.";
+"step2OnboardingText" = "Genera hashtags automáticamente a partir del contenido de las fotos.";
 "step3OnboardingText" = "Importe las etiquetas en Instagram o cualquier otra aplicación de redes sociales.";
 
 //UILabel

@@ -66,7 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot2" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-mc-oli" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot1" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-mc-oli" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
                                 <rect key="frame" x="65" y="35" width="245" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -109,7 +109,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot1" translatesAutoresizingMaskIntoConstraints="NO" id="fKO-wP-5tJ" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot3" translatesAutoresizingMaskIntoConstraints="NO" id="fKO-wP-5tJ" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
                                 <rect key="frame" x="65" y="35" width="245" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -525,7 +525,8 @@
         <image name="checkmark" width="32" height="32"/>
         <image name="icon-email" width="30" height="30"/>
         <image name="icon-feedback" width="30" height="30"/>
-        <image name="screenshot1" width="458" height="815"/>
-        <image name="screenshot2" width="458" height="815"/>
+        <image name="screenshot1" width="750" height="1293"/>
+        <image name="screenshot2" width="748" height="1294"/>
+        <image name="screenshot3" width="750" height="1292"/>
     </resources>
 </document>
