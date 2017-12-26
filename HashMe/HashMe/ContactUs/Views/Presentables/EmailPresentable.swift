@@ -18,6 +18,8 @@ public extension EmailPresentable where Self: HashTagFlowController {
         let emailViewModel = EmailViewModel()
         emailViewModel.flowDelegate = self
         emailViewController.viewModel = emailViewModel
+        
+        emailViewController.modalPresentationStyle = .overCurrentContext
         self.navigationController?.present(emailViewController, animated: true, completion: nil)
     }
 }

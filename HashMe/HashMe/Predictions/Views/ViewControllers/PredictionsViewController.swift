@@ -129,23 +129,20 @@ extension PredictionsViewController {
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         
-//        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: 0)
-//        self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
+        self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
         
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }
     
     func handleRightBarButtonAction() {
-//        UIView.animate(withDuration: OnboardingAnimationDuration.getStartedButton.rawValue,
-//                       delay: 0,
-//                       usingSpringWithDamping: 0.8,
-//                       initialSpringVelocity: 1,
-//                       options: UIViewAnimationOptions.allowUserInteraction,
-//                       animations: {
-//                        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: 0.01)
-//        }, completion: { (success) in
-//            self.feedbackButton.transform = CGAffineTransform.identity
-//        })
+        UIView.animate(withDuration: 0.3, animations: {
+            self.feedbackButton.transform = CGAffineTransform(translationX: 0, y: 0)
+        }) { (animated) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.contactUsButton.transform = CGAffineTransform(translationX: 0, y: 0)
+            }, completion: nil)
+        }
     }
 }
 

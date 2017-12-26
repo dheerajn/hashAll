@@ -16,6 +16,7 @@ class EmailViewController: BaseViewController, MFMailComposeViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.clear
         sendEmailButtonTapped()
     }
     
@@ -33,17 +34,32 @@ class EmailViewController: BaseViewController, MFMailComposeViewControllerDelega
         mailComposerVC.mailComposeDelegate = self
         mailComposerVC.setToRecipients(viewModel?.recipients ?? [""])
         mailComposerVC.setSubject(viewModel?.subject ?? "")
-//        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
-        
         return mailComposerVC
     }
     
     func showSendMailErrorAlert() {
-        print("can not send email")
+        dispatchOnMainQueueWith(delay: 1) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: MFMailComposeViewControllerDelegate Method
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch (result) {
+        case .cancelled:
+            print("mail cancelled")
+            break
+        case .saved:
+            print("mail saved")
+            break
+        case .sent:
+            print("mail sent successfully")
+            break
+        case .failed:
+            print("mail failed")
+            break
+        }
         controller.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
