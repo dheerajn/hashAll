@@ -47,7 +47,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var imageToPredict: UIImageView!
-    @IBOutlet weak var contactUsView: CustomView!
+    @IBOutlet weak var contactUsContainerView: CustomView!
     @IBOutlet weak var feedbackButton: UIButton!
     @IBOutlet weak var contactUsButton: UIButton!
     
@@ -90,7 +90,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @objc func rightBarButtonTapped() {
-        contactUsView.isHidden == true ? (shouldHideContactsUsView = false) : (shouldHideContactsUsView = true)
+        contactUsContainerView.isHidden == true ? (shouldHideContactsUsView = false) : (shouldHideContactsUsView = true)
     }
     
     @IBAction func feedbackButtonTapped(_ sender: Any) {
@@ -142,7 +142,7 @@ extension PredictionsViewController {
         
         hideContactsUsViewButtons()
         
-        self.contactUsView.setupLightBluredViewOnImage(UIImage.SnowRiverImage)
+        self.contactUsContainerView.setupLightBluredViewOnImage(UIImage.SnowRiverImage)
         self.shouldHideContactsUsView = true
         
         self.view.setupMediumBluredViewOnImage(UIImage.SunshineGreenery)
@@ -150,7 +150,7 @@ extension PredictionsViewController {
     
     func handleRightBarButtonAction() {
         UIView.animate(withDuration: 0.3, animations: {
-            self.contactUsView.isHidden = false
+            self.contactUsContainerView.isHidden = false
         }) { (animated) in
             UIView.animate(withDuration: 0.3, animations: {
                 self.feedbackButton.transform = CGAffineTransform(translationX: 0, y: 0)
@@ -164,7 +164,7 @@ extension PredictionsViewController {
     
     func hideContactUsView() {
         UIView.animate(withDuration: 0.5) {
-            self.contactUsView.isHidden = true
+            self.contactUsContainerView.isHidden = true
             self.hideContactsUsViewButtons()
         }
     }

@@ -301,7 +301,7 @@
                     <connections>
                         <outlet property="cameraButton" destination="iMq-AW-SUq" id="V4r-tG-Ied"/>
                         <outlet property="contactUsButton" destination="kqa-bo-XnF" id="nWp-BE-opa"/>
-                        <outlet property="contactUsView" destination="yCq-aL-tq6" id="fpb-vI-z93"/>
+                        <outlet property="contactUsContainerView" destination="yCq-aL-tq6" id="fpb-vI-z93"/>
                         <outlet property="descriptionLabel" destination="zWd-rd-Leb" id="nmX-J1-RBu"/>
                         <outlet property="feedbackButton" destination="332-7u-I7y" id="Hod-Fm-5Ee"/>
                         <outlet property="imageToPredict" destination="1kV-oF-rCg" id="yoz-zm-vO9"/>
