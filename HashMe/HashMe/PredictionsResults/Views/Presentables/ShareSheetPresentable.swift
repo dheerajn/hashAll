@@ -18,7 +18,7 @@ public extension ShareSheetPresentable {
         
         guard let validActivities = activities as? [Any] else { return }
         let activityVC = UIActivityViewController(activityItems: validActivities, applicationActivities: [])
-        activityVC.setValue("Stay at the )", forKey: "subject")
+        activityVC.setValue("#hashIt", forKey: "subject")
         let excludeActivities: [UIActivityType] = [.airDrop,
                                                    .assignToContact,
                                                    .copyToPasteboard,
