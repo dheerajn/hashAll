@@ -39,7 +39,7 @@ extension UIImage {
     }
     
     static var EmailImage: UIImage {
-        guard let validIconImage = UIImage(named: "icon-email-white") else { return UIImage() }
+        guard let validIconImage = UIImage(named: "icon-email") else { return UIImage() }
         return validIconImage
     }
     

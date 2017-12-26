@@ -38,6 +38,8 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     @IBOutlet weak var cameraButton: CustomButton!
     @IBOutlet weak var photoLibraryButton: CustomButton!
     @IBOutlet weak var imageToPredict: UIImageView!
+    @IBOutlet weak var feedbackButton: UIButton!
+    @IBOutlet weak var contactUsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,11 +78,21 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @objc func rightBarButtonTapped() {
+        self.handleRightBarButtonAction()
+    }
+    
+    @IBAction func feedbackButtonTapped(_ sender: Any) {
         
     }
+    
+    @IBAction func contactUsButtonTapped(_ sender: Any) {
+        
+    }
+    
 }
 
-//MARK: UI
+//MARK: UI & Helper methods
+
 extension PredictionsViewController {
     fileprivate func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
@@ -117,9 +129,26 @@ extension PredictionsViewController {
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         
+        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }
+    
+    func handleRightBarButtonAction() {
+//        UIView.animate(withDuration: OnboardingAnimationDuration.getStartedButton.rawValue,
+//                       delay: 0,
+//                       usingSpringWithDamping: 0.8,
+//                       initialSpringVelocity: 1,
+//                       options: UIViewAnimationOptions.allowUserInteraction,
+//                       animations: {
+//                        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: 0.01)
+//        }, completion: { (success) in
+//            self.feedbackButton.transform = CGAffineTransform.identity
+//        })
+    }
 }
+
+//MARK: UIImagePickerControllerDelegate
 
 extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -142,6 +171,8 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
         imagePicker.dismiss(animated: true, completion: nil)
     }
 }
+
+//MARK: PredictionsViewDelegate
 
 extension PredictionsViewController: PredictionsViewDelegate {
     func removePredictionImage() {

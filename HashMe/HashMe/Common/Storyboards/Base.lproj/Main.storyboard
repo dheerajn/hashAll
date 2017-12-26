@@ -236,11 +236,37 @@
                                     <action selector="photoLibraryTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtW-dd-PtW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="332-7u-I7y">
+                                <rect key="frame" x="315" y="70" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jod-Ac-Vj8"/>
+                                    <constraint firstAttribute="width" constant="50" id="MRq-64-1KV"/>
+                                </constraints>
+                                <state key="normal" image="icon-feedback"/>
+                                <connections>
+                                    <action selector="feedbackButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vcu-iT-NBt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-bo-XnF">
+                                <rect key="frame" x="315" y="130" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1ph-fL-H1n"/>
+                                    <constraint firstAttribute="width" constant="50" id="WSX-oO-ixi"/>
+                                </constraints>
+                                <state key="normal" image="icon-email"/>
+                                <connections>
+                                    <action selector="contactUsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNH-8F-m6y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kqa-bo-XnF" firstAttribute="top" secondItem="332-7u-I7y" secondAttribute="bottom" constant="10" id="5QE-qb-UxM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kqa-bo-XnF" secondAttribute="trailing" constant="10" id="CKt-pL-tzm"/>
                             <constraint firstItem="iMq-AW-SUq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Iwx-vr-s8i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="332-7u-I7y" secondAttribute="trailing" constant="10" id="XRj-Db-rVW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M3A-mt-Td0" secondAttribute="bottom" constant="65" id="azc-5A-Flq"/>
+                            <constraint firstItem="332-7u-I7y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="70" id="cId-h9-x0v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M3A-mt-Td0" secondAttribute="trailing" constant="20" id="fzS-XU-uPI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iMq-AW-SUq" secondAttribute="bottom" constant="65" id="h7Q-AI-BnC"/>
                             <constraint firstItem="zWd-rd-Leb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hTw-kJ-vy4"/>
@@ -251,7 +277,9 @@
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="iMq-AW-SUq" id="V4r-tG-Ied"/>
+                        <outlet property="contactUsButton" destination="kqa-bo-XnF" id="nWp-BE-opa"/>
                         <outlet property="descriptionLabel" destination="zWd-rd-Leb" id="nmX-J1-RBu"/>
+                        <outlet property="feedbackButton" destination="332-7u-I7y" id="Hod-Fm-5Ee"/>
                         <outlet property="imageToPredict" destination="1kV-oF-rCg" id="yoz-zm-vO9"/>
                         <outlet property="photoLibraryButton" destination="M3A-mt-Td0" id="vOc-tJ-XZO"/>
                     </connections>
@@ -471,6 +499,8 @@
     </scenes>
     <resources>
         <image name="checkmark" width="32" height="32"/>
+        <image name="icon-email" width="30" height="30"/>
+        <image name="icon-feedback" width="30" height="30"/>
         <image name="screenshot1" width="458" height="815"/>
         <image name="screenshot2" width="458" height="815"/>
     </resources>
