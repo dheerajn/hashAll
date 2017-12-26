@@ -45,20 +45,7 @@ class EmailViewController: BaseViewController, MFMailComposeViewControllerDelega
     
     // MARK: MFMailComposeViewControllerDelegate Method
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        switch (result) {
-        case .cancelled:
-            print("mail cancelled")
-            break
-        case .saved:
-            print("mail saved")
-            break
-        case .sent:
-            print("mail sent successfully")
-            break
-        case .failed:
-            print("mail failed")
-            break
-        }
+        print("result was \(result)")
         controller.dismiss(animated: true, completion: nil)
         self.dismiss(animated: true, completion: nil)
     }
