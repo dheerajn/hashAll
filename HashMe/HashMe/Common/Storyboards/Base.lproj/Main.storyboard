@@ -321,7 +321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pT2-tb-Te3">
-                                <rect key="frame" x="16" y="20" width="343" height="572"/>
+                                <rect key="frame" x="16" y="40" width="343" height="552"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="q0W-Gs-SLT" customClass="PredictionViewLayout" customModule="HashIt" customModuleProvider="target"/>
                                 <cells>
@@ -499,7 +499,7 @@
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="pT2-tb-Te3" secondAttribute="bottom" constant="75" id="K4x-wp-k3s"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Gi2-Ql-54o" secondAttribute="trailing" constant="30" id="NVg-pu-Fbm"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Mjh-3e-IHC" secondAttribute="trailing" constant="15" id="Ogw-rm-EQH"/>
-                            <constraint firstItem="pT2-tb-Te3" firstAttribute="top" secondItem="neA-Pt-P9Z" secondAttribute="top" id="mDs-uU-eQ4"/>
+                            <constraint firstItem="pT2-tb-Te3" firstAttribute="top" secondItem="neA-Pt-P9Z" secondAttribute="top" constant="20" id="mDs-uU-eQ4"/>
                             <constraint firstItem="pT2-tb-Te3" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="16" id="myQ-ng-faz"/>
                             <constraint firstItem="Mjh-3e-IHC" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="15" id="nYb-Zw-OgN"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="Gi2-Ql-54o" secondAttribute="bottom" constant="20" id="pbl-wm-FvA"/>
