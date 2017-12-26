@@ -145,7 +145,7 @@ extension PredictionsViewController {
         self.contactUsView.setupLightBluredViewOnImage(UIImage.SnowRiverImage)
         self.shouldHideContactsUsView = true
         
-        self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
+        self.view.setupMediumBluredViewOnImage(UIImage.SunshineGreenery)
     }
     
     func handleRightBarButtonAction() {

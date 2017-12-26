@@ -50,13 +50,13 @@ extension UIImage {
     
     //Blured Background Images
     static var NatureImage: UIImage {
-        guard let validSunLightImage = UIImage(named: "sunlight") else { return UIImage() }
-        return validSunLightImage
+        guard let validNatureImage = UIImage(named: "sunlight") else { return UIImage() }
+        return validNatureImage
     }
     
-    static var EagleImage: UIImage {
-        guard let validEagleImage = UIImage(named: "eagle") else { return UIImage() }
-        return validEagleImage
+    static var SunshineGreenery: UIImage {
+        guard let validSunshineGreeneryImage = UIImage(named: "sunshineGreenery") else { return UIImage() }
+        return validSunshineGreeneryImage
     }
     
     static var SnowRiverImage: UIImage {

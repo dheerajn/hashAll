@@ -52,7 +52,7 @@ class OnboardingViewController: UIPageViewController {
 extension OnboardingViewController {
     fileprivate func configureUI() {
         showTheFirstViewController()
-        self.view.setupMediumBluredViewOnImage(UIImage.EagleImage)
+        self.view.setupMediumBluredViewOnImage(UIImage.SunshineGreenery)
         self.viewModel = OnboardingViewModel()
         configureGetStartedButton()
         configurePageControl()
