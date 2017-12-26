@@ -51,7 +51,8 @@ public class LocalizedString {
     
     //Alert Buttons
     static var okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
-    
+    static var noThanksButtonTitle = NSLocalizedString("NoThanksButtonTitle", comment: "Title for No Thanks button")
+
     //Predictions
     static var alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
     static var alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
@@ -73,4 +74,5 @@ public class LocalizedString {
     
     //Prediction Results
     static var copiedText = NSLocalizedString("CopiedText", comment: "Title for Copied Label")
+    static var askForCopyingTags = NSLocalizedString("AskForCopyingTags", comment: "Text for asking user to copy tags")
 }

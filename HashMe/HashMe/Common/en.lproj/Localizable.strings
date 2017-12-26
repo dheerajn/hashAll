@@ -8,6 +8,7 @@
 
 //Alert Buttons
 "OkButtonTitle" = "OK";
+"NoThanksButtonTitle" = "No, thanks";
 
 //Predictions
 "ImagePickerAlert" = "Huh, looks like there is something wrong. Please try again later.";
@@ -29,3 +30,6 @@
 
 //UILabel
 "CopiedText" = "COPIED";
+
+//PredictionResults
+"AskForCopyingTags" = "Would you like to copy hash tags before you proceed?";

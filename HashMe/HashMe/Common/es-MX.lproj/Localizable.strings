@@ -8,6 +8,7 @@
 
 //Alert Buttons
 "OkButtonTitle" = "DE ACUERDO";
+"NoThanksButtonTitle" = "No, gracias";
 
 //Predictions
 "ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, inténtelo de nuevo más tarde.";
@@ -29,3 +30,6 @@
 
 //UILabel
 "CopiedText" = "COPIADO";
+
+//PredictionResults
+"AskForCopyingTags" = "Le gustaría copiar etiquetas hash antes de continuar?";

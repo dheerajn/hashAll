@@ -94,12 +94,25 @@ extension PredictionResultsViewController {
         }
         
         self.socialMediaView.moreButtonCustomHandler = {
-            self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
-            //The following codes helps in dismissing the custom share sheet and then presenting UIActivityVc
-            dispatchOnMainQueueWith(delay: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue, closure: {
-                self.viewModel?.launchShareActivity()
+            let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
+            let noThanks: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.default, handler: {
+                self.handleMoreButtonAction()
             })
+            CustomAlertController().displayAlertWithTitle(nil,
+                                                          message: LocalizedString.askForCopyingTags,
+                                                          preferredStyle: .alert,
+                                                          andActions: [dismissAction, noThanks],
+                                                          onViewController: self)
+            
         }
+    }
+    
+    fileprivate func handleMoreButtonAction() {
+        self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
+        //The following codes helps in dismissing the custom share sheet and then presenting UIActivityVc
+        dispatchOnMainQueueWith(delay: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue, closure: {
+            self.viewModel?.launchShareActivity()
+        })
     }
     
     fileprivate func animateCopiedView() {
