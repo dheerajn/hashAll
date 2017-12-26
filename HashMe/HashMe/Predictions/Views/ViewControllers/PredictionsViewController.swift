@@ -86,7 +86,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @IBAction func contactUsButtonTapped(_ sender: Any) {
-        
+        self.viewModel?.handleEmailAction()
     }
     
 }
@@ -129,8 +129,9 @@ extension PredictionsViewController {
         self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         
-        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: 0)
-        self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+//        self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+//        self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
         self.view.setupLightBluredViewOnImage(UIImage.EagleImage)
     }
     

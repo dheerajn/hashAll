@@ -33,6 +33,10 @@ public protocol PredictionsViewConfigurable: class {
     ///
     /// - Parameter ref: Based on the image buffer type. The pixel buffer implements the memory storage for an image buffer.
     func predictImage(ref: CVPixelBuffer, predictionImage: UIImage)
+    
+    
+    /// Lets user to email about the application.
+    func handleEmailAction()
 }
 
 public protocol PredictionsViewDelegate: class {

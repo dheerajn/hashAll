@@ -66,6 +66,10 @@ class PredictionsViewModel: PredictionsViewConfigurable {
             print(error)
         }
     }
+    
+    func handleEmailAction() {
+        self.flowDelegate?.showEmailView()
+    }
 
     fileprivate func emptyPredictionResultsArray() {
         if self.predictedResults.count > 0 {
