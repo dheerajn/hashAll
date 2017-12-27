@@ -386,7 +386,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" misplaced="YES" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="OsH-Xo-rii">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="OsH-Xo-rii">
                                                     <rect key="frame" x="35" y="27" width="171" height="137"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -418,11 +418,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
                                 <rect key="frame" x="30" y="607" width="315" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-yi-dQg" customClass="CustomButton" customModule="HashIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zan-w3-64Z"/>
                                         </constraints>
@@ -445,7 +445,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cre-d3-Zps" customClass="CustomButton" customModule="HashIt" customModuleProvider="target">
-                                        <rect key="frame" x="207.5" y="0.0" width="107.5" height="40"/>
+                                        <rect key="frame" x="195" y="0.0" width="120" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Oip-Aj-Byr"/>
                                         </constraints>
