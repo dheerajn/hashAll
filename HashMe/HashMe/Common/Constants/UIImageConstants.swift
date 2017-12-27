@@ -63,4 +63,9 @@ extension UIImage {
         guard let validSnowRiverImage = UIImage(named: "snowRiver") else { return UIImage() }
         return validSnowRiverImage
     }
+    
+    static var AutumnImage: UIImage {
+        guard let validAutumnImage = UIImage(named: "autumn") else { return UIImage() }
+        return validAutumnImage
+    }
 }

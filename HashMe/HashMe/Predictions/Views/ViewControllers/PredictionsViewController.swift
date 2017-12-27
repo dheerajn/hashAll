@@ -142,7 +142,7 @@ extension PredictionsViewController {
         
         hideContactsUsViewButtons()
         
-        self.contactUsContainerView.setupLightBluredViewOnImage(UIImage.SnowRiverImage)
+        self.contactUsContainerView.setupMediumBluredViewOnImage(UIImage.AutumnImage)
         self.shouldHideContactsUsView = true
         
         self.view.setupMediumBluredViewOnImage(UIImage.SunshineGreenery)
