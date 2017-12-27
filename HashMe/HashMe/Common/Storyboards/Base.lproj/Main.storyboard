@@ -418,7 +418,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
                                 <rect key="frame" x="30" y="607" width="315" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-yi-dQg" customClass="CustomButton" customModule="HashIt" customModuleProvider="target">
@@ -438,6 +438,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minimumScalingFactor">
+                                                <real key="value" value="0.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -494,10 +497,10 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Gi2-Ql-54o" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="30" id="5yP-Nb-reE"/>
+                            <constraint firstItem="Gi2-Ql-54o" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="20" id="5yP-Nb-reE"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="Mjh-3e-IHC" secondAttribute="bottom" constant="20" id="8oF-4s-a8F"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="pT2-tb-Te3" secondAttribute="bottom" constant="75" id="K4x-wp-k3s"/>
-                            <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Gi2-Ql-54o" secondAttribute="trailing" constant="30" id="NVg-pu-Fbm"/>
+                            <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Gi2-Ql-54o" secondAttribute="trailing" constant="20" id="NVg-pu-Fbm"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Mjh-3e-IHC" secondAttribute="trailing" constant="15" id="Ogw-rm-EQH"/>
                             <constraint firstItem="pT2-tb-Te3" firstAttribute="top" secondItem="neA-Pt-P9Z" secondAttribute="top" constant="20" id="mDs-uU-eQ4"/>
                             <constraint firstItem="pT2-tb-Te3" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="16" id="myQ-ng-faz"/>
