@@ -31,4 +31,6 @@ struct Constants {
     static var hashtagsVcIdentifier             = "PredictionsViewController"
     static var onboardingVcIdentifier           = "OnboardingViewController"
     static var predictionsResultsVcIdentifier   = "PredictionResultsViewController"
+    
+    static var socialMediaViewIdentifier        = "SocialMediaView"
 }

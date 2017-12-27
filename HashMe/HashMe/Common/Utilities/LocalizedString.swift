@@ -77,4 +77,9 @@ public class LocalizedString {
     static var askForCopyingTags = NSLocalizedString("AskForCopyingTags", comment: "Text for asking user to copy tags")
     static var instagramIssueTitle = NSLocalizedString("InstagramIssue", comment: "Title for alert when instagram can not be opened.")
     static var pleaseTryAgainLater = NSLocalizedString("PleaseTryAgainLater", comment: "Title for alert when instagram can not be opened.")
+    
+    //SocialView
+    static var shareWithLabelTitle = NSLocalizedString("ShareWithLabelTitle", comment: "Title for Label on Social View")
+    static var instagramLabelTitle = NSLocalizedString("InstagramLabelTitle", comment: "Title for Label on Social View")
+    static var moreLabelTitle = NSLocalizedString("MoreLabelTitle", comment: "Title for Label on Social View")
 }

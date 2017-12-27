@@ -12,10 +12,10 @@
 
 //Predictions
 "ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, inténtelo de nuevo más tarde.";
-"ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo más tarde. Algo salió mal.";
+"ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo más tarde. Algo salio mal.";
 
 //UIButtons
-"CameraButtonTitle" = "CÁMARA";
+"CameraButtonTitle" = "CAMARA";
 "PhotoLibraryButtonTitle" = "BIBLIOTECA DE FOTOS";
 "GetStartedButtonTitle" = "EMPEZAR";
 "copyButtonTitle" = "DUPDO";
@@ -34,4 +34,9 @@
 //PredictionResults
 "AskForCopyingTags" = "Le gustaría copiar etiquetas hash antes de continuar?";
 "InstagramIssue" = "Hmm, parece que hay un problema abriendo Instagram.";
-"PleaseTryAgainLater" = "Por favor, inténtelo de nuevo más tarde";
+"PleaseTryAgainLater" = "Por favor, intentelo de nuevo mas tarde";
+
+//SocialView
+"ShareWithLabelTitle" = "compartir con...";
+"InstagramLabelTitle" = "Instagram";
+"MoreLabelTitle" = "Mas";

@@ -14,6 +14,10 @@ class SocialMediaCustomView: CustomView {
     @IBOutlet weak var instagramButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
     
+    @IBOutlet weak var shareWithLabel: UILabel!
+    @IBOutlet weak var instagramLabel: UILabel!
+    @IBOutlet weak var moreLabel: UILabel!
+    
     var instagramButtonCustomHander: (() -> Void)?
     var dismissButtonCustomHandler: (() -> Void)?
     var moreButtonCustomHandler: (() -> Void)?
@@ -29,10 +33,14 @@ class SocialMediaCustomView: CustomView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("SocialMediaView", owner: self, options: nil)
+        Bundle.main.loadNibNamed(Constants.socialMediaViewIdentifier, owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        self.shareWithLabel.text = LocalizedString.shareWithLabelTitle
+        self.instagramLabel.text = LocalizedString.instagramLabelTitle
+        self.moreLabel.text = LocalizedString.moreLabelTitle
     }
 
     @IBAction func dismissButtonTapped(_ sender: Any) {
@@ -51,5 +59,4 @@ class SocialMediaCustomView: CustomView {
             self.moreButtonCustomHandler!()
         }
     }
-    
 }
