@@ -50,12 +50,27 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @IBAction func selectAllButtonTapped(_ sender: Any) {
-        self.viewModel?.selectAllButtonTapped()
-        guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
+        let buttonTitle = selectAllButton.titleLabel?.text
         
-        let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = true; $0.scaleToIdentityWith3DAnimation()}
-        
-        self.shouldEnableCopyButton()
+        if buttonTitle == LocalizedString.selecAllButtonTitle {
+            self.selectAllButton.setTitle(LocalizedString.deselecAllButtonTitle, for: .normal)
+            
+            self.viewModel?.selectAllButtonTapped()
+            guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
+            
+            let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = true; $0.scaleToIdentityWith3DAnimation()}
+            
+            self.shouldEnableCopyButton()
+        } else if buttonTitle == LocalizedString.deselecAllButtonTitle {
+            self.selectAllButton.setTitle(LocalizedString.selecAllButtonTitle, for: .normal)
+            
+            self.viewModel?.deselectAllButtonTapped()
+            guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
+            
+            let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = false; $0.scaleDownForAnimation()}
+            
+            self.shouldEnableCopyButton()
+        }
     }
 }
 

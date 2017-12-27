@@ -52,6 +52,10 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         self.updatedPredicitons = self.originalPredictions
     }
     
+    func deselectAllButtonTapped() {
+        self.updatedPredicitons = []
+    }
+    
     func launchShareActivity() {
         self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashIt")
     }
@@ -71,7 +75,8 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         for activity in self.updatedPredicitons ?? [] {
             activitiesToBeShared.add(activity)
         }
-        activitiesToBeShared.add("#hashIt")
+        let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "hashIt"
+        activitiesToBeShared.add("#\(appName.camelCaseStringLowerCase)")
         return activitiesToBeShared
     }
 }

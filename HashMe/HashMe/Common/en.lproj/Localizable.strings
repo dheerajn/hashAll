@@ -20,6 +20,7 @@
 "GetStartedButtonTitle" = "GET STARTED";
 "copyButtonTitle" = "COPY";
 "selectAllButtonTitle" = "SELECT ALL";
+"deselectAllButtonTitle" = "DESELECT ALL";
 
 "hashTagTitle" = "THE HASHTAG";
 "hashTagDescription" = "Utilize hashtags with online networking, don't be an instrument about it!";

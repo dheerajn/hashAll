@@ -22,6 +22,7 @@ public protocol PredictionResultsViewConfigurable: class {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     
     func selectAllButtonTapped()
+    func deselectAllButtonTapped()
     func updatePredictionsArray(forHashTag tag: String)
     func copyHashTagsToPasteboard()
     func launchShareActivity()

@@ -20,6 +20,7 @@
 "GetStartedButtonTitle" = "EMPEZAR";
 "copyButtonTitle" = "DUPDO";
 "selectAllButtonTitle" = "SELECCIONAR TODO";
+"deselectAllButtonTitle" = "DESELECCIONAR TODO";
 
 "hashTagTitle" = "THE HASHTAG";
 "hashTagDescription" = "Utiliza hashtags con redes en línea, no seas un instrumento al respecto!";
