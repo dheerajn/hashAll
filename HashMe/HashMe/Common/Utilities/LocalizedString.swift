@@ -75,4 +75,6 @@ public class LocalizedString {
     //Prediction Results
     static var copiedText = NSLocalizedString("CopiedText", comment: "Title for Copied Label")
     static var askForCopyingTags = NSLocalizedString("AskForCopyingTags", comment: "Text for asking user to copy tags")
+    static var instagramIssueTitle = NSLocalizedString("InstagramIssue", comment: "Title for alert when instagram can not be opened.")
+    static var pleaseTryAgainLater = NSLocalizedString("PleaseTryAgainLater", comment: "Title for alert when instagram can not be opened.")
 }

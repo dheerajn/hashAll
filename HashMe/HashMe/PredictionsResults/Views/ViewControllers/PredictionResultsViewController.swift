@@ -85,7 +85,11 @@ extension PredictionResultsViewController {
         self.socialMediaView.instagramButtonCustomHander = {
             let url = URL(string: "instagram://camera")
             if let url = url {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: [:], completionHandler: { (urlOpened) in
+                    if urlOpened == false {
+                        self.showInstagramAlertIssue()
+                    }
+                })
             }
         }
         
@@ -94,7 +98,7 @@ extension PredictionResultsViewController {
         }
         
         self.socialMediaView.moreButtonCustomHandler = {
-            if (self.viewModel?.updatedPredicitons?.count ?? 0) > 1 {
+            if (self.viewModel?.updatedPredicitons?.count ?? 0) >= 1 {
                 self.handleMoreButtonAction()
             } else {
                 let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
@@ -172,6 +176,15 @@ extension PredictionResultsViewController {
         self.copyButton.isEnabled = false
         self.copyButton.layer.borderColor = UIColor.darkGray.cgColor
         self.copyButton.setTitleColor(UIColor.darkGray, for: .normal)
+    }
+    
+    fileprivate func showInstagramAlertIssue() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.cancel, handler: nil)
+        CustomAlertController().displayAlertWithTitle(LocalizedString.instagramIssueTitle,
+                                                      message: LocalizedString.pleaseTryAgainLater,
+                                                      preferredStyle: .alert,
+                                                      andActions: [dismissAction],
+                                                      onViewController: self)
     }
 }
 

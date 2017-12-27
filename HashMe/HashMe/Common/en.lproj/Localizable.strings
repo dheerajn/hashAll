@@ -33,3 +33,5 @@
 
 //PredictionResults
 "AskForCopyingTags" = "Would you like to copy hash tags before you proceed?";
+"InstagramIssue" = "Hmm, looks like there is an issue opening Instagram.";
+"PleaseTryAgainLater" = "Please try again later";
