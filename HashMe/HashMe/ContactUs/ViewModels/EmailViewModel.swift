@@ -13,10 +13,10 @@ class EmailViewModel: EmailViewConfigurable {
     var flowDelegate: HashTagFlowDelegate?
     
     var recipients: [String]? {
-        return ["test@test.com"]
+        return ["hashitiosfeedback@gmail.com"]
     }
     
     var subject: String? {
-        return "test subject"
+        return "HashIt-ContactUs"
     }
 }
