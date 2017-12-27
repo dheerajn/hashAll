@@ -94,16 +94,19 @@ extension PredictionResultsViewController {
         }
         
         self.socialMediaView.moreButtonCustomHandler = {
-            let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
-            let noThanks: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.default, handler: {
+            if (self.viewModel?.updatedPredicitons?.count ?? 0) > 1 {
                 self.handleMoreButtonAction()
-            })
-            CustomAlertController().displayAlertWithTitle(nil,
-                                                          message: LocalizedString.askForCopyingTags,
-                                                          preferredStyle: .alert,
-                                                          andActions: [dismissAction, noThanks],
-                                                          onViewController: self)
-            
+            } else {
+                let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
+                let noThanks: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.default, handler: {
+                    self.handleMoreButtonAction()
+                })
+                CustomAlertController().displayAlertWithTitle(nil,
+                                                              message: LocalizedString.askForCopyingTags,
+                                                              preferredStyle: .alert,
+                                                              andActions: [dismissAction, noThanks],
+                                                              onViewController: self)
+            }
         }
     }
     
