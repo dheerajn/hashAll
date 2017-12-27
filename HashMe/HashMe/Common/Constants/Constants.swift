@@ -14,6 +14,11 @@ struct Constants {
         static let loadingViewTag               = 54321
         static let activateButtonTag            = 1210
     }
+    
+    struct ContactUs {
+        static let recipient = "hashitiosfeedback@gmail.com"
+        static let subject = "HashIt-ContactUs"
+    }
     static var mainStoryboardIdentifier         = "Main"
     
     static var AppOpenedCount                   = "AppOpenedKey"
