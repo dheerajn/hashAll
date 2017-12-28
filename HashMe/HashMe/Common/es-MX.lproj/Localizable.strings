@@ -14,8 +14,7 @@
 "ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, intentelo de nuevo mas tarde.";
 "ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo mas tarde. Algo salio mal.";
 "AppStoreOpenIssueTitle" = "Lo siento, no puedo abrir App Store.";
-"AppStoreOpenIssueMessage" = "Seleccione nuestra aplicacion de la App Store y escriba una resena para nosotros. Gracias.
-";
+"AppStoreOpenIssueMessage" = "Seleccione nuestra aplicacion de la App Store y escriba una resena para nosotros. Gracias.";
 
 //UIButtons
 "CameraButtonTitle" = "CAMARA";
