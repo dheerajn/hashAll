@@ -11,10 +11,10 @@
 "NoThanksButtonTitle" = "No, gracias";
 
 //Predictions
-"ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, intentelo de nuevo más tarde.";
+"ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, intentelo de nuevo mas tarde.";
 "ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo mas tarde. Algo salio mal.";
 "AppStoreOpenIssueTitle" = "Lo siento, no puedo abrir App Store.";
-"AppStoreOpenIssueMessage" = "Seleccione nuestra aplicacion de la App Store y escriba una reseña para nosotros. Gracias.
+"AppStoreOpenIssueMessage" = "Seleccione nuestra aplicacion de la App Store y escriba una resena para nosotros. Gracias.
 ";
 
 //UIButtons
@@ -28,7 +28,7 @@
 "hashTagTitle" = "EL HASHTAG";
 "hashTagDescription" = "Utiliza hashtags con redes en línea, no seas un instrumento al respecto!";
 
-"step1OnboardingText" = "Cargue fotos directamente desde la biblioteca de fotos o desde la cámara.";
+"step1OnboardingText" = "Cargue fotos directamente desde la biblioteca de fotos o desde la camara.";
 "step2OnboardingText" = "Genera hashtags automáticamente a partir del contenido de las fotos.";
 "step3OnboardingText" = "Importe las etiquetas en Instagram o cualquier otra aplicación de redes sociales.";
 
