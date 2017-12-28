@@ -36,8 +36,8 @@
 
 //PredictionResults
 "AskForCopyingTags" = "Le gustaría copiar etiquetas hash antes de continuar?";
-"InstagramIssue" = "Hmm, parece que hay un problema abriendo Instagram.";
-"PleaseTryAgainLater" = "Por favor, intentelo de nuevo mas tarde";
+"InstagramIssue" = "Hmm, parece que no tienes la aplicación de Instagram.";
+"installNowMessage" = "Que hay de instalar ahora?";
 
 //SocialView
 "ShareWithLabelTitle" = "compartir con...";

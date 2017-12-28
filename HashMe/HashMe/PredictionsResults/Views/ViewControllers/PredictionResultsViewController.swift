@@ -181,6 +181,20 @@ extension PredictionResultsViewController {
         selectedPredictionsCount >= 1 ? enableCopyButton() : disableCopyButton()
     }
     
+    fileprivate func updateButtonTitle() {
+        let selectedPredictionsCount = viewModel?.updatedPredicitons?.count ?? 0
+        
+        if selectedPredictionsCount == 0 {
+            if self.selectAllButton.titleLabel?.text == LocalizedString.deselecAllButtonTitle {
+                self.selectAllButton.setTitle(LocalizedString.selecAllButtonTitle, for: .normal)
+            }
+        } else if selectedPredictionsCount == self.viewModel?.originalPredictions?.count {
+            if self.selectAllButton.titleLabel?.text == LocalizedString.selecAllButtonTitle {
+                self.selectAllButton.setTitle(LocalizedString.deselecAllButtonTitle, for: .normal)
+            }
+        }
+    }
+    
     fileprivate func enableCopyButton() {
         self.copyButton.isEnabled = true
         self.copyButton.layer.borderColor = UIColor.white.cgColor
@@ -194,11 +208,19 @@ extension PredictionResultsViewController {
     }
     
     fileprivate func showInstagramAlertIssue() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.cancel, handler: nil)
+        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.cancel, handler: nil)
+        let installNow: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: {
+            let url = URL(string: Constants.InstagramAppId)
+            guard let instagramUrl = url else { return }
+            UIApplication.shared.open(instagramUrl, options: [:], completionHandler: { (urlOpened) in
+                urlOpened == false ? print("issue directing user to instagram app") : ()
+            })
+        })
+        
         CustomAlertController().displayAlertWithTitle(LocalizedString.instagramIssueTitle,
-                                                      message: LocalizedString.pleaseTryAgainLater,
+                                                      message: LocalizedString.installNowMessage,
                                                       preferredStyle: .alert,
-                                                      andActions: [dismissAction],
+                                                      andActions: [dismissAction, installNow],
                                                       onViewController: self)
     }
 }
@@ -271,5 +293,6 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         }
         self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
         self.shouldEnableCopyButton()
+        self.updateButtonTitle()
     }
 }
