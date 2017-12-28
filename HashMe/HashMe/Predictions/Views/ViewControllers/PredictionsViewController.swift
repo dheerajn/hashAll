@@ -14,14 +14,6 @@ import CoreML
 
 //more image: https://www.flaticon.com/free-icon/more-circular-symbol_54555#term=more&page=1&position=67
 
-//FB Support - https://en.facebookbrand.com/support
-//https://developers.facebook.com/docs/apps/review/branding
-//assets - https://en.facebookbrand.com/assets, https://en.facebookbrand.com/assets/f-logo
-
-//Instagram Permisson Request - https://en.instagram-brand.com/register/signin?redirect=%2Frequests%2Fdashboard
-//https://en.instagram-brand.com/guidelines/general
-//https://en.instagram-brand.com/assets/glyph-icon
-
 class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     var flowDelegate: HashTagFlowDelegate?
