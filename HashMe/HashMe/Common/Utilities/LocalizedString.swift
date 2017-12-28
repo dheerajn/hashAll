@@ -56,6 +56,8 @@ public class LocalizedString {
     //Predictions
     static var alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
     static var alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
+    static var appStoreOpenIssueTitle = NSLocalizedString("AppStoreOpenIssueTitle", comment: "Title for app store opening issue")
+    static var appStoreOpenIssueMessage = NSLocalizedString("AppStoreOpenIssueMessage", comment: "Message for app store opening issue")
     
     //UIButtons
     static var cameraButtonTitle = NSLocalizedString("CameraButtonTitle", comment: "Title for camera button")

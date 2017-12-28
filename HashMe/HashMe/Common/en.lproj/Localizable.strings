@@ -13,6 +13,8 @@
 //Predictions
 "ImagePickerAlert" = "Huh, looks like there is something wrong. Please try again later.";
 "ImagePickerIssue" = "Sorry, please try again later. Something went wrong.";
+"AppStoreOpenIssueTitle" = "Sorry, cannot open AppStore.";
+"AppStoreOpenIssueMessage" = "Please select our app from the AppStore and write a review for us. Thank you.";
 
 //UIButtons
 "CameraButtonTitle" = "CAMERA";

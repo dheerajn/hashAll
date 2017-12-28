@@ -11,8 +11,11 @@
 "NoThanksButtonTitle" = "No, gracias";
 
 //Predictions
-"ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, inténtelo de nuevo más tarde.";
-"ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo más tarde. Algo salio mal.";
+"ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, intentelo de nuevo más tarde.";
+"ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo mas tarde. Algo salio mal.";
+"AppStoreOpenIssueTitle" = "Lo siento, no puedo abrir App Store.";
+"AppStoreOpenIssueMessage" = "Seleccione nuestra aplicacion de la App Store y escriba una reseña para nosotros. Gracias.
+";
 
 //UIButtons
 "CameraButtonTitle" = "CAMARA";

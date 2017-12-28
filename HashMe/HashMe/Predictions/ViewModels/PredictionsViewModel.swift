@@ -67,6 +67,10 @@ class PredictionsViewModel: PredictionsViewConfigurable {
         }
     }
     
+    func getAppStoreAppId() -> String {
+        return Constants.AppStoreAppID
+    }
+    
     func handleEmailAction() {
         self.flowDelegate?.showEmailView()
     }

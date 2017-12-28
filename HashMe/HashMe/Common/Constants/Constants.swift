@@ -10,6 +10,8 @@ import Foundation
 
 struct Constants {
     
+    static let AppStoreAppID = "itms-apps://itunes.apple.com/app/id1329812139"
+    
     struct Tags {
         static let loadingViewTag               = 54321
         static let activateButtonTag            = 1210
@@ -19,6 +21,7 @@ struct Constants {
         static let recipient = "hashitcontactus@gmail.com"
         static let subject = "HashIt-ContactUs"
     }
+    
     static var mainStoryboardIdentifier         = "Main"
     
     static var AppOpenedCount                   = "AppOpenedKey"

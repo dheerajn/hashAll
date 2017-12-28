@@ -93,7 +93,14 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @IBAction func feedbackButtonTapped(_ sender: Any) {
-        
+        let appStoreAppUrl = URL(string: self.viewModel?.getAppStoreAppId() ?? Constants.AppStoreAppID)
+        if let url = appStoreAppUrl {
+            UIApplication.shared.open(url, options: [:], completionHandler: { (urlOpened) in
+                if urlOpened == false {
+                    self.showFeedbackSubmissionIssue()
+                }
+            })
+        }
     }
     
     @IBAction func contactUsButtonTapped(_ sender: Any) {
@@ -171,6 +178,15 @@ extension PredictionsViewController {
     fileprivate func hideContactsUsViewButtons() {
         self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
         self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
+    }
+    
+    fileprivate func showFeedbackSubmissionIssue() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
+        CustomAlertController().displayAlertWithTitle(LocalizedString.appStoreOpenIssueTitle,
+                                                      message: LocalizedString.appStoreOpenIssueMessage,
+                                                      preferredStyle: .alert,
+                                                      andActions: [dismissAction],
+                                                      onViewController: self)
     }
 }
 

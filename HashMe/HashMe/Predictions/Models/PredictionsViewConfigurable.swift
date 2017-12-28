@@ -37,6 +37,9 @@ public protocol PredictionsViewConfigurable: class {
     
     /// Lets user to email about the application.
     func handleEmailAction()
+    
+    /// This method gets called when user tap on feedback button
+    func getAppStoreAppId() -> String
 }
 
 public protocol PredictionsViewDelegate: class {
