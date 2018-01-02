@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 import CoreML
 
 //https://github.com/ytakzk/CoreML-samples - help taken from this.
@@ -104,23 +105,60 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
 
 extension PredictionsViewController {
     fileprivate func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
-        guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
-            self.showImagePickerProblemAlert()
-            return
-        }
-        imagePicker.sourceType = sourceType
-        imagePicker.delegate = self
-        dispatchOnMainQueue {
-            self.present(self.imagePicker, animated: true, completion: nil)
+        if sourceType == .camera {
+            guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
+                self.showImagePickerIssueAlert()
+                return
+            }
+            self.imagePicker.sourceType = sourceType
+            dispatchOnMainQueue {
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+        } else if sourceType == .photoLibrary {
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status {
+                case .authorized:
+                    guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
+                        self.showImagePickerIssueAlert()
+                        return
+                    }
+                    self.imagePicker.sourceType = sourceType
+                    dispatchOnMainQueue {
+                        self.present(self.imagePicker, animated: true, completion: nil)
+                    }
+                case .restricted,.denied,.notDetermined:
+                    self.showPhotoPrivacyAccessIssueAlert()
+                    return
+                }
+            }
         }
     }
     
-    fileprivate func showImagePickerProblemAlert() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
+    fileprivate func showImagePickerIssueAlert() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
         CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
                                                       message: LocalizedString.alertMessage,
                                                       preferredStyle: .alert,
                                                       andActions: [dismissAction],
+                                                      onViewController: self)
+    }
+    
+    fileprivate func showPhotoPrivacyAccessIssueAlert() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
+        let okAction: CustomAlertAction = (title: LocalizedString.settingsButtonTitle, style: UIAlertActionStyle.default, handler: {
+            guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                })
+            }
+        })
+        
+        CustomAlertController().displayAlertWithTitle(LocalizedString.photoLibraryAccessTitle,
+                                                      message: LocalizedString.photoLibraryAccessMessage,
+                                                      preferredStyle: .alert,
+                                                      andActions: [dismissAction, okAction],
                                                       onViewController: self)
     }
     
@@ -131,6 +169,7 @@ extension PredictionsViewController {
         dispatchOnMainQueueWith(delay: 0.05) {
             self.hideLeftNavBarButton()
         }
+        self.imagePicker.delegate = self
         addRightBarButton(withImage: UIImage.InfoImage, withAction: #selector(PredictionsViewController.rightBarButtonTapped))
         self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
         self.descriptionLabel.animateAlpha(duration: PredictionAnimationDuration.mainLabelAnimationDuration.rawValue, delay: 0)

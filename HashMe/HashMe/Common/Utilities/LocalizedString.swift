@@ -52,10 +52,13 @@ public class LocalizedString {
     //Alert Buttons
     static var okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
     static var noThanksButtonTitle = NSLocalizedString("NoThanksButtonTitle", comment: "Title for No Thanks button")
+    static var settingsButtonTitle = NSLocalizedString("SettingsButtonTitle", comment: "Title for Settings button")
 
     //Predictions
     static var alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
     static var alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
+    static var photoLibraryAccessTitle = NSLocalizedString("photoLibraryAccessTitle", comment: "Title for asking user for photo library permission")
+    static var photoLibraryAccessMessage = NSLocalizedString("photoLibraryAccessMessage", comment: "Message for asking user for photo library permission")
     static var appStoreOpenIssueTitle = NSLocalizedString("AppStoreOpenIssueTitle", comment: "Title for app store opening issue")
     static var appStoreOpenIssueMessage = NSLocalizedString("AppStoreOpenIssueMessage", comment: "Message for app store opening issue")
     

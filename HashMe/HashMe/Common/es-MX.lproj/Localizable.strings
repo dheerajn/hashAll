@@ -9,25 +9,28 @@
 //Alert Buttons
 "OkButtonTitle" = "DE ACUERDO";
 "NoThanksButtonTitle" = "No, gracias";
+"SettingsButtonTitle" = "Configuración abierta";
 
 //Predictions
 "ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, intentelo de nuevo mas tarde.";
 "ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo mas tarde. Algo salio mal.";
+"photoLibraryAccessTitle" = "No ha habilitado el acceso a su biblioteca de fotos.";
+"photoLibraryAccessMessage" = "HashIt tiene acceso a tus fotos. Puede habilitar el acceso en la configuración.";
 "AppStoreOpenIssueTitle" = "Lo siento, no puedo abrir App Store.";
-"AppStoreOpenIssueMessage" = "Seleccione nuestra aplicacion de la App Store y escriba una resena para nosotros. Gracias.";
+"AppStoreOpenIssueMessage" = "Seleccione nuestra aplicación de la App Store y escriba una reseña para nosotros. Gracias.";
 
 //UIButtons
-"CameraButtonTitle" = "CAMARA";
-"PhotoLibraryButtonTitle" = "BIBLIOTECA DE FOTOS";
+"CameraButtonTitle" = "CÁMARA";
+"PhotoLibraryButtonTitle" = "LIBRERÍA FOTOGRÁFICA";
 "GetStartedButtonTitle" = "EMPEZAR";
 "copyButtonTitle" = "DUPDO";
 "selectAllButtonTitle" = "SELECCIONAR TODO";
 "deselectAllButtonTitle" = "DESELECCIONAR TODO";
 
 "hashTagTitle" = "EL HASHTAG";
-"hashTagDescription" = "Utiliza hashtags con redes en línea, no seas un instrumento al respecto!";
+"hashTagDescription" = "Utiliza hashtags con redes en línea, ¡no seas un instrumento al respecto!";
 
-"step1OnboardingText" = "Cargue fotos directamente desde la biblioteca de fotos o desde la camara.";
+"step1OnboardingText" = "Cargue fotos directamente desde la biblioteca de fotos o desde la cámara.";
 "step2OnboardingText" = "Genera hashtags automáticamente a partir del contenido de las fotos.";
 "step3OnboardingText" = "Importe las etiquetas en Instagram o cualquier otra aplicación de redes sociales.";
 
@@ -35,11 +38,11 @@
 "CopiedText" = "COPIADO";
 
 //PredictionResults
-"AskForCopyingTags" = "Le gustaría copiar etiquetas hash antes de continuar?";
+"AskForCopyingTags" = "¿Le gustaría copiar etiquetas hash antes de continuar?";
 "InstagramIssue" = "Hmm, parece que no tienes la aplicación de Instagram.";
-"installNowMessage" = "Que hay de instalar ahora?";
+"installNowMessage" = "¿Qué hay de instalar ahora?";
 
 //SocialView
-"ShareWithLabelTitle" = "compartir con...";
+"ShareWithLabelTitle" = "Compartir con...";
 "InstagramLabelTitle" = "Instagram";
-"MoreLabelTitle" = "Mas";
+"MoreLabelTitle" = "Más";
