@@ -18,11 +18,7 @@ class PredictionResultsViewController: BaseViewController {
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     
-    var viewModel: PredictionResultsViewConfigurable? {
-        didSet {
-            
-        }
-    }
+    var viewModel: PredictionResultsViewConfigurable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +70,7 @@ class PredictionResultsViewController: BaseViewController {
     }
 }
 
-//MARK: UI
+//MARK: UI and helper methods
 
 extension PredictionResultsViewController {
     fileprivate func configureUI() {
