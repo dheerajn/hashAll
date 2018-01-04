@@ -18,7 +18,7 @@ import CoreML
 class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     var flowDelegate: HashTagFlowDelegate?
-
+    
     let imagePicker = UIImagePickerController()
     var viewModel: PredictionsViewConfigurable? {
         didSet {
@@ -226,7 +226,7 @@ extension PredictionsViewController {
 extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-                return
+            return
         }
         self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {

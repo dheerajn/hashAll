@@ -14,7 +14,9 @@ class PredictionViewLayout: UICollectionViewFlowLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let superAttributes = super.layoutAttributesForElements(in: rect) else { return nil }
         // Copy each item to prevent "UICollectionViewFlowLayout has cached frame mismatch" warning
-        guard let attributes = NSArray(array: superAttributes, copyItems: true) as? [UICollectionViewLayoutAttributes] else { return nil }
+        guard let attributes = NSArray(array: superAttributes, copyItems: true) as? [UICollectionViewLayoutAttributes] else {
+            return nil
+        }
         
         // Constants
         let leftPadding: CGFloat = 8
@@ -79,8 +81,6 @@ class PredictionViewLayout: UICollectionViewFlowLayout {
             leftMargin += layoutAttribute.frame.width + interItemSpacing
             maxY = max(layoutAttribute.frame.maxY, maxY)
         }
-        
         return attributes
     }
 }
-

@@ -9,7 +9,7 @@
 import UIKit
 
 class SocialMediaCustomView: CustomView {
-
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var instagramButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
@@ -42,7 +42,7 @@ class SocialMediaCustomView: CustomView {
         self.instagramLabel.text = LocalizedString.instagramLabelTitle
         self.moreLabel.text = LocalizedString.moreLabelTitle
     }
-
+    
     @IBAction func dismissButtonTapped(_ sender: Any) {
         if self.dismissButtonCustomHandler != nil {
             self.dismissButtonCustomHandler!()

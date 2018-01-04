@@ -11,6 +11,7 @@ import UIKit
 class OnboardingSubViewControllerTwo: BaseViewController {
 
     @IBOutlet weak var step2Label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear

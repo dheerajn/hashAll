@@ -88,14 +88,10 @@ extension UIImage {
                                 bitmapInfo: CGImageAlphaInfo.none.rawValue)
         
         guard let ctx = context, let cgImage = cgImage else {
-            
             return nil
         }
-        
         ctx.draw(cgImage, in: rect)
-        
         guard let image = ctx.makeImage() else { return nil }
-        
         return UIImage(cgImage: image)
     }
     
@@ -130,8 +126,6 @@ extension UIImage {
             
             result.append(val)
         }
-        
         return result
     }
 }
-

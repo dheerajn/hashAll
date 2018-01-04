@@ -17,6 +17,7 @@ class OnboardingViewModel: OnboardingViewConfigurable {
     var getStartedButtonTitle: String? {
         return LocalizedString.getStartedButtonTitle
     }
+    
     var screeTitle: String? {
         return "HASH ME ONBOARDING"
     }

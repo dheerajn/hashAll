@@ -9,9 +9,9 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
     open var initialLoad: Bool = true
-
+    
     override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
         view.backgroundColor = UIColor.LightGreyBackgroundColor()
         setupNavigationTitleProperties()
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

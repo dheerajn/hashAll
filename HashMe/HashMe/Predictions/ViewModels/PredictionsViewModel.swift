@@ -15,7 +15,7 @@ enum PredictionAnimationDuration: Double {
 class PredictionsViewModel: PredictionsViewConfigurable {
     
     weak var delegate: PredictionsViewDelegate?
-
+    
     fileprivate var flowDelegate: HashTagFlowDelegate?
     fileprivate var predictedResults = [String]()
     
@@ -74,7 +74,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     func handleEmailAction() {
         self.flowDelegate?.showEmailView()
     }
-
+    
     fileprivate func emptyPredictionResultsArray() {
         if self.predictedResults.count > 0 {
             self.predictedResults.removeAll()

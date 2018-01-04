@@ -14,7 +14,7 @@ public protocol LoadingScreenPresentable: class {
     func removeLoadingAnimationFromSuperView()
 }
 
-// MARK: - This helps presenting the loading screen for a view controler
+// This helps presenting the loading screen for a view controler
 extension LoadingScreenPresentable where Self: UIViewController {
     func startLoadingAnimation() {
         let loadingView = CustomLoadingAnimation()
@@ -35,9 +35,9 @@ extension LoadingScreenPresentable where Self: UIViewController {
     }
 }
 
-// MARK: - This helps presenting the loading screen for a view
+// This helps presenting the loading screen for a view
 public extension LoadingScreenPresentable where Self: UIView {
-
+    
     func startLoadingAnimation() {
         let loadingView = CustomLoadingAnimation()
         loadingView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)

@@ -21,7 +21,7 @@ public func CustomLocalizedString(_ key: String, english: String) -> String {
 }
 
 /**
-CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
+ CustomLocalizedString which returns the localized string if found, or the English translation if there is no translation
  found for the current language.
  
  If using this in a global constant defined in LocalizedString, use a computed var so that it will be reevaluated on each call.
@@ -53,7 +53,7 @@ public class LocalizedString {
     static var okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
     static var noThanksButtonTitle = NSLocalizedString("NoThanksButtonTitle", comment: "Title for No Thanks button")
     static var settingsButtonTitle = NSLocalizedString("SettingsButtonTitle", comment: "Title for Settings button")
-
+    
     //Predictions
     static var alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
     static var alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")

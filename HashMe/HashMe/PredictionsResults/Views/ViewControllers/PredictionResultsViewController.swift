@@ -35,7 +35,7 @@ class PredictionResultsViewController: BaseViewController {
         addLeftBarButton(withAction: #selector(PredictionResultsViewController.leftBarButtonTapped))
         addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.rightBarButtonTapped), withAnimation: true)
     }
-
+    
     @objc func leftBarButtonTapped() {
         self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
     }
@@ -75,6 +75,7 @@ class PredictionResultsViewController: BaseViewController {
 }
 
 //MARK: UI
+
 extension PredictionResultsViewController {
     fileprivate func configureUI() {
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
@@ -226,6 +227,7 @@ extension PredictionResultsViewController {
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
+
 extension PredictionResultsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -237,13 +239,14 @@ extension PredictionResultsViewController: UICollectionViewDelegateFlowLayout {
         let rect = NSString(string: text).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
         
         return CGSize(width: rect.width + 20, height: rect.height + 10)
-        
     }
 }
 
 
 // MARK: UICollectionViewDataSource
+
 extension PredictionResultsViewController: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

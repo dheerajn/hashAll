@@ -35,7 +35,6 @@ struct StoreReviewHelper {
             print("App run count is : \(appOpenCount)")
             break;
         }
-        
     }
     
     fileprivate func requestReview() {

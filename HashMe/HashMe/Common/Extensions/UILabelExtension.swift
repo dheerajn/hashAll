@@ -44,7 +44,7 @@ extension UILabel {
             let originalFontColor = self.textColor
             
             textColor = UIColor.clear
-
+            
             dispatchOnMainQueueWith(delay: delay, closure: {
                 self.iterateAlpha(text as NSString, index: 0, delay: duration / Double(text.count), font: self.font, color: originalFontColor!)
             })

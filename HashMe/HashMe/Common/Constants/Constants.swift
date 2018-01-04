@@ -23,18 +23,18 @@ struct Constants {
         static let subject = "HashIt-ContactUs"
     }
     
-    static var mainStoryboardIdentifier         = "Main"
+    static let mainStoryboardIdentifier         = "Main"
     
-    static var AppOpenedCount                   = "AppOpenedKey"
+    static let AppOpenedCount                   = "AppOpenedKey"
     
-    static var onboardingIdentifier             = "OnBoarding"
-    static var onboardingViewController1        = "onboardingViewController1"
-    static var onboardingViewController2        = "onboardingViewController2"
-    static var onboardingViewController3        = "onboardingViewController3"
-
-    static var hashtagsVcIdentifier             = "PredictionsViewController"
-    static var onboardingVcIdentifier           = "OnboardingViewController"
-    static var predictionsResultsVcIdentifier   = "PredictionResultsViewController"
+    static let onboardingIdentifier             = "OnBoarding"
+    static let onboardingViewController1        = "onboardingViewController1"
+    static let onboardingViewController2        = "onboardingViewController2"
+    static let onboardingViewController3        = "onboardingViewController3"
     
-    static var socialMediaViewIdentifier        = "SocialMediaView"
+    static let hashtagsVcIdentifier             = "PredictionsViewController"
+    static let onboardingVcIdentifier           = "OnboardingViewController"
+    static let predictionsResultsVcIdentifier   = "PredictionResultsViewController"
+    
+    static let socialMediaViewIdentifier        = "SocialMediaView"
 }
