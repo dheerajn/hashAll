@@ -10,6 +10,9 @@ import Foundation
 
 public protocol EmailViewConfigurable {
     
+    /// Sets the email address to be sent to
     var recipients: [String]? { get }
+    
+    /// Sets the subject for the email
     var subject: String? { get }
 }

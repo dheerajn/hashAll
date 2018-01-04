@@ -9,6 +9,10 @@
 import Foundation
 
 public protocol OnboardingViewConfigurable: class {
+    
+    /// Title for view controller
     var screeTitle: String? { get }
+    
+    /// Title for get started button
     var getStartedButtonTitle: String? { get }
 }
