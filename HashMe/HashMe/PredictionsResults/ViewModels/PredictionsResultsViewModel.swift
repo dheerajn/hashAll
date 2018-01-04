@@ -75,7 +75,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         for activity in self.updatedPredicitons ?? [] {
             activitiesToBeShared.add(activity)
         }
-        let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "hashIt"
+        let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "hashAllApp"
         activitiesToBeShared.add("#\(appName.camelCaseStringLowerCase)")
         return activitiesToBeShared
     }
