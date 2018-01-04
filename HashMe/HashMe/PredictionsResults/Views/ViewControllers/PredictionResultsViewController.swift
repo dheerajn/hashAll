@@ -132,10 +132,7 @@ extension PredictionResultsViewController {
     
     fileprivate func handleMoreButtonAction() {
         self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
-        //The following codes helps in dismissing the custom share sheet and then presenting UIActivityVc
-        dispatchOnMainQueueWith(delay: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue, closure: {
-            self.viewModel?.launchShareActivity()
-        })
+        self.viewModel?.launchShareActivity()
     }
     
     fileprivate func animateCopiedView() {
