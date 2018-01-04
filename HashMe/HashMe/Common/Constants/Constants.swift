@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     
-    static let AppStoreAppID = "itms-apps://itunes.apple.com/app/id1329812139"
+    static let AppStoreAppID = "itms-apps://itunes.apple.com/gb/app/id1329812139?action=write-review&mt=8"
     static let InstagramAppId = "https://itunes.apple.com/us/app/instagram/id389801252?mt=8"
     
     struct Tags {
