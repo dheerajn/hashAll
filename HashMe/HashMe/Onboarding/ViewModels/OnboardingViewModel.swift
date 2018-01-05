@@ -9,8 +9,8 @@
 import Foundation
 
 enum OnboardingAnimationDuration: Double {
-    case getStartedButton = 1.0
-    case tutorialLabelAnimation = 1.25
+    case getStartedButton = 0.25
+    case tutorialLabelAnimation = 1.0
 }
 
 class OnboardingViewModel: OnboardingViewConfigurable {
