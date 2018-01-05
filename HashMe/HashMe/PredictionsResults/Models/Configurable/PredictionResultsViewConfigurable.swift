@@ -56,5 +56,5 @@ public protocol PredictionResultsViewConfigurable: class {
     func copyHashTagsToPasteboard()
     
     /// This method launches the activity vc when more button is called
-    func launchShareActivity()
+    func launchShareActivity(withFrame: CGRect)
 }

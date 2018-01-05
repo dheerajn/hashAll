@@ -11,6 +11,7 @@
 		363B7B2A1F97D2C10094B274 /* SocialMediaCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B7B291F97D2C10094B274 /* SocialMediaCustomView.swift */; };
 		363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */; };
 		3680F6BF1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */; };
+		36973B65200004CB007FFBA7 /* DeviceIdiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36973B64200004CB007FFBA7 /* DeviceIdiom.swift */; };
 		36A01DDF1FA239A700EC5E28 /* OnboardingSubViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A01DDE1FA239A700EC5E28 /* OnboardingSubViewControllerOne.swift */; };
 		36A01DE11FA2405F00EC5E28 /* OnboardingSubViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A01DE01FA2405F00EC5E28 /* OnboardingSubViewControllerTwo.swift */; };
 		36A01DE31FA241E700EC5E28 /* OnboardingSubViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A01DE21FA241E700EC5E28 /* OnboardingSubViewControllerThree.swift */; };
@@ -80,6 +81,7 @@
 		363B7B291F97D2C10094B274 /* SocialMediaCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCustomView.swift; sourceTree = "<group>"; };
 		363BB3F91F8E8F0F0048347D /* UIImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
 		3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerAnimationPresentable.swift; sourceTree = "<group>"; };
+		36973B64200004CB007FFBA7 /* DeviceIdiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdiom.swift; sourceTree = "<group>"; };
 		36A01DDE1FA239A700EC5E28 /* OnboardingSubViewControllerOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSubViewControllerOne.swift; sourceTree = "<group>"; };
 		36A01DE01FA2405F00EC5E28 /* OnboardingSubViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSubViewControllerTwo.swift; sourceTree = "<group>"; };
 		36A01DE21FA241E700EC5E28 /* OnboardingSubViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSubViewControllerThree.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		C812BED01F77290D0029732B /* PredictionResultsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsPresentable.swift; sourceTree = "<group>"; };
 		C812BED21F7738C80029732B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C812BED61F773F8E0029732B /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
-		C817F72C1F75DCBF00B8C0FD /* HashIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C817F72C1F75DCBF00B8C0FD /* HashAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C817F7341F75DCBF00B8C0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C817F7361F75DCBF00B8C0FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,7 +244,7 @@
 		C817F72D1F75DCBF00B8C0FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C817F72C1F75DCBF00B8C0FD /* HashIt.app */,
+				C817F72C1F75DCBF00B8C0FD /* HashAll.app */,
 				C817F7401F75DCBF00B8C0FD /* HashMeTests.xctest */,
 			);
 			name = Products;
@@ -382,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */,
+				36973B64200004CB007FFBA7 /* DeviceIdiom.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -555,7 +558,7 @@
 			);
 			name = HashMe;
 			productName = HashMe;
-			productReference = C817F72C1F75DCBF00B8C0FD /* HashIt.app */;
+			productReference = C817F72C1F75DCBF00B8C0FD /* HashAll.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C817F73F1F75DCBF00B8C0FD /* HashMeTests */ = {
@@ -645,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A01DDF1FA239A700EC5E28 /* OnboardingSubViewControllerOne.swift in Sources */,
+				36973B65200004CB007FFBA7 /* DeviceIdiom.swift in Sources */,
 				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
 				C80542C41FAD42710003B2CC /* UIViewExtension.swift in Sources */,
 				C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */,
@@ -868,9 +872,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dheeru.HashIt;
-				PRODUCT_NAME = HashIt;
+				PRODUCT_NAME = HashAll;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -885,9 +889,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dheeru.HashIt;
-				PRODUCT_NAME = HashIt;
+				PRODUCT_NAME = HashAll;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

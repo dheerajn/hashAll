@@ -128,7 +128,7 @@ extension PredictionResultsViewController {
     
     fileprivate func handleMoreButtonAction() {
         self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
-        self.viewModel?.launchShareActivity()
+        self.viewModel?.launchShareActivity(withFrame: self.socialMediaView.frame)
     }
     
     fileprivate func animateCopiedView() {

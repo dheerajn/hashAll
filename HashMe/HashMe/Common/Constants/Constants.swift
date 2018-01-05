@@ -21,7 +21,7 @@ struct Constants {
     
     struct ContactUs {
         static let recipient = "hashitcontactus@gmail.com"
-        static let subject = "HashIt-ContactUs"
+        static let subject = "HashAll-ContactUs"
     }
     
     static let mainStoryboardIdentifier         = "Main"

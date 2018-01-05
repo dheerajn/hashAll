@@ -30,11 +30,7 @@ class BaseViewController: UIViewController {
         view.backgroundColor = UIColor.LightGreyBackgroundColor()
         setupNavigationTitleProperties()
     }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
+
     func setupNavigationTitleProperties(withColor color: UIColor = UIColor.white) {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color, NSAttributedStringKey.font: UIFont.italicSystemFont(ofSize: 20)]
     }
@@ -87,5 +83,9 @@ class BaseViewController: UIViewController {
                             rightBarButton.transform = CGAffineTransform.identity
                         }
         })
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }

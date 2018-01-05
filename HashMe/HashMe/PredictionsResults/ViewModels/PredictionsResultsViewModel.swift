@@ -56,8 +56,8 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         self.updatedPredicitons = []
     }
     
-    func launchShareActivity() {
-        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashIt")
+    func launchShareActivity(withFrame: CGRect) {
+        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashAllApp", withFrame: withFrame)
     }
     
     func updatePredictionsArray(forHashTag tag: String) {

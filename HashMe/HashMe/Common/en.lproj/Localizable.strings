@@ -15,7 +15,7 @@
 "ImagePickerAlert" = "Huh, looks like there is something wrong. Please try again later.";
 "ImagePickerIssue" = "Sorry, please try again later. Something went wrong.";
 "photoLibraryAccessTitle" = "You have not enabled access to your photo library.";
-"photoLibraryAccessMessage" = "HashIt doesn't have access to your photos. You can enable access in settings.";
+"photoLibraryAccessMessage" = "HashAll doesn't have access to your photos. You can enable access in settings.";
 "AppStoreOpenIssueTitle" = "Sorry, cannot open App Store.";
 "AppStoreOpenIssueMessage" = "Please select our app from the App Store and write a review for us. Thank you.";
 
