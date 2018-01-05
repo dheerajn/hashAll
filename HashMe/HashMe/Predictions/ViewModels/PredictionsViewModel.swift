@@ -44,7 +44,7 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     }
     
     var maxNumOfKeys: Int {
-        return 10
+        return (self.flowDelegate?.isDeviceIphone ?? true ? 7 : 10)
     }
     
     func predictImage(ref: CVPixelBuffer, predictionImage: UIImage) {
