@@ -61,28 +61,13 @@ class BaseViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = barButton
     }
     
-    func addRightBarButton(withImage image: UIImage, withAction action: Selector, withAnimation: Bool = false) {
+    func addRightBarButton(withImage image: UIImage, withAction action: Selector) {
         let rightBarButton: UIButton = UIButton()
         rightBarButton.setImage(image, for: UIControlState())
         rightBarButton.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
         rightBarButton.frame = CGRect(x: 0, y: 0, width: 50/2, height: 50/2)
         let barButton = UIBarButtonItem(customView: rightBarButton)
         self.navigationItem.rightBarButtonItem = barButton
-        if withAnimation {
-            zoomInButton(rightBarButton)
-        }
-    }
-    
-    fileprivate func zoomInButton(_ rightBarButton: UIButton) {
-        UIView.animate(withDuration: 0.6,
-                       animations: {
-                        rightBarButton.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
-        },
-                       completion: { _ in
-                        UIView.animate(withDuration: 0.6) {
-                            rightBarButton.transform = CGAffineTransform.identity
-                        }
-        })
     }
     
     deinit {

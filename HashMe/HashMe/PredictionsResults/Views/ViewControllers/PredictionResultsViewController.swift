@@ -31,7 +31,7 @@ class PredictionResultsViewController: BaseViewController {
         super.viewDidAppear(animated)
         self.resetStatusBar()
         addLeftBarButton(withAction: #selector(PredictionResultsViewController.leftBarButtonTapped))
-        addRightBarButton(withImage: UIImage.addImage, withAction: #selector(PredictionResultsViewController.addNewTagButtonTapped), withAnimation: true)
+        addRightBarButton(withImage: UIImage.addImage, withAction: #selector(PredictionResultsViewController.addNewTagButtonTapped))
     }
     
     @objc func leftBarButtonTapped() {

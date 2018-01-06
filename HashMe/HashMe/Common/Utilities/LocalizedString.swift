@@ -50,47 +50,47 @@ public func CustomLocalizedStringWithDefaultValue(_ key: String, tableName: Stri
 public class LocalizedString {
     
     //Alert Buttons
-    static var okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
-    static var noThanksButtonTitle = NSLocalizedString("NoThanksButtonTitle", comment: "Title for No Thanks button")
-    static var settingsButtonTitle = NSLocalizedString("SettingsButtonTitle", comment: "Title for Settings button")
-    static var cancelButtonTitle = NSLocalizedString("cancelButtonTitle", comment: "Title for Cancel button")
-    static var doneButtonTitle = NSLocalizedString("doneButtonTitle", comment: "Title for Done button")
+    static let okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
+    static let noThanksButtonTitle = NSLocalizedString("NoThanksButtonTitle", comment: "Title for No Thanks button")
+    static let settingsButtonTitle = NSLocalizedString("SettingsButtonTitle", comment: "Title for Settings button")
+    static let cancelButtonTitle = NSLocalizedString("cancelButtonTitle", comment: "Title for Cancel button")
+    static let doneButtonTitle = NSLocalizedString("doneButtonTitle", comment: "Title for Done button")
 
     //Predictions
-    static var alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
-    static var alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
-    static var photoLibraryAccessTitle = NSLocalizedString("photoLibraryAccessTitle", comment: "Title for asking user for photo library permission")
-    static var photoLibraryAccessMessage = NSLocalizedString("photoLibraryAccessMessage", comment: "Message for asking user for photo library permission")
-    static var appStoreOpenIssueTitle = NSLocalizedString("AppStoreOpenIssueTitle", comment: "Title for app store opening issue")
-    static var appStoreOpenIssueMessage = NSLocalizedString("AppStoreOpenIssueMessage", comment: "Message for app store opening issue")
+    static let alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
+    static let alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
+    static let photoLibraryAccessTitle = NSLocalizedString("photoLibraryAccessTitle", comment: "Title for asking user for photo library permission")
+    static let photoLibraryAccessMessage = NSLocalizedString("photoLibraryAccessMessage", comment: "Message for asking user for photo library permission")
+    static let appStoreOpenIssueTitle = NSLocalizedString("AppStoreOpenIssueTitle", comment: "Title for app store opening issue")
+    static let appStoreOpenIssueMessage = NSLocalizedString("AppStoreOpenIssueMessage", comment: "Message for app store opening issue")
     
     //UIButtons
-    static var cameraButtonTitle = NSLocalizedString("CameraButtonTitle", comment: "Title for camera button")
-    static var photoLibraryButtonTitle = NSLocalizedString("PhotoLibraryButtonTitle", comment: "Title for photo library button")
-    static var getStartedButtonTitle = NSLocalizedString("GetStartedButtonTitle", comment: "Title for get started button")
-    static var copyButtonTitle = NSLocalizedString("copyButtonTitle", comment: "Title for copy button")
-    static var selecAllButtonTitle = NSLocalizedString("selectAllButtonTitle", comment: "Title for selecet all button")
-    static var deselecAllButtonTitle = NSLocalizedString("deselectAllButtonTitle", comment: "Title for deselecet all button")
+    static let cameraButtonTitle = NSLocalizedString("CameraButtonTitle", comment: "Title for camera button")
+    static let photoLibraryButtonTitle = NSLocalizedString("PhotoLibraryButtonTitle", comment: "Title for photo library button")
+    static let getStartedButtonTitle = NSLocalizedString("GetStartedButtonTitle", comment: "Title for get started button")
+    static let copyButtonTitle = NSLocalizedString("copyButtonTitle", comment: "Title for copy button")
+    static let selecAllButtonTitle = NSLocalizedString("selectAllButtonTitle", comment: "Title for selecet all button")
+    static let deselecAllButtonTitle = NSLocalizedString("deselectAllButtonTitle", comment: "Title for deselecet all button")
     
-    static var theHashTagTitle = NSLocalizedString("hashTagTitle", comment: "Title for the screen")
-    static var hashTagDescription = NSLocalizedString("hashTagDescription", comment: "Description for hash tag")
+    static let theHashTagTitle = NSLocalizedString("hashTagTitle", comment: "Title for the screen")
+    static let hashTagDescription = NSLocalizedString("hashTagDescription", comment: "Description for hash tag")
     
     //Onboarding
-    static var onboardingStep1Text = NSLocalizedString("step1OnboardingText", comment: "Text for the tutorial step 1")
-    static var onboardingStep2Text = NSLocalizedString("step2OnboardingText", comment: "Text for the tutorial step 2")
-    static var onboardingStep3Text = NSLocalizedString("step3OnboardingText", comment: "Text for the tutorial step 3")
+    static let onboardingStep1Text = NSLocalizedString("step1OnboardingText", comment: "Text for the tutorial step 1")
+    static let onboardingStep2Text = NSLocalizedString("step2OnboardingText", comment: "Text for the tutorial step 2")
+    static let onboardingStep3Text = NSLocalizedString("step3OnboardingText", comment: "Text for the tutorial step 3")
     
     //Prediction Results
-    static var copiedText = NSLocalizedString("CopiedText", comment: "Title for Copied Label")
-    static var askForCopyingTags = NSLocalizedString("AskForCopyingTags", comment: "Text for asking user to copy tags")
-    static var instagramIssueTitle = NSLocalizedString("InstagramIssue", comment: "Title for alert when instagram can not be opened.")
-    static var installNowMessage = NSLocalizedString("installNowMessage", comment: "Message for install now")
+    static let copiedText = NSLocalizedString("CopiedText", comment: "Title for Copied Label")
+    static let askForCopyingTags = NSLocalizedString("AskForCopyingTags", comment: "Text for asking user to copy tags")
+    static let instagramIssueTitle = NSLocalizedString("InstagramIssue", comment: "Title for alert when instagram can not be opened.")
+    static let installNowMessage = NSLocalizedString("installNowMessage", comment: "Message for install now")
     static let  addNewTagTitle = NSLocalizedString("addNewTagTitle", comment: "Title for add new tag")
     static let  addNewTagPlaceHolder = NSLocalizedString("addNewTagPlaceHolder", comment: "Placeholder for add new tag")
     
     
     //SocialView
-    static var shareWithLabelTitle = NSLocalizedString("ShareWithLabelTitle", comment: "Title for Label on Social View")
-    static var instagramLabelTitle = NSLocalizedString("InstagramLabelTitle", comment: "Title for Label on Social View")
-    static var moreLabelTitle = NSLocalizedString("MoreLabelTitle", comment: "Title for Label on Social View")
+    static let shareWithLabelTitle = NSLocalizedString("ShareWithLabelTitle", comment: "Title for Label on Social View")
+    static let instagramLabelTitle = NSLocalizedString("InstagramLabelTitle", comment: "Title for Label on Social View")
+    static let moreLabelTitle = NSLocalizedString("MoreLabelTitle", comment: "Title for Label on Social View")
 }
