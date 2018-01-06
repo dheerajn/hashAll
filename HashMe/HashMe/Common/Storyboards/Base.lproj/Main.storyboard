@@ -12,7 +12,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="frn-pI-zOz">
             <objects>
-                <pageViewController storyboardIdentifier="OnboardingViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="s07-Xh-igG" customClass="OnboardingViewController" customModule="HashIt" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="OnboardingViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="s07-Xh-igG" customClass="OnboardingViewController" customModule="HashAll" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qc-At-iyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-812" y="133"/>
@@ -20,12 +20,12 @@
         <!--Onboarding Sub View Controller Three-->
         <scene sceneID="6kM-iZ-Fzl">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController3" id="elY-R3-QAj" customClass="OnboardingSubViewControllerThree" customModule="HashIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController3" id="elY-R3-QAj" customClass="OnboardingSubViewControllerThree" customModule="HashAll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgf-5z-pHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot2" translatesAutoresizingMaskIntoConstraints="NO" id="egd-Hf-Noy" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot2" translatesAutoresizingMaskIntoConstraints="NO" id="egd-Hf-Noy" customClass="CustomImageView" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="65" y="35" width="245" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -40,7 +40,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-7q-ZBu" customClass="CustomLabel" customModule="HashIt" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-7q-ZBu" customClass="CustomLabel" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="20" y="493" width="335" height="60"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
@@ -61,12 +61,12 @@
         <!--Onboarding Sub View Controller One-->
         <scene sceneID="JaK-rh-eFi">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController1" id="eIT-GF-nZr" customClass="OnboardingSubViewControllerOne" customModule="HashIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController1" id="eIT-GF-nZr" customClass="OnboardingSubViewControllerOne" customModule="HashAll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nab-h5-1Na">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot1" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-mc-oli" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot1" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-mc-oli" customClass="CustomImageView" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="65" y="35" width="245" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -81,7 +81,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUB-z2-7I5" customClass="CustomLabel" customModule="HashIt" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUB-z2-7I5" customClass="CustomLabel" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="20" y="493" width="335" height="60"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
@@ -104,12 +104,12 @@
         <!--Onboarding Sub View Controller Two-->
         <scene sceneID="T0Q-uc-Efo">
             <objects>
-                <viewController storyboardIdentifier="onboardingViewController2" id="KGA-qy-AsI" customClass="OnboardingSubViewControllerTwo" customModule="HashIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboardingViewController2" id="KGA-qy-AsI" customClass="OnboardingSubViewControllerTwo" customModule="HashAll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2q7-dw-nSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot3" translatesAutoresizingMaskIntoConstraints="NO" id="fKO-wP-5tJ" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screenshot3" translatesAutoresizingMaskIntoConstraints="NO" id="fKO-wP-5tJ" customClass="CustomImageView" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="65" y="35" width="245" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -124,7 +124,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LZ-6x-p4p" customClass="CustomLabel" customModule="HashIt" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LZ-6x-p4p" customClass="CustomLabel" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="20" y="493" width="335" height="60"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
@@ -145,12 +145,12 @@
         <!--Predictions View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PredictionsViewController" id="BYZ-38-t0r" customClass="PredictionsViewController" customModule="HashIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PredictionsViewController" id="BYZ-38-t0r" customClass="PredictionsViewController" customModule="HashAll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zWd-rd-Leb" customClass="CustomLabel" customModule="HashIt" customModuleProvider="target">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zWd-rd-Leb" customClass="CustomLabel" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="40" y="303.5" width="295" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="34P-eH-sQ4"/>
@@ -173,7 +173,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMq-AW-SUq" customClass="CustomButton" customModule="HashIt" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMq-AW-SUq" customClass="CustomButton" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="20" y="552" width="100" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="33r-TU-HDw"/>
@@ -197,7 +197,7 @@
                                     <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NH9-aY-7NF"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kV-oF-rCg" customClass="CustomImageView" customModule="HashIt" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kV-oF-rCg" customClass="CustomImageView" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="40" y="158" width="295" height="323"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -212,7 +212,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3A-mt-Td0" customClass="CustomButton" customModule="HashIt" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3A-mt-Td0" customClass="CustomButton" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="230" y="552" width="125" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="aVj-se-jix"/>
@@ -236,7 +236,7 @@
                                     <action selector="photoLibraryTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtW-dd-PtW"/>
                                 </connections>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCq-aL-tq6" customClass="CustomView" customModule="HashIt" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCq-aL-tq6" customClass="CustomView" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="300" y="30" width="65" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-bo-XnF">
@@ -315,7 +315,7 @@
         <!--Prediction Results View Controller-->
         <scene sceneID="25f-lU-Qcb">
             <objects>
-                <viewController storyboardIdentifier="PredictionResultsViewController" id="7NR-8f-Tr6" customClass="PredictionResultsViewController" customModule="HashIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PredictionResultsViewController" id="7NR-8f-Tr6" customClass="PredictionResultsViewController" customModule="HashAll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NUs-qZ-y6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,16 +323,16 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pT2-tb-Te3">
                                 <rect key="frame" x="16" y="40" width="343" height="552"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewLayout key="collectionViewLayout" id="q0W-Gs-SLT" customClass="PredictionViewLayout" customModule="HashIt" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="q0W-Gs-SLT" customClass="PredictionViewLayout" customModule="HashAll" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PredictionResultCollectionViewCell" id="t6O-xb-4nM" customClass="PredictionResultCollectionViewCell" customModule="HashIt" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PredictionResultCollectionViewCell" id="t6O-xb-4nM" customClass="PredictionResultCollectionViewCell" customModule="HashAll" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="94" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-Ti-KcH" customClass="CustomLabel" customModule="HashIt" customModuleProvider="target">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-Ti-KcH" customClass="CustomLabel" customModule="HashAll" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="94" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -368,7 +368,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XqW-09-HgE" customClass="CustomView" customModule="HashIt" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XqW-09-HgE" customClass="CustomView" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="67" y="217" width="240" height="221"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -379,7 +379,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="221"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-kP-QQn" customClass="CustomLabel" customModule="HashIt" customModuleProvider="target">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-kP-QQn" customClass="CustomLabel" customModule="HashAll" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="172" width="224" height="41"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -418,15 +418,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
-                                <rect key="frame" x="30" y="607" width="315" height="40"/>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-Ql-54o">
+                                <rect key="frame" x="20" y="607" width="335" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-yi-dQg" customClass="CustomButton" customModule="HashIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-yi-dQg" customClass="CustomButton" customModule="HashAll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="XpA-Ee-BtW"/>
                                             <constraint firstAttribute="height" constant="40" id="zan-w3-64Z"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Select All">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -447,12 +448,12 @@
                                             <action selector="selectAllButtonTapped:" destination="7NR-8f-Tr6" eventType="touchUpInside" id="PCk-Mj-Ywi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cre-d3-Zps" customClass="CustomButton" customModule="HashIt" customModuleProvider="target">
-                                        <rect key="frame" x="195" y="0.0" width="120" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cre-d3-Zps" customClass="CustomButton" customModule="HashAll" customModuleProvider="target">
+                                        <rect key="frame" x="175" y="0.0" width="89" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Oip-Aj-Byr"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Copy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -470,14 +471,25 @@
                                             <action selector="copyButtonTapped:" destination="7NR-8f-Tr6" eventType="touchUpInside" id="X7N-oz-vjE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-DY-sQ9">
+                                        <rect key="frame" x="314" y="0.0" width="21" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Kwy-yi-6cm"/>
+                                        </constraints>
+                                        <state key="normal" image="shareIcon"/>
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="7NR-8f-Tr6" eventType="touchUpInside" id="brw-qP-Uq3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1xe-Vy-tsr"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="jpa-Mw-keU"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" distribution="fillEqually" spacing="100"/>
                             </stackView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjh-3e-IHC" customClass="SocialMediaCustomView" customModule="HashIt" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjh-3e-IHC" customClass="SocialMediaCustomView" customModule="HashAll" customModuleProvider="target">
                                 <rect key="frame" x="15" y="527" width="345" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -531,5 +543,6 @@
         <image name="screenshot1" width="750" height="1293"/>
         <image name="screenshot2" width="748" height="1294"/>
         <image name="screenshot3" width="750" height="1292"/>
+        <image name="shareIcon" width="21" height="35"/>
     </resources>
 </document>

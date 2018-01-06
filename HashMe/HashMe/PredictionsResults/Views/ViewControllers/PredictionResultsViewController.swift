@@ -36,15 +36,17 @@ class PredictionResultsViewController: BaseViewController {
         self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
     }
     
-    //TODO: add button action for share button
     @objc func addNewTagButtonTapped() {
-        //        self.resetSocialMediaView()
         self.addNewHashTagManually()
     }
     
     @IBAction func copyButtonTapped(_ sender: Any) {
         self.viewModel?.copyHashTagsToPasteboard()
         self.animateCopiedView()
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        self.resetSocialMediaView()
     }
     
     @IBAction func selectAllButtonTapped(_ sender: Any) {
