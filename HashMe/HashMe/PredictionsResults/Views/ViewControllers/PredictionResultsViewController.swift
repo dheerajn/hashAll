@@ -93,11 +93,20 @@ class PredictionResultsViewController: BaseViewController {
     func insertNewHashTag(alertController: UIAlertController) -> ((UIAlertAction) -> Void) {
         let hashtag: ((UIAlertAction) -> Void) = { (alert) in
             let textField = alertController.textFields![0] as UITextField
-            guard let validHashTag = textField.text else { return }
+            guard var validHashTag = textField.text else { return }
+            validHashTag = "#\(validHashTag)"
             
-            self.viewModel?.originalPredictions?.append(validHashTag)
-            self.viewModel?.updatedPredicitons?.append(validHashTag)
-            
+            //check for duplicates
+            if self.viewModel?.originalPredictions?.contains(validHashTag) == false {
+                self.viewModel?.originalPredictions?.append(validHashTag)
+            } else {
+                return
+            }
+            if self.viewModel?.updatedPredicitons?.contains(validHashTag) == false {
+                self.viewModel?.updatedPredicitons?.append(validHashTag)
+            } else {
+                return
+            }
             //here we did "(self.viewModel?.originalPredictions?.count ?? 0) - 1" because, first we want to add the new element in the "originalPredictions.count" value but we did add an element to the array so count will be incremented by 1 and there might be a crash since we are out of the index, so we inserting by decrementing 1 value.
             let indexPathForNewElement = IndexPath(item: (self.viewModel?.originalPredictions?.count ?? 0) - 1, section: 0)
             self.predictionResultsCollectionView.insertItems(at: [indexPathForNewElement])
