@@ -17,6 +17,8 @@ class PredictionResultsViewController: BaseViewController {
     @IBOutlet weak var selectAllButton: CustomButton!
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var shareButton: CustomButton!
     
     var viewModel: PredictionResultsViewConfigurable?
     
@@ -163,7 +165,10 @@ extension PredictionResultsViewController {
     
     fileprivate func handleMoreButtonAction() {
         self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
-        self.viewModel?.launchShareActivity(withFrame: self.socialMediaView.frame)
+        
+        let shareButtonFrame = self.shareButton.frame
+        let sourceFrame = CGRect(x: (shareButtonFrame.origin.x + shareButtonFrame.width/2), y: self.stackView.frame.origin.y, width: shareButtonFrame.width, height: shareButtonFrame.height)
+        self.viewModel?.launchShareActivity(withFrame: sourceFrame)
     }
     
     fileprivate func animateCopiedView() {
