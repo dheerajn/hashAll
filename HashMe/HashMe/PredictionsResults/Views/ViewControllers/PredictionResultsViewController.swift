@@ -76,13 +76,13 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     func addNewHashTagManually() {
-        let alertController = UIAlertController(title: "Add a new Tag", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: LocalizedString.addNewTagTitle, message: nil, preferredStyle: .alert)
         
-        let doneAction = UIAlertAction(title: "Done", style: .default, handler: self.insertNewHashTag(alertController: alertController))
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let doneAction = UIAlertAction(title: LocalizedString.doneButtonTitle, style: .default, handler: self.insertNewHashTag(alertController: alertController))
+        let cancelAction = UIAlertAction(title: LocalizedString.cancelButtonTitle, style: .default, handler: nil)
         
         alertController.addTextField { (hashtagTextField) in
-            hashtagTextField.placeholder = "Add your new #hashtag"
+            hashtagTextField.placeholder = LocalizedString.addNewTagPlaceHolder
         }
         
         alertController.addAction(cancelAction)

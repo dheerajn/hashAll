@@ -10,6 +10,8 @@
 "OkButtonTitle" = "DE ACUERDO";
 "NoThanksButtonTitle" = "No, gracias";
 "SettingsButtonTitle" = "Configuración abierta";
+"cancelButtonTitle" = "Cancelar";
+"doneButtonTitle" = "Hecho";
 
 //Predictions
 "ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, intentelo de nuevo mas tarde.";
@@ -41,6 +43,8 @@
 "AskForCopyingTags" = "¿Le gustaría copiar etiquetas hash antes de continuar?";
 "InstagramIssue" = "Hmm, parece que no tienes la aplicación de Instagram.";
 "installNowMessage" = "¿Qué hay de instalar ahora?";
+"addNewTagTitle" = "Agregar nueva etiqueta";
+"addNewTagPlaceHolder" = "Agrega tu nuevo #hashtag";
 
 //SocialView
 "ShareWithLabelTitle" = "Compartir con...";

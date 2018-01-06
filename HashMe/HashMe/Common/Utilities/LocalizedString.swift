@@ -53,7 +53,9 @@ public class LocalizedString {
     static var okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
     static var noThanksButtonTitle = NSLocalizedString("NoThanksButtonTitle", comment: "Title for No Thanks button")
     static var settingsButtonTitle = NSLocalizedString("SettingsButtonTitle", comment: "Title for Settings button")
-    
+    static var cancelButtonTitle = NSLocalizedString("cancelButtonTitle", comment: "Title for Cancel button")
+    static var doneButtonTitle = NSLocalizedString("doneButtonTitle", comment: "Title for Done button")
+
     //Predictions
     static var alertTitle = NSLocalizedString("ImagePickerAlert", comment: "Title shown when Image picker can not open")
     static var alertMessage = NSLocalizedString("ImagePickerIssue", comment: "Message shown when Image picker can not open")
@@ -83,6 +85,9 @@ public class LocalizedString {
     static var askForCopyingTags = NSLocalizedString("AskForCopyingTags", comment: "Text for asking user to copy tags")
     static var instagramIssueTitle = NSLocalizedString("InstagramIssue", comment: "Title for alert when instagram can not be opened.")
     static var installNowMessage = NSLocalizedString("installNowMessage", comment: "Message for install now")
+    static let  addNewTagTitle = NSLocalizedString("addNewTagTitle", comment: "Title for add new tag")
+    static let  addNewTagPlaceHolder = NSLocalizedString("addNewTagPlaceHolder", comment: "Placeholder for add new tag")
+    
     
     //SocialView
     static var shareWithLabelTitle = NSLocalizedString("ShareWithLabelTitle", comment: "Title for Label on Social View")

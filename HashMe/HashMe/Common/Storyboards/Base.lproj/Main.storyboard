@@ -471,7 +471,7 @@
                                             <action selector="copyButtonTapped:" destination="7NR-8f-Tr6" eventType="touchUpInside" id="X7N-oz-vjE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-DY-sQ9">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-DY-sQ9" customClass="CustomButton" customModule="HashAll" customModuleProvider="target">
                                         <rect key="frame" x="314" y="0.0" width="21" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Kwy-yi-6cm"/>
@@ -528,7 +528,9 @@
                         <outlet property="copyButton" destination="cre-d3-Zps" id="hvw-SZ-Et1"/>
                         <outlet property="predictionResultsCollectionView" destination="pT2-tb-Te3" id="A7C-mR-urC"/>
                         <outlet property="selectAllButton" destination="1Bb-yi-dQg" id="ROY-NB-JnQ"/>
+                        <outlet property="shareButton" destination="VgQ-DY-sQ9" id="lIS-1m-XHt"/>
                         <outlet property="socialMediaView" destination="Mjh-3e-IHC" id="exY-LP-5Qa"/>
+                        <outlet property="stackView" destination="Gi2-Ql-54o" id="CDE-9Y-1Gt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBo-a5-dH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
