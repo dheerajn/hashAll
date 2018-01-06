@@ -29,15 +29,17 @@ class PredictionResultsViewController: BaseViewController {
         super.viewDidAppear(animated)
         self.resetStatusBar()
         addLeftBarButton(withAction: #selector(PredictionResultsViewController.leftBarButtonTapped))
-        addRightBarButton(withImage: UIImage.ShareImage, withAction: #selector(PredictionResultsViewController.rightBarButtonTapped), withAnimation: true)
+        addRightBarButton(withImage: UIImage.addImage, withAction: #selector(PredictionResultsViewController.addNewTagButtonTapped), withAnimation: true)
     }
     
     @objc func leftBarButtonTapped() {
         self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
     }
     
-    @objc func rightBarButtonTapped() {
-        self.resetSocialMediaView()
+    //TODO: add button action for share button
+    @objc func addNewTagButtonTapped() {
+        //        self.resetSocialMediaView()
+        self.addNewHashTagManually()
     }
     
     @IBAction func copyButtonTapped(_ sender: Any) {
@@ -67,6 +69,37 @@ class PredictionResultsViewController: BaseViewController {
             
             self.shouldEnableCopyButton()
         }
+    }
+    
+    func addNewHashTagManually() {
+        let alertController = UIAlertController(title: "Add a new Tag", message: "", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: self.insertNewHashTag(alertController: alertController))
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        alertController.addTextField { (hashtagTextField) in
+            hashtagTextField.placeholder = "Add your new #hashtag"
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(doneAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func insertNewHashTag(alertController: UIAlertController) -> ((UIAlertAction) -> Void) {
+        let hashtag: ((UIAlertAction) -> Void) = { (alert) in
+            let textField = alertController.textFields![0] as UITextField
+            guard let validHashTag = textField.text else { return }
+            
+            self.viewModel?.originalPredictions?.append(validHashTag)
+            self.viewModel?.updatedPredicitons?.append(validHashTag)
+            
+            //here we did "(self.viewModel?.originalPredictions?.count ?? 0) - 1" because, first we want to add the new element in the "originalPredictions.count" value but we did add an element to the array so count will be incremented by 1 and there might be a crash since we are out of the index, so we inserting by decrementing 1 value.
+            let indexPathForNewElement = IndexPath(item: (self.viewModel?.originalPredictions?.count ?? 0) - 1, section: 0)
+            self.predictionResultsCollectionView.insertItems(at: [indexPathForNewElement])
+            self.collectionView(self.predictionResultsCollectionView, didSelectItemAt: indexPathForNewElement, shouldUpdateVmPredictionsArray: false)
+        }
+        return hashtag
     }
 }
 
@@ -250,7 +283,7 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let predictionCell = collectionView.dequeueReusableCell(withReuseIdentifier: PredictionResultCollectionViewCell.reuseID(), for: indexPath) as? PredictionResultCollectionViewCell else { return UICollectionViewCell() }
-        
+
         guard let validPredictions = viewModel?.originalPredictions else { return UICollectionViewCell() }
         predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
         
@@ -279,6 +312,17 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
 extension PredictionResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        self.collectionView(collectionView, didSelectItemAt: indexPath, shouldUpdateVmPredictionsArray: true)
+    }
+    
+    
+    /// This is a helper method for didSelectItemAt
+    ///
+    /// - Parameters:
+    ///   - collectionView: collectionView to be considered
+    ///   - indexPath: indexPath to be considered
+    ///   - shouldUpdateVmPredictionsArray: if this property is set to true, then if will the selecte tag to viewModel's updatedPridictionArray else if will not update. This is used when manual tag buton is tapped.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, shouldUpdateVmPredictionsArray: Bool = true) {
         guard let selectedPredictionCell = predictionResultsCollectionView.cellForItem(at: indexPath) as? PredictionResultCollectionViewCell else { return }
         if selectedPredictionCell.isPredictionSelected == true {
             selectedPredictionCell.isPredictionSelected = false
@@ -287,7 +331,10 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
             selectedPredictionCell.isPredictionSelected = true
             selectedPredictionCell.scaleToIdentityWith3DAnimation()
         }
-        self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
+        
+        if shouldUpdateVmPredictionsArray {
+            self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
+        }
         self.shouldEnableCopyButton()
         self.updateButtonTitle()
     }

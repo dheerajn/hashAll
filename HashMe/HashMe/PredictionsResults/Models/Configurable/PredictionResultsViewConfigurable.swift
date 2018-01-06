@@ -15,7 +15,7 @@ public protocol PredictionResultsViewConfigurable: class {
     var flowDelegate: HashTagFlowDelegate? { get set }
     
     /// These are the original predictions that comes to the results vc after some manipulation in the other class
-    var originalPredictions: [String]? { get }
+    var originalPredictions: [String]? { get set }
     
     /// Image that was selected by the user so we can pass it to different social networking apps
     var predictionImage: UIImage? { get }

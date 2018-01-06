@@ -22,7 +22,7 @@ extension UIImage {
         return validMoreImage
     }
     
-    //Navigation Button Images
+    //Button Images
     static var BackButtonImage: UIImage {
         guard let validBackButtonImage = UIImage(named: "backButtonIcon") else { return UIImage() }
         return validBackButtonImage
@@ -34,18 +34,23 @@ extension UIImage {
     }
     
     static var InfoImage: UIImage {
-        guard let validIconImage = UIImage(named: "info") else { return UIImage() }
-        return validIconImage
+        guard let validInfoImage = UIImage(named: "info") else { return UIImage() }
+        return validInfoImage
     }
     
     static var EmailImage: UIImage {
-        guard let validIconImage = UIImage(named: "icon-email") else { return UIImage() }
-        return validIconImage
+        guard let validEmailImage = UIImage(named: "icon-email") else { return UIImage() }
+        return validEmailImage
     }
     
     static var FeedbackImage: UIImage {
-        guard let validIconImage = UIImage(named: "icon-feedback") else { return UIImage() }
-        return validIconImage
+        guard let validFeedbackImage = UIImage(named: "icon-feedback") else { return UIImage() }
+        return validFeedbackImage
+    }
+    
+    static var addImage: UIImage {
+        guard let validAddImage = UIImage(named: "icon-add") else { return UIImage() }
+        return validAddImage
     }
     
     //Blured Background Images
