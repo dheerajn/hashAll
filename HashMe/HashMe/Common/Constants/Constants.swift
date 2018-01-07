@@ -20,7 +20,8 @@ struct Constants {
     }
     
     struct ContactUs {
-        static let recipient = "hashitcontactus@gmail.com"
+        static let recipient = "hashallcontactus@gmail.com"
+        static let feedbackForm = "https://goo.gl/AZt6c4"
         static let subject = "HashAll-ContactUs"
     }
     
