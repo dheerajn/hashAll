@@ -29,12 +29,12 @@ class PredictionResultCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func setColors() {
-        self.backgroundColor = UIColor.PredictionsCellSelectedColor()
+        self.backgroundColor = UIColor.yellowCustom()
         predictionDisplayLabel.textColor = UIColor.black
     }
     
     fileprivate func resetColors() {
-        self.backgroundColor = UIColor.PredictionsCellDeselectedColor()
+        self.backgroundColor = UIColor.darkGrayCustom()
         predictionDisplayLabel.textColor = UIColor.white
     }
     
