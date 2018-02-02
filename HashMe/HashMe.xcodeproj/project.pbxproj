@@ -911,7 +911,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HashMe.app/HashMe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HashAll.app/HashAll";
 			};
 			name = Debug;
 		};
@@ -927,7 +927,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HashMe.app/HashMe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HashAll.app/HashAll";
 			};
 			name = Release;
 		};

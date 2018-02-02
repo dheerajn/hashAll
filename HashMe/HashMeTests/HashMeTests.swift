@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import HashMe
+@testable import HashAll
 
 class HashMeTests: XCTestCase {
     
