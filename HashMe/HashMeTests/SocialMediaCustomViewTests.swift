@@ -1,5 +1,5 @@
 //
-//  SocialMediaCustomView.swift
+//  SocialMediaCustomViewTests.swift
 //  HashMeTests
 //
 //  Created by Dheeru on 2/3/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import HashAll
 
-class TestingNibsTests: XCTestCase {
+class SocialMediaCustomViewTests: XCTestCase {
     
     var storyBoard: UIStoryboard?
     var predictionResultsVc: PredictionResultsViewController?
