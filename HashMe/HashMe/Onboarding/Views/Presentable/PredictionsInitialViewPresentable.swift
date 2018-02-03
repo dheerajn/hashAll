@@ -16,7 +16,7 @@ public protocol PredictionsInitialViewPresentable: class {
 public extension PredictionsInitialViewPresentable where Self: HashTagFlowController {
     func showPredictionsView() {
         let storyboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
-        let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.hashtagsVcIdentifier) as? PredictionsViewController
+        let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.predictionsVcIdentifier) as? PredictionsViewController
         hashTagVc?.flowDelegate = self
         hashTagVc?.viewModel = PredictionsViewModel(flowDelegate: self)
         self.pushViewControllerWithAnimation(hashTagVc!, withAnimationType: .fade)

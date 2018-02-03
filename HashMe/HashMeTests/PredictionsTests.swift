@@ -19,7 +19,7 @@ class PredictionsTests: XCTestCase {
         self.storyBoard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
         XCTAssertNotNil(storyBoard, "Storyboard couldnt be instantiated.")
         
-        guard let predictionVc = storyBoard?.instantiateViewController(withIdentifier: Constants.hashtagsVcIdentifier) as? PredictionsViewController else {
+        guard let predictionVc = storyBoard?.instantiateViewController(withIdentifier: Constants.predictionsVcIdentifier) as? PredictionsViewController else {
             XCTFail("View controller is not yet here")
             return
         }

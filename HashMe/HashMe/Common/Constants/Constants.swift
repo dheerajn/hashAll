@@ -35,7 +35,7 @@ struct Constants {
     static let onboardingViewController2        = "onboardingViewController2"
     static let onboardingViewController3        = "onboardingViewController3"
     
-    static let hashtagsVcIdentifier             = "PredictionsViewController"
+    static let predictionsVcIdentifier             = "PredictionsViewController"
     static let onboardingVcIdentifier           = "OnboardingViewController"
     static let predictionsResultsVcIdentifier   = "PredictionResultsViewController"
     
