@@ -32,11 +32,11 @@ class OnboardingTest: XCTestCase {
     
     func testOnboardingView() {
         guard let onboardingVc = storyBoard?.instantiateViewController(withIdentifier: Constants.onboardingVcIdentifier) as? OnboardingViewController else {
-            XCTAssert(false, "OnboardingVieewController is not initialized.")
+            XCTFail("View controller is not here")
             return
         }
         
-        let _ = onboardingVc.view
+        onboardingVc.loadViewIfNeeded()
         
         XCTAssertNil(onboardingVc.flowDelegate, "FlowDelegate is not nil")
         XCTAssertEqual(onboardingVc.getstartedButton.titleLabel?.text, LocalizedString.getStartedButtonTitle)

@@ -12,6 +12,7 @@ import CoreML
 enum PredictionAnimationDuration: Double {
     case mainLabelAnimationDuration = 1
 }
+
 class PredictionsViewModel: PredictionsViewConfigurable {
     
     weak var delegate: PredictionsViewDelegate?

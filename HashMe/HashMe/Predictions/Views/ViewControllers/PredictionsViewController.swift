@@ -104,7 +104,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
 //MARK: UI & Helper methods
 
 extension PredictionsViewController {
-    fileprivate func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
+    func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
         if sourceType == .camera {
             guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
                 self.showImagePickerIssueAlert()
@@ -134,7 +134,7 @@ extension PredictionsViewController {
         }
     }
     
-    fileprivate func showImagePickerIssueAlert() {
+    func showImagePickerIssueAlert() {
         let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
         CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
                                                       message: LocalizedString.alertMessage,
@@ -143,7 +143,7 @@ extension PredictionsViewController {
                                                       onViewController: self)
     }
     
-    fileprivate func showPhotoPrivacyAccessIssueAlert() {
+    func showPhotoPrivacyAccessIssueAlert() {
         let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
         let okAction: CustomAlertAction = (title: LocalizedString.settingsButtonTitle, style: UIAlertActionStyle.default, handler: {
             guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
