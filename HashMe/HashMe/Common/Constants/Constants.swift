@@ -8,6 +8,7 @@
 
 import Foundation
 
+//TODO: Look at this API for future enhancement https://developer.twitter.com/en/docs/trends/trends-for-location/api-reference/get-trends-place
 struct Constants {
     static let appId = "1329812139"
     
