@@ -20,7 +20,7 @@ class SocialMediaCustomViewTests: XCTestCase {
                        "CustomView should add subviews from nib when instantiated in code")
     }
     
-    func testInitializingWithCoder() {
+    func testInitializing() {
         self.storyBoard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
         XCTAssertNotNil(storyBoard, "Storyboard couldnt be instantiated.")
         
