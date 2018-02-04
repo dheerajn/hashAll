@@ -57,7 +57,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     }
     
     func launchShareActivity(withFrame: CGRect) {
-        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#hashAllApp", withFrame: withFrame)
+        self.flowDelegate?.launchShareSheet(withActivities: getHashTagsToBeShared(), andSubject: "#\(LocalizedString.appNameCamelCased)App", withFrame: withFrame)
     }
     
     func updatePredictionsArray(forHashTag tag: String) {
@@ -75,7 +75,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         for activity in self.updatedPredicitons ?? [] {
             activitiesToBeShared.add(activity)
         }
-        let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "hashAllApp"
+        let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "\(LocalizedString.appNameCamelCased)App"
         activitiesToBeShared.add("#\(appName.camelCaseStringLowerCase)")
         return activitiesToBeShared
     }

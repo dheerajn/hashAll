@@ -6,6 +6,8 @@
   Copyright © 2017 Dheeru. All rights reserved.
 */
 
+"appNameCamelCased" = "hashAll";
+
 //Alert Buttons
 "OkButtonTitle" = "OK";
 "NoThanksButtonTitle" = "No, thanks";

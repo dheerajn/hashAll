@@ -49,6 +49,7 @@ public func CustomLocalizedStringWithDefaultValue(_ key: String, tableName: Stri
 
 public class LocalizedString {
     
+    static let appNameCamelCased = NSLocalizedString("appNameCamelCased", comment: "App Name")
     //Alert Buttons
     static let okButtonTitle = NSLocalizedString("OkButtonTitle", comment: "Title for OK button")
     static let noThanksButtonTitle = NSLocalizedString("NoThanksButtonTitle", comment: "Title for No Thanks button")
