@@ -45,7 +45,10 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     }
     
     var maxNumOfKeys: Int {
-        return (self.flowDelegate?.isDeviceIphone ?? true ? 7 : 10)
+        let numberOfTagsForIpad = PredictionsRuleEngine().maximumTagsForIpad() ?? 10
+        let numberOfTagsForIphone = PredictionsRuleEngine().maximumTagsForIphone() ?? 7
+        
+        return (self.flowDelegate?.isDeviceIphone ?? true ? numberOfTagsForIphone : numberOfTagsForIpad)
     }
     
     func predictImage(ref: CVPixelBuffer, predictionImage: UIImage) {

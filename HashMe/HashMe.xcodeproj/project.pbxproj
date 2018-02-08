@@ -41,6 +41,8 @@
 		C83AF3C21F86E07100D4A4BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C83AF3C41F86E07100D4A4BC /* Localizable.strings */; };
 		C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83AF3CC1F86EA8200D4A4BC /* CustomUserDefaults.swift */; };
 		C83AF3CE1F86EACB00D4A4BC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83AF3CB1F86EA8200D4A4BC /* LocalizedString.swift */; };
+		C84ABBB9202D151A00C39D96 /* PredictionsRuleEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBB8202D151A00C39D96 /* PredictionsRuleEngine.swift */; };
+		C84ABBBB202D155000C39D96 /* Prediction_Rule_Engine.js in Resources */ = {isa = PBXBuildFile; fileRef = C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
 		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
 		C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */; };
@@ -123,6 +125,8 @@
 		C83AF3C71F86E10100D4A4BC /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C83AF3CB1F86EA8200D4A4BC /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		C83AF3CC1F86EA8200D4A4BC /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
+		C84ABBB8202D151A00C39D96 /* PredictionsRuleEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsRuleEngine.swift; sourceTree = "<group>"; };
+		C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Prediction_Rule_Engine.js; sourceTree = "<group>"; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +298,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		C84ABBB7202D14F900C39D96 /* BusinessRules */ = {
+			isa = PBXGroup;
+			children = (
+				C84ABBB8202D151A00C39D96 /* PredictionsRuleEngine.swift */,
+				C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */,
+			);
+			path = BusinessRules;
+			sourceTree = "<group>";
+		};
 		C84B2B0B1F75E94200F56BF5 /* Extras */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +393,7 @@
 		C84B2B331F76C18400F56BF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C84ABBB7202D14F900C39D96 /* BusinessRules */,
 				C80542B81FAD425C0003B2CC /* Extensions */,
 				364019601F98F71E00247521 /* Constants */,
 				C83AF3CA1F86EA7500D4A4BC /* Utilities */,
@@ -640,6 +654,7 @@
 				C817F73A1F75DCBF00B8C0FD /* LaunchScreen.storyboard in Resources */,
 				C83AF3C21F86E07100D4A4BC /* Localizable.strings in Resources */,
 				363B7B281F97D0C50094B274 /* SocialMediaView.xib in Resources */,
+				C84ABBBB202D155000C39D96 /* Prediction_Rule_Engine.js in Resources */,
 				C817F7371F75DCBF00B8C0FD /* Assets.xcassets in Resources */,
 				C817F7351F75DCBF00B8C0FD /* Main.storyboard in Resources */,
 			);
@@ -662,6 +677,7 @@
 				36A01DDF1FA239A700EC5E28 /* OnboardingSubViewControllerOne.swift in Sources */,
 				36973B65200004CB007FFBA7 /* DeviceIdiom.swift in Sources */,
 				C84B2B301F76BD4000F56BF5 /* PredictionsViewConfigurable.swift in Sources */,
+				C84ABBB9202D151A00C39D96 /* PredictionsRuleEngine.swift in Sources */,
 				C80542C41FAD42710003B2CC /* UIViewExtension.swift in Sources */,
 				C8255A391F82FE78006DA3F3 /* RootViewController.swift in Sources */,
 				C8884D341FF1FAAE00E91590 /* EmailViewModel.swift in Sources */,
