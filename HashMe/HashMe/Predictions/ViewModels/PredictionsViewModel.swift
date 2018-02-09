@@ -45,8 +45,8 @@ class PredictionsViewModel: PredictionsViewConfigurable {
     }
     
     var maxNumOfKeys: Int {
-        let numberOfTagsForIpad = PredictionsRuleEngine().maximumTagsForIpad() ?? 10
-        let numberOfTagsForIphone = PredictionsRuleEngine().maximumTagsForIphone() ?? 7
+        let numberOfTagsForIpad = self.flowDelegate?.maximumTagsForIpad() ?? 10
+        let numberOfTagsForIphone = self.flowDelegate?.maximumTagsForIphone() ?? 7
         
         return (self.flowDelegate?.isDeviceIphone ?? true ? numberOfTagsForIphone : numberOfTagsForIpad)
     }
