@@ -52,10 +52,10 @@ var maximumTagsForIphone = function () {
 
 //Business Rule: Contactus email id
 var contactUsEmailId = function() {
-    return "hashallcontactus@gmail.com"
-}
+    return "hashallcontactus@gmail.com";
+};
 
 //Business Rule: Contactus email subject
 var contactUsEmailSubject = function() {
-    return "HashAll-ContactUs"
-}
+    return "HashAll-ContactUs";
+};
