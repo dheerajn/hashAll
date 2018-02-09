@@ -54,3 +54,8 @@ var maximumTagsForIphone = function () {
 var contactUsEmailId = function() {
     return "hashallcontactus@gmail.com"
 }
+
+//Business Rule: Contactus email subject
+var contactUsEmailSubject = function() {
+    return "HashAll-ContactUs"
+}

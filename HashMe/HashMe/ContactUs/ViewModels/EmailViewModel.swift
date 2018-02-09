@@ -17,6 +17,6 @@ class EmailViewModel: EmailViewConfigurable {
     }
     
     var subject: String? {
-        return Constants.ContactUs.subject
+        return self.contactUsEmailSubject() ?? Constants.ContactUs.subject
     }
 }

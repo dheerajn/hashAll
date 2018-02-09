@@ -26,6 +26,12 @@ public protocol HashMeRuleEngineProtocol: class {
     ///
     /// - Returns: String value
     func contactUsEmailId() -> String?
+    
+    /// This method helps gettings the contact us email subject
+    ///
+    /// - Returns: String value
+    func contactUsEmailSubject() -> String?
+    
     func validateDates(departureDate: Date, returnDate: Date) -> String?
 }
 
@@ -80,6 +86,16 @@ extension HashMeRuleEngineProtocol  {
     public func contactUsEmailId() -> String? {
         let contactUsEmailIdFunction = context?.objectForKeyedSubscript("contactUsEmailId")
         let jsValueString = contactUsEmailIdFunction?.call(withArguments: [])
+        
+        if let validJsValueString = jsValueString?.isNull {
+            return validJsValueString ? nil : jsValueString?.toString()
+        }
+        return nil
+    }
+    
+    public func contactUsEmailSubject() -> String? {
+        let contactUsEmailSubjectFunction = context?.objectForKeyedSubscript("contactUsEmailSubject")
+        let jsValueString = contactUsEmailSubjectFunction?.call(withArguments: [])
         
         if let validJsValueString = jsValueString?.isNull {
             return validJsValueString ? nil : jsValueString?.toString()
