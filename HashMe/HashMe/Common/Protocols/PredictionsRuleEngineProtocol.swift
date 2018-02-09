@@ -62,4 +62,3 @@ extension PredictionsRuleEngineProtocol  {
     }
 }
 
-extension UIViewController: PredictionsRuleEngineProtocol {}

@@ -44,6 +44,7 @@
 		C84ABBBB202D155000C39D96 /* Prediction_Rule_Engine.js in Resources */ = {isa = PBXBuildFile; fileRef = C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */; };
 		C84ABBBD202D194900C39D96 /* PredictionsRuleEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBBC202D194900C39D96 /* PredictionsRuleEngineProtocol.swift */; };
 		C84ABBBF202D218500C39D96 /* ViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBBE202D218500C39D96 /* ViewModelConfigurable.swift */; };
+		C84ABBC1202D23B100C39D96 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC0202D23B100C39D96 /* UIViewControllerExtension.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
 		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
 		C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */; };
@@ -129,6 +130,7 @@
 		C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Prediction_Rule_Engine.js; sourceTree = "<group>"; };
 		C84ABBBC202D194900C39D96 /* PredictionsRuleEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsRuleEngineProtocol.swift; sourceTree = "<group>"; };
 		C84ABBBE202D218500C39D96 /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
+		C84ABBC0202D23B100C39D96 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				C80542BB1FAD42710003B2CC /* UIImageExtension.swift */,
 				C80542BE1FAD42710003B2CC /* UILabelExtension.swift */,
 				C80542BD1FAD42710003B2CC /* UIViewExtension.swift */,
+				C84ABBC0202D23B100C39D96 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
 				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
+				C84ABBC1202D23B100C39D96 /* UIViewControllerExtension.swift in Sources */,
 				C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */,
 				C8884D301FF1F24400E91590 /* EmailViewController.swift in Sources */,
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
