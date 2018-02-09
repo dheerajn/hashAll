@@ -40,10 +40,9 @@ extension HashMeRuleEngineProtocol  {
     var context: JSContext? {
         get {
             let context = JSContext()
-            guard let
-                commonJSPath = Bundle.main.path(forResource: "HashMe_Rule_Engine", ofType: "js") else {
-                    print("Unable to read resource files.")
-                    return nil
+            guard let commonJSPath = Bundle.main.path(forResource: "HashMe_Rule_Engine", ofType: "js") else {
+                print("Unable to read resource files.")
+                return nil
             }
             do {
                 let common = try String(contentsOfFile: commonJSPath, encoding: String.Encoding.utf8)
