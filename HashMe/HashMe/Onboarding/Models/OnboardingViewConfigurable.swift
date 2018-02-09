@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol OnboardingViewConfigurable: class {
+public protocol OnboardingViewConfigurable: ViewModelConfigurable {
     
     /// Title for get started button
     var getStartedButtonTitle: String? { get }

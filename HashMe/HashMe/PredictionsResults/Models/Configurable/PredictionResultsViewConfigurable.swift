@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol PredictionResultsViewConfigurable: class {
+public protocol PredictionResultsViewConfigurable: ViewModelConfigurable {
     
     /// Delegate that controls the views
     var flowDelegate: HashTagFlowDelegate? { get set }

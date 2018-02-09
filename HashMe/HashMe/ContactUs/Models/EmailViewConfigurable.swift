@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol EmailViewConfigurable {
+public protocol EmailViewConfigurable: ViewModelConfigurable {
     
     /// Sets the email address to be sent to
     var recipients: [String]? { get }

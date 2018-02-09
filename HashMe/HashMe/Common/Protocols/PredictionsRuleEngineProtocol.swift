@@ -11,7 +11,15 @@ import UIKit
 import JavaScriptCore
 
 public protocol PredictionsRuleEngineProtocol: class {
+    
+    /// This method returns the max number of tags to be shown for iPad
+    ///
+    /// - Returns: Int value
     func maximumTagsForIpad() -> Int?
+    
+    /// This method returns the max number of tags to be shown for iPhone
+    ///
+    /// - Returns: Int value
     func maximumTagsForIphone() -> Int?
     func validateDates(departureDate: Date, returnDate: Date) -> String?
 }

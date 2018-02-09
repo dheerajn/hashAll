@@ -8,4 +8,5 @@
 
 import Foundation
 
+/// This protocol is the base view model and helps access the business rules all over the app.
 public protocol ViewModelConfigurable: PredictionsRuleEngineProtocol { }
