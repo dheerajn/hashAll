@@ -35,7 +35,7 @@ public protocol HashMeRuleEngineProtocol: JsContextProtocolLocal {
     func validateDates(departureDate: Date, returnDate: Date) -> String?
 }
 
-extension HashMeRuleEngineProtocol  {
+extension HashMeRuleEngineProtocol {
     
     public func validateDates(departureDate: Date, returnDate: Date) -> String? {
         let dateFunction = context?.objectForKeyedSubscript("validateDates")
