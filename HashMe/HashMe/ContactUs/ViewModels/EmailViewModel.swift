@@ -13,7 +13,7 @@ class EmailViewModel: EmailViewConfigurable {
     var flowDelegate: HashTagFlowDelegate?
     
     var recipients: [String]? {
-        return [Constants.ContactUs.recipient]
+        return [self.contactUsEmailId() ?? Constants.ContactUs.recipient]
     }
     
     var subject: String? {

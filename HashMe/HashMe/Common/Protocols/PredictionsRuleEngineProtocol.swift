@@ -71,5 +71,15 @@ extension PredictionsRuleEngineProtocol  {
         }
         return nil
     }
+    
+    public func contactUsEmailId() -> String? {
+        let contactUsEmailIdFunction = context?.objectForKeyedSubscript("contactUsEmailId")
+        let jsValueString = contactUsEmailIdFunction?.call(withArguments: [])
+        
+        if let validJsValueString = jsValueString?.isNull {
+            return validJsValueString ? nil : jsValueString?.toString()
+        }
+        return nil
+    }
 }
 

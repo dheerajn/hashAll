@@ -49,3 +49,7 @@ var maximumTagsForIpad = function () {
 var maximumTagsForIphone = function () {
     return 7;
 }
+
+var contactUsEmailId = function() {
+    return "hashallcontactus@gmail.com"
+}
