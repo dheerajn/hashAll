@@ -25,6 +25,7 @@ public protocol PredictionsRuleEngineProtocol: class {
 }
 
 extension PredictionsRuleEngineProtocol  {
+    
     var context: JSContext? {
         get {
             let context = JSContext()
@@ -46,19 +47,29 @@ extension PredictionsRuleEngineProtocol  {
     public func validateDates(departureDate: Date, returnDate: Date) -> String? {
         let dateFunction = context?.objectForKeyedSubscript("validateDates")
         let jsValueString = dateFunction?.call(withArguments: [ departureDate, returnDate])
-        return (jsValueString?.isNull)! ? nil : jsValueString?.toString()
+        
+        if let validJsValueString = jsValueString?.isNull {
+            return validJsValueString ? nil : jsValueString?.toString()
+        }
+        return nil
     }
     
     public func maximumTagsForIpad() -> Int? {
-        let dateFunction = context?.objectForKeyedSubscript("maximumTagsForIpad")
-        let jsValueInt = dateFunction?.call(withArguments: [])
-        return (jsValueInt?.isNull)! ? nil : jsValueInt?.toNumber().intValue
+        let iPadTagsFunction = context?.objectForKeyedSubscript("maximumTagsForIpad")
+        let jsValueInt = iPadTagsFunction?.call(withArguments: [])
+        if let validJsValueString = jsValueInt?.isNull {
+            return validJsValueString ? nil : jsValueInt?.toNumber().intValue
+        }
+        return nil
     }
     
     public func maximumTagsForIphone() -> Int? {
-        let dateFunction = context?.objectForKeyedSubscript("maximumTagsForIphone")
-        let jsValueInt = dateFunction?.call(withArguments: [])
-        return (jsValueInt?.isNull)! ? nil : jsValueInt?.toNumber().intValue
+        let iPhoneTagsFunction = context?.objectForKeyedSubscript("maximumTagsForIphone")
+        let jsValueInt = iPhoneTagsFunction?.call(withArguments: [])
+        if let validJsValueString = jsValueInt?.isNull {
+            return validJsValueString ? nil : jsValueInt?.toNumber().intValue
+        }
+        return nil
     }
 }
 
