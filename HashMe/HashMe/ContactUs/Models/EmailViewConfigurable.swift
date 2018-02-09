@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol EmailViewConfigurable: ViewModelConfigurable {
+public protocol EmailViewConfigurable: HashMeRuleEngineProtocol {
     
     /// Sets the email address to be sent to
     var recipients: [String]? { get }

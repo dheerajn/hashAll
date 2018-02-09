@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreML
 
-public protocol PredictionsViewConfigurable: ViewModelConfigurable {
+public protocol PredictionsViewConfigurable: HashMeRuleEngineProtocol {
     
     /// This delegate is responsible for communicating with view controler
     weak var delegate: PredictionsViewDelegate? { get set }

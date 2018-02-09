@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol OnboardingViewConfigurable: ViewModelConfigurable {
+public protocol OnboardingViewConfigurable: HashMeRuleEngineProtocol {
     
     /// Title for get started button
     var getStartedButtonTitle: String? { get }

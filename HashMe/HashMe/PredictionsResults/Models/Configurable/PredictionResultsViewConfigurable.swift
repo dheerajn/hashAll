@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol PredictionResultsViewConfigurable: ViewModelConfigurable {
+public protocol PredictionResultsViewConfigurable: HashMeRuleEngineProtocol {
     
     /// Delegate that controls the views
     var flowDelegate: HashTagFlowDelegate? { get set }
