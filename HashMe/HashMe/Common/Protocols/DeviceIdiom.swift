@@ -14,6 +14,7 @@ public protocol DeviceIdiom {
     var isDeviceIphone: Bool { get }
 }
 
+// MARK: - DeviceIdiom Extension for HashTagFlowController
 public extension DeviceIdiom where Self: HashTagFlowController {
     
     var isDeviceIpad: Bool {
