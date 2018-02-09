@@ -1,5 +1,5 @@
 //
-//  PredictionRuleEngine
+//  HashMe_Rule_Engine
 //
 //  This file contains all business rules for Predictions
 //

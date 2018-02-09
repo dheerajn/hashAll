@@ -9,4 +9,4 @@
 import Foundation
 import UIKit
 
-extension UIViewController: PredictionsRuleEngineProtocol {}
+extension UIViewController: HashMeRuleEngineProtocol {}

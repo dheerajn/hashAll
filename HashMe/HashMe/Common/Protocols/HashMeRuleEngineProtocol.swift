@@ -1,5 +1,5 @@
 //
-//  PredictionsRuleEngineProtocol.swift
+//  HashMeRuleEngineProtocol.swift
 //  HashMe
 //
 //  Created by Dheeru on 2/8/18.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import JavaScriptCore
 
-public protocol PredictionsRuleEngineProtocol: class {
+public protocol HashMeRuleEngineProtocol: class {
     
     /// This method returns the max number of tags to be shown for iPad
     ///
@@ -21,16 +21,21 @@ public protocol PredictionsRuleEngineProtocol: class {
     ///
     /// - Returns: Int value
     func maximumTagsForIphone() -> Int?
+    
+    /// This method helps getting the contact us email id
+    ///
+    /// - Returns: String value
+    func contactUsEmailId() -> String?
     func validateDates(departureDate: Date, returnDate: Date) -> String?
 }
 
-extension PredictionsRuleEngineProtocol  {
+extension HashMeRuleEngineProtocol  {
     
     var context: JSContext? {
         get {
             let context = JSContext()
             guard let
-                commonJSPath = Bundle.main.path(forResource: "Prediction_Rule_Engine", ofType: "js") else {
+                commonJSPath = Bundle.main.path(forResource: "HashMe_Rule_Engine", ofType: "js") else {
                     print("Unable to read resource files.")
                     return nil
             }

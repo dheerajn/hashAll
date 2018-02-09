@@ -41,8 +41,8 @@
 		C83AF3C21F86E07100D4A4BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C83AF3C41F86E07100D4A4BC /* Localizable.strings */; };
 		C83AF3CD1F86EAC800D4A4BC /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83AF3CC1F86EA8200D4A4BC /* CustomUserDefaults.swift */; };
 		C83AF3CE1F86EACB00D4A4BC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83AF3CB1F86EA8200D4A4BC /* LocalizedString.swift */; };
-		C84ABBBB202D155000C39D96 /* Prediction_Rule_Engine.js in Resources */ = {isa = PBXBuildFile; fileRef = C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */; };
-		C84ABBBD202D194900C39D96 /* PredictionsRuleEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBBC202D194900C39D96 /* PredictionsRuleEngineProtocol.swift */; };
+		C84ABBBB202D155000C39D96 /* HashMe_Rule_Engine.js in Resources */ = {isa = PBXBuildFile; fileRef = C84ABBBA202D155000C39D96 /* HashMe_Rule_Engine.js */; };
+		C84ABBBD202D194900C39D96 /* HashMeRuleEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBBC202D194900C39D96 /* HashMeRuleEngineProtocol.swift */; };
 		C84ABBBF202D218500C39D96 /* ViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBBE202D218500C39D96 /* ViewModelConfigurable.swift */; };
 		C84ABBC1202D23B100C39D96 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC0202D23B100C39D96 /* UIViewControllerExtension.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
@@ -127,8 +127,8 @@
 		C83AF3C71F86E10100D4A4BC /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C83AF3CB1F86EA8200D4A4BC /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		C83AF3CC1F86EA8200D4A4BC /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
-		C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Prediction_Rule_Engine.js; sourceTree = "<group>"; };
-		C84ABBBC202D194900C39D96 /* PredictionsRuleEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsRuleEngineProtocol.swift; sourceTree = "<group>"; };
+		C84ABBBA202D155000C39D96 /* HashMe_Rule_Engine.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = HashMe_Rule_Engine.js; sourceTree = "<group>"; };
+		C84ABBBC202D194900C39D96 /* HashMeRuleEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMeRuleEngineProtocol.swift; sourceTree = "<group>"; };
 		C84ABBBE202D218500C39D96 /* ViewModelConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelConfigurable.swift; sourceTree = "<group>"; };
 		C84ABBC0202D23B100C39D96 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		C84ABBB7202D14F900C39D96 /* BusinessRules */ = {
 			isa = PBXGroup;
 			children = (
-				C84ABBBA202D155000C39D96 /* Prediction_Rule_Engine.js */,
+				C84ABBBA202D155000C39D96 /* HashMe_Rule_Engine.js */,
 			);
 			path = BusinessRules;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 		C867A09C1F76E16500B8B0E7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C84ABBBC202D194900C39D96 /* PredictionsRuleEngineProtocol.swift */,
+				C84ABBBC202D194900C39D96 /* HashMeRuleEngineProtocol.swift */,
 				C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */,
 				36973B64200004CB007FFBA7 /* DeviceIdiom.swift */,
 				C84ABBBE202D218500C39D96 /* ViewModelConfigurable.swift */,
@@ -660,7 +660,7 @@
 				C817F73A1F75DCBF00B8C0FD /* LaunchScreen.storyboard in Resources */,
 				C83AF3C21F86E07100D4A4BC /* Localizable.strings in Resources */,
 				363B7B281F97D0C50094B274 /* SocialMediaView.xib in Resources */,
-				C84ABBBB202D155000C39D96 /* Prediction_Rule_Engine.js in Resources */,
+				C84ABBBB202D155000C39D96 /* HashMe_Rule_Engine.js in Resources */,
 				C817F7371F75DCBF00B8C0FD /* Assets.xcassets in Resources */,
 				C817F7351F75DCBF00B8C0FD /* Main.storyboard in Resources */,
 			);
@@ -728,7 +728,7 @@
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
 				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,
-				C84ABBBD202D194900C39D96 /* PredictionsRuleEngineProtocol.swift in Sources */,
+				C84ABBBD202D194900C39D96 /* HashMeRuleEngineProtocol.swift in Sources */,
 				C89F5C9F1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift in Sources */,
 				C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */,
 				C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */,
