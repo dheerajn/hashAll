@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import JavaScriptCore
 
-public protocol HashMeRuleEngineProtocol: class {
+public protocol HashMeRuleEngineProtocol: JsContextProtocolLocal {
     
     /// This method returns the max number of tags to be shown for iPad
     ///
@@ -36,23 +36,6 @@ public protocol HashMeRuleEngineProtocol: class {
 }
 
 extension HashMeRuleEngineProtocol  {
-    
-    var context: JSContext? {
-        get {
-            let context = JSContext()
-            guard let commonJSPath = Bundle.main.path(forResource: "HashMe_Rule_Engine", ofType: "js") else {
-                print("Unable to read resource files.")
-                return nil
-            }
-            do {
-                let common = try String(contentsOfFile: commonJSPath, encoding: String.Encoding.utf8)
-                _ = context?.evaluateScript(common)
-            } catch (let error) {
-                print("Error while processing script file: \(error)")
-            }
-            return context
-        }
-    }
     
     public func validateDates(departureDate: Date, returnDate: Date) -> String? {
         let dateFunction = context?.objectForKeyedSubscript("validateDates")

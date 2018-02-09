@@ -45,6 +45,7 @@
 		C84ABBBD202D194900C39D96 /* HashMeRuleEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBBC202D194900C39D96 /* HashMeRuleEngineProtocol.swift */; };
 		C84ABBC1202D23B100C39D96 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC0202D23B100C39D96 /* UIViewControllerExtension.swift */; };
 		C84ABBC3202D5A7600C39D96 /* HashMeRuleEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC2202D5A7600C39D96 /* HashMeRuleEngineTest.swift */; };
+		C84ABBC5202E684000C39D96 /* JsContextProtocolLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC4202E684000C39D96 /* JsContextProtocolLocal.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
 		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
 		C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */; };
@@ -131,6 +132,7 @@
 		C84ABBBC202D194900C39D96 /* HashMeRuleEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMeRuleEngineProtocol.swift; sourceTree = "<group>"; };
 		C84ABBC0202D23B100C39D96 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C84ABBC2202D5A7600C39D96 /* HashMeRuleEngineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMeRuleEngineTest.swift; sourceTree = "<group>"; };
+		C84ABBC4202E684000C39D96 /* JsContextProtocolLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsContextProtocolLocal.swift; sourceTree = "<group>"; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				C84ABBBC202D194900C39D96 /* HashMeRuleEngineProtocol.swift */,
+				C84ABBC4202E684000C39D96 /* JsContextProtocolLocal.swift */,
 				C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */,
 				36973B64200004CB007FFBA7 /* DeviceIdiom.swift */,
 			);
@@ -688,6 +691,7 @@
 				C8884D341FF1FAAE00E91590 /* EmailViewModel.swift in Sources */,
 				C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */,
 				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
+				C84ABBC5202E684000C39D96 /* JsContextProtocolLocal.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				C80542C51FAD42710003B2CC /* UILabelExtension.swift in Sources */,
 				36A01DE11FA2405F00EC5E28 /* OnboardingSubViewControllerTwo.swift in Sources */,
