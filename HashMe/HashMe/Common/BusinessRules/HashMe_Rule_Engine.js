@@ -50,6 +50,7 @@ var maximumTagsForIphone = function () {
     return 7;
 }
 
+//Business Rule: Contactus email id
 var contactUsEmailId = function() {
     return "hashallcontactus@gmail.com"
 }
