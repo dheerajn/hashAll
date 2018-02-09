@@ -67,6 +67,7 @@ extension HashMeRuleEngineProtocol  {
     public func maximumTagsForIpad() -> Int? {
         let iPadTagsFunction = context?.objectForKeyedSubscript("maximumTagsForIpad")
         let jsValueInt = iPadTagsFunction?.call(withArguments: [])
+        
         if let validJsValueString = jsValueInt?.isNull {
             return validJsValueString ? nil : jsValueInt?.toNumber().intValue
         }
@@ -76,6 +77,7 @@ extension HashMeRuleEngineProtocol  {
     public func maximumTagsForIphone() -> Int? {
         let iPhoneTagsFunction = context?.objectForKeyedSubscript("maximumTagsForIphone")
         let jsValueInt = iPhoneTagsFunction?.call(withArguments: [])
+        
         if let validJsValueString = jsValueInt?.isNull {
             return validJsValueString ? nil : jsValueInt?.toNumber().intValue
         }
