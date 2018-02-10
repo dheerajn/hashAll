@@ -14,28 +14,28 @@ public protocol HashMeRuleEngineProtocol: JsContextProtocolLocal {
     
     /// This method returns the max number of tags to be shown for iPad
     ///
-    /// - Returns: Int value
+    /// - Returns: Int value or nil if not found anything
     func maximumTagsForIpad() -> Int?
     
     /// This method returns the max number of tags to be shown for iPhone
     ///
-    /// - Returns: Int value
+    /// - Returns: Int value or nil if not found anything
     func maximumTagsForIphone() -> Int?
     
     /// This method helps getting the contact us email id
     ///
-    /// - Returns: String value
+    /// - Returns: String value or nil if not found anything
     func contactUsEmailId() -> String?
     
     /// This method helps gettings the contact us email subject
     ///
-    /// - Returns: String value
+    /// - Returns: String value or nil if not found anything
     func contactUsEmailSubject() -> String?
     
     /// This method helps in formatting the string by appending "#" to it
     ///
     /// - Parameter string: String that needs to be formatted
-    /// - Returns: String Value
+    /// - Returns: String Value or nil if not found anything
     func appendHashToString(tobeFormattedString string: String) -> String?
 }
 

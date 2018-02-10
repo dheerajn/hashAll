@@ -19,14 +19,14 @@ extension JsContextProtocolLocal {
     public var context: JSContext? {
         let context = JSContext()
         guard let commonJSPath = Bundle.main.path(forResource: "HashMe_Rule_Engine", ofType: "js") else {
-            print("Unable to read resource files.")
+            print("Unable to read resource files since the path is not found")
             return nil
         }
         do {
             let common = try String(contentsOfFile: commonJSPath, encoding: String.Encoding.utf8)
             _ = context?.evaluateScript(common)
         } catch (let error) {
-            print("Error while processing script file: \(error)")
+            print("Error while processing jscript file: \(error.localizedDescription)")
         }
         return context
     }
