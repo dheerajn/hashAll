@@ -31,21 +31,15 @@ public protocol HashMeRuleEngineProtocol: JsContextProtocolLocal {
     ///
     /// - Returns: String value
     func contactUsEmailSubject() -> String?
+    
+    /// This method helps in formatting the string by appending "#" to it
+    ///
+    /// - Parameter string: String that needs to be formatted
+    /// - Returns: String Value
     func appendHashToString(tobeFormattedString string: String) -> String?
-    func validateDates(departureDate: Date, returnDate: Date) -> String?
 }
 
 extension HashMeRuleEngineProtocol {
-    
-    public func validateDates(departureDate: Date, returnDate: Date) -> String? {
-        let dateFunction = context?.objectForKeyedSubscript("validateDates")
-        let jsValueString = dateFunction?.call(withArguments: [ departureDate, returnDate])
-        
-        if let validJsValueString = jsValueString?.isNull {
-            return validJsValueString ? nil : jsValueString?.toString()
-        }
-        return nil
-    }
     
     public func maximumTagsForIpad() -> Int? {
         let iPadTagsFunction = context?.objectForKeyedSubscript("maximumTagsForIpad")
