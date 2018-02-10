@@ -19,9 +19,6 @@ public extension PredictionsInitialViewPresentable where Self: HashTagFlowContro
         let hashTagVc = storyboard.instantiateViewController(withIdentifier: Constants.predictionsVcIdentifier) as? PredictionsViewController
         hashTagVc?.flowDelegate = self
         hashTagVc?.viewModel = PredictionsViewModel(flowDelegate: self)
-        // if test
-        //hashTagVc?.viewModel = PredictionsTestViewModel(flowDelegate: nil)
-        
         self.pushViewControllerWithAnimation(hashTagVc!, withAnimationType: .fade)
     }
 }
