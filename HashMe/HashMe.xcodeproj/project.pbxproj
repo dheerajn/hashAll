@@ -48,6 +48,8 @@
 		C84ABBC5202E684000C39D96 /* JsContextProtocolLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC4202E684000C39D96 /* JsContextProtocolLocal.swift */; };
 		C84ABBCE202E75B700C39D96 /* PredictionsTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBCD202E75B700C39D96 /* PredictionsTestViewModel.swift */; };
 		C84ABBD0202E8F7500C39D96 /* OnboardingTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBCF202E8F7500C39D96 /* OnboardingTestViewModel.swift */; };
+		C84ABBD2202E95A800C39D96 /* PredictionResultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBD1202E95A800C39D96 /* PredictionResultsTests.swift */; };
+		C84ABBD4202E967500C39D96 /* PredictionResultsTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBD3202E967500C39D96 /* PredictionResultsTestViewModel.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
 		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
 		C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */; };
@@ -137,6 +139,8 @@
 		C84ABBC4202E684000C39D96 /* JsContextProtocolLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsContextProtocolLocal.swift; sourceTree = "<group>"; };
 		C84ABBCD202E75B700C39D96 /* PredictionsTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsTestViewModel.swift; sourceTree = "<group>"; };
 		C84ABBCF202E8F7500C39D96 /* OnboardingTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTestViewModel.swift; sourceTree = "<group>"; };
+		C84ABBD1202E95A800C39D96 /* PredictionResultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsTests.swift; sourceTree = "<group>"; };
+		C84ABBD3202E967500C39D96 /* PredictionResultsTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsTestViewModel.swift; sourceTree = "<group>"; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				C8AB172C20240F65005FBBBE /* OnboardingTest.swift */,
 				C817F7461F75DCBF00B8C0FD /* Info.plist */,
 				C84ABBC2202D5A7600C39D96 /* HashMeRuleEngineTest.swift */,
+				C84ABBD1202E95A800C39D96 /* PredictionResultsTests.swift */,
 			);
 			path = HashMeTests;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			children = (
 				C84ABBCD202E75B700C39D96 /* PredictionsTestViewModel.swift */,
 				C84ABBCF202E8F7500C39D96 /* OnboardingTestViewModel.swift */,
+				C84ABBD3202E967500C39D96 /* PredictionResultsTestViewModel.swift */,
 			);
 			path = TestViewModels;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				C84B2B2C1F76B3A000F56BF5 /* OnboardingViewConfigurable.swift in Sources */,
 				C84B2B351F76C19F00F56BF5 /* NavigationFlowControllable.swift in Sources */,
 				C812BEC81F7727D50029732B /* PredictionResultsViewController.swift in Sources */,
+				C84ABBD4202E967500C39D96 /* PredictionResultsTestViewModel.swift in Sources */,
 				C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */,
 				C80542C21FAD42710003B2CC /* UIImageExtension.swift in Sources */,
 				C84B2B2E1F76BD2C00F56BF5 /* PredictionsViewModel.swift in Sources */,
@@ -766,6 +773,7 @@
 				C817F7451F75DCBF00B8C0FD /* HashMeTests.swift in Sources */,
 				C8AB173220253159005FBBBE /* PredictionsTests.swift in Sources */,
 				C87CA29720268148001CD749 /* SocialMediaCustomViewTests.swift in Sources */,
+				C84ABBD2202E95A800C39D96 /* PredictionResultsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

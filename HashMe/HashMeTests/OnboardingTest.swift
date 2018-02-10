@@ -38,7 +38,7 @@ class OnboardingTest: XCTestCase {
         }
     }
     
-    func testOnboardingView() {
+    func testOnboarding() {
         onboardingVc?.loadViewIfNeeded()
         
         onboardingVc?.viewDidAppear(true)

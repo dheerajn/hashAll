@@ -38,7 +38,7 @@ class PredictionsTests: XCTestCase {
         }
     }
     
-    func testPredictionViewController() {
+    func testPredictions() {
         
         predictionVc?.loadViewIfNeeded()
         
