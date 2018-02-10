@@ -24,6 +24,7 @@ class PredictionsTests: XCTestCase {
             return
         }
         self.predictionVc = predictionVc
+        self.predictionVc?.viewModel = PredictionsTestViewModel(flowDelegate: nil)
     }
     
     override func tearDown() {
@@ -33,13 +34,11 @@ class PredictionsTests: XCTestCase {
     
     func testPerformanceExample() {
         self.measure {
-            predictionVc?.viewModel = PredictionsViewModel(flowDelegate: nil)
             predictionVc?.viewModel?.predictImage(ref: #imageLiteral(resourceName: "screenshot3").buffer!, predictionImage: #imageLiteral(resourceName: "screenshot3"))
         }
     }
     
     func testPredictionViewController() {
-
         
         predictionVc?.loadViewIfNeeded()
         
@@ -61,11 +60,12 @@ class PredictionsTests: XCTestCase {
         predictionVc?.rightBarButtonTapped()
         XCTAssertTrue((predictionVc?.contactUsContainerView.isHidden)!, "shouldHideContactsUsView is not yet hidden, so hide it right now")
         
-        
-
         predictionVc?.viewDidAppear(true)
         predictionVc?.setStatusBar()
         XCTAssertNil(predictionVc?.navigationController?.navigationBar.barStyle, "status bar style is set")
         
+        XCTAssertEqual(predictionVc?.descriptionLabel.text, "test description", "description label is different")
+        XCTAssertEqual(predictionVc?.photoLibraryButton.titleLabel?.text, "test photo library button", "Photo Library button title is different")
+        XCTAssertEqual(predictionVc?.cameraButton.titleLabel?.text, "test camera button", "Camera button title is different")
     }
 }
