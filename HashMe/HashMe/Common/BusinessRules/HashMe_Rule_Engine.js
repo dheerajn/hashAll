@@ -17,7 +17,6 @@ Date.prototype.withoutTime = function () {
 }
 
 //Business Rule: Append "#" for a string
-
 var appendHashToString = function(toBeHashedString) {
     var string = toBeHashedString
     string = "#" + string
