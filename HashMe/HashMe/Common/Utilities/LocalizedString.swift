@@ -72,6 +72,7 @@ public class LocalizedString {
     static let copyButtonTitle = NSLocalizedString("copyButtonTitle", comment: "Title for copy button")
     static let selecAllButtonTitle = NSLocalizedString("selectAllButtonTitle", comment: "Title for selecet all button")
     static let deselecAllButtonTitle = NSLocalizedString("deselectAllButtonTitle", comment: "Title for deselecet all button")
+    static let addButtonTitle = NSLocalizedString("addButtonTitle", comment: "Title for add button")
     
     static let theHashTagTitle = NSLocalizedString("hashTagTitle", comment: "Title for the screen")
     static let hashTagDescription = NSLocalizedString("hashTagDescription", comment: "Description for hash tag")

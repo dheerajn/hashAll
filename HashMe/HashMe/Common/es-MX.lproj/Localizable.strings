@@ -30,6 +30,7 @@
 "copyButtonTitle" = "DUPDO";
 "selectAllButtonTitle" = "SELECCIONAR TODO";
 "deselectAllButtonTitle" = "DESELECCIONAR TODO";
+"addButtonTitle" = "AÑADIR";
 
 "hashTagTitle" = "HashAll";
 "hashTagDescription" = "Utiliza hashtags con redes en línea, ¡no seas un instrumento al respecto!";

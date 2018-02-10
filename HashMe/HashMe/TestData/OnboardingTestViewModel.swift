@@ -9,6 +9,16 @@
 import Foundation
 
 class OnboardingTestViewModel: OnboardingViewConfigurable {
+    
+    var flowDelegate: HashTagFlowDelegate?
+    
+    init(flowDelegate: HashTagFlowDelegate?) {
+        self.flowDelegate = flowDelegate
+    }
+    func showPredicitonsView() {
+        self.flowDelegate?.showPredictionsView()
+    }
+    
     var getStartedButtonTitle: String? {
         return "test get started"
     }

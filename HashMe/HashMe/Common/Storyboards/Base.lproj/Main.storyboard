@@ -507,10 +507,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntZ-4h-0Qp" customClass="KeyboardCustomView" customModule="HashAll" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Hpe-IK-0D8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="ntZ-4h-0Qp" firstAttribute="trailing" secondItem="neA-Pt-P9Z" secondAttribute="trailing" id="1N8-BT-UQL"/>
                             <constraint firstItem="Gi2-Ql-54o" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="20" id="5yP-Nb-reE"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="Mjh-3e-IHC" secondAttribute="bottom" constant="20" id="8oF-4s-a8F"/>
+                            <constraint firstItem="ntZ-4h-0Qp" firstAttribute="bottom" secondItem="neA-Pt-P9Z" secondAttribute="bottom" id="DKd-mW-tiG"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="pT2-tb-Te3" secondAttribute="bottom" constant="75" id="K4x-wp-k3s"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Gi2-Ql-54o" secondAttribute="trailing" constant="20" id="NVg-pu-Fbm"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="Mjh-3e-IHC" secondAttribute="trailing" constant="15" id="Ogw-rm-EQH"/>
@@ -519,6 +528,7 @@
                             <constraint firstItem="Mjh-3e-IHC" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" constant="15" id="nYb-Zw-OgN"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="bottom" secondItem="Gi2-Ql-54o" secondAttribute="bottom" constant="20" id="pbl-wm-FvA"/>
                             <constraint firstItem="neA-Pt-P9Z" firstAttribute="trailing" secondItem="pT2-tb-Te3" secondAttribute="trailing" constant="16" id="swL-l1-m8d"/>
+                            <constraint firstItem="ntZ-4h-0Qp" firstAttribute="leading" secondItem="neA-Pt-P9Z" secondAttribute="leading" id="xz9-mv-8hz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="neA-Pt-P9Z"/>
                     </view>
@@ -526,6 +536,8 @@
                         <outlet property="copiedLabel" destination="fGp-kP-QQn" id="K0H-qC-9dc"/>
                         <outlet property="copiedView" destination="XqW-09-HgE" id="Odf-NM-KN2"/>
                         <outlet property="copyButton" destination="cre-d3-Zps" id="hvw-SZ-Et1"/>
+                        <outlet property="keyboardView" destination="ntZ-4h-0Qp" id="mLV-IQ-YQU"/>
+                        <outlet property="keyboardViewBottomConstraint" destination="DKd-mW-tiG" id="fq4-xs-oZk"/>
                         <outlet property="predictionResultsCollectionView" destination="pT2-tb-Te3" id="A7C-mR-urC"/>
                         <outlet property="selectAllButton" destination="1Bb-yi-dQg" id="ROY-NB-JnQ"/>
                         <outlet property="shareButton" destination="VgQ-DY-sQ9" id="lIS-1m-XHt"/>

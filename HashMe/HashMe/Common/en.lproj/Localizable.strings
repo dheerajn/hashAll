@@ -30,6 +30,7 @@
 "copyButtonTitle" = "COPY";
 "selectAllButtonTitle" = "SELECT ALL";
 "deselectAllButtonTitle" = "DESELECT ALL";
+"addButtonTitle" = "ADD";
 
 "hashTagTitle" = "HashAll";
 "hashTagDescription" = "Utilize hashtags with online networking, don't be an instrument about it!";

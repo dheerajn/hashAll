@@ -10,10 +10,7 @@ import UIKit
 
 class OnboardingViewController: UIPageViewController {
     
-    weak var flowDelegate: HashTagFlowDelegate?
-    
     var getstartedButton: UIButton!
-    
     var pageControl = UIPageControl()
     
     lazy var orderedViewControllers: [UIViewController] = {
@@ -44,7 +41,7 @@ class OnboardingViewController: UIPageViewController {
         let customUserDefaults = CustomUserDefault()
         customUserDefaults.setOnboardingWithValue()
         
-        self.flowDelegate?.showPredictionsView()
+        self.viewModel?.showPredicitonsView()
     }
 }
 

@@ -40,4 +40,5 @@ struct Constants {
     static let predictionsResultsVcIdentifier   = "PredictionResultsViewController"
     
     static let socialMediaViewIdentifier        = "SocialMediaView"
+    static let keyboardViewIdentifier           = "KeyboardView"
 }

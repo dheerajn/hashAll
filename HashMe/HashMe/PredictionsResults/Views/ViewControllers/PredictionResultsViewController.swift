@@ -19,6 +19,9 @@ class PredictionResultsViewController: BaseViewController {
     @IBOutlet weak var predictionResultsCollectionView: UICollectionView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var shareButton: CustomButton!
+    @IBOutlet weak var keyboardView: KeyboardCustomView!
+    
+    @IBOutlet weak var keyboardViewBottomConstraint: NSLayoutConstraint!
     
     var viewModel: PredictionResultsViewConfigurable?
     
@@ -39,7 +42,7 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @objc func addNewTagButtonTapped() {
-        self.addNewHashTagManually()
+        self.resetKeyboardView()
     }
     
     @IBAction func copyButtonTapped(_ sender: Any) {
@@ -75,50 +78,36 @@ class PredictionResultsViewController: BaseViewController {
         }
     }
     
-    func addNewHashTagManually() {
-        let alertController = UIAlertController(title: LocalizedString.addNewTagTitle, message: nil, preferredStyle: .alert)
+    func insertNewHashTag(tag: String) {
         
-        let doneAction = UIAlertAction(title: LocalizedString.doneButtonTitle, style: .default, handler: self.insertNewHashTag(alertController: alertController))
-        let cancelAction = UIAlertAction(title: LocalizedString.cancelButtonTitle, style: .default, handler: nil)
+        let validHashTag = "#\(tag.camelCaseStringLowerCase)"
         
-        alertController.addTextField { (hashtagTextField) in
-            hashtagTextField.placeholder = LocalizedString.addNewTagPlaceHolder
+        //check for duplicates
+        if self.viewModel?.originalPredictions?.contains(validHashTag) == false {
+            self.viewModel?.originalPredictions?.append(validHashTag)
+        } else {
+            return
         }
-        
-        alertController.addAction(cancelAction)
-        alertController.addAction(doneAction)
-        self.present(alertController, animated: true, completion: nil)
+        if self.viewModel?.updatedPredicitons?.contains(validHashTag) == false {
+            self.viewModel?.updatedPredicitons?.append(validHashTag)
+        } else {
+            return
+        }
+        //here we did "(self.viewModel?.originalPredictions?.count ?? 0) - 1" because, first we want to add the new element in the "originalPredictions.count" value but we did add an element to the array so count will be incremented by 1 and there might be a crash since we are out of the index, so we inserting by decrementing 1 value.
+        let indexPathForNewElement = IndexPath(item: (self.viewModel?.originalPredictions?.count ?? 0) - 1, section: 0)
+        self.predictionResultsCollectionView.insertItems(at: [indexPathForNewElement])
+        self.collectionView(self.predictionResultsCollectionView, didSelectItemAt: indexPathForNewElement, shouldUpdateVmPredictionsArray: false)
     }
     
-    func insertNewHashTag(alertController: UIAlertController) -> ((UIAlertAction) -> Void) {
-        let hashtag: ((UIAlertAction) -> Void) = { (alert) in
-            let textField = alertController.textFields![0] as UITextField
-            guard var validHashTag = textField.text else { return }
-            validHashTag = "#\(validHashTag.camelCaseStringLowerCase)"
-            
-            //check for duplicates
-            if self.viewModel?.originalPredictions?.contains(validHashTag) == false {
-                self.viewModel?.originalPredictions?.append(validHashTag)
-            } else {
-                return
-            }
-            if self.viewModel?.updatedPredicitons?.contains(validHashTag) == false {
-                self.viewModel?.updatedPredicitons?.append(validHashTag)
-            } else {
-                return
-            }
-            //here we did "(self.viewModel?.originalPredictions?.count ?? 0) - 1" because, first we want to add the new element in the "originalPredictions.count" value but we did add an element to the array so count will be incremented by 1 and there might be a crash since we are out of the index, so we inserting by decrementing 1 value.
-            let indexPathForNewElement = IndexPath(item: (self.viewModel?.originalPredictions?.count ?? 0) - 1, section: 0)
-            self.predictionResultsCollectionView.insertItems(at: [indexPathForNewElement])
-            self.collectionView(self.predictionResultsCollectionView, didSelectItemAt: indexPathForNewElement, shouldUpdateVmPredictionsArray: false)
-        }
-        return hashtag
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
 //MARK: UI and helper methods
 
 extension PredictionResultsViewController {
+    
     fileprivate func configureUI() {
         self.view.setupLightBluredViewOnImage(UIImage.NatureImage)
         
@@ -134,9 +123,24 @@ extension PredictionResultsViewController {
         self.copiedLabel.text = viewModel?.copiedLabelTitle
         self.moveCopiedViewOutsideBounds()
         self.moveSocialMediaCustomViewOutsideBounds()
+        self.moveKeyboardOusideBounds()
         
         handleShareSheetActions()
+        handleKeyboardData()
+        registerNotifications()
+        
         StoreReviewHelper.checkAndAskForReview()
+    }
+    
+    @objc func handleKeyboardView(notification: Notification) {
+        if let userInfo = notification.userInfo {
+            let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            
+            self.keyboardViewBottomConstraint.constant = -(keyboardFrame?.height)!
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
     
     fileprivate func handleShareSheetActions() {
@@ -169,6 +173,14 @@ extension PredictionResultsViewController {
                                                               andActions: [dismissAction, noThanks],
                                                               onViewController: self)
             }
+        }
+    }
+    
+    func handleKeyboardData() {
+        self.keyboardView.addButtonHandler = { data in
+            self.keyboardView.keyboardTextField.resignFirstResponder()
+            self.moveKeyboardOusideBounds()
+            self.insertNewHashTag(tag: data ?? "")
         }
     }
     
@@ -213,10 +225,23 @@ extension PredictionResultsViewController {
         }
     }
     
+    fileprivate func moveKeyboardOusideBounds() {
+        let yOrigin = self.view.frame.size.height
+        self.keyboardView.transform = CGAffineTransform(translationX: 0, y: yOrigin + 200)
+    }
+    
     fileprivate func resetSocialMediaView() {
         UIView.animate(withDuration: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue) {
             self.socialMediaView.transform = CGAffineTransform.identity
         }
+    }
+    
+    fileprivate func resetKeyboardView() {
+        UIView.animate(withDuration: PredictionResultsAnimationDuration.hidingAnimationDuration.rawValue) {
+            self.keyboardView.transform = CGAffineTransform.identity
+        }
+        self.keyboardView.keyboardTextField.becomeFirstResponder()
+        self.keyboardView.keyboardTextField.text = nil
     }
     
     fileprivate func shouldEnableCopyButton() {
@@ -266,6 +291,10 @@ extension PredictionResultsViewController {
                                                       andActions: [dismissAction, installNow],
                                                       onViewController: self)
     }
+    
+    fileprivate func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardView(notification:)), name: .UIKeyboardWillShow, object: nil)
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -299,7 +328,7 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let predictionCell = collectionView.dequeueReusableCell(withReuseIdentifier: PredictionResultCollectionViewCell.reuseID(), for: indexPath) as? PredictionResultCollectionViewCell else { return UICollectionViewCell() }
-
+        
         guard let validPredictions = viewModel?.originalPredictions else { return UICollectionViewCell() }
         predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
         

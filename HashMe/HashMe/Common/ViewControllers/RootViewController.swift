@@ -9,7 +9,8 @@
 import UIKit
 
 class RootViewController: UIViewController {
-    weak var flowDelegate: HashTagFlowDelegate?
+    //This delegate should not be nil since someone has to hold the delegate
+    var flowDelegate: HashTagFlowDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

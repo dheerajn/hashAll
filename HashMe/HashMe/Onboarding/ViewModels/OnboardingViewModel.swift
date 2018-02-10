@@ -14,7 +14,18 @@ enum OnboardingAnimationDuration: Double {
 }
 
 class OnboardingViewModel: OnboardingViewConfigurable {
+    
+    weak var flowDelegate: HashTagFlowDelegate?
+    
+    init(flowDelegate: HashTagFlowDelegate?) {
+        self.flowDelegate = flowDelegate
+    }
+    
     var getStartedButtonTitle: String? {
         return LocalizedString.getStartedButtonTitle
+    }
+    
+    func showPredicitonsView() {
+        self.flowDelegate?.showPredictionsView()
     }
 }
