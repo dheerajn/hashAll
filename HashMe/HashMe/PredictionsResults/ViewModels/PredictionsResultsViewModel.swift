@@ -17,7 +17,7 @@ enum PredictionResultsAnimationDuration: Double {
 
 class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     
-    var flowDelegate: HashTagFlowDelegate?
+    weak var flowDelegate: HashTagFlowDelegate?
     
     var originalPredictions: [String]?
     var predictionImage: UIImage?

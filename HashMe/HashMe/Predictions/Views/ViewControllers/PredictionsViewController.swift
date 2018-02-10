@@ -17,7 +17,7 @@ import CoreML
 
 class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
-    var flowDelegate: HashTagFlowDelegate?
+    weak var flowDelegate: HashTagFlowDelegate?
     
     let imagePicker = UIImagePickerController()
     var viewModel: PredictionsViewConfigurable? {

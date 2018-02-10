@@ -10,7 +10,7 @@ import UIKit
 
 class PredictionResultsTestViewModel: PredictionResultsViewConfigurable {
     
-    var flowDelegate: HashTagFlowDelegate?
+    weak var flowDelegate: HashTagFlowDelegate?
     
     var originalPredictions: [String]?
     var predictionImage: UIImage?

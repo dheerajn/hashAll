@@ -10,7 +10,7 @@ import UIKit
 
 class OnboardingViewController: UIPageViewController {
     
-    var flowDelegate: HashTagFlowDelegate?
+    weak var flowDelegate: HashTagFlowDelegate?
     
     var getstartedButton: UIButton!
     

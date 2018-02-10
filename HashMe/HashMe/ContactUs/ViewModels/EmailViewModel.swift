@@ -10,7 +10,7 @@ import Foundation
 
 class EmailViewModel: EmailViewConfigurable {
     
-    var flowDelegate: HashTagFlowDelegate?
+    weak var flowDelegate: HashTagFlowDelegate?
     
     var recipients: [String]? {
         return [self.contactUsEmailId() ?? Constants.ContactUs.recipient]
