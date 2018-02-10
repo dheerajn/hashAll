@@ -25,6 +25,7 @@ class PredictionsTests: XCTestCase {
         }
         self.predictionVc = predictionVc
         self.predictionVc?.viewModel = PredictionsTestViewModel(flowDelegate: nil)
+        self.predictionVc?.loadViewIfNeeded()
     }
     
     override func tearDown() {
@@ -39,9 +40,6 @@ class PredictionsTests: XCTestCase {
     }
     
     func testPredictions() {
-        
-        predictionVc?.loadViewIfNeeded()
-        
         XCTAssertNil(predictionVc?.flowDelegate, "FlowDelegate is not nil")
         XCTAssertNotNil(predictionVc?.imagePicker, "image picker is empty")
         XCTAssertNotNil(predictionVc?.descriptionLabel, "descriptionLabel is empty")

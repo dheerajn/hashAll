@@ -25,6 +25,7 @@ class OnboardingTest: XCTestCase {
         }
         self.onboardingVc = onboardingVc
         self.onboardingVc?.viewModel = OnboardingTestViewModel()
+        self.onboardingVc?.loadViewIfNeeded()
     }
     
     override func tearDown() {
@@ -39,8 +40,6 @@ class OnboardingTest: XCTestCase {
     }
     
     func testOnboarding() {
-        onboardingVc?.loadViewIfNeeded()
-        
         onboardingVc?.viewDidAppear(true)
         XCTAssertNil(onboardingVc?.flowDelegate, "FlowDelegate is not nil")
         XCTAssertEqual(onboardingVc?.getstartedButton.titleLabel?.text, "test get started", "Get started button title is different")

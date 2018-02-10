@@ -25,6 +25,7 @@ class PredictionResultsTests: XCTestCase {
         }
         self.predictionResultsVc = predictionResultsVc
         self.predictionResultsVc?.viewModel = PredictionResultsTestViewModel(predictions: ["one", "two"], withPredictionImage: UIImage())
+        self.predictionResultsVc?.loadViewIfNeeded()
     }
     
     override func tearDown() {
@@ -39,8 +40,6 @@ class PredictionResultsTests: XCTestCase {
     }
     
     func testPredictionResults() {
-        predictionResultsVc?.loadViewIfNeeded()
-        
         XCTAssertNotNil(predictionResultsVc, "Prediction Results Vc is nil")
         XCTAssertNotNil(predictionResultsVc?.copiedLabel, "CopiedLabel is empty")
         XCTAssertNotNil(predictionResultsVc?.socialMediaView, "SocialMediaView is empty")
@@ -53,8 +52,6 @@ class PredictionResultsTests: XCTestCase {
     }
     
     func testPredictionsData() {
-        predictionResultsVc?.loadViewIfNeeded()
-        
         XCTAssertEqual(predictionResultsVc?.copyButton.titleLabel?.text, "test copy button", "Copy button title is different")
         XCTAssertEqual(predictionResultsVc?.copiedLabel.text, "test copied", "Copy label title is different")
         
