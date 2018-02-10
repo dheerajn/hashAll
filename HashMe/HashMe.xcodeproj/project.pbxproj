@@ -281,7 +281,7 @@
 		C817F72E1F75DCBF00B8C0FD /* HashMe */ = {
 			isa = PBXGroup;
 			children = (
-				C84ABBCC202E75A000C39D96 /* TestViewModels */,
+				C84ABBCC202E75A000C39D96 /* TestData */,
 				C8884D271FF1EF5E00E91590 /* ContactUs */,
 				C812BEC31F7726900029732B /* PredictionsResults */,
 				C84B2B331F76C18400F56BF5 /* Common */,
@@ -324,14 +324,14 @@
 			path = BusinessRules;
 			sourceTree = "<group>";
 		};
-		C84ABBCC202E75A000C39D96 /* TestViewModels */ = {
+		C84ABBCC202E75A000C39D96 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
 				C84ABBCD202E75B700C39D96 /* PredictionsTestViewModel.swift */,
 				C84ABBCF202E8F7500C39D96 /* OnboardingTestViewModel.swift */,
 				C84ABBD3202E967500C39D96 /* PredictionResultsTestViewModel.swift */,
 			);
-			path = TestViewModels;
+			path = TestData;
 			sourceTree = "<group>";
 		};
 		C84B2B0B1F75E94200F56BF5 /* Extras */ = {
