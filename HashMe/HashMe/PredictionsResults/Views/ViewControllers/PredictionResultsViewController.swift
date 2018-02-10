@@ -94,7 +94,7 @@ class PredictionResultsViewController: BaseViewController {
         let hashtag: ((UIAlertAction) -> Void) = { (alert) in
             let textField = alertController.textFields![0] as UITextField
             guard var validHashTag = textField.text else { return }
-            validHashTag = "#\(validHashTag)"
+            validHashTag = "#\(validHashTag.camelCaseStringLowerCase)"
             
             //check for duplicates
             if self.viewModel?.originalPredictions?.contains(validHashTag) == false {
