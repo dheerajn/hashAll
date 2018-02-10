@@ -76,7 +76,9 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
             activitiesToBeShared.add(activity)
         }
         let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "\(LocalizedString.appNameCamelCased)App"
-        activitiesToBeShared.add("#\(appName.camelCaseStringLowerCase)")
+        
+        let formattedAppName = self.appendHashToString(tobeFormattedString: appName)
+        activitiesToBeShared.add(formattedAppName ?? "")
         return activitiesToBeShared
     }
 }

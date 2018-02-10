@@ -31,7 +31,7 @@ public protocol HashMeRuleEngineProtocol: JsContextProtocolLocal {
     ///
     /// - Returns: String value
     func contactUsEmailSubject() -> String?
-    
+    func appendHashToString(tobeFormattedString string: String) -> String?
     func validateDates(departureDate: Date, returnDate: Date) -> String?
 }
 
@@ -80,6 +80,16 @@ extension HashMeRuleEngineProtocol {
     public func contactUsEmailSubject() -> String? {
         let contactUsEmailSubjectFunction = context?.objectForKeyedSubscript("contactUsEmailSubject")
         let jsValueString = contactUsEmailSubjectFunction?.call(withArguments: [])
+        
+        if let validJsValueString = jsValueString?.isNull {
+            return validJsValueString ? nil : jsValueString?.toString()
+        }
+        return nil
+    }
+    
+    public func appendHashToString(tobeFormattedString string: String) -> String? {
+        let appendHashToStringFunction = context?.objectForKeyedSubscript("appendHashToString")
+        let jsValueString = appendHashToStringFunction?.call(withArguments: [string])
         
         if let validJsValueString = jsValueString?.isNull {
             return validJsValueString ? nil : jsValueString?.toString()
