@@ -47,6 +47,7 @@
 		C84ABBC3202D5A7600C39D96 /* HashMeRuleEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC2202D5A7600C39D96 /* HashMeRuleEngineTest.swift */; };
 		C84ABBC5202E684000C39D96 /* JsContextProtocolLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBC4202E684000C39D96 /* JsContextProtocolLocal.swift */; };
 		C84ABBCE202E75B700C39D96 /* PredictionsTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBCD202E75B700C39D96 /* PredictionsTestViewModel.swift */; };
+		C84ABBD0202E8F7500C39D96 /* OnboardingTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBCF202E8F7500C39D96 /* OnboardingTestViewModel.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
 		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
 		C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */; };
@@ -135,6 +136,7 @@
 		C84ABBC2202D5A7600C39D96 /* HashMeRuleEngineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMeRuleEngineTest.swift; sourceTree = "<group>"; };
 		C84ABBC4202E684000C39D96 /* JsContextProtocolLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsContextProtocolLocal.swift; sourceTree = "<group>"; };
 		C84ABBCD202E75B700C39D96 /* PredictionsTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsTestViewModel.swift; sourceTree = "<group>"; };
+		C84ABBCF202E8F7500C39D96 /* OnboardingTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTestViewModel.swift; sourceTree = "<group>"; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				C84ABBCD202E75B700C39D96 /* PredictionsTestViewModel.swift */,
+				C84ABBCF202E8F7500C39D96 /* OnboardingTestViewModel.swift */,
 			);
 			path = TestViewModels;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				C8884D341FF1FAAE00E91590 /* EmailViewModel.swift in Sources */,
 				C8869D4F1F92753300C32845 /* ShareSheetPresentable.swift in Sources */,
 				C8F54A241F7B32AC00E94DF4 /* CustomLabel.swift in Sources */,
+				C84ABBD0202E8F7500C39D96 /* OnboardingTestViewModel.swift in Sources */,
 				C84ABBC5202E684000C39D96 /* JsContextProtocolLocal.swift in Sources */,
 				C812BECC1F7728070029732B /* PredictionResultsViewConfigurable.swift in Sources */,
 				C80542C51FAD42710003B2CC /* UILabelExtension.swift in Sources */,

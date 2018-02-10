@@ -12,11 +12,19 @@ import XCTest
 class OnboardingTest: XCTestCase {
     
     var storyBoard: UIStoryboard?
+    var onboardingVc: OnboardingViewController?
     
     override func setUp() {
         super.setUp()
         self.storyBoard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
         XCTAssertNotNil(storyBoard, "Storyboard couldnt be instantiated.")
+        
+        guard let onboardingVc = storyBoard?.instantiateViewController(withIdentifier: Constants.onboardingVcIdentifier) as? OnboardingViewController else {
+            XCTFail("View controller is not here")
+            return
+        }
+        self.onboardingVc = onboardingVc
+        self.onboardingVc?.viewModel = OnboardingTestViewModel()
     }
     
     override func tearDown() {
@@ -31,19 +39,15 @@ class OnboardingTest: XCTestCase {
     }
     
     func testOnboardingView() {
-        guard let onboardingVc = storyBoard?.instantiateViewController(withIdentifier: Constants.onboardingVcIdentifier) as? OnboardingViewController else {
-            XCTFail("View controller is not here")
-            return
-        }
+        onboardingVc?.loadViewIfNeeded()
         
-        onboardingVc.loadViewIfNeeded()
+        onboardingVc?.viewDidAppear(true)
+        XCTAssertNil(onboardingVc?.flowDelegate, "FlowDelegate is not nil")
+        XCTAssertEqual(onboardingVc?.getstartedButton.titleLabel?.text, "test get started", "Get started button title is different")
+        XCTAssertNotNil(onboardingVc?.pageControl, "Page control not initialized")
+        XCTAssertNotNil(onboardingVc?.viewModel, "View Model is not initialized")
         
-        XCTAssertNil(onboardingVc.flowDelegate, "FlowDelegate is not nil")
-        XCTAssertEqual(onboardingVc.getstartedButton.titleLabel?.text, LocalizedString.getStartedButtonTitle)
-        XCTAssertNotNil(onboardingVc.pageControl, "Page control not initialized")
-        XCTAssertNotNil(onboardingVc.viewModel, "View Model is not initialized")
-        
-        onboardingVc.viewDidAppear(true)
+        onboardingVc?.viewDidAppear(true)
     }
     
     func testOnboardingSubViewControllerOne() {

@@ -53,7 +53,6 @@ extension OnboardingViewController {
     fileprivate func configureUI() {
         showTheFirstViewController()
         self.view.setupMediumBluredViewOnImage(UIImage.SunshineGreenery)
-        self.viewModel = OnboardingViewModel()
         configureGetStartedButton()
         configurePageControl()
     }
