@@ -180,7 +180,9 @@ extension PredictionResultsViewController {
         self.keyboardView.addButtonHandler = { data in
             self.keyboardView.keyboardTextField.resignFirstResponder()
             self.moveKeyboardOusideBounds()
-            self.insertNewHashTag(tag: data ?? "")
+            if data?.isEmpty == false && data.isNil == false {
+                self.insertNewHashTag(tag: data ?? "")
+            }
         }
     }
     

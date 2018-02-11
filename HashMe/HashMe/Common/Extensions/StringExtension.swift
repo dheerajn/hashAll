@@ -42,3 +42,9 @@ public extension String {
         }
     }
 }
+
+extension Optional where Wrapped == String {
+    var isNil: Bool {
+        return self == nil
+    }
+}
