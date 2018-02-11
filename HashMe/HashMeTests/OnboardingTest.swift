@@ -24,7 +24,7 @@ class OnboardingTest: XCTestCase {
             return
         }
         self.onboardingVc = onboardingVc
-        self.onboardingVc?.viewModel = OnboardingTestViewModel()
+        self.onboardingVc?.viewModel = OnboardingTestViewModel(flowDelegate: nil)
         self.onboardingVc?.loadViewIfNeeded()
     }
     
@@ -41,7 +41,6 @@ class OnboardingTest: XCTestCase {
     
     func testOnboarding() {
         onboardingVc?.viewDidAppear(true)
-        XCTAssertNil(onboardingVc?.flowDelegate, "FlowDelegate is not nil")
         XCTAssertEqual(onboardingVc?.getstartedButton.titleLabel?.text, "test get started", "Get started button title is different")
         XCTAssertNotNil(onboardingVc?.pageControl, "Page control not initialized")
         XCTAssertNotNil(onboardingVc?.viewModel, "View Model is not initialized")

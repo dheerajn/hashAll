@@ -52,6 +52,7 @@
 		C84ABBD4202E967500C39D96 /* PredictionResultsTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBD3202E967500C39D96 /* PredictionResultsTestViewModel.swift */; };
 		C84ABBD6202F875800C39D96 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C84ABBD5202F875800C39D96 /* KeyboardView.xib */; };
 		C84ABBD8202F8C0A00C39D96 /* KeyboardCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBD7202F8C0A00C39D96 /* KeyboardCustomView.swift */; };
+		C84ABBDE2030E53000C39D96 /* KeyboardCustomViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84ABBDD2030E53000C39D96 /* KeyboardCustomViewTests.swift */; };
 		C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */; };
 		C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */; };
 		C84B2B2A1F76B39000F56BF5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */; };
@@ -145,6 +146,7 @@
 		C84ABBD3202E967500C39D96 /* PredictionResultsTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsTestViewModel.swift; sourceTree = "<group>"; };
 		C84ABBD5202F875800C39D96 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		C84ABBD7202F8C0A00C39D96 /* KeyboardCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCustomView.swift; sourceTree = "<group>"; };
+		C84ABBDD2030E53000C39D96 /* KeyboardCustomViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCustomViewTests.swift; sourceTree = "<group>"; };
 		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				C8AB173120253159005FBBBE /* PredictionsTests.swift */,
 				C87CA29620268148001CD749 /* SocialMediaCustomViewTests.swift */,
+				C84ABBDD2030E53000C39D96 /* KeyboardCustomViewTests.swift */,
 				C817F7441F75DCBF00B8C0FD /* HashMeTests.swift */,
 				C8AB172C20240F65005FBBBE /* OnboardingTest.swift */,
 				C817F7461F75DCBF00B8C0FD /* Info.plist */,
@@ -778,6 +781,7 @@
 			files = (
 				C84ABBC3202D5A7600C39D96 /* HashMeRuleEngineTest.swift in Sources */,
 				C8AB172D20240F65005FBBBE /* OnboardingTest.swift in Sources */,
+				C84ABBDE2030E53000C39D96 /* KeyboardCustomViewTests.swift in Sources */,
 				C817F7451F75DCBF00B8C0FD /* HashMeTests.swift in Sources */,
 				C8AB173220253159005FBBBE /* PredictionsTests.swift in Sources */,
 				C87CA29720268148001CD749 /* SocialMediaCustomViewTests.swift in Sources */,
