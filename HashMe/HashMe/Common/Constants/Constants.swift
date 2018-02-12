@@ -41,4 +41,8 @@ struct Constants {
     
     static let socialMediaViewIdentifier        = "SocialMediaView"
     static let keyboardViewIdentifier           = "KeyboardView"
+    
+    struct RuleEngine {
+        static let hashMeRuleEngineFileName     = "HashMe_Rule_Engine"
+    }
 }

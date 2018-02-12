@@ -18,7 +18,7 @@ public protocol JsContextProtocolLocal: class {
 extension JsContextProtocolLocal {
     public var context: JSContext? {
         let context = JSContext()
-        guard let commonJSPath = Bundle.main.path(forResource: "HashMe_Rule_Engine", ofType: "js") else {
+        guard let commonJSPath = Bundle.main.path(forResource: Constants.RuleEngine.hashMeRuleEngineFileName, ofType: "js") else {
             print("Unable to read resource files since the path is not found")
             return nil
         }
