@@ -72,9 +72,7 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
     fileprivate func getHashTagsToBeShared() -> NSMutableArray {
         let activitiesToBeShared = NSMutableArray()
         activitiesToBeShared.add(self.predictionImage ?? UIImage())
-        for activity in self.updatedPredicitons ?? [] {
-            activitiesToBeShared.add(activity)
-        }
+        let _ = self.updatedPredicitons?.map{activitiesToBeShared.add($0)}
         let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "\(LocalizedString.appNameCamelCased)App"
         
         let formattedAppName = self.appendHashToString(tobeFormattedString: appName)
