@@ -13,7 +13,7 @@ import CoreML
 public protocol PredictionsViewConfigurable: HashMeRuleEngineProtocol {
     
     /// This delegate is responsible for communicating with view controler
-    weak var delegate: PredictionsViewDelegate? { get set }
+    var delegate: PredictionsViewDelegate? { get set }
     
     /// Title for view controller.
     var screenTitle: String? { get }

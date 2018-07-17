@@ -10,7 +10,7 @@ import Foundation
 
 public protocol OnboardingViewConfigurable: HashMeRuleEngineProtocol {
     
-    weak var flowDelegate: HashTagFlowDelegate? { get set }
+    var flowDelegate: HashTagFlowDelegate? { get set }
     /// Title for get started button
     var getStartedButtonTitle: String? { get }
     

@@ -12,7 +12,7 @@ import UIKit
 public protocol PredictionResultsViewConfigurable: HashMeRuleEngineProtocol {
     
     /// Delegate that controls the views
-    weak var flowDelegate: HashTagFlowDelegate? { get set }
+    var flowDelegate: HashTagFlowDelegate? { get set }
     
     /// These are the original predictions that comes to the results vc after some manipulation in the other class
     var originalPredictions: [String]? { get set }
