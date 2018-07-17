@@ -62,7 +62,6 @@
 		C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */; };
 		C84B2B351F76C19F00F56BF5 /* NavigationFlowControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */; };
 		C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85450591F76F44100CF3D4E /* CustomButton.swift */; };
-		C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */; };
 		C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867A0981F76CB5200B8B0E7 /* Constants.swift */; };
 		C87CA29720268148001CD749 /* SocialMediaCustomViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CA29620268148001CD749 /* SocialMediaCustomViewTests.swift */; };
 		C8869D351F8C2ACB00C32845 /* PredictionsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D341F8C2ACB00C32845 /* PredictionsLayout.swift */; };
@@ -76,6 +75,7 @@
 		C89F5C9F1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F5C9E1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift */; };
 		C8AB172D20240F65005FBBBE /* OnboardingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB172C20240F65005FBBBE /* OnboardingTest.swift */; };
 		C8AB173220253159005FBBBE /* PredictionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB173120253159005FBBBE /* PredictionsTests.swift */; };
+		C8D3FC9520FEB89B00E481C2 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C8D3FC9420FEB89B00E481C2 /* Resnet50.mlmodel */; };
 		C8F54A171F79BD6900E94DF4 /* CustomLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */; };
 		C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */; };
 		C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */; };
@@ -147,7 +147,6 @@
 		C84ABBD5202F875800C39D96 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		C84ABBD7202F8C0A00C39D96 /* KeyboardCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCustomView.swift; sourceTree = "<group>"; };
 		C84ABBDD2030E53000C39D96 /* KeyboardCustomViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCustomViewTests.swift; sourceTree = "<group>"; };
-		C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C84B2B251F76B2CF00F56BF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C84B2B271F76B36500F56BF5 /* PredictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsViewController.swift; sourceTree = "<group>"; };
 		C84B2B291F76B39000F56BF5 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -170,6 +169,7 @@
 		C89F5C9E1F998CC100CB33CE /* PredictionsInitialViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsInitialViewPresentable.swift; sourceTree = "<group>"; };
 		C8AB172C20240F65005FBBBE /* OnboardingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTest.swift; sourceTree = "<group>"; };
 		C8AB173120253159005FBBBE /* PredictionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsTests.swift; sourceTree = "<group>"; };
+		C8D3FC9420FEB89B00E481C2 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		C8F54A161F79BD6900E94DF4 /* CustomLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingAnimation.swift; sourceTree = "<group>"; };
 		C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationPresentable.swift; sourceTree = "<group>"; };
 		C8F54A1E1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -345,8 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				C817F73B1F75DCBF00B8C0FD /* Info.plist */,
+				C8D3FC9420FEB89B00E481C2 /* Resnet50.mlmodel */,
 				C817F72F1F75DCBF00B8C0FD /* AppDelegate.swift */,
-				C84B2B0C1F75E97700F56BF5 /* Resnet50.mlmodel */,
 				C817F7381F75DCBF00B8C0FD /* LaunchScreen.storyboard */,
 				C817F7361F75DCBF00B8C0FD /* Assets.xcassets */,
 			);
@@ -730,6 +730,7 @@
 				36A306641FED923A00E97AE5 /* StoreReviewHelper.swift in Sources */,
 				C80542C61FAD42710003B2CC /* UICollectionViewExtension.swift in Sources */,
 				363B7B2A1F97D2C10094B274 /* SocialMediaCustomView.swift in Sources */,
+				C8D3FC9520FEB89B00E481C2 /* Resnet50.mlmodel in Sources */,
 				363BB3FA1F8E8F0F0048347D /* UIImageConstants.swift in Sources */,
 				3680F6BF1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift in Sources */,
 				C812BECA1F7727F90029732B /* PredictionsResultsViewModel.swift in Sources */,
@@ -756,7 +757,6 @@
 				C8255A3D1F831300006DA3F3 /* OnboardingPresentable.swift in Sources */,
 				C83AF3CE1F86EACB00D4A4BC /* LocalizedString.swift in Sources */,
 				C84B2B281F76B36500F56BF5 /* PredictionsViewController.swift in Sources */,
-				C854505B1F76FF9100CF3D4E /* Resnet50.mlmodel in Sources */,
 				C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */,
 				C84ABBC1202D23B100C39D96 /* UIViewControllerExtension.swift in Sources */,
 				C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */,
