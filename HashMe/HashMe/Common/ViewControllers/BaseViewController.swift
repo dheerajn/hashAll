@@ -72,5 +72,6 @@ class BaseViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+        print("\(self.description.debugDescription) deinit")
     }
 }

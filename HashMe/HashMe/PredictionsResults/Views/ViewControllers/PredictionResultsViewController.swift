@@ -101,6 +101,7 @@ class PredictionResultsViewController: BaseViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+        print("\(self.description.debugDescription) deinit")
     }
 }
 

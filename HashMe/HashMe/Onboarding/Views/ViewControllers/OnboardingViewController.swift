@@ -43,6 +43,10 @@ class OnboardingViewController: UIPageViewController {
         
         self.viewModel?.showPredicitonsView()
     }
+    
+    deinit {
+        print("\(self.description.debugDescription) deinit")
+    }
 }
 
 //MARK: UI

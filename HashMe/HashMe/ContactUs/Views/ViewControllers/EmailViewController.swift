@@ -49,4 +49,8 @@ class EmailViewController: BaseViewController, MFMailComposeViewControllerDelega
         controller.dismiss(animated: true, completion: nil)
         self.dismiss(animated: true, completion: nil)
     }
+    
+    deinit {
+        print("\(self.description.debugDescription) deinit")
+    }
 }

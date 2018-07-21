@@ -25,4 +25,8 @@ class OnboardingSubViewControllerTwo: BaseViewController {
             initialLoad = false
         }
     }
+    
+    deinit {
+        print("\(self.description.debugDescription) deinit")
+    }
 }

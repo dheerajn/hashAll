@@ -99,6 +99,10 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     @IBAction func contactUsButtonTapped(_ sender: Any) {
         self.viewModel?.handleEmailAction()
     }
+    
+    deinit {
+        print("\(self.description.debugDescription) deinit")
+    }
 }
 
 //MARK: UI & Helper methods

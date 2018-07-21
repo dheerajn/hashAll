@@ -17,4 +17,8 @@ class RootViewController: UIViewController {
         self.view.backgroundColor = UIColor.LightGreyBackgroundColor()
         self.flowDelegate = HashTagFlowController(navigationController: self.navigationController!)
     }
+    
+    deinit {
+        print("\(self.description.debugDescription) deinit")
+    }
 }
