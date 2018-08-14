@@ -10,7 +10,6 @@ import UIKit
 
 class OnboardingSubViewControllerOne: BaseViewController {
 
-    @IBOutlet weak var screenShot1: CustomImageView!
     @IBOutlet weak var step1Label: CustomLabel!
     
     override func viewDidLoad() {
