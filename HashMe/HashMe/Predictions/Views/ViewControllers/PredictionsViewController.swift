@@ -232,11 +232,6 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
-        
-//        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//            guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-//                return
-//            }
         self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {
             //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
