@@ -33,7 +33,7 @@ class KeyboardCustomView: CustomView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        self.keyboardTextField.borderStyle = UITextBorderStyle.roundedRect
+        self.keyboardTextField.borderStyle = UITextField.BorderStyle.roundedRect
         self.keyboardTextField.layer.cornerRadius = 10.0
         
         self.addButton.titleLabel?.text = LocalizedString.addButtonTitle

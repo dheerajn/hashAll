@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// Alert button title, what type of action should the button take and completion handler.
-public typealias CustomAlertAction = (title: String?, style: UIAlertActionStyle, handler: (() -> Void)?)
+public typealias CustomAlertAction = (title: String?, style: UIAlertAction.Style, handler: (() -> Void)?)
 
 private class CustomHashTagAlertController: UIAlertController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -22,7 +22,7 @@ private class CustomHashTagAlertController: UIAlertController {
 
 /// This helps handling all the alerts presented in the app. This will tell us how many alerts are shown present and a gives us a place to dismiss all.
 open class CustomAlertController: NSObject, UIAlertViewDelegate {
-    open static let sharedInstance = CustomAlertController()
+    public static let sharedInstance = CustomAlertController()
     fileprivate var presentedAlert: UIAlertController?
     
     /// Displays an alertDescription
@@ -33,7 +33,7 @@ open class CustomAlertController: NSObject, UIAlertViewDelegate {
     ///   - preferredStyle: Type of style for the alert.
     ///   - actions: Array of actions for the alert.
     ///   - currentDisplayedVc: View controller to show the alert.
-    open func displayAlertWithTitle(_ title: String?, message: String?, preferredStyle: UIAlertControllerStyle, andActions actions: [CustomAlertAction]?, onViewController currentDisplayedVc: UIViewController?) {
+    open func displayAlertWithTitle(_ title: String?, message: String?, preferredStyle: UIAlertController.Style, andActions actions: [CustomAlertAction]?, onViewController currentDisplayedVc: UIViewController?) {
         
         dismissPresentAlert()
         

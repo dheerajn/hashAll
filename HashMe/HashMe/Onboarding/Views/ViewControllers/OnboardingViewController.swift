@@ -74,7 +74,7 @@ extension OnboardingViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
     }
     
     fileprivate func configurePageControl() {
@@ -96,8 +96,8 @@ extension OnboardingViewController {
         getstartedButton.layer.borderWidth = 2
         getstartedButton.layer.borderColor = UIColor.white.cgColor
         getstartedButton.titleLabel?.textColor = UIColor.white
-        getstartedButton.addTarget(self, action: #selector(OnboardingViewController.getStartedButtonTapped(_:)), for: UIControlEvents.touchUpInside)
-        self.getstartedButton.setTitle(viewModel?.getStartedButtonTitle ?? LocalizedString.getStartedButtonTitle, for: UIControlState.normal)
+        getstartedButton.addTarget(self, action: #selector(OnboardingViewController.getStartedButtonTapped(_:)), for: UIControl.Event.touchUpInside)
+        self.getstartedButton.setTitle(viewModel?.getStartedButtonTitle ?? LocalizedString.getStartedButtonTitle, for: UIControl.State.normal)
         self.scaleButtonToZero()
         self.view.addSubview(getstartedButton)
     }
@@ -115,7 +115,7 @@ extension OnboardingViewController {
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 1,
-                       options: UIViewAnimationOptions.allowUserInteraction,
+                       options: UIView.AnimationOptions.allowUserInteraction,
                        animations: {
                         self.getstartedButton.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         }, completion: { (success) in
@@ -128,7 +128,7 @@ extension OnboardingViewController {
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 1,
-                       options: UIViewAnimationOptions.allowUserInteraction,
+                       options: UIView.AnimationOptions.allowUserInteraction,
                        animations: {
                         self.getstartedButton.transform = .identity
         }, completion: nil)

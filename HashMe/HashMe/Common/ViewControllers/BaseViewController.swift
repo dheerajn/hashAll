@@ -32,7 +32,7 @@ class BaseViewController: UIViewController {
     }
 
     func setupNavigationTitleProperties(withColor color: UIColor = UIColor.white) {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color, NSAttributedStringKey.font: UIFont.italicSystemFont(ofSize: 20)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 20)]
     }
     
     open func hideLeftNavBarButton() {
@@ -54,8 +54,8 @@ class BaseViewController: UIViewController {
     
     func addLeftBarButton(withAction action: Selector) {
         let leftBarButton: UIButton = UIButton()
-        leftBarButton.setImage(UIImage.BackButtonImage, for: UIControlState())
-        leftBarButton.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
+        leftBarButton.setImage(UIImage.BackButtonImage, for: UIControl.State())
+        leftBarButton.addTarget(self, action: action, for: UIControl.Event.touchUpInside)
         leftBarButton.frame = CGRect(x: 0, y: 0, width: 50/2, height: 50/2)
         let barButton = UIBarButtonItem(customView: leftBarButton)
         self.navigationItem.leftBarButtonItem = barButton
@@ -63,8 +63,8 @@ class BaseViewController: UIViewController {
     
     func addRightBarButton(withImage image: UIImage, withAction action: Selector) {
         let rightBarButton: UIButton = UIButton()
-        rightBarButton.setImage(image, for: UIControlState())
-        rightBarButton.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
+        rightBarButton.setImage(image, for: UIControl.State())
+        rightBarButton.addTarget(self, action: action, for: UIControl.Event.touchUpInside)
         rightBarButton.frame = CGRect(x: 0, y: 0, width: 50/2, height: 50/2)
         let barButton = UIBarButtonItem(customView: rightBarButton)
         self.navigationItem.rightBarButtonItem = barButton

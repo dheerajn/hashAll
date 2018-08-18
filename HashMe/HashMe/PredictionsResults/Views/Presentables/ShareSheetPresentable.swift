@@ -19,7 +19,7 @@ public extension ShareSheetPresentable where Self: HashTagFlowController {
         guard let validActivities = activities as? [Any] else { return }
         let activityVC = UIActivityViewController(activityItems: validActivities, applicationActivities: [])
         activityVC.setValue("#\(LocalizedString.appNameCamelCased)App", forKey: "subject")
-        let excludeActivities: [UIActivityType] = [.airDrop,
+        let excludeActivities: [UIActivity.ActivityType] = [.airDrop,
                                                    .assignToContact,
                                                    .copyToPasteboard,
                                                    .markupAsPDF,

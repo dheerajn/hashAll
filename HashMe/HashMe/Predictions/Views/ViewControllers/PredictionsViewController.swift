@@ -88,7 +88,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     @IBAction func feedbackButtonTapped(_ sender: Any) {
         let appStoreAppUrl = URL(string: self.viewModel?.getAppStoreAppId() ?? Constants.AppStoreAppID)
         if let url = appStoreAppUrl {
-            UIApplication.shared.open(url, options: [:], completionHandler: { (urlOpened) in
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
                 if urlOpened == false {
                     self.showFeedbackSubmissionIssue()
                 }
@@ -108,7 +108,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
 //MARK: UI & Helper methods
 
 extension PredictionsViewController {
-    func openCameraOrPhotoLibrary(sourceType: UIImagePickerControllerSourceType) {
+    func openCameraOrPhotoLibrary(sourceType: UIImagePickerController.SourceType) {
         if sourceType == .camera {
             guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
                 self.showImagePickerIssueAlert()
@@ -139,7 +139,7 @@ extension PredictionsViewController {
     }
     
     func showImagePickerIssueAlert() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
         CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
                                                       message: LocalizedString.alertMessage,
                                                       preferredStyle: .alert,
@@ -148,9 +148,9 @@ extension PredictionsViewController {
     }
     
     func showPhotoPrivacyAccessIssueAlert() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.destructive, handler: nil)
-        let okAction: CustomAlertAction = (title: LocalizedString.settingsButtonTitle, style: UIAlertActionStyle.default, handler: {
-            guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.destructive, handler: nil)
+        let okAction: CustomAlertAction = (title: LocalizedString.settingsButtonTitle, style: UIAlertAction.Style.default, handler: {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                 return
             }
             if UIApplication.shared.canOpenURL(settingsUrl) {
@@ -178,7 +178,7 @@ extension PredictionsViewController {
         self.descriptionLabel.text = self.viewModel?.descriptionLabelText ?? ""
         self.descriptionLabel.animateAlpha(duration: PredictionAnimationDuration.mainLabelAnimationDuration.rawValue, delay: 0)
         
-        self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControlState.normal)
+        self.cameraButton.setTitle(viewModel?.cameraButtonTitle, for: UIControl.State.normal)
         self.photoLibraryButton.setTitle(viewModel?.photoLibraryButtonTitle, for: .normal)
         
         hideContactsUsViewButtons()
@@ -216,7 +216,7 @@ extension PredictionsViewController {
     }
     
     fileprivate func showFeedbackSubmissionIssue() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
         CustomAlertController().displayAlertWithTitle(LocalizedString.appStoreOpenIssueTitle,
                                                       message: LocalizedString.appStoreOpenIssueMessage,
                                                       preferredStyle: .alert,
@@ -228,10 +228,15 @@ extension PredictionsViewController {
 //MARK: UIImagePickerControllerDelegate
 
 extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
+        
+//        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//            guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+//                return
+//            }
         self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {
             //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
@@ -255,4 +260,14 @@ extension PredictionsViewController: PredictionsViewDelegate {
     func removePredictionImage() {
         self.imageToPredict.image = nil
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

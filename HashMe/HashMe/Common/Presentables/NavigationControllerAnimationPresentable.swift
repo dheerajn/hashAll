@@ -33,7 +33,7 @@ public protocol NavigationControllerAnimationPresentable: NavigationFlowControll
 public extension NavigationControllerAnimationPresentable {
     func pushViewControllerWithAnimation(_ viewController: UIViewController, withAnimationType animation: NavigationAnimationType) {
         let transition: CATransition = self.transition(withAnimation: animation)
-        transition.subtype = kCATransitionFromTop
+        transition.subtype = CATransitionSubtype.fromTop
         
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.pushViewController(viewController, animated: false)
@@ -41,7 +41,7 @@ public extension NavigationControllerAnimationPresentable {
     
     func popViewControllerWithAnimation(withAnimationType animation: NavigationAnimationType) {
         let transition: CATransition = self.transition(withAnimation: animation)
-        transition.subtype = kCATransitionFromBottom
+        transition.subtype = CATransitionSubtype.fromBottom
         
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.popViewController(animated: false)
@@ -54,16 +54,16 @@ public extension NavigationControllerAnimationPresentable {
     fileprivate func transition(withAnimation animation: NavigationAnimationType) -> CATransition {
         let transition: CATransition = CATransition()
         transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         switch animation {
         case .moveIn:
-            transition.type = kCATransitionMoveIn
+            transition.type = CATransitionType.moveIn
         case .fade:
-            transition.type = kCATransitionFade
+            transition.type = CATransitionType.fade
         case .push:
-            transition.type = kCATransitionPush
+            transition.type = CATransitionType.push
         case .reveal:
-            transition.type = kCATransitionFromTop
+            transition.type = CATransitionType.reveal
         }
         return transition
     }

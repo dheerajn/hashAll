@@ -57,7 +57,6 @@ class OnboardingTest: XCTestCase {
         onboardingVcOne.viewDidAppear(true)
         
         XCTAssertNotNil(onboardingVcOne.step1Label, "Step 1 label is not yet initialized")
-        XCTAssertNotNil(onboardingVcOne.screenShot1, "Screen shot imagevie is not yet initialized")
         XCTAssertEqual(onboardingVcOne.step1Label.text, LocalizedString.onboardingStep1Text)
     }
     

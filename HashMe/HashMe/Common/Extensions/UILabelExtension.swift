@@ -55,12 +55,12 @@ extension UILabel {
         let substringToShow = text.substring(to: index);
         let substringToHide = text.substring(from: index);
         
-        let showAttrs = [NSAttributedStringKey.font: font,
-                         NSAttributedStringKey.foregroundColor: color]
+        let showAttrs = [NSAttributedString.Key.font: font,
+                         NSAttributedString.Key.foregroundColor: color]
         let showString = NSAttributedString(string: substringToShow, attributes: showAttrs)
         
-        let hideAttrs = [NSAttributedStringKey.font: font,
-                         NSAttributedStringKey.foregroundColor: UIColor.clear]
+        let hideAttrs = [NSAttributedString.Key.font: font,
+                         NSAttributedString.Key.foregroundColor: UIColor.clear]
         
         let hideString = NSAttributedString(string: substringToHide, attributes: hideAttrs)
         

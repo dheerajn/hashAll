@@ -34,15 +34,15 @@ extension UIView {
         return addBlurEffectView(withBlurStyle: .dark, aboveSubview: nil, animated: animated)
     }
     
-    func addBlurEffectView(withBlurStyle blurStyle: UIBlurEffectStyle, aboveSubview subview: UIView?) -> UIView {
+    func addBlurEffectView(withBlurStyle blurStyle: UIBlurEffect.Style, aboveSubview subview: UIView?) -> UIView {
         return addBlurEffectView(withBlurStyle: blurStyle, aboveSubview: subview, andDarkAlpha: 0.0, animated: false)
     }
     
-    func addBlurEffectView(withBlurStyle blurStyle: UIBlurEffectStyle, aboveSubview subview: UIView?, animated: Bool) -> UIView {
+    func addBlurEffectView(withBlurStyle blurStyle: UIBlurEffect.Style, aboveSubview subview: UIView?, animated: Bool) -> UIView {
         return addBlurEffectView(withBlurStyle: blurStyle, aboveSubview: subview, andDarkAlpha: 0.0, animated: animated)
     }
     
-    func addBlurEffectView(withBlurStyle blurStyle: UIBlurEffectStyle, aboveSubview subview: UIView?, andDarkAlpha darkAlpha: CGFloat, animated: Bool) -> UIView {
+    func addBlurEffectView(withBlurStyle blurStyle: UIBlurEffect.Style, aboveSubview subview: UIView?, andDarkAlpha darkAlpha: CGFloat, animated: Bool) -> UIView {
         // For the blur effect
         removeBlur()
         backgroundColor = UIColor.clear
@@ -102,7 +102,7 @@ extension UIView {
     
     func setupMediumBluredViewOnImage(_ image: UIImage) {
         let imageView = UIImageView(image: image)
-        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.contentMode = UIView.ContentMode.scaleToFill
         imageView.frame = UIScreen.main.bounds
         self.insertSubview(imageView, at: 0)
         
@@ -111,7 +111,7 @@ extension UIView {
     
     func setupLightBluredViewOnImage(_ image: UIImage) {
         let imageView = UIImageView(image: image)
-        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.contentMode = UIView.ContentMode.scaleToFill
         imageView.frame = UIScreen.main.bounds
         self.insertSubview(imageView, at: 0)
         
@@ -120,7 +120,7 @@ extension UIView {
     
     func setupDarkBluredViewOnImage(_ image: UIImage) {
         let imageView = UIImageView(image: image)
-        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.contentMode = UIView.ContentMode.scaleToFill
         imageView.frame = UIScreen.main.bounds
         self.insertSubview(imageView, at: 0)
         

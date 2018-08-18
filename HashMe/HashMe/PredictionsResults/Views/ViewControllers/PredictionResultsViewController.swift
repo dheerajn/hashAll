@@ -116,10 +116,10 @@ extension PredictionResultsViewController {
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
         
-        self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControlState.normal)
+        self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControl.State.normal)
         self.shouldEnableCopyButton()
         
-        self.selectAllButton.setTitle(viewModel?.selectAllButtonTitle, for: UIControlState.normal)
+        self.selectAllButton.setTitle(viewModel?.selectAllButtonTitle, for: UIControl.State.normal)
         
         self.copiedLabel.text = viewModel?.copiedLabelTitle
         self.moveCopiedViewOutsideBounds()
@@ -135,7 +135,7 @@ extension PredictionResultsViewController {
     
     @objc func handleKeyboardView(notification: Notification) {
         if let userInfo = notification.userInfo {
-            let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             
             self.keyboardViewBottomConstraint.constant = -(keyboardFrame?.height)!
             UIView.animate(withDuration: 0.5) {
@@ -148,7 +148,7 @@ extension PredictionResultsViewController {
         self.socialMediaView.instagramButtonCustomHander = {
             let url = URL(string: "instagram://camera")
             if let url = url {
-                UIApplication.shared.open(url, options: [:], completionHandler: { (urlOpened) in
+                UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
                     if urlOpened == false {
                         self.showInstagramAlertIssue()
                     }
@@ -164,8 +164,8 @@ extension PredictionResultsViewController {
             if (self.viewModel?.updatedPredicitons?.count ?? 0) >= 1 {
                 self.handleMoreButtonAction()
             } else {
-                let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: nil)
-                let noThanks: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.default, handler: {
+                let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
+                let noThanks: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.default, handler: {
                     self.handleMoreButtonAction()
                 })
                 CustomAlertController().displayAlertWithTitle(nil,
@@ -279,11 +279,11 @@ extension PredictionResultsViewController {
     }
     
     fileprivate func showInstagramAlertIssue() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertActionStyle.cancel, handler: nil)
-        let installNow: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertActionStyle.default, handler: {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.cancel, handler: nil)
+        let installNow: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: {
             let url = URL(string: Constants.InstagramAppId)
             guard let instagramUrl = url else { return }
-            UIApplication.shared.open(instagramUrl, options: [:], completionHandler: { (urlOpened) in
+            UIApplication.shared.open(instagramUrl, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
                 urlOpened == false ? print("issue directing user to instagram app") : ()
             })
         })
@@ -296,7 +296,7 @@ extension PredictionResultsViewController {
     }
     
     fileprivate func registerNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardView(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardView(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 }
 
@@ -310,7 +310,7 @@ extension PredictionResultsViewController: UICollectionViewDelegateFlowLayout {
         guard let validPredictions = predictions else { return CGSize() }
         let text = validPredictions[indexPath.row]
         let font = UIFont.systemFont(ofSize: 18)
-        let rect = NSString(string: text).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let rect = NSString(string: text).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return CGSize(width: rect.width + 20, height: rect.height + 10)
     }
@@ -386,4 +386,9 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         self.shouldEnableCopyButton()
         self.updateButtonTitle()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
