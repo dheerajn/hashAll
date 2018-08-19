@@ -15,7 +15,12 @@ class OnboardingTestViewModel: OnboardingViewConfigurable {
     init(flowDelegate: HashTagFlowDelegate?) {
         self.flowDelegate = flowDelegate
     }
-    func showPredicitonsView() {
+    
+    func setOnboardingValue() {
+        
+    }
+    
+    func showPredicitionsView() {
         self.flowDelegate?.showPredictionsView()
     }
     

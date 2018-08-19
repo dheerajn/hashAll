@@ -25,7 +25,12 @@ class OnboardingViewModel: OnboardingViewConfigurable {
         return LocalizedString.getStartedButtonTitle
     }
     
-    func showPredicitonsView() {
+    func setOnboardingValue() {
+        let customUserDefaults = CustomUserDefault()
+        customUserDefaults.setOnboardingWithValue()
+    }
+    
+    func showPredicitionsView() {
         self.flowDelegate?.showPredictionsView()
     }
 }

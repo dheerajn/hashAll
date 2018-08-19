@@ -38,10 +38,8 @@ class OnboardingViewController: UIPageViewController {
     }
     
     @IBAction func getStartedButtonTapped(_ sender: Any) {
-        let customUserDefaults = CustomUserDefault()
-        customUserDefaults.setOnboardingWithValue()
-        
-        self.viewModel?.showPredicitonsView()
+        self.viewModel?.setOnboardingValue()
+        self.viewModel?.showPredicitionsView()
     }
     
     deinit {

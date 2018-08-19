@@ -10,9 +10,15 @@ import Foundation
 
 public protocol OnboardingViewConfigurable: HashMeRuleEngineProtocol {
     
+    /// This helps in transition to different screes
     var flowDelegate: HashTagFlowDelegate? { get set }
+    
     /// Title for get started button
     var getStartedButtonTitle: String? { get }
     
-    func showPredicitonsView()
+    /// This functions helps to set user defaults for onboarding screen
+    func setOnboardingValue()
+    
+    /// This helps showing the predictions view
+    func showPredicitionsView()
 }
