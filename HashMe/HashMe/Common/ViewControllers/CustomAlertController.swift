@@ -32,8 +32,7 @@ open class CustomAlertController: NSObject, UIAlertViewDelegate {
     ///   - message: Message that will shown on the alert.
     ///   - preferredStyle: Type of style for the alert.
     ///   - actions: Array of actions for the alert.
-    ///   - currentDisplayedVc: View controller to show the alert.
-    open func displayAlertWithTitle(_ title: String?, message: String?, preferredStyle: UIAlertController.Style, andActions actions: [CustomAlertAction]?, onViewController currentDisplayedVc: UIViewController?) {
+    open func displayAlertWithTitle(_ title: String?, message: String?, preferredStyle: UIAlertController.Style, andActions actions: [CustomAlertAction]?) {
         
         dismissPresentAlert()
         
@@ -46,7 +45,10 @@ open class CustomAlertController: NSObject, UIAlertViewDelegate {
                 }))
             }
         }
-        currentDisplayedVc?.present(alert, animated: true, completion: nil)
+        
+        guard let validNavCont = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
+        validNavCont.topViewController?.present(alert, animated: true, completion: nil)
+        
         presentedAlert = alert
     }
     

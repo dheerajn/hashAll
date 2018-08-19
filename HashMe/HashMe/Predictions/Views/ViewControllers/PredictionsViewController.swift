@@ -143,8 +143,7 @@ extension PredictionsViewController {
         CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
                                                       message: LocalizedString.alertMessage,
                                                       preferredStyle: .alert,
-                                                      andActions: [dismissAction],
-                                                      onViewController: self)
+                                                      andActions: [dismissAction])
     }
     
     func showPhotoPrivacyAccessIssueAlert() {
@@ -162,8 +161,7 @@ extension PredictionsViewController {
         CustomAlertController().displayAlertWithTitle(LocalizedString.photoLibraryAccessTitle,
                                                       message: LocalizedString.photoLibraryAccessMessage,
                                                       preferredStyle: .alert,
-                                                      andActions: [dismissAction, okAction],
-                                                      onViewController: self)
+                                                      andActions: [dismissAction, okAction])
     }
     
     fileprivate func setupUserInterface() {
@@ -220,8 +218,7 @@ extension PredictionsViewController {
         CustomAlertController().displayAlertWithTitle(LocalizedString.appStoreOpenIssueTitle,
                                                       message: LocalizedString.appStoreOpenIssueMessage,
                                                       preferredStyle: .alert,
-                                                      andActions: [dismissAction],
-                                                      onViewController: self)
+                                                      andActions: [dismissAction])
     }
 }
 

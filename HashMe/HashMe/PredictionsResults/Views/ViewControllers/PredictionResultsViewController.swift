@@ -171,8 +171,7 @@ extension PredictionResultsViewController {
                 CustomAlertController().displayAlertWithTitle(nil,
                                                               message: LocalizedString.askForCopyingTags,
                                                               preferredStyle: .alert,
-                                                              andActions: [dismissAction, noThanks],
-                                                              onViewController: self)
+                                                              andActions: [dismissAction, noThanks])
             }
         }
     }
@@ -291,8 +290,7 @@ extension PredictionResultsViewController {
         CustomAlertController().displayAlertWithTitle(LocalizedString.instagramIssueTitle,
                                                       message: LocalizedString.installNowMessage,
                                                       preferredStyle: .alert,
-                                                      andActions: [dismissAction, installNow],
-                                                      onViewController: self)
+                                                      andActions: [dismissAction, installNow])
     }
     
     fileprivate func registerNotifications() {
