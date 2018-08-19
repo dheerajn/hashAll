@@ -23,7 +23,11 @@ class PredictionResultsViewController: BaseViewController {
     
     @IBOutlet weak var keyboardViewBottomConstraint: NSLayoutConstraint!
     
-    var viewModel: PredictionResultsViewConfigurable?
+    var viewModel: PredictionResultsViewConfigurable? {
+        didSet {
+            viewModel?.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,7 +154,7 @@ extension PredictionResultsViewController {
             if let url = url {
                 UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
                     if urlOpened == false {
-                        self.showInstagramAlertIssue()
+                        self.viewModel?.showInstagramAlertIssue()
                     }
                 })
             }
@@ -164,14 +168,7 @@ extension PredictionResultsViewController {
             if (self.viewModel?.updatedPredicitons?.count ?? 0) >= 1 {
                 self.handleMoreButtonAction()
             } else {
-                let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
-                let noThanks: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.default, handler: {
-                    self.handleMoreButtonAction()
-                })
-                CustomAlertController().displayAlertWithTitle(nil,
-                                                              message: LocalizedString.askForCopyingTags,
-                                                              preferredStyle: .alert,
-                                                              andActions: [dismissAction, noThanks])
+                self.viewModel?.askToCopyTagsAlert()
             }
         }
     }
@@ -184,14 +181,6 @@ extension PredictionResultsViewController {
                 self.insertNewHashTag(tag: data ?? "")
             }
         }
-    }
-    
-    fileprivate func handleMoreButtonAction() {
-        self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
-        
-        let shareButtonFrame = self.shareButton.frame
-        let sourceFrame = CGRect(x: (shareButtonFrame.origin.x + shareButtonFrame.width/2), y: self.stackView.frame.origin.y, width: shareButtonFrame.width, height: shareButtonFrame.height)
-        self.viewModel?.launchShareActivity(withFrame: sourceFrame)
     }
     
     fileprivate func animateCopiedView() {
@@ -277,29 +266,12 @@ extension PredictionResultsViewController {
         self.copyButton.setTitleColor(UIColor.darkGray, for: .normal)
     }
     
-    fileprivate func showInstagramAlertIssue() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.cancel, handler: nil)
-        let installNow: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: {
-            let url = URL(string: Constants.InstagramAppId)
-            guard let instagramUrl = url else { return }
-            UIApplication.shared.open(instagramUrl, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
-                urlOpened == false ? print("issue directing user to instagram app") : ()
-            })
-        })
-        
-        CustomAlertController().displayAlertWithTitle(LocalizedString.instagramIssueTitle,
-                                                      message: LocalizedString.installNowMessage,
-                                                      preferredStyle: .alert,
-                                                      andActions: [dismissAction, installNow])
-    }
-    
     fileprivate func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardView(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
-
 extension PredictionResultsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -316,7 +288,6 @@ extension PredictionResultsViewController: UICollectionViewDelegateFlowLayout {
 
 
 // MARK: UICollectionViewDataSource
-
 extension PredictionResultsViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -386,7 +357,14 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
     }
 }
 
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+// MARK: - PredictionResultsViewModelDelegate
+extension PredictionResultsViewController: PredictionResultsViewModelDelegate {
+    
+    func handleMoreButtonAction() {
+        self.moveSocialMediaCustomViewOutsideBounds(withAnimation: true)
+        
+        let shareButtonFrame = self.shareButton.frame
+        let sourceFrame = CGRect(x: (shareButtonFrame.origin.x + shareButtonFrame.width/2), y: self.stackView.frame.origin.y, width: shareButtonFrame.width, height: shareButtonFrame.height)
+        self.viewModel?.launchShareActivity(withFrame: sourceFrame)
+    }
 }

@@ -14,6 +14,9 @@ public protocol PredictionResultsViewConfigurable: HashMeRuleEngineProtocol {
     /// Delegate that controls the views
     var flowDelegate: HashTagFlowDelegate? { get set }
     
+    /// This delegates helps in communicating with view controller
+    var delegate: PredictionResultsViewModelDelegate? { get set }
+    
     /// These are the original predictions that comes to the results vc after some manipulation in the other class
     var originalPredictions: [String]? { get set }
     
@@ -57,4 +60,14 @@ public protocol PredictionResultsViewConfigurable: HashMeRuleEngineProtocol {
     
     /// This method launches the activity vc when more button is called
     func launchShareActivity(withFrame: CGRect)
+    
+    /// This method shows an alert to let user know to copy the tags if interested
+    func askToCopyTagsAlert()
+    
+    /// This functions shows an alert letting user that there is an issue in opening Instagram
+    func showInstagramAlertIssue()
+}
+
+public protocol PredictionResultsViewModelDelegate: class {
+    func handleMoreButtonAction()
 }

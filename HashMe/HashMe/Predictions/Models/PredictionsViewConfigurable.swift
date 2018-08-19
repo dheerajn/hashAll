@@ -35,12 +35,20 @@ public protocol PredictionsViewConfigurable: HashMeRuleEngineProtocol {
     /// - Parameter ref: Based on the image buffer type. The pixel buffer implements the memory storage for an image buffer.
     func predictImage(ref: CVPixelBuffer, predictionImage: UIImage)
     
-    
     /// Lets user to email about the application.
     func handleEmailAction()
     
     /// This method gets called when user tap on feedback button
     func getAppStoreAppId() -> String
+    
+    /// This method shows an alert when feed submission has an issue
+    func showFeedbackSubmissionIssue()
+    
+    /// This method shows an alert when Image Picker has an issue
+    func showImagePickerIssueAlert()
+    
+    /// This method shows an alert when Photo privacy access has an issue
+    func showPhotoPrivacyAccessIssueAlert()
 }
 
 public protocol PredictionsViewDelegate: class {

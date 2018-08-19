@@ -15,10 +15,11 @@ enum PredictionResultsAnimationDuration: Double {
     case cellAnimation = 0.4
 }
 
-class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
+class PredictionsResultsViewModel: PredictionResultsViewConfigurable, AlertViewPresentable {
     
     weak var flowDelegate: HashTagFlowDelegate?
-    
+    weak var delegate: PredictionResultsViewModelDelegate?
+
     var originalPredictions: [String]?
     var predictionImage: UIImage?
     var updatedPredicitons: [String]?
@@ -79,4 +80,29 @@ class PredictionsResultsViewModel: PredictionResultsViewConfigurable {
         activitiesToBeShared.add(formattedAppName ?? "")
         return activitiesToBeShared
     }
+    
+    func askToCopyTagsAlert() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
+        let noThanks: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.default, handler: {
+            self.delegate?.handleMoreButtonAction()
+        })
+        self.displayAlertWithTitle(nil,
+                                   message: LocalizedString.askForCopyingTags,
+                                   andActions: [dismissAction, noThanks])
+    }
+    
+    func showInstagramAlertIssue() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.cancel, handler: nil)
+        let installNow: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: {
+            let url = URL(string: Constants.InstagramAppId)
+            guard let instagramUrl = url else { return }
+            UIApplication.shared.open(instagramUrl, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
+                urlOpened == false ? print("issue directing user to instagram app") : ()
+            })
+        })
+        self.displayAlertWithTitle(LocalizedString.instagramIssueTitle,
+                                   message: LocalizedString.installNowMessage,
+                                   andActions: [dismissAction, installNow])
+    }
 }
+

@@ -13,7 +13,7 @@ enum PredictionAnimationDuration: Double {
     case mainLabelAnimationDuration = 1
 }
 
-class PredictionsViewModel: PredictionsViewConfigurable {
+class PredictionsViewModel: PredictionsViewConfigurable, AlertViewPresentable {
     
     weak var delegate: PredictionsViewDelegate?
     
@@ -83,5 +83,38 @@ class PredictionsViewModel: PredictionsViewConfigurable {
         if self.predictedResults.count > 0 {
             self.predictedResults.removeAll()
         }
+    }
+    
+    func showFeedbackSubmissionIssue() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
+        self.displayAlertWithTitle(LocalizedString.appStoreOpenIssueTitle,
+                                   message: LocalizedString.appStoreOpenIssueMessage,
+                                   andActions: [dismissAction])
+    }
+    
+    func showImagePickerIssueAlert() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
+        CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
+                                                      message: LocalizedString.alertMessage,
+                                                      preferredStyle: .alert,
+                                                      andActions: [dismissAction])
+    }
+    
+    func showPhotoPrivacyAccessIssueAlert() {
+        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.destructive, handler: nil)
+        let okAction: CustomAlertAction = (title: LocalizedString.settingsButtonTitle, style: UIAlertAction.Style.default, handler: {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                })
+            }
+        })
+        
+        CustomAlertController().displayAlertWithTitle(LocalizedString.photoLibraryAccessTitle,
+                                                      message: LocalizedString.photoLibraryAccessMessage,
+                                                      preferredStyle: .alert,
+                                                      andActions: [dismissAction, okAction])
     }
 }

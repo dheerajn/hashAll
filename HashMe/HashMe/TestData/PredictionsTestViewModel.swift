@@ -81,4 +81,16 @@ class PredictionsTestViewModel: PredictionsViewConfigurable {
             self.predictedResults.removeAll()
         }
     }
+    
+    func showFeedbackSubmissionIssue() {
+        
+    }
+    
+    func showImagePickerIssueAlert() {
+    
+    }
+    
+    func showPhotoPrivacyAccessIssueAlert() {
+        
+    }
 }

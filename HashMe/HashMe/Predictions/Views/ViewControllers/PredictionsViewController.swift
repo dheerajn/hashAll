@@ -90,7 +90,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
         if let url = appStoreAppUrl {
             UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
                 if urlOpened == false {
-                    self.showFeedbackSubmissionIssue()
+                    self.viewModel?.showFeedbackSubmissionIssue()
                 }
             })
         }
@@ -111,7 +111,7 @@ extension PredictionsViewController {
     func openCameraOrPhotoLibrary(sourceType: UIImagePickerController.SourceType) {
         if sourceType == .camera {
             guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
-                self.showImagePickerIssueAlert()
+                self.viewModel?.showImagePickerIssueAlert()
                 return
             }
             self.imagePicker.sourceType = sourceType
@@ -123,7 +123,7 @@ extension PredictionsViewController {
                 switch status {
                 case .authorized:
                     guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
-                        self.showImagePickerIssueAlert()
+                        self.viewModel?.showImagePickerIssueAlert()
                         return
                     }
                     self.imagePicker.sourceType = sourceType
@@ -131,37 +131,11 @@ extension PredictionsViewController {
                         self.present(self.imagePicker, animated: true, completion: nil)
                     }
                 case .restricted,.denied,.notDetermined:
-                    self.showPhotoPrivacyAccessIssueAlert()
+                    self.viewModel?.showPhotoPrivacyAccessIssueAlert()
                     return
                 }
             }
         }
-    }
-    
-    func showImagePickerIssueAlert() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
-        CustomAlertController().displayAlertWithTitle(LocalizedString.alertTitle,
-                                                      message: LocalizedString.alertMessage,
-                                                      preferredStyle: .alert,
-                                                      andActions: [dismissAction])
-    }
-    
-    func showPhotoPrivacyAccessIssueAlert() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.noThanksButtonTitle, style: UIAlertAction.Style.destructive, handler: nil)
-        let okAction: CustomAlertAction = (title: LocalizedString.settingsButtonTitle, style: UIAlertAction.Style.default, handler: {
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                return
-            }
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                })
-            }
-        })
-        
-        CustomAlertController().displayAlertWithTitle(LocalizedString.photoLibraryAccessTitle,
-                                                      message: LocalizedString.photoLibraryAccessMessage,
-                                                      preferredStyle: .alert,
-                                                      andActions: [dismissAction, okAction])
     }
     
     fileprivate func setupUserInterface() {
@@ -212,18 +186,9 @@ extension PredictionsViewController {
         self.feedbackButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
         self.contactUsButton.transform = CGAffineTransform(scaleX: 0, y: -0.05)
     }
-    
-    fileprivate func showFeedbackSubmissionIssue() {
-        let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
-        CustomAlertController().displayAlertWithTitle(LocalizedString.appStoreOpenIssueTitle,
-                                                      message: LocalizedString.appStoreOpenIssueMessage,
-                                                      preferredStyle: .alert,
-                                                      andActions: [dismissAction])
-    }
 }
 
 //MARK: UIImagePickerControllerDelegate
-
 extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
@@ -247,19 +212,8 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
 }
 
 //MARK: PredictionsViewDelegate
-
 extension PredictionsViewController: PredictionsViewDelegate {
     func removePredictionImage() {
         self.imageToPredict.image = nil
     }
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// - Parameters:
 ///   - items: Zero or more items to print.
@@ -34,4 +35,14 @@ public func dispatchOnMainQueueWith(delay: Double, closure: @escaping ()->()) {
 /// - Parameter closure: Code to be executed.
 public func dispatchOnMainQueue(closure: @escaping ()->()) {
     DispatchQueue.main.async(execute: closure)
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+public func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+public func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+    return input.rawValue
 }

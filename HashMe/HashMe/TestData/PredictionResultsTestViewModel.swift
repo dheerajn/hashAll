@@ -11,7 +11,8 @@ import UIKit
 class PredictionResultsTestViewModel: PredictionResultsViewConfigurable {
     
     weak var flowDelegate: HashTagFlowDelegate?
-    
+    weak var delegate: PredictionResultsViewModelDelegate?
+
     var originalPredictions: [String]?
     var predictionImage: UIImage?
     var updatedPredicitons: [String]?
@@ -71,6 +72,14 @@ class PredictionResultsTestViewModel: PredictionResultsViewConfigurable {
         let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "\(LocalizedString.appNameCamelCased)App"
         activitiesToBeShared.add("#\(appName.camelCaseStringLowerCase)")
         return activitiesToBeShared
+    }
+    
+    func askToCopyTagsAlert() {
+        
+    }
+    
+    func showInstagramAlertIssue() {
+        
     }
 }
 
