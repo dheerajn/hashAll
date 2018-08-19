@@ -85,6 +85,17 @@ class PredictionsViewModel: PredictionsViewConfigurable, AlertViewPresentable {
         }
     }
     
+    func feedbackButtonAction() {
+        let appStoreAppUrl = URL(string: self.getAppStoreAppId())
+        if let url = appStoreAppUrl {
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
+                if urlOpened == false {
+                    self.showFeedbackSubmissionIssue()
+                }
+            })
+        }
+    }
+    
     func showFeedbackSubmissionIssue() {
         let dismissAction: CustomAlertAction = (title: LocalizedString.okButtonTitle, style: UIAlertAction.Style.default, handler: nil)
         self.displayAlertWithTitle(LocalizedString.appStoreOpenIssueTitle,

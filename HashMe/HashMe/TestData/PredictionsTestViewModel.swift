@@ -82,6 +82,10 @@ class PredictionsTestViewModel: PredictionsViewConfigurable {
         }
     }
     
+    func feedbackButtonAction() {
+        
+    }
+    
     func showFeedbackSubmissionIssue() {
         
     }

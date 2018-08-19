@@ -75,9 +75,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     
     @IBAction func predictButtonTapped() {
         let resized = imageToPredict.image?.resize(size: CGSize(width: 224, height: 224))
-        guard let image = resized, let ref = image.buffer else {
-            return
-        }
+        guard let image = resized, let ref = image.buffer else { return }
         self.viewModel?.predictImage(ref: ref, predictionImage: imageToPredict.image ?? UIImage())
     }
     
@@ -86,14 +84,7 @@ class PredictionsViewController: BaseViewController, LoadingScreenPresentable {
     }
     
     @IBAction func feedbackButtonTapped(_ sender: Any) {
-        let appStoreAppUrl = URL(string: self.viewModel?.getAppStoreAppId() ?? Constants.AppStoreAppID)
-        if let url = appStoreAppUrl {
-            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
-                if urlOpened == false {
-                    self.viewModel?.showFeedbackSubmissionIssue()
-                }
-            })
-        }
+        self.viewModel?.feedbackButtonAction()
     }
     
     @IBAction func contactUsButtonTapped(_ sender: Any) {
@@ -130,7 +121,7 @@ extension PredictionsViewController {
                     dispatchOnMainQueue {
                         self.present(self.imagePicker, animated: true, completion: nil)
                     }
-                case .restricted,.denied,.notDetermined:
+                case .restricted, .denied, .notDetermined:
                     self.viewModel?.showPhotoPrivacyAccessIssueAlert()
                     return
                 }

@@ -49,6 +49,9 @@ public protocol PredictionsViewConfigurable: HashMeRuleEngineProtocol {
     
     /// This method shows an alert when Photo privacy access has an issue
     func showPhotoPrivacyAccessIssueAlert()
+    
+    /// Action for feed back button
+    func feedbackButtonAction()
 }
 
 public protocol PredictionsViewDelegate: class {
