@@ -62,6 +62,7 @@
 		C84B2B321F76C0B000F56BF5 /* HashTagFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */; };
 		C84B2B351F76C19F00F56BF5 /* NavigationFlowControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */; };
 		C854505A1F76F44100CF3D4E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85450591F76F44100CF3D4E /* CustomButton.swift */; };
+		C85A3C1C2129CB52001E5B23 /* AlertViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85A3C1B2129CB52001E5B23 /* AlertViewPresentable.swift */; };
 		C867A0991F76CB5200B8B0E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867A0981F76CB5200B8B0E7 /* Constants.swift */; };
 		C87CA29720268148001CD749 /* SocialMediaCustomViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CA29620268148001CD749 /* SocialMediaCustomViewTests.swift */; };
 		C8869D351F8C2ACB00C32845 /* PredictionsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8869D341F8C2ACB00C32845 /* PredictionsLayout.swift */; };
@@ -156,6 +157,8 @@
 		C84B2B311F76C0B000F56BF5 /* HashTagFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagFlowController.swift; sourceTree = "<group>"; };
 		C84B2B341F76C19F00F56BF5 /* NavigationFlowControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowControllable.swift; sourceTree = "<group>"; };
 		C85450591F76F44100CF3D4E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C85A3C1B2129CB52001E5B23 /* AlertViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewPresentable.swift; sourceTree = "<group>"; };
+		C85A3C1E2129CB99001E5B23 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C867A0981F76CB5200B8B0E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C87CA29620268148001CD749 /* SocialMediaCustomViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCustomViewTests.swift; sourceTree = "<group>"; };
 		C8869D341F8C2ACB00C32845 /* PredictionsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsLayout.swift; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 				C817F7431F75DCBF00B8C0FD /* HashMeTests */,
 				C817F72D1F75DCBF00B8C0FD /* Products */,
 				C8869D2B1F8C28A700C32845 /* Recovered References */,
+				C85A3C1D2129CB99001E5B23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -440,6 +444,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C85A3C1D2129CB99001E5B23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C85A3C1E2129CB99001E5B23 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C867A09C1F76E16500B8B0E7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F54A191F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift */,
+				C85A3C1B2129CB52001E5B23 /* AlertViewPresentable.swift */,
 				3680F6BE1F8E9AD300A8E562 /* NavigationControllerAnimationPresentable.swift */,
 			);
 			path = Presentables;
@@ -764,6 +777,7 @@
 				C8869D5B1F93DDDC00C32845 /* CustomImageView.swift in Sources */,
 				C8884D301FF1F24400E91590 /* EmailViewController.swift in Sources */,
 				C84ABBD8202F8C0A00C39D96 /* KeyboardCustomView.swift in Sources */,
+				C85A3C1C2129CB52001E5B23 /* AlertViewPresentable.swift in Sources */,
 				C8F54A1F1F7B1ECB00E94DF4 /* PredictionResultCollectionViewCell.swift in Sources */,
 				C8F54A1A1F79BDAC00E94DF4 /* LoadingAnimationPresentable.swift in Sources */,
 				C84B2B261F76B2CF00F56BF5 /* OnboardingViewController.swift in Sources */,
