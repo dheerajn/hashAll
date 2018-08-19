@@ -23,9 +23,9 @@ class PredictionResultsViewController: BaseViewController {
     
     @IBOutlet weak var keyboardViewBottomConstraint: NSLayoutConstraint!
     
-    var viewModel: PredictionResultsViewConfigurable? {
+    var viewModel: PredictionResultsViewConfigurable! {
         didSet {
-            viewModel?.delegate = self
+            viewModel.delegate = self
         }
     }
     
@@ -42,7 +42,7 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @objc func leftBarButtonTapped() {
-        self.viewModel?.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
+        self.viewModel.flowDelegate?.popViewControllerWithAnimation(withAnimationType: .fade)
     }
     
     @objc func addNewTagButtonTapped() {
@@ -50,7 +50,7 @@ class PredictionResultsViewController: BaseViewController {
     }
     
     @IBAction func copyButtonTapped(_ sender: Any) {
-        self.viewModel?.copyHashTagsToPasteboard()
+        self.viewModel.copyHashTagsToPasteboard()
         self.animateCopiedView()
     }
     
@@ -64,7 +64,7 @@ class PredictionResultsViewController: BaseViewController {
         if buttonTitle == LocalizedString.selecAllButtonTitle {
             self.selectAllButton.setTitle(LocalizedString.deselecAllButtonTitle, for: .normal)
             
-            self.viewModel?.selectAllButtonTapped()
+            self.viewModel.selectAllButtonTapped()
             guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
             
             let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = true; $0.scaleToIdentityWith3DAnimation()}
@@ -73,7 +73,7 @@ class PredictionResultsViewController: BaseViewController {
         } else if buttonTitle == LocalizedString.deselecAllButtonTitle {
             self.selectAllButton.setTitle(LocalizedString.selecAllButtonTitle, for: .normal)
             
-            self.viewModel?.deselectAllButtonTapped()
+            self.viewModel.deselectAllButtonTapped()
             guard let validPredictionResultsCollectionViewCells = predictionResultsCollectionView.visibleCells as? [PredictionResultCollectionViewCell] else { return }
             
             let _ = validPredictionResultsCollectionViewCells.map{$0.isPredictionSelected = false; $0.scaleDownForAnimation()}
@@ -87,18 +87,18 @@ class PredictionResultsViewController: BaseViewController {
         let validHashTag = "#\(tag.camelCaseStringLowerCase)"
         
         //check for duplicates
-        if self.viewModel?.originalPredictions?.contains(validHashTag) == false {
-            self.viewModel?.originalPredictions?.append(validHashTag)
+        if self.viewModel.originalPredictions?.contains(validHashTag) == false {
+            self.viewModel.originalPredictions?.append(validHashTag)
         } else {
             return
         }
-        if self.viewModel?.updatedPredicitons?.contains(validHashTag) == false {
-            self.viewModel?.updatedPredicitons?.append(validHashTag)
+        if self.viewModel.updatedPredicitons?.contains(validHashTag) == false {
+            self.viewModel.updatedPredicitons?.append(validHashTag)
         } else {
             return
         }
-        //here we did "(self.viewModel?.originalPredictions?.count ?? 0) - 1" because, first we want to add the new element in the "originalPredictions.count" value but we did add an element to the array so count will be incremented by 1 and there might be a crash since we are out of the index, so we inserting by decrementing 1 value.
-        let indexPathForNewElement = IndexPath(item: (self.viewModel?.originalPredictions?.count ?? 0) - 1, section: 0)
+        //here we did "(self.viewModel.originalPredictions?.count ?? 0) - 1" because, first we want to add the new element in the "originalPredictions.count" value but we did add an element to the array so count will be incremented by 1 and there might be a crash since we are out of the index, so we inserting by decrementing 1 value.
+        let indexPathForNewElement = IndexPath(item: (self.viewModel.originalPredictions?.count ?? 0) - 1, section: 0)
         self.predictionResultsCollectionView.insertItems(at: [indexPathForNewElement])
         self.collectionView(self.predictionResultsCollectionView, didSelectItemAt: indexPathForNewElement, shouldUpdateVmPredictionsArray: false)
     }
@@ -120,12 +120,12 @@ extension PredictionResultsViewController {
         self.predictionResultsCollectionView.dataSource = self
         self.predictionResultsCollectionView.backgroundColor = UIColor.clear
         
-        self.copyButton.setTitle(viewModel?.copyButtonTitle, for: UIControl.State.normal)
+        self.copyButton.setTitle(viewModel.copyButtonTitle, for: UIControl.State.normal)
         self.shouldEnableCopyButton()
         
-        self.selectAllButton.setTitle(viewModel?.selectAllButtonTitle, for: UIControl.State.normal)
+        self.selectAllButton.setTitle(viewModel.selectAllButtonTitle, for: UIControl.State.normal)
         
-        self.copiedLabel.text = viewModel?.copiedLabelTitle
+        self.copiedLabel.text = viewModel.copiedLabelTitle
         self.moveCopiedViewOutsideBounds()
         self.moveSocialMediaCustomViewOutsideBounds()
         self.moveKeyboardOusideBounds()
@@ -154,7 +154,7 @@ extension PredictionResultsViewController {
             if let url = url {
                 UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { (urlOpened) in
                     if urlOpened == false {
-                        self.viewModel?.showInstagramAlertIssue()
+                        self.viewModel.showInstagramAlertIssue()
                     }
                 })
             }
@@ -165,10 +165,10 @@ extension PredictionResultsViewController {
         }
         
         self.socialMediaView.moreButtonCustomHandler = {
-            if (self.viewModel?.updatedPredicitons?.count ?? 0) >= 1 {
+            if (self.viewModel.updatedPredicitons?.count ?? 0) >= 1 {
                 self.handleMoreButtonAction()
             } else {
-                self.viewModel?.askToCopyTagsAlert()
+                self.viewModel.askToCopyTagsAlert()
             }
         }
     }
@@ -236,18 +236,18 @@ extension PredictionResultsViewController {
     }
     
     fileprivate func shouldEnableCopyButton() {
-        let selectedPredictionsCount = viewModel?.updatedPredicitons?.count ?? 0
+        let selectedPredictionsCount = viewModel.updatedPredicitons?.count ?? 0
         selectedPredictionsCount >= 1 ? enableCopyButton() : disableCopyButton()
     }
     
     fileprivate func updateButtonTitle() {
-        let selectedPredictionsCount = viewModel?.updatedPredicitons?.count ?? 0
+        let selectedPredictionsCount = viewModel.updatedPredicitons?.count ?? 0
         
         if selectedPredictionsCount == 0 {
             if self.selectAllButton.titleLabel?.text == LocalizedString.deselecAllButtonTitle {
                 self.selectAllButton.setTitle(LocalizedString.selecAllButtonTitle, for: .normal)
             }
-        } else if selectedPredictionsCount == self.viewModel?.originalPredictions?.count {
+        } else if selectedPredictionsCount == self.viewModel.originalPredictions?.count {
             if self.selectAllButton.titleLabel?.text == LocalizedString.selecAllButtonTitle {
                 self.selectAllButton.setTitle(LocalizedString.deselecAllButtonTitle, for: .normal)
             }
@@ -276,7 +276,7 @@ extension PredictionResultsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let predictions = viewModel?.originalPredictions
+        let predictions = viewModel.originalPredictions
         guard let validPredictions = predictions else { return CGSize() }
         let text = validPredictions[indexPath.row]
         let font = UIFont.systemFont(ofSize: 18)
@@ -295,13 +295,13 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.collectionView(collectionView, numberOfItemsInSection: section) ?? 0
+        return viewModel.collectionView(collectionView, numberOfItemsInSection: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let predictionCell = collectionView.dequeueReusableCell(withReuseIdentifier: PredictionResultCollectionViewCell.reuseID(), for: indexPath) as? PredictionResultCollectionViewCell else { return UICollectionViewCell() }
         
-        guard let validPredictions = viewModel?.originalPredictions else { return UICollectionViewCell() }
+        guard let validPredictions = viewModel.originalPredictions else { return UICollectionViewCell() }
         predictionCell.predictionDisplayLabel.text = validPredictions[indexPath.row]
         
         predictionCell.isPredictionSelected = false
@@ -350,7 +350,7 @@ extension PredictionResultsViewController: UICollectionViewDelegate {
         }
         
         if shouldUpdateVmPredictionsArray {
-            self.viewModel?.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
+            self.viewModel.updatePredictionsArray(forHashTag: selectedPredictionCell.predictionDisplayLabel.text ?? "")
         }
         self.shouldEnableCopyButton()
         self.updateButtonTitle()
@@ -365,6 +365,6 @@ extension PredictionResultsViewController: PredictionResultsViewModelDelegate {
         
         let shareButtonFrame = self.shareButton.frame
         let sourceFrame = CGRect(x: (shareButtonFrame.origin.x + shareButtonFrame.width/2), y: self.stackView.frame.origin.y, width: shareButtonFrame.width, height: shareButtonFrame.height)
-        self.viewModel?.launchShareActivity(withFrame: sourceFrame)
+        self.viewModel.launchShareActivity(withFrame: sourceFrame)
     }
 }

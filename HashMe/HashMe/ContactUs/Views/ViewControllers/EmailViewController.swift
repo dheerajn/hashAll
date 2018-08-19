@@ -12,7 +12,7 @@ import MessageUI
 
 class EmailViewController: BaseViewController, MFMailComposeViewControllerDelegate {
     
-    var viewModel: EmailViewConfigurable?
+    var viewModel: EmailViewConfigurable!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class EmailViewController: BaseViewController, MFMailComposeViewControllerDelega
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients(viewModel?.recipients ?? [""])
-        mailComposerVC.setSubject(viewModel?.subject ?? "")
+        mailComposerVC.setToRecipients(viewModel.recipients ?? [""])
+        mailComposerVC.setSubject(viewModel.subject ?? "")
         return mailComposerVC
     }
     
