@@ -327,11 +327,11 @@ extension PredictionResultsViewController: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegate
 extension PredictionResultsViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         self.collectionView(collectionView, didSelectItemAt: indexPath, shouldUpdateVmPredictionsArray: true)
     }
-    
     
     /// This is a helper method for didSelectItemAt
     ///
