@@ -17,7 +17,7 @@ import UIKit
 ///     default is a newline (`"\n"`).
 public func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-        Swift.print(items[0], separator:separator, terminator: terminator)
+        Swift.print(items, separator:separator, terminator: terminator)
     #endif
 }
 
@@ -43,6 +43,6 @@ public func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [
 }
 
 // Helper function inserted by Swift 4.2 migrator.
-public func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+ func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
     return input.rawValue
 }
