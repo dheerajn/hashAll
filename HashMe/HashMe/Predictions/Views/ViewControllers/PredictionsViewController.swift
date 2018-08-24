@@ -188,8 +188,8 @@ extension PredictionsViewController: UIImagePickerControllerDelegate, UINavigati
         self.imageToPredict.image = image
         imagePicker.dismiss(animated: true) {
             //reason behind putting a delay is because user has to know that there is something loading. If no delay, loading screen is not showing up on the screen
-            dispatchOnMainQueueWith(delay: 1, closure: {
-                self.predictButtonTapped()
+            dispatchOnMainQueueWith(delay: 1, closure: { [weak self] in
+                self?.predictButtonTapped()
             })
             UIView.animate(withDuration: 0.2, animations: {
                 self.startLoadingAnimation()
