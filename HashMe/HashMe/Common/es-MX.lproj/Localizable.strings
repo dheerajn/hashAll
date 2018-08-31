@@ -16,7 +16,7 @@
 "doneButtonTitle" = "Hecho";
 
 //Predictions
-"ImagePickerAlert" = "Huh, parece que hay algo mal. Por favor, intentelo de nuevo mas tarde.";
+"ImagePickerAlert" = "Parece que hay algo mal. Por favor, intentelo de nuevo mas tarde.";
 "ImagePickerIssue" = "Lo sentimos, por favor intente de nuevo mas tarde. Algo salio mal.";
 "photoLibraryAccessTitle" = "No ha habilitado el acceso a su biblioteca de fotos.";
 "photoLibraryAccessMessage" = "HashAll tiene acceso a tus fotos. Puede habilitar el acceso en la configuración.";

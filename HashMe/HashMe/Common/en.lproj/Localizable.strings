@@ -16,7 +16,7 @@
 "doneButtonTitle" = "Done";
 
 //Predictions
-"ImagePickerAlert" = "Huh, looks like there is something wrong. Please try again later.";
+"ImagePickerAlert" = "Looks like there is something wrong. Please try again later.";
 "ImagePickerIssue" = "Sorry, please try again later. Something went wrong.";
 "photoLibraryAccessTitle" = "You have not enabled access to your photo library.";
 "photoLibraryAccessMessage" = "HashAll doesn't have access to your photos. You can enable access in settings.";
