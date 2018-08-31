@@ -38,9 +38,12 @@ open class CustomAlertController: NSObject, UIAlertViewDelegate {
         
         let alert = CustomHashTagAlertController(title: title, message: message, preferredStyle: preferredStyle)
         if let dereferancedActions = actions {
-            for action in dereferancedActions {
-                alert.addAction(UIAlertAction(title: action.title, style: action.style, handler: { (alertAction) -> Void in
-                    action.handler?()
+            dereferancedActions.forEach {
+                let customHandler = $0.handler
+                alert.addAction(UIAlertAction(title: $0.title, style: $0.style, handler: { alertAction in
+                    if let validHandler = customHandler {
+                        validHandler()
+                    }
                     self.alertViewDismised()
                 }))
             }
