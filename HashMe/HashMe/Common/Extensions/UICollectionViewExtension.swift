@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 public extension UICollectionViewCell {
     func scaleDownForAnimation() {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: [], animations: {
