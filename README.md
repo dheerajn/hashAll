@@ -1,1 +1,2 @@
-# hashAll - This app is completely designed using MVVM, JavaScript, POP and Machine Learning
+# hashAll - This app is completely designed using MVVM, JavaScript, POP and Machine Learning 
+# CODE NOT UPDATED
